@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         mapaView = findViewById(R.id.mapView);
 
         Bundle mapViewBundle = null;
@@ -43,11 +43,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
 
-
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(new OnMapReadyCallback() {
-
             //La posición del mapa y el nombre del marcador
             LatLng position = new LatLng(43.257385, -2.933527);
             String markerText = "Goazen";
@@ -56,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 Log.i("DEBUG", "onMapReady");
 
                 //Añade el marcador
-                Marker marker  = googleMap.addMarker(new MarkerOptions().position(position).title(markerText));
+                Marker marker = googleMap.addMarker(new MarkerOptions().position(position).title(markerText));
 
                 //Zoom del mapa
                 CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, 19);
@@ -64,9 +62,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             }
         });
-
-
-
+    }
+        @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case 1: {
@@ -82,8 +79,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
-    @Override
 
+    @Override
     public void onResume() {
         mapView.onResume();
         super.onResume();
@@ -101,7 +98,20 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        //La posición del mapa y el nombre del marcador
+        LatLng position = new LatLng(43.257385, -2.933527);
+        String markerText = "Goazen";
+        Log.i("DEBUG", "onMapReady");
 
+        //Añade el marcador
+        Marker marker = googleMap.addMarker(new MarkerOptions().position(position).title(markerText));
+
+        //Zoom del mapa
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, 19);
+        googleMap.animateCamera(cameraUpdate);
+    }
 }
 
 
