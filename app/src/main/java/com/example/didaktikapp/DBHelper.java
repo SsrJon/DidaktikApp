@@ -27,7 +27,22 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_TABLE_USUARIO =
             "DROP TABLE IF EXISTS " + entidadUsuario.TABLE_NAME;
 
+    public static class entidadLugares implements BaseColumns {
+        public static final String TABLE_NAME = "Lugares";
+        public static final String COLUMN_NAME_NOMBRE = "nLugar" ;
+        public static final String COLUMN_NAME_LATITUD = "Latitud" ;
+        public static final String COLUMN_NAME_LONGITUD = "Longitud" ;
+    }
 
+    private static final String SQL_CREATE_TABLE_LUGARES =
+            "CREATE TABLE " + entidadLugares.TABLE_NAME + " (" +
+                    entidadLugares._ID + " TEXT PRIMARY KEY AUTOINCREMENT," +
+                    entidadLugares.COLUMN_NAME_NOMBRE + " TEXT," +
+                    entidadLugares.COLUMN_NAME_LATITUD + " TEXT," +
+                    entidadLugares.COLUMN_NAME_LONGITUD + " TEXT)";
+
+    private static final String SQL_DELETE_TABLE_LUGARES =
+            "DROP TABLE IF EXISTS " + entidadLugares.TABLE_NAME;
 
     @Override
     public void onCreate(SQLiteDatabase db) {
