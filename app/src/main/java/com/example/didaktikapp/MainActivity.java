@@ -17,7 +17,16 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+    GoogleMap mapa;
+    MapView mapaView;
+    private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
 
     MapView mapView;
 
@@ -26,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        mapaView = findViewById(R.id.mapView);
+
+        Bundle mapViewBundle = null;
+        if (savedInstanceState != null) {
+            mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY);
+        }
+
 
 
         mapView = findViewById(R.id.mapView);
@@ -50,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-    }
-
 
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
@@ -69,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
+
     public void onResume() {
         mapView.onResume();
         super.onResume();
