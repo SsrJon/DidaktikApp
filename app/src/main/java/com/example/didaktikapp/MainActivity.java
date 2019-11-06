@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    
+
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case 1: {
