@@ -23,7 +23,7 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+public abstract class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
     GoogleMap mapa;
     MapView mapaView;
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
@@ -34,14 +34,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         mapaView = findViewById(R.id.mapView);
 
         Bundle mapViewBundle = null;
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY);
         }
-
 
 
         mapView = findViewById(R.id.mapView);
@@ -51,12 +50,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             //La posición del mapa y el nombre del marcador
             LatLng position = new LatLng(43.257385, -2.933527);
             String markerText = "Goazen";
+
             @Override
             public void onMapReady(GoogleMap googleMap) {
                 Log.i("DEBUG", "onMapReady");
 
                 //Añade el marcador
-                Marker marker  = googleMap.addMarker(new MarkerOptions().position(position).title(markerText));
+                Marker marker = googleMap.addMarker(new MarkerOptions().position(position).title(markerText));
 
                 //Zoom del mapa
                 CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, 19);
@@ -64,9 +64,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             }
         });
-
-
-
+    }
+        @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case 1: {
@@ -82,8 +81,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
-    @Override
 
+    @Override
     public void onResume() {
         mapView.onResume();
         super.onResume();
