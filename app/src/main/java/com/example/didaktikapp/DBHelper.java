@@ -76,6 +76,23 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_TABLE_LUGARES =
             "DROP TABLE IF EXISTS " + entidadLugares.TABLE_NAME;
 
+    public static class entidadVideojuegos implements BaseColumns {
+        public static final String TABLE_NAME = "Videojuego";
+        public static final String TABLE_NAME_VIDEOJUEGO = "nVideojuego";
+        public static final String COLUMN_NAME_LUGAR = "nLugar" ;
+        public static final String COLUMN_NAME_ACTIVADO = "Activado" ;
+    }
+    private static final String SQL_CREATE_TABLE_VIDEOJUEGOS =
+            "CREATE TABLE " + entidadVideojuegos.TABLE_NAME + " (" +
+                    entidadVideojuegos._ID + " TEXT PRIMARY KEY AUTOINCREMENT," +
+                    entidadVideojuegos.TABLE_NAME_VIDEOJUEGO + " TEXT,"+
+                    "FOREIGN KEY('" + entidadVideojuegos.COLUMN_NAME_LUGAR + "') REFERENCES '" + entidadLugares.TABLE_NAME + "'('" + entidadLugares._ID + "'),"+
+                    entidadVideojuegos.COLUMN_NAME_ACTIVADO + " TEXT)";
+
+    private static final String SQL_DELETE_TABLE_VIDEOJUEGOS =
+            "DROP TABLE IF EXISTS " + entidadVideojuegos.TABLE_NAME;
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
 
