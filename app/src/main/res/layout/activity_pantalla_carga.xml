@@ -17,5 +17,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.221"
-        app:srcCompat="@drawable/logoEHU" />
+        app:srcCompat="@drawable/logo_ehu" />
 </androidx.constraintlayout.widget.ConstraintLayout>
