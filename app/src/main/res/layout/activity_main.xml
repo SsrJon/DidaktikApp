@@ -2,22 +2,25 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cons"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
     tools:context=".MainActivity">
 
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        class="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="361dp"
-        android:layout_height="626dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/manolo"
+        android:layout_width="365dp"
+        android:layout_height="640dp"
+        android:background="#D16F6F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="0.175">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/imageView"
@@ -34,9 +37,10 @@
         app:layout_constraintVertical_bias="0.975" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
+        android:id="@+id/FAprinicipal"
         android:layout_width="56dp"
         android:layout_height="72dp"
+        android:background="#4CAF50"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,12 +1,19 @@
 package com.example.didaktikapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
+import android.content.ClipData;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -22,48 +29,42 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+import static com.example.didaktikapp.R.drawable.fondo2;
+
+
+public class MainActivity extends AppCompatActivity implements Mapa.OnFragmentInteractionListener {
     GoogleMap mapa;
     MapView mapaView;
-    private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
+    int pantalla = 0;
+    ConstraintLayout cons;
 
+    FloatingActionButton play;
+
+    private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
     MapView mapView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-        mapaView = findViewById(R.id.mapView);
 
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        play = findViewById(R.id.FAprinicipal);
+        cons = findViewById(R.id.cons);
         Bundle mapViewBundle = null;
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY);
         }
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        Fragment fragment = new Mapa();
+        fragmentTransaction.replace(R.id.manolo, fragment, null).commit();
 
 
-        mapView = findViewById(R.id.mapView);
-        mapView.onCreate(savedInstanceState);
-        mapView.getMapAsync(new OnMapReadyCallback() {
-            //La posición del mapa y el nombre del marcador
-            LatLng position = new LatLng(43.257385, -2.933527);
-            String markerText = "Goazen";
-            @Override
-            public void onMapReady(GoogleMap googleMap) {
-                Log.i("DEBUG", "onMapReady");
-
-                //Añade el marcador
-                Marker marker = googleMap.addMarker(new MarkerOptions().position(position).title(markerText));
-
-                //Zoom del mapa
-                CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, 19);
-                googleMap.animateCamera(cameraUpdate);
-
-            }
-        });
     }
-        @Override
+    @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case 1: {
@@ -78,39 +79,35 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
-
-
-    @Override
-    public void onResume() {
-        mapView.onResume();
-        super.onResume();
+    public boolean onCreateOptionsMenu(Menu menu){
+    getMenuInflater().inflate(R.menu.overflow,menu);
+    return true;
+    }
+    public boolean onOptionsItemSelected (MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.juegos){
+            if (pantalla==0){
+                setTheme(R.style.AppTheme2);
+                setContentView(R.layout.activity_main);
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment = new Mapa();
+                fragmentTransaction.replace(R.id.manolo, fragment, null).commit();
+                pantalla=1;
+            }else if (pantalla == 1){
+                setTheme(R.style.AppTheme);
+                setContentView(R.layout.activity_main);
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                Fragment fragment = new Mapa();
+                fragmentTransaction.replace(R.id.manolo, fragment, null).commit();
+                pantalla=0;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mapView.onDestroy();
-    }
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        mapView.onLowMemory();
-    }
+    public void onFragmentInteraction(Uri uri) {
 
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        //La posición del mapa y el nombre del marcador
-        LatLng position = new LatLng(43.257385, -2.933527);
-        String markerText = "Goazen";
-        Log.i("DEBUG", "onMapReady");
-
-        //Añade el marcador
-        Marker marker = googleMap.addMarker(new MarkerOptions().position(position).title(markerText));
-
-        //Zoom del mapa
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, 19);
-        googleMap.animateCamera(cameraUpdate);
     }
 }
 
