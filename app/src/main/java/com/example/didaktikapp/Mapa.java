@@ -1,7 +1,10 @@
 package com.example.didaktikapp;
-
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -23,22 +26,15 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link Mapa.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link Mapa#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Mapa extends Fragment {
+public class Mapa extends Fragment implements LocationListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
     MapView mapView;
-
+    private LocationManager locManager;
+    private LocationListener locListener;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -49,15 +45,6 @@ public class Mapa extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Mapa.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Mapa newInstance(String param1, String param2) {
         Mapa fragment = new Mapa();
         Bundle args = new Bundle();
@@ -89,22 +76,23 @@ public class Mapa extends Fragment {
         mapView = getView().findViewById(R.id.juanjo);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(new OnMapReadyCallback() {
+
             //La posición del mapa y el nombre del marcador
             LatLng position = new LatLng(43.257385, -2.933527);
             String markerText = "Goazen";
             @Override
             public void onMapReady(GoogleMap googleMap) {
                 Log.i("DEBUG", "onMapReady");
-
                 //Añade el marcador
                 Marker marker = googleMap.addMarker(new MarkerOptions().position(position).title(markerText));
-
                 //Zoom del mapa
                 CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, 19);
                 googleMap.animateCamera(cameraUpdate);
-
             }
+
         });
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -131,16 +119,7 @@ public class Mapa extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
@@ -176,18 +155,20 @@ public class Mapa extends Fragment {
         super.onLowMemory();
         mapView.onLowMemory();
     }
-    /*@Override
-    public void onMapReady(GoogleMap googleMap) {
-        //La posición del mapa y el nombre del marcador
-        LatLng position = new LatLng(43.257385, -2.933527);
-        String markerText = "Goazen";
-        Log.i("DEBUG", "onMapReady");
 
-        //Añade el marcador
-        Marker marker = googleMap.addMarker(new MarkerOptions().position(position).title(markerText));
+    @Override
+    public void onLocationChanged(Location location) {}
 
-        //Zoom del mapa
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, 19);
-        googleMap.animateCamera(cameraUpdate);
-    }*/
+    @Override
+    public void onProviderDisabled(String provider) {
+        Intent intent = new Intent( android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {}
+
+    @Override
+    public void onProviderEnabled(String provider) {}
+
 }

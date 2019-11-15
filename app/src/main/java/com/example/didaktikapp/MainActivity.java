@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements Mapa.OnFragmentIn
     MapView mapaView;
     int pantalla = 0;
     ConstraintLayout cons;
-
     FloatingActionButton play;
 
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
@@ -64,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements Mapa.OnFragmentIn
 
 
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements Mapa.OnFragmentIn
                 }
                 return;
             }
-
         }
     }
 
