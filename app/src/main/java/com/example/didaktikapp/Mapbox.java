@@ -2,6 +2,7 @@ package com.example.didaktikapp;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,11 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.mapbox.android.core.permissions.PermissionsListener;
+import com.mapbox.geojson.Feature;
+import com.mapbox.geojson.FeatureCollection;
+import com.mapbox.geojson.Point;
+import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.geometry.LatLngBounds;
 import com.mapbox.mapboxsdk.maps.MapView;
@@ -25,12 +31,23 @@ import com.mapbox.mapboxsdk.offline.OfflineRegion;
 import com.mapbox.mapboxsdk.offline.OfflineRegionError;
 import com.mapbox.mapboxsdk.offline.OfflineRegionStatus;
 import com.mapbox.mapboxsdk.offline.OfflineTilePyramidRegionDefinition;
+import com.mapbox.mapboxsdk.plugins.markerview.MarkerView;
+import com.mapbox.mapboxsdk.plugins.markerview.MarkerViewManager;
+import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
+import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
+import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import timber.log.Timber;
 
-public class Mapbox extends Fragment {
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconAllowOverlap;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconOffset;
+
+public class Mapbox extends Fragment implements OnMapReadyCallback , PermissionsListener {
 
     private MapboxViewModel mViewModel;
     private boolean isEndNotified;
@@ -41,6 +58,13 @@ public class Mapbox extends Fragment {
     // JSON encoding/decoding
     public static final String JSON_CHARSET = "UTF-8";
     public static final String JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME";
+
+    private static final String SOURCE_ID = "SOURCE_ID";
+    private static final String ICON_ID = "ICON_ID";
+    private static final String LAYER_ID = "LAYER_ID";
+
+
+
 
     public static Mapbox newInstance() {
         return new Mapbox();
@@ -63,6 +87,18 @@ public class Mapbox extends Fragment {
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(@NonNull final MapboxMap mapboxMap) {
+
+                mapboxMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(43.209712, -2.889002))
+                        .title("Arrigorriaga"));
+
+
+
+
+
+
+
+
 
                 mapboxMap.setStyle(Style.OUTDOORS, new Style.OnStyleLoaded() {
                     @Override
@@ -161,11 +197,18 @@ public class Mapbox extends Fragment {
 
 
 
+
+
         return root;
     }
 
 
-    @Override
+
+
+    
+
+
+        @Override
     public void onResume() {
         super.onResume();
         mapView.onResume();
@@ -267,5 +310,22 @@ public class Mapbox extends Fragment {
     }
 
 
+    @Override
+    public void onMapReady(@NonNull MapboxMap mapboxMap) {
 
+
+
+
+
+    }
+
+    @Override
+    public void onExplanationNeeded(List<String> permissionsToExplain) {
+
+    }
+
+    @Override
+    public void onPermissionResult(boolean granted) {
+
+    }
 }
