@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements Mapa.OnFragmentIn
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY);
         }
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        Fragment fragment = new Mapa();
+        Fragment fragment = new Mapbox();
         fragmentTransaction.replace(R.id.manolo, fragment, null).commit();
 
 
