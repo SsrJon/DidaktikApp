@@ -54,15 +54,13 @@ public class Mapbox extends Fragment implements  PermissionsListener {
     public static final String JSON_CHARSET = "UTF-8";
     public static final String JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME";
 
-    //zona accesible en el mapa
+    //Zona accesible en el mapa
     private static final LatLng BOUND_CORNER_NW = new LatLng(43.202712, -2.90102);
     private static final LatLng BOUND_CORNER_SE = new LatLng(43.221812, -2.88002);
     private static final LatLngBounds RESTRICTED_BOUNDS_AREA = new LatLngBounds.Builder()
             .include(BOUND_CORNER_NW)
             .include(BOUND_CORNER_SE)
             .build();
-
-
 
 
     public static Mapbox newInstance() {
@@ -73,8 +71,7 @@ public class Mapbox extends Fragment implements  PermissionsListener {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Mapbox access token is configured here. This needs to be called either in your application
-        // object or in the same activity which contains the mapview.
+        //token de mapbox (el codigo de la cuenta)
         com.mapbox.mapboxsdk.Mapbox.getInstance(getActivity(), getString(R.string.mapbox_access_token));
 
         final View root= inflater.inflate(R.layout.mapbox_fragment, container, false);
@@ -82,8 +79,6 @@ public class Mapbox extends Fragment implements  PermissionsListener {
         mapView = root.findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(new OnMapReadyCallback() {
-
-
 
 
 
@@ -107,13 +102,13 @@ public class Mapbox extends Fragment implements  PermissionsListener {
                         // Set up the OfflineManager
                         offlineManager = OfflineManager.getInstance(getActivity());
 
-                        // Create a bounding box for the offline region
+                        // la zona del mapa que se va a descargar (bounding box)
                         LatLngBounds latLngBounds = new LatLngBounds.Builder()
-                                .include(new LatLng(43.209712, -2.889002)) // Northeast
-                                .include(new LatLng(43.109712, -2.989002)) // Southwest
+                                .include(new LatLng(43.201712, -2.901002)) // Northeast
+                                .include(new LatLng(43.223712, -2.889002)) // Southwest
                                 .build();
 
-                        // Define the offline region
+                        // Define la region  offline
                         OfflineTilePyramidRegionDefinition definition = new OfflineTilePyramidRegionDefinition(
                                 style.getUri(),
                                 latLngBounds,
@@ -133,7 +128,7 @@ public class Mapbox extends Fragment implements  PermissionsListener {
                             metadata = null;
                         }
 
-                        // Create the region asynchronously
+                        // Crea la region
                         if (metadata != null) {
                             offlineManager.createOfflineRegion(
                                     definition,
@@ -143,11 +138,11 @@ public class Mapbox extends Fragment implements  PermissionsListener {
                                         public void onCreate(OfflineRegion offlineRegion) {
                                             offlineRegion.setDownloadState(OfflineRegion.STATE_ACTIVE);
 
-                                            // Display the download progress bar
+                                            // muestra la barra de progreso
                                             progressBar =root.findViewById(R.id.progress_bar);
                                             startProgress();
 
-                                            // Monitor the download progress using setObserver
+                                            // Monitoriza la descarga usando setObserver
                                             offlineRegion.setObserver(new OfflineRegion.OfflineRegionObserver() {
                                                 @Override
                                                 public void onStatusChanged(OfflineRegionStatus status) {
@@ -200,7 +195,7 @@ public class Mapbox extends Fragment implements  PermissionsListener {
         return root;
     }
 
-    
+
         @Override
     public void onResume() {
         super.onResume();
