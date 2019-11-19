@@ -2,23 +2,21 @@ package com.example.didaktikapp;
 
 import androidx.lifecycle.ViewModelProviders;
 
-import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.mapbox.android.core.permissions.PermissionsListener;
-import com.mapbox.geojson.Feature;
-import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
+import com.mapbox.geojson.Polygon;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.geometry.LatLngBounds;
@@ -31,23 +29,20 @@ import com.mapbox.mapboxsdk.offline.OfflineRegion;
 import com.mapbox.mapboxsdk.offline.OfflineRegionError;
 import com.mapbox.mapboxsdk.offline.OfflineRegionStatus;
 import com.mapbox.mapboxsdk.offline.OfflineTilePyramidRegionDefinition;
-import com.mapbox.mapboxsdk.plugins.markerview.MarkerView;
-import com.mapbox.mapboxsdk.plugins.markerview.MarkerViewManager;
-import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
-import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
+import com.mapbox.mapboxsdk.style.layers.FillLayer;
 import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
 
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import timber.log.Timber;
 
-import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconAllowOverlap;
-import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconOffset;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillColor;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillOpacity;
 
-public class Mapbox extends Fragment implements OnMapReadyCallback , PermissionsListener {
+
+public class Mapbox extends Fragment implements  PermissionsListener {
 
     private MapboxViewModel mViewModel;
     private boolean isEndNotified;
@@ -59,9 +54,13 @@ public class Mapbox extends Fragment implements OnMapReadyCallback , Permissions
     public static final String JSON_CHARSET = "UTF-8";
     public static final String JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME";
 
-    private static final String SOURCE_ID = "SOURCE_ID";
-    private static final String ICON_ID = "ICON_ID";
-    private static final String LAYER_ID = "LAYER_ID";
+    //zona accesible en el mapa
+    private static final LatLng BOUND_CORNER_NW = new LatLng(43.202712, -2.90102);
+    private static final LatLng BOUND_CORNER_SE = new LatLng(43.221812, -2.88002);
+    private static final LatLngBounds RESTRICTED_BOUNDS_AREA = new LatLngBounds.Builder()
+            .include(BOUND_CORNER_NW)
+            .include(BOUND_CORNER_SE)
+            .build();
 
 
 
@@ -74,8 +73,6 @@ public class Mapbox extends Fragment implements OnMapReadyCallback , Permissions
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
-
         // Mapbox access token is configured here. This needs to be called either in your application
         // object or in the same activity which contains the mapview.
         com.mapbox.mapboxsdk.Mapbox.getInstance(getActivity(), getString(R.string.mapbox_access_token));
@@ -85,24 +82,27 @@ public class Mapbox extends Fragment implements OnMapReadyCallback , Permissions
         mapView = root.findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(new OnMapReadyCallback() {
+
+
+
+
+
             @Override
             public void onMapReady(@NonNull final MapboxMap mapboxMap) {
 
+                //Marcador
                 mapboxMap.addMarker(new MarkerOptions()
                         .position(new LatLng(43.209712, -2.889002))
                         .title("Arrigorriaga"));
 
-
-
-
-
-
-
-
-
+                //el estilo que utiliza
                 mapboxMap.setStyle(Style.OUTDOORS, new Style.OnStyleLoaded() {
                     @Override
                     public void onStyleLoaded(@NonNull Style style) {
+
+                        //Restriccion de zona del mapa
+                        mapboxMap.setLatLngBoundsForCameraTarget(RESTRICTED_BOUNDS_AREA);
+
 
                         // Set up the OfflineManager
                         offlineManager = OfflineManager.getInstance(getActivity());
@@ -125,7 +125,7 @@ public class Mapbox extends Fragment implements OnMapReadyCallback , Permissions
                         byte[] metadata;
                         try {
                             JSONObject jsonObject = new JSONObject();
-                            jsonObject.put(JSON_FIELD_REGION_NAME, "Yosemite National Park");
+                            jsonObject.put(JSON_FIELD_REGION_NAME, "Arrigorriaga");
                             String json = jsonObject.toString();
                             metadata = json.getBytes(JSON_CHARSET);
                         } catch (Exception exception) {
@@ -190,24 +190,17 @@ public class Mapbox extends Fragment implements OnMapReadyCallback , Permissions
                     }
                 });
             }
+
+
+
         });
-
-
-
-
-
 
 
 
         return root;
     }
 
-
-
-
     
-
-
         @Override
     public void onResume() {
         super.onResume();
@@ -239,11 +232,7 @@ public class Mapbox extends Fragment implements OnMapReadyCallback , Permissions
                         offlineRegions[(offlineRegions.length - 1)].delete(new OfflineRegion.OfflineRegionDeleteCallback() {
                             @Override
                             public void onDelete() {
-                                Toast.makeText(
-                                        getActivity(),
-                                        getString(R.string.basic_offline_deleted_toast),
-                                        Toast.LENGTH_LONG
-                                ).show();
+                                //Toast.makeText(getActivity(), getString(R.string.basic_offline_deleted_toast), Toast.LENGTH_LONG).show();
                             }
 
                             @Override
@@ -305,19 +294,10 @@ public class Mapbox extends Fragment implements OnMapReadyCallback , Permissions
         progressBar.setIndeterminate(false);
         progressBar.setVisibility(View.GONE);
 
-        // Show a toast
-        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
-    }
-
-
-    @Override
-    public void onMapReady(@NonNull MapboxMap mapboxMap) {
-
-
-
-
 
     }
+
+
 
     @Override
     public void onExplanationNeeded(List<String> permissionsToExplain) {

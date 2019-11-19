@@ -10,7 +10,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/manolo"
+        android:id="@+id/fragmentos"
         android:layout_width="365dp"
         android:layout_height="640dp"
         android:background="#D16F6F"
