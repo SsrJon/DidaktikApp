@@ -1,17 +1,12 @@
 package com.example.didaktikapp;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 
-import java.io.IOException;
-import java.io.InputStream;
+
 
 public class pantallaCarga extends AppCompatActivity {
     ImageView progreso;
