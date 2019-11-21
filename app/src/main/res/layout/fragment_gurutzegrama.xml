@@ -4,391 +4,278 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blanco"
     tools:context=".Gurutzegrama">
 
-    <!-- TODO: Update blank fragment layout -->
 
-    <EditText
-        android:id="@+id/palabraUnoLetraUno"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="56dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraDos"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraUno" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraTres"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraDos" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraCuatro"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraTres" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraCinco"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraCuatro" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraSeis"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraCinco" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraSiete"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraSeis" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraOcho"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraSiete" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraNueve"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraOcho" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraDiez"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraNueve" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraOnce"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraDiez" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraDoce"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraOnce" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraTrece"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraDoce" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraCatorce"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraTrece" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraQuince"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraCatorce" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraDieciseis"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraQuince" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraDiecisiete"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraDieciseis" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraDieciocho"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraDiecisiete" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraDiecinueve"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraDieciocho" />
-
-    <EditText
-        android:id="@+id/palabraUnoLetraVeinte"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/palabraUnoLetraDiecinueve" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraUno"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraDos"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraUno"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraTres"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraDos"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraCuatro"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraTres"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraCinco"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraCuatro"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraSeis"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraCinco"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraSiete"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toStartOf="@+id/palabraUnoLetraOcho"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraSeis"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraNueve"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintStart_toEndOf="@+id/palabraUnoLetraOcho"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraDiez"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraNueve"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraOnce"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraDiez"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraDoce"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraOnce"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraTrece"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraDoce"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraCatorce"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraTrece"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraQuince"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraCatorce"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraDieciseis"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraQuince"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraDiecisiete"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraDieciseis"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraDosLetraDieciocho"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="272dp"
-        android:maxLength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/palabraDosLetraDiecisiete"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/palabraTresLetraUno"
-        android:layout_width="24dp"
-        android:layout_height="31dp"
-        android:maxLength="1"
+    <ImageView
+        android:id="@+id/gurutzegrama"
+        android:layout_width="419dp"
+        android:layout_height="499dp"
+        android:src="@drawable/gurutzegrama"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865" />
+        app:layout_constraintVertical_bias="0.349" />
 
+    <TextView
+        android:id="@+id/tituloHorizontalGurutzegrama"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:text="@string/tituloHorizontalGurutzegrama"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gurutzegrama"
+        app:layout_constraintVertical_bias="0.186" />
+
+    <TextView
+        android:id="@+id/preguntaHorizontalUno"
+        android:layout_width="197dp"
+        android:layout_height="22dp"
+        android:text="@string/horizontalUno"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloHorizontalGurutzegrama"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/preguntaHorizontalDos"
+        android:layout_width="197dp"
+        android:layout_height="21dp"
+        android:text="@string/horizontalDos"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/preguntaHorizontalUno"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/preguntaHorizontalTres"
+        android:layout_width="198dp"
+        android:layout_height="19dp"
+        android:text="@string/horizontalTres"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/preguntaHorizontalDos"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/preguntaHorizontalCuatro"
+        android:layout_width="197dp"
+        android:layout_height="18dp"
+        android:text="@string/horizontalCuatro"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/preguntaHorizontalTres"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tituloVerticalGurutzegrama"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:text="@string/tituloVerticalGurutzegrama"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gurutzegrama"
+        app:layout_constraintVertical_bias="0.186" />
+
+    <TextView
+        android:id="@+id/preguntaVerticallUno"
+        android:layout_width="137dp"
+        android:layout_height="39dp"
+        android:text="@string/verticalUno"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.883"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloVerticalGurutzegrama"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/preguntaVerticalDos"
+        android:layout_width="140dp"
+        android:layout_height="38dp"
+        android:text="@string/verticalDos"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/preguntaVerticallUno"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/gurutzegramaUno"
+        android:layout_width="16dp"
+        android:layout_height="13dp"
+        android:background="#00FFFFFF"
+        android:text="@string/horizontalbtnUno"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.235" />
+
+    <Button
+        android:id="@+id/gurutzegramaDos"
+        android:layout_width="16dp"
+        android:layout_height="13dp"
+        android:background="#00FFFFFF"
+        android:text="@string/horizontalbtnDos"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.394" />
+
+    <Button
+        android:id="@+id/gurutzegramaTres"
+        android:layout_width="16dp"
+        android:layout_height="13dp"
+        android:background="#00FFFFFF"
+        android:text="@string/horizontalbtnTres"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.44" />
+
+    <Button
+        android:id="@+id/gurutzegramaCuatro"
+        android:layout_width="16dp"
+        android:layout_height="13dp"
+        android:background="#00FFFFFF"
+        android:text="@string/horizontalbtnCuatro"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465" />
+
+    <Button
+        android:id="@+id/gurutzegramaCinco"
+        android:layout_width="16dp"
+        android:layout_height="13dp"
+        android:background="#00FFFFFF"
+        android:text="@string/horizontalbtnCinco"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.512" />
+
+    <Button
+        android:id="@+id/gurutzegramaSeis"
+        android:layout_width="16dp"
+        android:layout_height="13dp"
+        android:background="#00FFFFFF"
+        android:text="@string/horizontalbtnSeis"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.667" />
+
+    <ImageView
+        android:id="@+id/respuestaUno"
+        android:layout_width="24dp"
+        android:layout_height="331dp"
+        android:src="@drawable/respuestaUno"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <ImageView
+        android:id="@+id/respuestaDos"
+        android:layout_width="309dp"
+        android:layout_height="23dp"
+        android:src="@drawable/respuestaDos"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.700"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.395" />
+
+    <ImageView
+        android:id="@+id/respuestaTres"
+        android:layout_width="22dp"
+        android:layout_height="133dp"
+        android:src="@drawable/respuestaTres"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.750"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.525" />
+
+    <ImageView
+        android:id="@+id/respuestaCuatro"
+        android:layout_width="350dp"
+        android:layout_height="21dp"
+        android:src="@drawable/respuestaCuatro"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.462" />
+
+    <ImageView
+        android:id="@+id/respuestaCinco"
+        android:layout_width="158dp"
+        android:layout_height="22dp"
+        android:src="@drawable/respuestaCinco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.510" />
+
+    <ImageView
+        android:id="@+id/respuestaSeis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/respuestaCinco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

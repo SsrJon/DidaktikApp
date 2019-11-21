@@ -65,9 +65,11 @@ public class Gurutzegrama extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gurutzegrama, container, false);
-    }
+            View root = inflater.inflate(R.layout.fragment_gurutzegrama, container, false);
+            // Inflate the layout for this fragment
+            return root;
+        }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
