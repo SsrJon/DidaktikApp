@@ -24,13 +24,13 @@
         android:id="@+id/gifImageView"
         android:layout_width="903dp"
         android:layout_height="244dp"
-        android:src="@drawable/barraprogreso"
+        android:src="@drawable/bailoteo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.932" />
 
     <ImageView
         android:id="@+id/imageView3"
