@@ -1,5 +1,6 @@
 package com.example.didaktikapp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,11 +15,11 @@ import java.io.InputStream;
 
 public class pantallaCarga extends AppCompatActivity {
     ImageView progreso;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_carga);
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
