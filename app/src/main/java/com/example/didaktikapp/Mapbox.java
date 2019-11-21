@@ -1,22 +1,20 @@
 package com.example.didaktikapp;
 
-import androidx.lifecycle.ViewModelProviders;
-
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
-
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 import com.mapbox.android.core.permissions.PermissionsListener;
-import com.mapbox.geojson.Point;
-import com.mapbox.geojson.Polygon;
+import com.mapbox.mapboxsdk.annotations.Icon;
+import com.mapbox.mapboxsdk.annotations.IconFactory;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.geometry.LatLngBounds;
@@ -29,17 +27,9 @@ import com.mapbox.mapboxsdk.offline.OfflineRegion;
 import com.mapbox.mapboxsdk.offline.OfflineRegionError;
 import com.mapbox.mapboxsdk.offline.OfflineRegionStatus;
 import com.mapbox.mapboxsdk.offline.OfflineTilePyramidRegionDefinition;
-import com.mapbox.mapboxsdk.style.layers.FillLayer;
-import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
-
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.List;
 import timber.log.Timber;
-
-import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillColor;
-import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillOpacity;
 
 
 public class Mapbox extends Fragment implements  PermissionsListener {
@@ -89,6 +79,10 @@ public class Mapbox extends Fragment implements  PermissionsListener {
                 mapboxMap.addMarker(new MarkerOptions()
                         .position(new LatLng(43.209712, -2.889002))
                         .title("Arrigorriaga"));
+
+
+
+
 
                 //el estilo que utiliza
                 mapboxMap.setStyle(Style.OUTDOORS, new Style.OnStyleLoaded() {
