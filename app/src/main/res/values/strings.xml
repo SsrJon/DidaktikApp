@@ -5,5 +5,18 @@
     <string name="simple_offline_end_progress_success">Mapa descargado</string>
     <string name="basic_offline_deleted_toast">deleted</string>
 
+    <string name="inicio_nombre">Zure izena idatzi</string>
+    <string name="empezar_aventura">Hasi</string>
+
+    <string name="continuar">Jarraitu</string>
+    <string name="audio1">Kaixo! Ni mika naiz eta zuen laguntzailea izango
+        naiz. Ez duzue imajinatzen zer nolako abentura
+        miresgarria antolatu dudan! Ba al dakizue zertan
+        datzan? Erantzuna ezezkoa bada, adi egon orain
+        kontatuko dizuedana entzuteko. Prest? Prrrrrrr...
+        Arrigorriagako ondare kulturalak ezagutzeari
+        ekingo diogu!.
+    </string>
+
 
 </resources>

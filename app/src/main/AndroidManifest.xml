@@ -8,7 +8,6 @@
     <uses-permission android:name="com.example.permission.MAPS_RECEIVE" />
     <uses-permission android:name="a.b.c.d.permission.MAPS_RECEIVE" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/grape1"
@@ -16,16 +15,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".InicioAventuraActivity"></activity>
         <activity android:name=".pantallaCarga">
             <intent-filter>
-                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+
         <uses-library android:name="com.google.android.maps" />
-
     </application>
-
 
 </manifest>
