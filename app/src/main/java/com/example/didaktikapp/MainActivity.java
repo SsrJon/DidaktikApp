@@ -2,19 +2,8 @@ package com.example.didaktikapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
-import android.Manifest;
-import android.content.ClipData;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,6 +24,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.Icon;
+import com.mapbox.mapboxsdk.annotations.IconFactory;
+import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.geometry.LatLngBounds;
 import com.mapbox.mapboxsdk.location.LocationComponent;
@@ -43,7 +35,9 @@ import com.mapbox.mapboxsdk.location.LocationComponentOptions;
 import com.mapbox.mapboxsdk.location.OnCameraTrackingChangedListener;
 import com.mapbox.mapboxsdk.location.modes.CameraMode;
 import com.mapbox.mapboxsdk.location.modes.RenderMode;
+import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
+import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.offline.OfflineManager;
 import com.mapbox.mapboxsdk.offline.OfflineRegion;
@@ -69,7 +63,6 @@ public class MainActivity extends AppCompatActivity implements
     private LocationComponent locationComponent;
     private boolean isInTrackingMode;
     int pantalla =0;
-    FloatingActionButton BTNjuegos;
 
 
 
@@ -119,12 +112,68 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
         this.mapboxMap = mapboxMap;
+
+        //Punto 1  Larrea eskultura
+        MarkerOptions punto1 =new MarkerOptions();
+        punto1.title("Larrea eskultura");
+        IconFactory iconFactoryPunto1= IconFactory.getInstance(MainActivity.this);
+        Icon iconPunto1= iconFactoryPunto1.fromResource(R.drawable.marcador1);
+        punto1.icon(iconPunto1);
+        punto1.position(new LatLng(43.211583,-2.886917));
+        mapboxMap.addMarker(punto1);
+
+        //Punto 2  Arrigorriagako Udaletxea
+        MarkerOptions punto2 =new MarkerOptions();
+        punto2.title("Arrigorriagako Udaletxea");
+        IconFactory iconFactoryPunto2= IconFactory.getInstance(MainActivity.this);
+        Icon iconPunto2= iconFactoryPunto2.fromResource(R.drawable.marcador2);
+        punto2.icon(iconPunto2);
+        punto2.position(new LatLng(43.205978,-2.887869));
+        mapboxMap.addMarker(punto2);
+
+        //Punto 3 Andra Maria Magdalena eliza
+        MarkerOptions punto3 =new MarkerOptions();
+        punto3.title("Maria Magdalena eliza");
+        IconFactory iconFactoryPunto3= IconFactory.getInstance(MainActivity.this);
+        Icon iconPunto3= iconFactoryPunto3.fromResource(R.drawable.marcador3);
+        punto3.icon(iconPunto3);
+        punto3.position(new LatLng(43.205548,-2.888705));
+        mapboxMap.addMarker(punto3);
+
+        //Punto 4 Hiltegi Zaharra
+        MarkerOptions punto4 =new MarkerOptions();
+        punto4.title("Hiltegi Zaharra");
+        IconFactory iconFactoryPunto4= IconFactory.getInstance(MainActivity.this);
+        Icon iconPunto4= iconFactoryPunto4.fromResource(R.drawable.marcador4);
+        punto4.icon(iconPunto4);
+        punto4.position(new LatLng(43.204889,-2.887833));
+        mapboxMap.addMarker(punto4);
+
+        //Punto 5 Landaederreagako Santo Kristo baseliza
+        MarkerOptions punto5 =new MarkerOptions();
+        punto5.title("Landaederreagako Santo Kristo baseliza");
+        IconFactory iconFactoryPunto5= IconFactory.getInstance(MainActivity.this);
+        Icon iconPunto5= iconFactoryPunto5.fromResource(R.drawable.marcador5);
+        punto5.icon(iconPunto5);
+        punto5.position(new LatLng(43.209306,-2.893722));
+        mapboxMap.addMarker(punto5);
+
+        //Punto 6 Abrisketako San Pedro baseleizea
+        MarkerOptions punto6 =new MarkerOptions();
+        punto6.title("Abrisketako San Pedro baseleizea");
+        IconFactory iconFactoryPunto6= IconFactory.getInstance(MainActivity.this);
+        Icon iconPunto6= iconFactoryPunto6.fromResource(R.drawable.marcador6);
+        punto6.icon(iconPunto6);
+        punto6.position(new LatLng(43.210500,-2.909417));
+        mapboxMap.addMarker(punto6);
+
         mapboxMap.setStyle(Style.OUTDOORS, new Style.OnStyleLoaded() {
 
 
             @Override
             public void onStyleLoaded(@NonNull Style style) {
                 enableLocationComponent(style);
+
 
                 //Restriccion de zona del mapa
                     mapboxMap.setLatLngBoundsForCameraTarget(RESTRICTED_BOUNDS_AREA);
