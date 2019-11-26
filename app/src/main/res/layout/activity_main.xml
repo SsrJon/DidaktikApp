@@ -13,7 +13,12 @@
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        mapbox:mapbox_cameraZoom="15" />
+        mapbox:mapbox_cameraTargetLat="43.209712"
+        mapbox:mapbox_cameraTargetLng="-2.889002"
+        mapbox:mapbox_cameraZoom="14.5"
+        mapbox:mapbox_cameraZoomMin="5"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="-357dp" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -42,6 +47,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.949"
         app:srcCompat="@android:drawable/ic_menu_mylocation" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:visibility="gone"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

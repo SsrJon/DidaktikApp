@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -62,11 +63,32 @@ public class Gurutzegrama extends Fragment {
         }
     }
 
+    private Button uno;
+    private Button dos;
+    private Button tres;
+    private Button cuatro;
+    private Button cinco;
+    private Button seis;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
             View root = inflater.inflate(R.layout.fragment_gurutzegrama, container, false);
             // Inflate the layout for this fragment
+
+        uno = root.findViewById(R.id.gurutzegramaUno);
+        dos = root.findViewById(R.id.gurutzegramaDos);
+        tres = root.findViewById(R.id.gurutzegramaTres);
+        cuatro = root.findViewById(R.id.gurutzegramaCuatro);
+        cinco = root.findViewById(R.id.gurutzegramaCinco);
+        seis = root.findViewById(R.id.gurutzegramaSeis);
+
+        uno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
             return root;
         }
 

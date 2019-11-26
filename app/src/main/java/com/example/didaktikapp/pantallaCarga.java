@@ -19,7 +19,7 @@ public class pantallaCarga extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             public void run() {
                 // acciones que se ejecutan tras los milisegundos
-                Intent intent = new Intent(pantallaCarga.this,MainActivity.class);
+                Intent intent = new Intent(pantallaCarga.this,InicioAventuraActivity.class);
                 startActivity(intent);
             }
         }, 3000);
