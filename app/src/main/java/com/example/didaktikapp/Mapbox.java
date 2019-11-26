@@ -49,7 +49,6 @@ public class Mapbox extends Fragment implements  PermissionsListener {
     private ProgressBar progressBar;
     private MapView mapView;
     private OfflineManager offlineManager;
-
     // JSON encoding/decoding
     public static final String JSON_CHARSET = "UTF-8";
     public static final String JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME";
