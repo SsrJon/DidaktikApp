@@ -36,18 +36,12 @@ public class InicioAudioFragment extends Fragment {
 
         MediaPlayer mediaPlayer= MediaPlayer.create(getActivity(),R.raw.hasiera0_audioa);
         mediaPlayer.start();
-
-
         btnContinuar=root.findViewById(R.id.buttonContinuar);
-
         btnContinuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(getActivity(),MainActivity.class);
                 startActivity(intent);
-
-
             }
         });
 

@@ -1,0 +1,55 @@
+package com.example.didaktikapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+
+
+public class seleccionJuego extends AppCompatActivity {
+    AdaptadorJuegos adap;
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_seleccion);
+        rellenarJuegos();
+
+        adap = new AdaptadorJuegos (Juegos.getJuegosArrayList());
+        adap.setOnItemClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //System.out.println(recyclerView.getChildAdapterPosition(v));
+                String fotoaMandar  = Juegos.getJuegosArrayList().get(recyclerView.getChildAdapterPosition(v)).getNombre();
+                if(fotoaMandar.equals("Quiz")){
+                    Intent intent = new Intent(seleccionJuego.this, Quiz.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
+        recyclerView = findViewById(R.id.ReciclerView);
+        recyclerView.setAdapter(adap);
+        layoutManager = new GridLayoutManager(getApplicationContext(),2);
+        recyclerView.setLayoutManager(layoutManager);
+    }
+
+    public void rellenarJuegos(){
+        Juegos J = new Juegos("Sopa de letras",getDrawable(R.drawable.sopa));
+        Juegos.getJuegosArrayList().add(J);
+        Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.quiz));
+        Juegos.getJuegosArrayList().add(J2);
+        Juegos J3 = new Juegos("Cruzada",getDrawable(R.drawable.cruzada));
+        Juegos.getJuegosArrayList().add(J3);
+        Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+        Juegos.getJuegosArrayList().add(J4);
+        Juegos J5 = new Juegos("Muztioa egin",getDrawable(R.drawable.muztio));
+        Juegos.getJuegosArrayList().add(J5);
+    }
+}

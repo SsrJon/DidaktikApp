@@ -16,6 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".InicioAventuraActivity"></activity>
+        <activity android:name=".seleccionJuego"></activity>
+        <activity android:name=".Quiz"></activity>
         <activity android:name=".pantallaCarga">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

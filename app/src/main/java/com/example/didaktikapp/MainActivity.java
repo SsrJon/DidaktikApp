@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.content.ClipData;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
@@ -30,6 +31,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.mapboxsdk.Mapbox;
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements
     private LocationComponent locationComponent;
     private boolean isInTrackingMode;
     int pantalla =0;
+    FloatingActionButton BTNjuegos;
 
 
 
@@ -103,6 +106,14 @@ public class MainActivity extends AppCompatActivity implements
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+        BTNjuegos = findViewById(R.id.btnJuegos);
+        BTNjuegos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),seleccionJuego.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
