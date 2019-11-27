@@ -19,6 +19,7 @@
     </string>
 
 
+
     <string name="tituloHorizontalGurutzegrama">Horizontal</string>
     <string name="tituloVerticalGurutzegrama">Bertikal</string>
     <string name="horizontalUno">2.Bizkaiko baseliza zaharrena da.</string>
@@ -33,4 +34,11 @@
     <string name="horizontalbtnCuatro">4</string>
     <string name="horizontalbtnCinco">5</string>
     <string name="horizontalbtnSeis">6</string>
+    <string name="respuestaUno">Andramaria Magdalena</string>
+    <string name="respuestaDos">San Pedro Baseliza</string>
+    <string name="respuestaTres">Hiltegia</string>
+    <string name="respuestaCuatro">San Kristo Baseliza</string>
+    <string name="respuestaCinco">Udaletxea</string>
+    <string name="respuestaSeis">Larrea Eskultura</string>
+    <string name="responder">Responder</string>
 </resources>
