@@ -461,11 +461,11 @@ public class MainActivity extends AppCompatActivity implements
         int id = item.getItemId();
         if(id == R.id.juegos){
             if (pantalla==0){
-               /* Log.d("tag", "juegos");
+                Log.d("tag", "juegos");
 
                 FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.add(R.id.cons, new GurutzegramaFragment());
-                fragmentTransaction.commit();*/
+                fragmentTransaction.commit();
 
 
                 pantalla=1;
