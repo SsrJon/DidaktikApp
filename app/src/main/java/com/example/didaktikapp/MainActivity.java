@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -462,9 +463,8 @@ public class MainActivity extends AppCompatActivity implements
         if(id == R.id.juegos){
             if (pantalla==0){
                 Log.d("tag", "juegos");
-                FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.add(R.id.cons, new GurutzegramaFragment());
-                fragmentTransaction.commit();
+                Intent intent = new Intent(MainActivity.this,GurutzegramaActivity.class);
+                startActivity(intent);
 
                 pantalla=1;
             }else if (pantalla == 1){
