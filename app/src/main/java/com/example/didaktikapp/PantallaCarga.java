@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 
 
-public class pantallaCarga extends AppCompatActivity {
+public class PantallaCarga extends AppCompatActivity {
     ImageView progreso;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class pantallaCarga extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             public void run() {
                 // acciones que se ejecutan tras los milisegundos
-                Intent intent = new Intent(pantallaCarga.this,InicioAventuraActivity.class);
+                Intent intent = new Intent(PantallaCarga.this,InicioAventuraActivity.class);
                 startActivity(intent);
             }
         }, 3000);

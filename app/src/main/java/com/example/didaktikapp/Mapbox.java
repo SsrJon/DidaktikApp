@@ -51,7 +51,6 @@ public class Mapbox extends Fragment implements  PermissionsListener {
             .include(BOUND_CORNER_SE)
             .build();
 
-
     public static Mapbox newInstance() {
         return new Mapbox();
     }
