@@ -463,7 +463,7 @@ public class MapaActivity extends AppCompatActivity implements
         if(id == R.id.juegos){
             if (pantalla==0){
                 Log.d("tag", "juegos");
-                Intent intent = new Intent(MainActivity.this,GurutzegramaActivity.class);
+                Intent intent = new Intent(MapaActivity.this,GurutzegramaActivity.class);
                 startActivity(intent);
 
                 pantalla=1;
