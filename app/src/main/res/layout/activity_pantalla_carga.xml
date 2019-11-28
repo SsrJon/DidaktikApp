@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo2"
-    tools:context=".pantallaCarga">
+    tools:context=".PantallaCarga">
 
     <ImageView
         android:id="@+id/imageView2"

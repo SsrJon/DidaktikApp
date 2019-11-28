@@ -47,8 +47,9 @@ public class Mapbox extends Fragment implements  PermissionsListener {
     private static final LatLng BOUND_CORNER_NW = new LatLng(43.202712, -2.90102);
     private static final LatLng BOUND_CORNER_SE = new LatLng(43.221812, -2.88002);
     private static final LatLngBounds RESTRICTED_BOUNDS_AREA = new LatLngBounds.Builder()
-            .include(BOUND_CORNER_NW).include(BOUND_CORNER_SE).build();
-
+            .include(BOUND_CORNER_NW)
+            .include(BOUND_CORNER_SE)
+            .build();
 
     public static Mapbox newInstance() {
         return new Mapbox();
@@ -71,24 +72,29 @@ public class Mapbox extends Fragment implements  PermissionsListener {
 
             @Override
             public void onMapReady(@NonNull final MapboxMap mapboxMap) {
+
                 //Marcador
                 mapboxMap.addMarker(new MarkerOptions()
                         .position(new LatLng(43.209712, -2.889002))
                         .title("Arrigorriaga"));
-
                 //el estilo que utiliza
                 mapboxMap.setStyle(Style.OUTDOORS, new Style.OnStyleLoaded() {
                     @Override
                     public void onStyleLoaded(@NonNull Style style) {
+
                         //Restriccion de zona del mapa
                         mapboxMap.setLatLngBoundsForCameraTarget(RESTRICTED_BOUNDS_AREA);
-                        // Set up the OfflfineManager
+
+
+                        // Set up the OfflineManager
                         offlineManager = OfflineManager.getInstance(getActivity());
+
                         // la zona del mapa que se va a descargar (bounding box)
                         LatLngBounds latLngBounds = new LatLngBounds.Builder()
                                 .include(new LatLng(43.201712, -2.901002)) // Northeast
                                 .include(new LatLng(43.223712, -2.889002)) // Southwest
                                 .build();
+
                         // Define la region  offline
                         OfflineTilePyramidRegionDefinition definition = new OfflineTilePyramidRegionDefinition(
                                 style.getUri(),
@@ -108,6 +114,7 @@ public class Mapbox extends Fragment implements  PermissionsListener {
                             Timber.e("Failed to encode metadata: %s", exception.getMessage());
                             metadata = null;
                         }
+
                         // Crea la region
                         if (metadata != null) {
                             offlineManager.createOfflineRegion(
@@ -140,12 +147,14 @@ public class Mapbox extends Fragment implements  PermissionsListener {
                                                         setPercentage((int) Math.round(percentage));
                                                     }
                                                 }
+
                                                 @Override
                                                 public void onError(OfflineRegionError error) {
                                                     // If an error occurs, print to logcat
                                                     Timber.e("onError reason: %s", error.getReason());
                                                     Timber.e("onError message: %s", error.getMessage());
                                                 }
+
                                                 @Override
                                                 public void mapboxTileCountLimitExceeded(long limit) {
                                                     // Notify if offline region exceeds maximum tile count

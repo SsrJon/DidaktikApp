@@ -22,7 +22,7 @@ public class InicioAudioFragment extends Fragment {
     private InicioAudioViewModel mViewModel;
 
     private Button btnContinuar;
-    private TextView tvAudio;
+    private MediaPlayer mediaPlayer;
 
     public static InicioAudioFragment newInstance() {
         return new InicioAudioFragment();
@@ -34,18 +34,26 @@ public class InicioAudioFragment extends Fragment {
         View root= inflater.inflate(R.layout.inicio_audio_fragment, container, false);
 
 
-        MediaPlayer mediaPlayer= MediaPlayer.create(getActivity(),R.raw.hasiera0_audioa);
+        mediaPlayer= MediaPlayer.create(getActivity(),R.raw.hasiera0_audioa);
         mediaPlayer.start();
         btnContinuar=root.findViewById(R.id.buttonContinuar);
         btnContinuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),MainActivity.class);
+                mediaPlayer.stop();
+                Intent intent = new Intent(getActivity(), MapaActivity.class);
                 startActivity(intent);
+
+
             }
         });
 
         return root;
+    }
+
+    public void onBackPressed(){
+        //Bloquea el boton hacia atras
+        getActivity().getSupportFragmentManager().popBackStack();
     }
 
 

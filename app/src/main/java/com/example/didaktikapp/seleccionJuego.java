@@ -60,5 +60,7 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J5);
         Juegos J6 = new Juegos("Puzzle arrastre",getDrawable(R.drawable.puzzletearrastro));
         Juegos.getJuegosArrayList().add(J6);
+        Juegos J7 = new Juegos("Utstuneak bete",getDrawable(R.drawable.puzzletearrastro));
+        Juegos.getJuegosArrayList().add(J7);
     }
 }
