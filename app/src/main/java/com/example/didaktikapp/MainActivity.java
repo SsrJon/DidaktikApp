@@ -9,11 +9,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import com.google.android.gms.maps.CameraUpdateFactory;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mapbox.android.core.permissions.PermissionsListener;
@@ -32,21 +29,16 @@ import com.mapbox.mapboxsdk.location.modes.CameraMode;
 import com.mapbox.mapboxsdk.location.modes.RenderMode;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
-
+import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.offline.OfflineManager;
 import com.mapbox.mapboxsdk.offline.OfflineRegion;
 import com.mapbox.mapboxsdk.offline.OfflineRegionError;
 import com.mapbox.mapboxsdk.offline.OfflineRegionStatus;
 import com.mapbox.mapboxsdk.offline.OfflineTilePyramidRegionDefinition;
-
 import org.json.JSONObject;
-
 import java.util.List;
-
 import timber.log.Timber;
-
-import static com.example.didaktikapp.R.drawable.fondo2;
 
 
 public class MainActivity extends AppCompatActivity implements
@@ -165,7 +157,6 @@ public class MainActivity extends AppCompatActivity implements
 
         mapboxMap.setStyle(Style.OUTDOORS, new Style.OnStyleLoaded() {
 
-
             @Override
             public void onStyleLoaded(@NonNull Style style) {
                 enableLocationComponent(style);
@@ -259,12 +250,7 @@ public class MainActivity extends AppCompatActivity implements
                                 });
                     }
 
-
-
-
-
-
-
+                    
             }
         });
     }
@@ -273,18 +259,18 @@ public class MainActivity extends AppCompatActivity implements
 
     @SuppressWarnings( {"MissingPermission"})
     private void enableLocationComponent(@NonNull Style loadedMapStyle) {
-// Check if permissions are enabled and if not request
+        // Check if permissions are enabled and if not request
         if (PermissionsManager.areLocationPermissionsGranted(this)) {
 
-// Create and customize the LocationComponent's options
+            // Create and customize the LocationComponent's options
             LocationComponentOptions customLocationComponentOptions = LocationComponentOptions.builder(this)
                     .elevation(5)
                     .accuracyAlpha(.6f)
                     .accuracyColor(Color.CYAN)
-                    .foregroundDrawable(R.drawable.uva_gps)
+                    .foregroundDrawable(R.drawable.gps)
                     .build();
 
-// Get an instance of the component
+            // Get an instance of the component
             locationComponent = mapboxMap.getLocationComponent();
 
             LocationComponentActivationOptions locationComponentActivationOptions =
@@ -292,22 +278,22 @@ public class MainActivity extends AppCompatActivity implements
                             .locationComponentOptions(customLocationComponentOptions)
                             .build();
 
-// Activate with options
+            // Activate with options
             locationComponent.activateLocationComponent(locationComponentActivationOptions);
 
-// Enable to make component visible
+            // Enable to make component visible
             locationComponent.setLocationComponentEnabled(true);
 
-// Set the component's camera mode
+            // Set the component's camera mode
             locationComponent.setCameraMode(CameraMode.TRACKING);
 
-// Set the component's render mode
+            // Set the component's render mode
             locationComponent.setRenderMode(RenderMode.COMPASS);
 
-/*// Add the location icon click listener
+            /*// Add the location icon click listener
             locationComponent.addOnLocationClickListener(l);*/
 
-// Add the camera tracking listener. Fires if the map camera is manually moved.
+            // Add the camera tracking listener. Fires if the map camera is manually moved.
             locationComponent.addOnCameraTrackingChangedListener(this);
 
             findViewById(R.id.FAprinicipal).setOnClickListener(new View.OnClickListener() {
@@ -474,8 +460,6 @@ public class MainActivity extends AppCompatActivity implements
 
 
     }
-
-
 
 
 
