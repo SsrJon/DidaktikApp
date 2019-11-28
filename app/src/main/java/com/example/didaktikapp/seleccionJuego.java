@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.didaktikapp.Puzzle.PuzzleActivity;
 
 
 public class seleccionJuego extends AppCompatActivity {
@@ -30,6 +31,12 @@ public class seleccionJuego extends AppCompatActivity {
                 if(fotoaMandar.equals("Quiz")){
                     Intent intent = new Intent(seleccionJuego.this, Quiz.class);
                     startActivity(intent);
+                }if (fotoaMandar.equals("Puzzle")){
+                    Intent intent = new Intent(seleccionJuego.this, PuzzleActivity.class);
+                    startActivity(intent);
+                }if (fotoaMandar.equals("Puzzle arrastre")){
+                    Intent intent = new Intent(seleccionJuego.this, com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity.class);
+                    startActivity(intent);
                 }
 
             }
@@ -51,5 +58,7 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J4);
         Juegos J5 = new Juegos("Muztioa egin",getDrawable(R.drawable.muztio));
         Juegos.getJuegosArrayList().add(J5);
+        Juegos J6 = new Juegos("Puzzle arrastre",getDrawable(R.drawable.puzzletearrastro));
+        Juegos.getJuegosArrayList().add(J6);
     }
 }

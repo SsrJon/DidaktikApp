@@ -2,21 +2,16 @@ package com.example.didaktikapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 
@@ -37,7 +32,7 @@ import com.mapbox.mapboxsdk.location.modes.CameraMode;
 import com.mapbox.mapboxsdk.location.modes.RenderMode;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
-import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
+
 import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.offline.OfflineManager;
 import com.mapbox.mapboxsdk.offline.OfflineRegion;
@@ -63,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements
     private LocationComponent locationComponent;
     private boolean isInTrackingMode;
     int pantalla =0;
+    FloatingActionButton BTNjuegos;
 
 
 
@@ -103,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements
         BTNjuegos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),seleccionJuego.class);
+                Intent intent = new Intent(MainActivity.this,seleccionJuego.class);
                 startActivity(intent);
             }
         });

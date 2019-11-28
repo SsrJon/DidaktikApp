@@ -25,6 +25,8 @@ public class Quiz extends AppCompatActivity {
     TextView pregunta;
     TextView indicador;
     int puntos = 0;
+    MediaPlayer mediaPlayerzuzena;
+    MediaPlayer mediaPlayerokerra;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,8 +110,9 @@ public class Quiz extends AppCompatActivity {
     public void respuesta(String cadena){
         if (cadena.equals(correcto)) {
             puntos = puntos +1;
-            MediaPlayer mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.erantzun_zuzena_3_audioa);
-            mediaPlayer.start();
+
+            mediaPlayerzuzena= MediaPlayer.create(getApplicationContext(),R.raw.erantzun_zuzena_3_audioa);
+            mediaPlayerzuzena.start();
             seleccionarPregunta();
             if (indicador.getText().toString().equals("1/3")){
                 indicador.setText("2/3");
@@ -120,8 +123,9 @@ public class Quiz extends AppCompatActivity {
             }
         }else{
             puntos = puntos-1;
-            MediaPlayer mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.erantzun_okerra_3_audioa);
-            mediaPlayer.start();
+            mediaPlayerokerra= MediaPlayer.create(getApplicationContext(),R.raw.erantzun_okerra_3_audioa);
+            mediaPlayerokerra.start();
+
         }
 
     }
