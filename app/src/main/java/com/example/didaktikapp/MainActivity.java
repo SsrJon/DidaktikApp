@@ -2,11 +2,15 @@ package com.example.didaktikapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import com.mapbox.android.core.permissions.PermissionsListener;
@@ -52,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements
     private ProgressBar progressBar;
     private OfflineManager offlineManager;
 
+    private Button juegos;
 
     // JSON encoding/decoding
     public static final String JSON_CHARSET = "UTF-8";
@@ -234,10 +239,9 @@ public class MainActivity extends AppCompatActivity implements
                                     }
                                 });
                     }
-
-
             }
         });
+
     }
 
 
@@ -457,6 +461,12 @@ public class MainActivity extends AppCompatActivity implements
         int id = item.getItemId();
         if(id == R.id.juegos){
             if (pantalla==0){
+                Log.d("tag", "juegos");
+
+                FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.cons, new GurutzegramaFragment());
+                fragmentTransaction.commit();
+
 
                 pantalla=1;
             }else if (pantalla == 1){
