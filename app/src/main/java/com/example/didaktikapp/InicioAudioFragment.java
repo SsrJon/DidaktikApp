@@ -51,6 +51,11 @@ public class InicioAudioFragment extends Fragment {
         return root;
     }
 
+    public void onBackPressed(){
+        //Bloquea el boton hacia atras
+        getActivity().getSupportFragmentManager().popBackStack();
+    }
+
 
 
 }

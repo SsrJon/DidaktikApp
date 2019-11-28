@@ -12,8 +12,6 @@ import android.widget.EditText;
 public class InicioAventuraActivity extends AppCompatActivity {
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +24,14 @@ public class InicioAventuraActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
 
-
-
     }
+
+    @Override
+    public void onBackPressed () {
+        //Bloquea el boton hacia atras
+    }
+
+
+
+
 }
