@@ -180,7 +180,13 @@ public class GurutzegramaFragment extends Fragment {
         });
 
         return root;
+
     }
+
+
+
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -195,6 +201,13 @@ public class GurutzegramaFragment extends Fragment {
         super.onDetach();
         mListener=null;
     }
+
+
+    public void onBackPressed(){
+        //Bloquea el boton hacia atras
+        getActivity().getSupportFragmentManager().popBackStack();
+    }
+
 
 
 }

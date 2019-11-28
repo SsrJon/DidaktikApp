@@ -42,7 +42,7 @@ import java.util.List;
 import timber.log.Timber;
 
 
-public class MainActivity extends AppCompatActivity implements
+public class MapaActivity extends AppCompatActivity implements
         OnMapReadyCallback, /*OnLocationClickListener,*/ PermissionsListener, OnCameraTrackingChangedListener {
 
     private PermissionsManager permissionsManager;
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements
         Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
 
 // This contains the MapView in XML and needs to be called after the access token is configured.
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mapa);
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements
         //Punto 1  Larrea eskultura
         MarkerOptions punto1 =new MarkerOptions();
         punto1.title("Larrea eskultura");
-        IconFactory iconFactoryPunto1= IconFactory.getInstance(MainActivity.this);
+        IconFactory iconFactoryPunto1= IconFactory.getInstance(MapaActivity.this);
         Icon iconPunto1= iconFactoryPunto1.fromResource(R.drawable.marcador1);
         punto1.icon(iconPunto1);
         punto1.position(new LatLng(43.211583,-2.886917));
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements
         //Punto 2  Arrigorriagako Udaletxea
         MarkerOptions punto2 =new MarkerOptions();
         punto2.title("Arrigorriagako Udaletxea");
-        IconFactory iconFactoryPunto2= IconFactory.getInstance(MainActivity.this);
+        IconFactory iconFactoryPunto2= IconFactory.getInstance(MapaActivity.this);
         Icon iconPunto2= iconFactoryPunto2.fromResource(R.drawable.marcador2);
         punto2.icon(iconPunto2);
         punto2.position(new LatLng(43.205978,-2.887869));
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements
         //Punto 3 Andra Maria Magdalena eliza
         MarkerOptions punto3 =new MarkerOptions();
         punto3.title("Maria Magdalena eliza");
-        IconFactory iconFactoryPunto3= IconFactory.getInstance(MainActivity.this);
+        IconFactory iconFactoryPunto3= IconFactory.getInstance(MapaActivity.this);
         Icon iconPunto3= iconFactoryPunto3.fromResource(R.drawable.marcador3);
         punto3.icon(iconPunto3);
         punto3.position(new LatLng(43.205548,-2.888705));
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements
         //Punto 4 Hiltegi Zaharra
         MarkerOptions punto4 =new MarkerOptions();
         punto4.title("Hiltegi Zaharra");
-        IconFactory iconFactoryPunto4= IconFactory.getInstance(MainActivity.this);
+        IconFactory iconFactoryPunto4= IconFactory.getInstance(MapaActivity.this);
         Icon iconPunto4= iconFactoryPunto4.fromResource(R.drawable.marcador4);
         punto4.icon(iconPunto4);
         punto4.position(new LatLng(43.204889,-2.887833));
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements
         //Punto 5 Landaederreagako Santo Kristo baseliza
         MarkerOptions punto5 =new MarkerOptions();
         punto5.title("Landaederreagako Santo Kristo baseliza");
-        IconFactory iconFactoryPunto5= IconFactory.getInstance(MainActivity.this);
+        IconFactory iconFactoryPunto5= IconFactory.getInstance(MapaActivity.this);
         Icon iconPunto5= iconFactoryPunto5.fromResource(R.drawable.marcador5);
         punto5.icon(iconPunto5);
         punto5.position(new LatLng(43.209306,-2.893722));
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements
         //Punto 6 Abrisketako San Pedro baseleizea
         MarkerOptions punto6 =new MarkerOptions();
         punto6.title("Abrisketako San Pedro baseleizea");
-        IconFactory iconFactoryPunto6= IconFactory.getInstance(MainActivity.this);
+        IconFactory iconFactoryPunto6= IconFactory.getInstance(MapaActivity.this);
         Icon iconPunto6= iconFactoryPunto6.fromResource(R.drawable.marcador6);
         punto6.icon(iconPunto6);
         punto6.position(new LatLng(43.210500,-2.909417));
@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
                     // Set up the OfflineManager
-                    offlineManager = OfflineManager.getInstance(MainActivity.this);
+                    offlineManager = OfflineManager.getInstance(MapaActivity.this);
 
                     // la zona del mapa que se va a descargar (bounding box)
                     LatLngBounds latLngBounds = new LatLngBounds.Builder()
@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements
                             latLngBounds,
                             10,
                             20,
-                            MainActivity.this.getResources().getDisplayMetrics().density);
+                            MapaActivity.this.getResources().getDisplayMetrics().density);
 
                     // Set the metadata
                     byte[] metadata;
@@ -473,6 +473,14 @@ public class MainActivity extends AppCompatActivity implements
             }
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onBackPressed () {
+
+        //Bloquea el boton hacia atras
+
     }
 
 

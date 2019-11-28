@@ -51,7 +51,6 @@ public class Mapbox extends Fragment implements  PermissionsListener {
             .include(BOUND_CORNER_SE)
             .build();
 
-
     public static Mapbox newInstance() {
         return new Mapbox();
     }
@@ -78,11 +77,6 @@ public class Mapbox extends Fragment implements  PermissionsListener {
                 mapboxMap.addMarker(new MarkerOptions()
                         .position(new LatLng(43.209712, -2.889002))
                         .title("Arrigorriaga"));
-
-
-
-
-
                 //el estilo que utiliza
                 mapboxMap.setStyle(Style.OUTDOORS, new Style.OnStyleLoaded() {
                     @Override
