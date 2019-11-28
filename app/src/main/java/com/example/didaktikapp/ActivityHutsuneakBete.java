@@ -147,6 +147,14 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
     }
 
 
+
+
+    @Override
+    public void onBackPressed () {
+        //Bloquea el boton hacia atras
+    }
+
+
     //comprueba el contador para hacer visible el boton jarraitu
     private void Jarraitu(){
 
@@ -248,4 +256,10 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
 
 
 
+
+
+
+
+
 }
+

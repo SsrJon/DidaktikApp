@@ -9,4 +9,6 @@
     <color name="colorPrimaryDark">#9FE0BF</color>
     <color name="colorAccent">#065E32</color>
 
+    <color name="blanco">#ffffff</color>
+
 </resources>
