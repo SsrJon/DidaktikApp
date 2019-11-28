@@ -15,8 +15,10 @@
         android:roundIcon="@drawable/grape1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityHutsuneakBete" android:screenOrientation="landscape">
-        </activity>
+        <activity android:name=".GurutzegramaActivity"></activity>
+        <activity
+            android:name=".ActivityHutsuneakBete"
+            android:screenOrientation="landscape"></activity>
         <activity android:name=".InicioAventuraActivity" />
         <activity android:name=".seleccionJuego"></activity>
         <activity android:name=".Puzzle.PuzzleActivity"></activity>

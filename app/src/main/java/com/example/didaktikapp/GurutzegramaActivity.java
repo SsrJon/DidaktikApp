@@ -1,29 +1,20 @@
 package com.example.didaktikapp;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
+public class GurutzegramaActivity extends AppCompatActivity {
 
-
-public class GurutzegramaFragment extends Fragment {
-    //Aqui declaras lo necesario para mostrar el contenido del recyclerView
-
-
-    private GurutzegramaFragment.OnFragmentInteractionListener mListener;
-    private Button  uno;
+    private Button uno;
     private Button  dos;
     private Button  tres;
     private Button  cuatro;
@@ -43,27 +34,26 @@ public class GurutzegramaFragment extends Fragment {
     private ImageView imagenSeis;
     private  int contador;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-
-        View root = inflater.inflate(R.layout.activity_gurutzegrama, container, false);
-        //Llamamos a lo que necesitemos en este caso es lo siquiente
-        uno = root.findViewById(R.id.gurutzegramaUno);
-        dos = root.findViewById(R.id.gurutzegramaDos);
-        tres = root.findViewById(R.id.gurutzegramaTres);
-        cuatro = root.findViewById(R.id.gurutzegramaCuatro);
-        cinco = root.findViewById(R.id.gurutzegramaCinco);
-        seis = root.findViewById(R.id.gurutzegramaSeis);
-        constraintLayout = root.findViewById(R.id.responderGurutzegrama);
-        responder = root.findViewById(R.id.responderPregunta);
-        pregunta = root.findViewById(R.id.textoPregunta);
-        respuestaEscrita = root.findViewById(R.id.escribirRespuesta);
-        imagenUno = root.findViewById(R.id.respuestaUno);
-        imagenDos = root.findViewById(R.id.respuestaDos);
-        imagenTres = root.findViewById(R.id.respuestaTres);
-        imagenCuatro = root.findViewById(R.id.respuestaCuatro);
-        imagenCinco = root.findViewById(R.id.respuestaCinco);
-        imagenSeis = root.findViewById(R.id.respuestaSeis);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_gurutzegrama);
+        uno = findViewById(R.id.gurutzegramaUno);
+        dos = findViewById(R.id.gurutzegramaDos);
+        tres = findViewById(R.id.gurutzegramaTres);
+        cuatro = findViewById(R.id.gurutzegramaCuatro);
+        cinco = findViewById(R.id.gurutzegramaCinco);
+        seis = findViewById(R.id.gurutzegramaSeis);
+        constraintLayout = findViewById(R.id.responderGurutzegrama);
+        responder = findViewById(R.id.responderPregunta);
+        pregunta = findViewById(R.id.textoPregunta);
+        respuestaEscrita = findViewById(R.id.escribirRespuesta);
+        imagenUno = findViewById(R.id.respuestaUno);
+        imagenDos = findViewById(R.id.respuestaDos);
+        imagenTres = findViewById(R.id.respuestaTres);
+        imagenCuatro = findViewById(R.id.respuestaCuatro);
+        imagenCinco = findViewById(R.id.respuestaCinco);
+        imagenSeis = findViewById(R.id.respuestaSeis);
         contador = 0;
 
         uno.setOnClickListener(new View.OnClickListener() {
@@ -140,7 +130,7 @@ public class GurutzegramaFragment extends Fragment {
                 if(respuestaEscrita.getText().toString().equals(respuesta)){
                     contador++;
                     if(contador == 6){
-                        MediaPlayer mediaPlayer= MediaPlayer.create(getActivity(),R.raw.erantzunzuzena6_audioa);
+                        MediaPlayer mediaPlayer= MediaPlayer.create(GurutzegramaActivity.this,R.raw.erantzunzuzena6_audioa);
                         mediaPlayer.start();
                     }
 
@@ -172,42 +162,11 @@ public class GurutzegramaFragment extends Fragment {
                     }
                     constraintLayout.setVisibility(View.INVISIBLE);
                 }else{
-                    MediaPlayer mediaPlayer= MediaPlayer.create(getActivity(),R.raw.erantzunokerra6_audioa);
+                    MediaPlayer mediaPlayer= MediaPlayer.create(GurutzegramaActivity.this,R.raw.erantzunokerra6_audioa);
                     mediaPlayer.start();
                     constraintLayout.setVisibility(View.INVISIBLE);
                 }
             }
         });
-
-        return root;
-
     }
-
-
-
-
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(String uri);
-    }
-    @Override
-    public void onDetach(){
-        super.onDetach();
-        mListener=null;
-    }
-
-
-    public void onBackPressed(){
-        //Bloquea el boton hacia atras
-        getActivity().getSupportFragmentManager().popBackStack();
-    }
-
-
-
 }
