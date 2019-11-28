@@ -25,4 +25,6 @@ public class PantallaCarga extends AppCompatActivity {
         }, 3000);
     }
 
+
+
 }

@@ -208,6 +208,11 @@ public class GurutzegramaFragment extends Fragment {
     }
 
 
+    public void onBackPressed(){
+        //Bloquea el boton hacia atras
+        getActivity().getSupportFragmentManager().popBackStack();
+    }
+
 
 
 }
