@@ -77,6 +77,7 @@ public class GurutzegramaFragment extends Fragment {
                 respuesta = getString(R.string.respuestaUno);
                 constraintLayout.setVisibility(View.VISIBLE);
                 pregunta.setText(getString(R.string.verticalUno));
+                respuestaEscrita.setText("");
                 mostrar = "1";
 
             }
@@ -88,6 +89,7 @@ public class GurutzegramaFragment extends Fragment {
                 respuesta = getString(R.string.respuestaDos);
                 constraintLayout.setVisibility(View.VISIBLE);
                 pregunta.setText(getString(R.string.horizontalUno));
+                respuestaEscrita.setText("");
                 mostrar = "2";
             }
         });
@@ -98,6 +100,7 @@ public class GurutzegramaFragment extends Fragment {
                 respuesta = getString(R.string.respuestaTres);
                 constraintLayout.setVisibility(View.VISIBLE);
                 pregunta.setText(getString(R.string.verticalDos));
+                respuestaEscrita.setText("");
                 mostrar = "3";
             }
         });
@@ -108,6 +111,7 @@ public class GurutzegramaFragment extends Fragment {
                 respuesta = getString(R.string.respuestaCuatro);
                 constraintLayout.setVisibility(View.VISIBLE);
                 pregunta.setText(getString(R.string.horizontalDos));
+                respuestaEscrita.setText("");
                 mostrar = "4";
             }
         });
@@ -118,6 +122,7 @@ public class GurutzegramaFragment extends Fragment {
                 respuesta = getString(R.string.respuestaCinco);
                 constraintLayout.setVisibility(View.VISIBLE);
                 pregunta.setText(getString(R.string.horizontalTres));
+                respuestaEscrita.setText("");
                 mostrar = "5";
             }
         });
@@ -128,6 +133,7 @@ public class GurutzegramaFragment extends Fragment {
                 respuesta = getString(R.string.respuestaSeis);
                 constraintLayout.setVisibility(View.VISIBLE);
                 pregunta.setText(getString(R.string.horizontalCuatro));
+                respuestaEscrita.setText("");
                 mostrar = "6";
             }
         });
@@ -194,7 +200,6 @@ public class GurutzegramaFragment extends Fragment {
         super.onDetach();
         mListener=null;
     }
-
 
 
 }
