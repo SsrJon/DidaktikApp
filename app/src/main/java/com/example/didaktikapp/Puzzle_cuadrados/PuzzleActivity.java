@@ -179,7 +179,7 @@ public class PuzzleActivity extends AppCompatActivity  {
 
         // initialise pause button and pause menu fragment
         //pauseMenu = PauseMenu.newInstance();
-        ImageButton pauseButton = findViewById(R.id.pauseButton);
+       /* ImageButton pauseButton = findViewById(R.id.pauseButton);
         pauseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -187,14 +187,14 @@ public class PuzzleActivity extends AppCompatActivity  {
                 if (timerCount != 0) {
                     /*pauseTimer();
                     pauseFragment();*/
-                } else {
+               /* } else {
                     String toastText = "You have not started the puzzle!";
                     Toast toast = Toast.makeText(getApplicationContext(), toastText, Toast.LENGTH_SHORT);
                     toast.show();
                 }
 
             }
-        });
+        });*/
 
         // Hint button makes original selected image visible over top of the puzzle grid to show cells solved order
         TextView hintButton = findViewById(R.id.hintButton);
@@ -243,8 +243,8 @@ public class PuzzleActivity extends AppCompatActivity  {
                 timer.setText(String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds));
             }
             // onPause called before onDestroy, so fragment will be present, must handle this depending if paused or not
-            LinearLayout pauseContainer = findViewById(R.id.pauseContainer);
-            Log.i(TAG, "onCreate:paused? "+ gamePaused);
+           // LinearLayout pauseContainer = findViewById(R.id.pauseContainer);
+           // Log.i(TAG, "onCreate:paused? "+ gamePaused);
             //replace pause Contacts.Intents.UI fragment with newly created instance or it will cause issues...
             FragmentManager manager = getSupportFragmentManager();
             FragmentTransaction fragTrans = manager.beginTransaction();

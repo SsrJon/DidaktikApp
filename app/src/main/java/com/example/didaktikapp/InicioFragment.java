@@ -18,7 +18,7 @@ import android.widget.EditText;
 
 public class InicioFragment extends Fragment {
 
-    private Button btnEmpezar,btnPruebas;
+    private Button btnEmpezar;
     private EditText etNombreInicio;
 
 
@@ -59,28 +59,6 @@ public class InicioFragment extends Fragment {
 
             }
         });
-
-
-
-        btnPruebas=root.findViewById(R.id.buttonPruebas);
-
-        btnPruebas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getActivity(),ActivityHutsuneakBete.class);
-                startActivity(intent);
-
-            }
-        });
-
-
-
-
-
-
-
-
         return root;
 
     }

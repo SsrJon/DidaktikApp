@@ -37,6 +37,13 @@ public class seleccionJuego extends AppCompatActivity {
                 }if (fotoaMandar.equals("Puzzle arrastre")){
                     Intent intent = new Intent(seleccionJuego.this, com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity.class);
                     startActivity(intent);
+                }if (fotoaMandar.equals("Utstuneak bete")){
+                    Intent intent = new Intent(seleccionJuego.this, ActivityHutsuneakBete.class);
+                    startActivity(intent);
+                }
+                if (fotoaMandar.equals("Cruzada")){
+                    Intent intent = new Intent(seleccionJuego.this, GurutzegramaActivity.class);
+                    startActivity(intent);
                 }
 
             }
@@ -60,7 +67,7 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J5);
         Juegos J6 = new Juegos("Puzzle arrastre",getDrawable(R.drawable.puzzletearrastro));
         Juegos.getJuegosArrayList().add(J6);
-        Juegos J7 = new Juegos("Utstuneak bete",getDrawable(R.drawable.puzzletearrastro));
+        Juegos J7 = new Juegos("Utstuneak bete",getDrawable(R.drawable.rellenar_hueco));
         Juegos.getJuegosArrayList().add(J7);
     }
 }
