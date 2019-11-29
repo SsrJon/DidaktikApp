@@ -11,9 +11,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.mapboxsdk.Mapbox;
@@ -52,12 +53,11 @@ public class MapaActivity extends AppCompatActivity implements
     private boolean isInTrackingMode;
     int pantalla =0;
 
-
+    private FloatingActionButton juegos;
     private boolean isEndNotified;
     private ProgressBar progressBar;
     private OfflineManager offlineManager;
 
-    private Button juegos;
 
     // JSON encoding/decoding
     public static final String JSON_CHARSET = "UTF-8";
@@ -86,6 +86,15 @@ public class MapaActivity extends AppCompatActivity implements
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+        juegos = findViewById(R.id.btnJuegos);
+        juegos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent  = new Intent(MapaActivity.this,seleccionJuego.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     @Override
@@ -240,9 +249,10 @@ public class MapaActivity extends AppCompatActivity implements
                                     }
                                 });
                     }
+
+
             }
         });
-
     }
 
 
