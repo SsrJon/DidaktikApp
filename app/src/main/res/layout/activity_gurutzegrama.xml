@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent2"
-    tools:context=".GurutzegramaFragment">
+    tools:context=".GurutzegramaActivity">
 
 
     <ImageView
@@ -17,108 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.349" />
-
-    <TextView
-        android:id="@+id/tituloHorizontalGurutzegrama"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:text="@string/tituloHorizontalGurutzegrama"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gurutzegrama"
-        app:layout_constraintVertical_bias="0.110" />
-
-    <TextView
-        android:id="@+id/preguntaHorizontalUno"
-        android:layout_width="197dp"
-        android:layout_height="22dp"
-        android:text="@string/horizontalUno"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloHorizontalGurutzegrama"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/preguntaHorizontalDos"
-        android:layout_width="192dp"
-        android:layout_height="32dp"
-        android:text="@string/horizontalDos"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/preguntaHorizontalUno"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/preguntaHorizontalTres"
-        android:layout_width="198dp"
-        android:layout_height="19dp"
-        android:text="@string/horizontalTres"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/preguntaHorizontalDos"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/preguntaHorizontalCuatro"
-        android:layout_width="197dp"
-        android:layout_height="18dp"
-        android:text="@string/horizontalCuatro"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/preguntaHorizontalTres"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tituloVerticalGurutzegrama"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:text="@string/tituloVerticalGurutzegrama"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.778"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gurutzegrama"
-        app:layout_constraintVertical_bias="0.110" />
-
-    <TextView
-        android:id="@+id/preguntaVerticallUno"
-        android:layout_width="137dp"
-        android:layout_height="39dp"
-        android:text="@string/verticalUno"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.883"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloVerticalGurutzegrama"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/preguntaVerticalDos"
-        android:layout_width="140dp"
-        android:layout_height="38dp"
-        android:text="@string/verticalDos"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.892"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/preguntaVerticallUno"
-        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/gurutzegramaUno"
@@ -284,6 +182,109 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="412dp"
+        android:layout_height="205dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/preguntaHorizontalUno"
+            android:layout_width="197dp"
+            android:layout_height="22dp"
+            android:text="@string/horizontalUno"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.046"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tituloHorizontalGurutzegrama" />
+
+        <TextView
+            android:id="@+id/preguntaHorizontalTres"
+            android:layout_width="198dp"
+            android:layout_height="19dp"
+            android:text="@string/horizontalTres"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.046"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/preguntaHorizontalDos" />
+
+        <TextView
+            android:id="@+id/preguntaHorizontalDos"
+            android:layout_width="192dp"
+            android:layout_height="32dp"
+            android:text="@string/horizontalDos"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.046"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/preguntaHorizontalUno" />
+
+        <TextView
+            android:id="@+id/tituloVerticalGurutzegrama"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tituloVerticalGurutzegrama"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.83"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/preguntaVerticalDos"
+            android:layout_width="140dp"
+            android:layout_height="38dp"
+            android:text="@string/verticalDos"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.952"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/preguntaVerticallUno"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/preguntaHorizontalCuatro"
+            android:layout_width="197dp"
+            android:layout_height="18dp"
+            android:text="@string/horizontalCuatro"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.023"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/preguntaHorizontalTres"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tituloHorizontalGurutzegrama"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tituloHorizontalGurutzegrama"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.032"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/preguntaVerticallUno"
+            android:layout_width="137dp"
+            android:layout_height="39dp"
+            android:text="@string/verticalUno"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.941"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tituloVerticalGurutzegrama" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="412dp"
         android:layout_height="241dp"
         android:visibility="invisible"
         android:background="@color/blanco"
@@ -326,5 +327,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/escribirRespuesta" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+   
 
 </androidx.constraintlayout.widget.ConstraintLayout>
