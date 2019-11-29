@@ -142,10 +142,7 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
 
 
 
-
-
     }
-
 
 
 
