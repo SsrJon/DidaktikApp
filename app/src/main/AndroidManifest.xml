@@ -20,6 +20,10 @@
             android:name=".ActivityHutsuneakBete"
             android:screenOrientation="landscape"></activity>
         <activity android:name=".InicioAventuraActivity" />
+        <activity android:name=".seleccionJuego"></activity>
+        <activity android:name=".Puzzle.PuzzleActivity"></activity>
+        <activity android:name=".Puzzle_cuadrados.PuzzleActivity"></activity>
+        <activity android:name=".Quiz"></activity>
         <activity android:name=".PantallaCarga">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

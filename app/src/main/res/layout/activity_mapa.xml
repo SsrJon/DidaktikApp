@@ -16,21 +16,25 @@
         mapbox:mapbox_cameraTargetLat="43.209712"
         mapbox:mapbox_cameraTargetLng="-2.889002"
         mapbox:mapbox_cameraZoom="14.5"
-        mapbox:mapbox_cameraZoomMin="5" />
+        mapbox:mapbox_cameraZoomMin="5"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="0dp">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="89dp"
-        android:layout_height="79dp"
-        android:background="@drawable/logo"
-        android:scrollbarThumbHorizontal="@android:color/transparent"
-        android:scrollbarThumbVertical="@android:color/transparent"
+
+    </com.mapbox.mapboxsdk.maps.MapView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnJuegos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+        app:layout_constraintVertical_bias="0.949"
+        mapbox:srcCompat="@drawable/mando" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/FAprinicipal"
@@ -58,6 +62,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

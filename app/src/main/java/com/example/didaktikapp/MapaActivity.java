@@ -2,7 +2,6 @@ package com.example.didaktikapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,9 +10,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.mapboxsdk.Mapbox;
@@ -43,7 +43,7 @@ import timber.log.Timber;
 
 
 public class MapaActivity extends AppCompatActivity implements
-        OnMapReadyCallback, /*OnLocationClickListener,*/ PermissionsListener, OnCameraTrackingChangedListener {
+        OnMapReadyCallback,  PermissionsListener, OnCameraTrackingChangedListener {
 
     private PermissionsManager permissionsManager;
     private MapView mapView;
@@ -52,12 +52,11 @@ public class MapaActivity extends AppCompatActivity implements
     private boolean isInTrackingMode;
     int pantalla =0;
 
-
+    private FloatingActionButton juegos;
     private boolean isEndNotified;
     private ProgressBar progressBar;
     private OfflineManager offlineManager;
 
-    private Button juegos;
 
     // JSON encoding/decoding
     public static final String JSON_CHARSET = "UTF-8";
@@ -77,15 +76,24 @@ public class MapaActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-// Mapbox access token is configured here. This needs to be called either in your application
-// object or in the same activity which contains the mapview.
+        // Mapbox access token is configured here. This needs to be called either in your application
+        // object or in the same activity which contains the mapview.
         Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
 
-// This contains the MapView in XML and needs to be called after the access token is configured.
+        // This contains the MapView in XML and needs to be called after the access token is configured.
         setContentView(R.layout.activity_mapa);
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+        juegos = findViewById(R.id.btnJuegos);
+        juegos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent  = new Intent(MapaActivity.this,seleccionJuego.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     @Override
@@ -240,13 +248,15 @@ public class MapaActivity extends AppCompatActivity implements
                                     }
                                 });
                     }
+
+
             }
         });
-
     }
 
 
 
+    //---------
     @SuppressWarnings( {"MissingPermission"})
     private void enableLocationComponent(@NonNull Style loadedMapStyle) {
         // Check if permissions are enabled and if not request
@@ -352,6 +362,8 @@ public class MapaActivity extends AppCompatActivity implements
             finish();
         }
     }
+
+    //-----
 
     @SuppressWarnings( {"MissingPermission"})
     protected void onStart() {
