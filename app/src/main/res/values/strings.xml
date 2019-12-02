@@ -22,6 +22,10 @@
     <string name="timer">Timer</string>
 
 
+    <string name="jarraitu">Jarraitu</string>
+    <string name="errepikatu">Errepikatu</string>
+    <string name="amaituta">Amaitu duzu!</string>
+
     <!--__________-LIMPIEZA URGENTE ________-->
 
     <string name="start">Start</string>

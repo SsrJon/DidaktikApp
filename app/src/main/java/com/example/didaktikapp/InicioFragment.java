@@ -4,6 +4,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -46,9 +47,15 @@ public class InicioFragment extends Fragment {
 
                 if (!etNombreInicio.getText().toString().equals("")){
                     //el fragment se reemplaza
-                    FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.fragment, new InicioAudioFragment());
-                    fragmentTransaction.commit();
+
+
+
+                    Intent popUp = new Intent(getContext(), Popup.class);
+                    startActivity(popUp);
+
+                    //FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
+                    //fragmentTransaction.replace(R.id.fragment, new InicioAudioFragment());
+                    //fragmentTransaction.commit();
                 }
 
                 else {
