@@ -33,12 +33,12 @@
     <string name="horizontalbtnCuatro">4</string>
     <string name="horizontalbtnCinco">5</string>
     <string name="horizontalbtnSeis">6</string>
-    <string name="respuestaUno">Andramaria Magdalena</string>
-    <string name="respuestaDos">San Pedro Baseliza</string>
-    <string name="respuestaTres">Hiltegia</string>
-    <string name="respuestaCuatro">San Kristo Baseliza</string>
-    <string name="respuestaCinco">Udaletxea</string>
-    <string name="respuestaSeis">Larrea Eskultura</string>
+    <string name="respuestaUno">andramaria magdalena</string>
+    <string name="respuestaDos">san pedro baseliza</string>
+    <string name="respuestaTres">hiltegia</string>
+    <string name="respuestaCuatro">san kristo baseliza</string>
+    <string name="respuestaCinco">udaletxea</string>
+    <string name="respuestaSeis">larrea eskultura</string>
     <string name="responder">Responder</string>
     <string name="p5_hutsuneak_bete_0">Paragrafo honen hutsuneak bete:</string>
 
