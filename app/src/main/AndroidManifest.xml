@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.didaktikapp">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -15,15 +16,18 @@
         android:roundIcon="@drawable/grape1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GurutzegramaActivity"></activity>
+        <activity android:name=".Popup" android:theme="@style/AppTheme.PopUpPagos"
+            tools:ignore="InnerclassSeparator" />
+
+        <activity android:name=".GurutzegramaActivity" />
         <activity
             android:name=".ActivityHutsuneakBete"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity android:name=".InicioAventuraActivity" />
-        <activity android:name=".seleccionJuego"></activity>
-        <activity android:name=".Puzzle.PuzzleActivity"></activity>
-        <activity android:name=".Puzzle_cuadrados.PuzzleActivity"></activity>
-        <activity android:name=".Quiz"></activity>
+        <activity android:name=".seleccionJuego" />
+        <activity android:name=".Puzzle.PuzzleActivity" />
+        <activity android:name=".Puzzle_cuadrados.PuzzleActivity" />
+        <activity android:name=".Quiz" />
         <activity android:name=".PantallaCarga">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
