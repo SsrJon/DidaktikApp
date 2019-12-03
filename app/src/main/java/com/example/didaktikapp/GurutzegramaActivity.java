@@ -3,6 +3,7 @@ package com.example.didaktikapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -132,6 +133,11 @@ public class GurutzegramaActivity extends AppCompatActivity {
                     if(contador == 6){
                         MediaPlayer mediaPlayer= MediaPlayer.create(GurutzegramaActivity.this,R.raw.erantzunzuzena6_audioa);
                         mediaPlayer.start();
+
+                        Intent popUp = new Intent(GurutzegramaActivity.this, Popup.class);
+                        String valor  = "gurutzegrama";
+                        popUp.putExtra("valor", valor );
+                        startActivity(popUp);
                     }
 
                     switch (mostrar){

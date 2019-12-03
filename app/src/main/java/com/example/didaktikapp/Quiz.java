@@ -1,5 +1,6 @@
 package com.example.didaktikapp;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,7 @@ public class Quiz extends AppCompatActivity {
     TextView pregunta;
     TextView indicador;
     int puntos = 0;
+    int puntosCorrectos=0;
     MediaPlayer mediaPlayerzuzena;
     MediaPlayer mediaPlayerokerra;
     @Override
@@ -59,11 +61,11 @@ public class Quiz extends AppCompatActivity {
     }
 
     public void Crearpreguntas(){
-        Pregunta P = new Pregunta("1. Gaur eguneko Gaztegunea....","hilerria izan zen.","betidanik Gaztegunea izan da.","lehen hiltegia zen.","lehen hiltegia zen.");
+        Pregunta P = new Pregunta(" Gaur eguneko Gaztegunea....","hilerria izan zen.","betidanik Gaztegunea izan da.","lehen hiltegia zen.","lehen hiltegia zen.");
         preguntas.add(P);
-        Pregunta P1 = new Pregunta("2. Gaur eguneko Gaztegunea....","Hiltegiaren forma originala mantentzen du.","Egurrezkoa da.","Aurreko guztiak zuzenak dira.","Hiltegiaren forma originala mantentzen du.");
+        Pregunta P1 = new Pregunta(" Gaur eguneko Gaztegunea....","Hiltegiaren forma originala mantentzen du.","Egurrezkoa da.","Aurreko guztiak zuzenak dira.","Hiltegiaren forma originala mantentzen du.");
         preguntas.add(P1);
-        Pregunta P2 = new Pregunta("3. Eraikina....","1940 eta 1950 urte bitartekoa da.","1960an eraiki zen.","Eraikin berria da.","1940 eta 1950 urte bitartekoa da.");
+        Pregunta P2 = new Pregunta(" Eraikina....","1940 eta 1950 urte bitartekoa da.","1960an eraiki zen.","Eraikin berria da.","1940 eta 1950 urte bitartekoa da.");
         preguntas.add(P2);
     }
 
@@ -110,6 +112,7 @@ public class Quiz extends AppCompatActivity {
     public void respuesta(String cadena){
         if (cadena.equals(correcto)) {
             puntos = puntos +1;
+            puntosCorrectos++;
 
             mediaPlayerzuzena= MediaPlayer.create(getApplicationContext(),R.raw.erantzun_zuzena_3_audioa);
             mediaPlayerzuzena.start();
@@ -121,6 +124,19 @@ public class Quiz extends AppCompatActivity {
             }else if(indicador.getText().toString().equals("3/3")){
 
             }
+
+            if (puntosCorrectos==3){
+
+                respu1.setClickable(false);
+                respu2.setClickable(false);
+                respu3.setClickable(false);
+
+                Intent popUp = new Intent(Quiz.this, Popup.class);
+                String valor  = "quiz";
+                popUp.putExtra("valor", valor );
+                startActivity(popUp);
+            }
+
         }else{
             puntos = puntos-1;
             mediaPlayerokerra= MediaPlayer.create(getApplicationContext(),R.raw.erantzun_okerra_3_audioa);
