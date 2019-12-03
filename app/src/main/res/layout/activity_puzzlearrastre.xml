@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F39248"
+    android:background="@color/Fondo"
     tools:context=".Puzzle_cuadrados.PuzzleActivity">
 
     <GridLayout
