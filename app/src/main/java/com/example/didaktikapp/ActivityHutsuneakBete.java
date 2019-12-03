@@ -2,6 +2,7 @@ package com.example.didaktikapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -156,8 +157,11 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
     private void Jarraitu(){
 
         if (contadorButton==3){
-            System.out.println(contadorButton);
-            btnJarraitu.setVisibility(View.VISIBLE);
+
+            Intent popUp = new Intent(ActivityHutsuneakBete.this, Popup.class);
+            startActivity(popUp);
+            //System.out.println(contadorButton);
+            //btnJarraitu.setVisibility(View.VISIBLE);
 
         }
     }

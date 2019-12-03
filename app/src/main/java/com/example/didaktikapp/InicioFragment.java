@@ -50,12 +50,12 @@ public class InicioFragment extends Fragment {
 
 
 
-                    Intent popUp = new Intent(getContext(), Popup.class);
-                    startActivity(popUp);
+                    //Intent popUp = new Intent(getContext(), Popup.class);
+                    //startActivity(popUp);
 
-                    //FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
-                    //fragmentTransaction.replace(R.id.fragment, new InicioAudioFragment());
-                    //fragmentTransaction.commit();
+                    FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment, new InicioAudioFragment());
+                    fragmentTransaction.commit();
                 }
 
                 else {

@@ -3,21 +3,31 @@ package com.example.didaktikapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 public class Popup extends Activity {
+
+    private Button btnJarraitu, btnErrepikatu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_popup);
+        Bundle bundle = getIntent().getExtras();
+
+
+        btnJarraitu=findViewById(R.id.buttonJarraitu);
+        btnErrepikatu=findViewById(R.id.buttonErrepikatu);
 
         //Creamos el PopUp
         DisplayMetrics dm = new DisplayMetrics();
@@ -41,6 +51,42 @@ public class Popup extends Activity {
         getWindow().setAttributes(params);
 
 
+
+
+
+        btnErrepikatu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(getIntent().getStringExtra("valor").equals("quiz")){
+
+                    Intent intent = new Intent(Popup.this, Quiz.class);
+                    startActivity(intent);
+                }
+
+                else if(getIntent().getStringExtra("valor").equals("gurutzegrama")){
+
+                    Intent intent = new Intent(Popup.this, GurutzegramaActivity.class);
+                    startActivity(intent);
+                }
+
+                //Intent intent = new Intent(Popup.this, ActivityHutsuneakBete.class);
+                //startActivity(intent);
+            }
+        });
+
+
+        btnJarraitu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    Intent intent = new Intent(Popup.this, seleccionJuego.class);
+                    startActivity(intent);
+
+
+
+            }
+        });
 
 
 
