@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary2">#7F7D7F</color>
-    <color name="colorPrimaryDark2">#09A785</color>
-    <color name="colorAccent2">#F76F09</color>
-
 
     <color name="colorPrimary">#7F7D7F</color>
-    <color name="colorPrimaryDark">#9FE0BF</color>
-    <color name="colorAccent">#065E32</color>
-
-    <color name="blanco">#ffffff</color>
+    <color name="colorPrimaryDark">#707070</color>
+    <color name="colorAccent">#2DAD2F</color>
+    <color name="Fondo">#F1C68D</color>
+    <color name ="blanco">#FFFF</color>
 
     //Color fondo PopUps
     <color name="color_fondo_popUps1">#E6E5E4E8</color>

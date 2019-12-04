@@ -27,7 +27,8 @@ public class PuzzleCellView extends AppCompatImageView {
         if (context instanceof PuzzleActivity) {
             mContext = (PuzzleActivity)context;
             numRows = mContext.getNumRows();
-            DISTANCE_THRESHOLD = mContext.dpToPx(11);  // ~1/3 the cell size
+            //DISTANCE_THRESHOLD = mContext.dpToPx(11);  // ~1/3 the cell size
+            DISTANCE_THRESHOLD = mContext.dpToPx(300);  // ~1/3 the cell size
             VELOCITY_THRESHOLD = 200;
         }
     }
