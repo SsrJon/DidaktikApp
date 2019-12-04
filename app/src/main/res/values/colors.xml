@@ -7,4 +7,12 @@
     <color name="Fondo">#F1C68D</color>
     <color name ="blanco">#FFFF</color>
 
+    //Color fondo PopUps
+    <color name="color_fondo_popUps1">#E6E5E4E8</color>
+
+    <color name="color_fondo_popUps2">#E78636</color>
+    <color name="Fondo">#F1C68D</color>
+
+    <color name="color1">#2B2B2B</color>
+
 </resources>

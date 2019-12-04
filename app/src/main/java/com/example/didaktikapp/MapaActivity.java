@@ -1,9 +1,12 @@
 package com.example.didaktikapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.DialogFragment;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -44,7 +47,7 @@ import timber.log.Timber;
 
 
 public class MapaActivity extends AppCompatActivity implements
-        OnMapReadyCallback, /*OnLocationClickListener,*/ PermissionsListener, OnCameraTrackingChangedListener {
+        OnMapReadyCallback,  PermissionsListener, OnCameraTrackingChangedListener {
 
     private PermissionsManager permissionsManager;
     private MapView mapView;
@@ -77,11 +80,11 @@ public class MapaActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-// Mapbox access token is configured here. This needs to be called either in your application
-// object or in the same activity which contains the mapview.
+        // Mapbox access token is configured here. This needs to be called either in your application
+        // object or in the same activity which contains the mapview.
         Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
 
-// This contains the MapView in XML and needs to be called after the access token is configured.
+        // This contains the MapView in XML and needs to be called after the access token is configured.
         setContentView(R.layout.activity_mapa);
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
@@ -96,6 +99,14 @@ public class MapaActivity extends AppCompatActivity implements
             }
         });
     }
+
+
+
+
+
+
+
+
 
     @Override
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
@@ -257,6 +268,7 @@ public class MapaActivity extends AppCompatActivity implements
 
 
 
+    //---------
     @SuppressWarnings( {"MissingPermission"})
     private void enableLocationComponent(@NonNull Style loadedMapStyle) {
         // Check if permissions are enabled and if not request
@@ -362,6 +374,8 @@ public class MapaActivity extends AppCompatActivity implements
             finish();
         }
     }
+
+    //-----
 
     @SuppressWarnings( {"MissingPermission"})
     protected void onStart() {
@@ -495,5 +509,9 @@ public class MapaActivity extends AppCompatActivity implements
 
 
 }
+
+
+
+
 
 
