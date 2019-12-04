@@ -3,6 +3,7 @@ package com.example.didaktikapp;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -116,6 +117,22 @@ public class Quiz extends AppCompatActivity {
 
             mediaPlayerzuzena= MediaPlayer.create(getApplicationContext(),R.raw.erantzun_zuzena_3_audioa);
             mediaPlayerzuzena.start();
+
+            respu1.setClickable(false);
+            respu2.setClickable(false);
+            respu3.setClickable(false);
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+
+                    respu1.setClickable(true);
+                    respu2.setClickable(true);
+                    respu3.setClickable(true);
+
+                }
+            }, 2000);
+
             seleccionarPregunta();
             if (indicador.getText().toString().equals("1/3")){
                 indicador.setText("2/3");
@@ -141,6 +158,22 @@ public class Quiz extends AppCompatActivity {
             puntos = puntos-1;
             mediaPlayerokerra= MediaPlayer.create(getApplicationContext(),R.raw.erantzun_okerra_3_audioa);
             mediaPlayerokerra.start();
+            respu1.setClickable(false);
+            respu2.setClickable(false);
+            respu3.setClickable(false);
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+
+                    respu1.setClickable(true);
+                    respu2.setClickable(true);
+                    respu3.setClickable(true);
+
+
+
+                }
+            }, 3000);
 
         }
 

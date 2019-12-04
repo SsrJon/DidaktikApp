@@ -13,10 +13,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
+
+import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
 
 public class Popup extends Activity {
 
-    private Button btnJarraitu, btnErrepikatu;
+
+    private ImageButton btnErrepikatu, btnJarraitu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +30,8 @@ public class Popup extends Activity {
         Bundle bundle = getIntent().getExtras();
 
 
-        btnJarraitu=findViewById(R.id.buttonJarraitu);
-        btnErrepikatu=findViewById(R.id.buttonErrepikatu);
+        btnJarraitu=findViewById(R.id.imageButtonJarraitu);
+        btnErrepikatu=findViewById(R.id.imageButtonErrepikatu);
 
         //Creamos el PopUp
         DisplayMetrics dm = new DisplayMetrics();
@@ -67,6 +71,12 @@ public class Popup extends Activity {
                 else if(getIntent().getStringExtra("valor").equals("gurutzegrama")){
 
                     Intent intent = new Intent(Popup.this, GurutzegramaActivity.class);
+                    startActivity(intent);
+                }
+
+                else if(getIntent().getStringExtra("valor").equals("deslizar")){
+
+                    Intent intent = new Intent(Popup.this, PuzzleActivity.class);
                     startActivity(intent);
                 }
 

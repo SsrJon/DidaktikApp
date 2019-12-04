@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@drawable/layout_border"
 
     tools:context=".Popup">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contendor_PopUp"
-        android:layout_width="325dp"
-        android:layout_height="145dp"
+        android:layout_width="322dp"
+        android:layout_height="148dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,29 +32,37 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.246" />
 
-        <Button
-            android:id="@+id/buttonErrepikatu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/errepikatu"
+        <ImageButton
+            android:id="@+id/imageButtonErrepikatu"
+            android:layout_width="63dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:padding="20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/restart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.164"
+            app:layout_constraintHorizontal_bias="0.278"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.835" />
+            app:layout_constraintVertical_bias="0.952" />
 
-        <Button
-            android:id="@+id/buttonJarraitu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/jarraitu"
+        <ImageButton
+            android:id="@+id/imageButtonJarraitu"
+            android:layout_width="63dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:padding="20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/jarraitu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.791"
+            app:layout_constraintHorizontal_bias="0.694"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.835" />
+            app:layout_constraintVertical_bias="0.952" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
