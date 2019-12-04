@@ -1,6 +1,7 @@
 package com.example.didaktikapp.Puzzle_cuadrados;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -26,6 +27,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.didaktikapp.ActivityHutsuneakBete;
+import com.example.didaktikapp.Popup;
+import com.example.didaktikapp.Quiz;
 import com.example.didaktikapp.R;
 
 import java.io.BufferedReader;
@@ -564,6 +568,10 @@ public class PuzzleActivity extends AppCompatActivity  {
         String gameTime = Integer.toString(gameData[0]);
         String gameMoves = Integer.toString(gameData[1]);
         StringBuilder stringBuilder = new StringBuilder();
+
+        Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
+        String valor  = "deslizar";
+        startActivity(popUp);
         //TODO: add support for photos taken by the app...change puzzleNum for these, and add lines in file as needed
         if (puzzleNum == -1) {
             return;
@@ -751,6 +759,14 @@ public class PuzzleActivity extends AppCompatActivity  {
             // get the tags of each cell in the grid
             int[] cellTag = (int[])cell.getTag();
             if (cellTag[0] != cellTag[1]) {
+
+               /* Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
+                String valor  = "deslizar";
+                popUp.putExtra("valor", valor );
+                startActivity(popUp);
+                */
+
+
                 return false;
             }
         }
