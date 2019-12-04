@@ -170,8 +170,6 @@ public class Quiz extends AppCompatActivity {
                     respu2.setClickable(true);
                     respu3.setClickable(true);
 
-
-
                 }
             }, 3000);
 

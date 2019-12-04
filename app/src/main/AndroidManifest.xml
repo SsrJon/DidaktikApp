@@ -16,9 +16,13 @@
         android:roundIcon="@drawable/grape1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Popup" android:theme="@style/AppTheme.PopUpPagos"
+        <activity android:name=".PopupHorizontal"
+            android:theme="@style/AppTheme.PopUpPagos"
+            tools:ignore="InnerclassSeparator"/>
+        <activity
+            android:name=".Popup"
+            android:theme="@style/AppTheme.PopUpPagos"
             tools:ignore="InnerclassSeparator" />
-
         <activity android:name=".GurutzegramaActivity" />
         <activity
             android:name=".ActivityHutsuneakBete"
