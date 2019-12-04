@@ -49,9 +49,11 @@ public class game_test extends AppCompatActivity {
         int originx = dpToPx(51);
         // for each row loop 4 times creating a new cropped image from original bitmap and add to adapter dataset
         for(int x=0; x<columns; x++) {
+
             // for each row, increment y value to start the bitmap at
             int ypos = dpToPx(x*51);
             for(int y=0; y<rows; y++) {
+
                 int index = x*columns + y;
                 // loop through 4 positions in row incrementing the x value to start bitmap at
                 int xpos = dpToPx(y*51);

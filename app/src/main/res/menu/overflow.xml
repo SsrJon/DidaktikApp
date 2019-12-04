@@ -10,10 +10,11 @@
 
     <item
         android:id="@+id/juegos"
-        android:title="Juegos" />
+        android:title="Ezarpenak" />
     <item
         android:id="@+id/borrado"
-        android:title="Borrar Todo" />
+        android:title="Ezabatu guztia" />
+    <item android:title="Kredituak" />
 
 
 </menu>

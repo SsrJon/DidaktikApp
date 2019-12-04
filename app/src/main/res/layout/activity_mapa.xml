@@ -13,6 +13,7 @@
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/Fondo"
         mapbox:mapbox_cameraTargetLat="43.209712"
         mapbox:mapbox_cameraTargetLng="-2.889002"
         mapbox:mapbox_cameraZoom="14.5"

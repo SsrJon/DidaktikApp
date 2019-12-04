@@ -7,17 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-
 import java.util.ArrayList;
 import java.util.Random;
-
-
 public class ImageAdapter extends BaseAdapter {
 
     private Context mContext;
     private ArrayList<Drawable> mBitmaps;
     private int mGridWidth;
-    private boolean isShown;
     private String TAG = "ImageAdapter";
     private ArrayList<ArrayList<ImageView>> cellRows, cellCols;
     private ArrayList<ImageView> gridCells;
@@ -38,12 +34,13 @@ public class ImageAdapter extends BaseAdapter {
     public ImageAdapter(Context c, ArrayList<Drawable> bitmaps, int gridWidth, View.OnTouchListener onTouchListener) {
         mContext = c;
         mBitmaps = bitmaps;
-        mGridWidth = gridWidth;
+        mGridWidth = 50;
         swipeListener = onTouchListener;
         gridRows = (int) Math.sqrt(bitmaps.size());
         // initialise objects for randomisation of images
         rng = new Random();
-        bounds = gridRows*gridRows-1;
+        //bounds = gridRows*gridRows-1;
+        bounds = 30*29;
         positionPool = new ArrayList<>();
         for (int x=0; x<gridRows*gridRows; x++) {
             positionPool.add(x);
