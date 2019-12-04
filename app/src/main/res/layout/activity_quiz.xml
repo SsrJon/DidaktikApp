@@ -24,6 +24,7 @@
         android:layout_width="220dp"
         android:layout_height="152dp"
         android:background="@drawable/pregunta"
+        android:padding="20dp"
         android:text="Gaur eguneko Gaztegunea...."
         android:textAlignment="center"
         android:textSize="18sp"
