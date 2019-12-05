@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DidaktikApp</string>
+    <string name="app_name">Arrigorriaga</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mapbox_access_token">pk.eyJ1Ijoic3Jqb24iLCJhIjoiY2szMzMydTduMDR0ZzNkcGpoMTlseXlrdSJ9.FVx9_XrgYlZcFlyHkHRO_Q</string>
     <string name="simple_offline_end_progress_success">Mapa descargado</string>
@@ -90,7 +90,7 @@
     <!-- Puzzle Activity -->
     <string name="title_activity_puzzle">PuzzleActivity</string>
 
-    <string name="hint">Show Original Image</string>
+    <string name="hint">Argazkia ikusi</string>
     <!-- Paused UI -->
     <string name="resize">Resize</string>
     <!-- Solved UI -->
