@@ -38,6 +38,7 @@ public class GurutzegramaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_gurutzegrama);
         uno = findViewById(R.id.gurutzegramaUno);
         dos = findViewById(R.id.gurutzegramaDos);

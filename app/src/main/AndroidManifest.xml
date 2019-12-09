@@ -16,7 +16,12 @@
         android:roundIcon="@drawable/grape1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".PopupHorizontal"
+            android:theme="@style/AppTheme.PopUpPagos"
+            tools:ignore="InnerclassSeparator"/>
         <activity android:name=".EgiaedoGezurra" android:screenOrientation="landscape"></activity>
+
         <activity
             android:name=".Popup"
             android:theme="@style/AppTheme.PopUpPagos"

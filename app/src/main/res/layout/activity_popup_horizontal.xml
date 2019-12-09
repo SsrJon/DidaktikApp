@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/layout_border"
-
-    tools:context=".Popup">
+    tools:context=".PopupHorizontal">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contendor_PopUp"
-        android:layout_width="322dp"
-        android:layout_height="148dp"
+        android:id="@+id/contendor_PopUpH"
+        android:layout_width="376dp"
+        android:layout_height="154dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,19 +20,18 @@
         app:layout_constraintVertical_bias="0.097">
 
         <TextView
-            android:id="@+id/textViewAmaituta"
+            android:id="@+id/textViewAmaitutaH"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/amaituta"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.46"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.246" />
+            app:layout_constraintVertical_bias="0.118" />
 
         <ImageButton
-            android:id="@+id/imageButtonErrepikatu"
+            android:id="@+id/imageButtonErrepikatuH"
             android:layout_width="63dp"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -43,13 +41,13 @@
             android:src="@drawable/restart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.278"
+            app:layout_constraintHorizontal_bias="0.277"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.952" />
+            app:layout_constraintVertical_bias="0.638" />
 
         <ImageButton
-            android:id="@+id/imageButtonJarraitu"
+            android:id="@+id/imageButtonJarraituH"
             android:layout_width="63dp"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -59,10 +57,14 @@
             android:src="@drawable/jarraitu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.694"
+            app:layout_constraintHorizontal_bias="0.814"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.952" />
+            app:layout_constraintVertical_bias="0.638" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
