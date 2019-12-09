@@ -1,10 +1,12 @@
 package com.example.didaktikapp;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
@@ -43,6 +45,10 @@ public class seleccionJuego extends AppCompatActivity {
                 if (fotoaMandar.equals("Gurutzegrama")){
                     Intent intent = new Intent(seleccionJuego.this, GurutzegramaActivity.class);
                     startActivity(intent);
+
+                }if (fotoaMandar.equals("Egia edo Gezurra")){
+                    Intent intent = new Intent(seleccionJuego.this, EgiaedoGezurra.class);
+                    startActivity(intent);
                 }
 
             }
@@ -53,6 +59,7 @@ public class seleccionJuego extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void rellenarJuegos(){
         Juegos.getJuegosArrayList().clear();
         //Juegos J = new Juegos("Sopa de letras",getDrawable(R.drawable.sopa));
@@ -69,5 +76,7 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J6);
         Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
         Juegos.getJuegosArrayList().add(J7);
+        Juegos J8 = new Juegos("Egia edo Gezurra",getDrawable(R.drawable.rellenar_hueco));
+        Juegos.getJuegosArrayList().add(J8);
     }
 }
