@@ -8,191 +8,233 @@
     tools:context=".GurutzegramaActivity">
 
 
-    <ImageView
-        android:id="@+id/gurutzegrama"
-        android:layout_width="419dp"
-        android:layout_height="499dp"
-        android:src="@drawable/gurutzegrama"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.349" />
-
-    <Button
-        android:id="@+id/gurutzegramaUno"
-        android:layout_width="16dp"
-        android:layout_height="13dp"
-        android:background="@color/blanco"
-        android:text="@string/horizontalbtnUno"
-        android:textSize="10dp"
+    <RelativeLayout
+        android:layout_width="401dp"
+        android:layout_height="385dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.470"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintVertical_bias="0.103">
 
-    <Button
-        android:id="@+id/gurutzegramaDos"
-        android:layout_width="16dp"
-        android:layout_height="13dp"
-        android:background="@color/blanco"
-        android:text="@string/horizontalbtnDos"
-        android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.177"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399" />
+        <ImageView
+            android:id="@+id/gurutzegrama"
+            android:layout_width="383dp"
+            android:layout_height="359dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="13dp"
+            android:src="@drawable/gurutzegrama" />
 
-    <Button
-        android:id="@+id/gurutzegramaTres"
-        android:layout_width="16dp"
-        android:layout_height="13dp"
-        android:background="@color/blanco"
-        android:text="@string/horizontalbtnTres"
-        android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.723"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.447" />
+        <Button
+            android:id="@+id/gurutzegramaUno"
+            android:layout_width="15dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="189dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="198dp"
+            android:layout_marginBottom="328dp"
+            android:background="@color/blanco"
+            android:text="@string/horizontalbtnUno"
+            android:textSize="10dp" />
 
-    <Button
-        android:id="@+id/gurutzegramaCuatro"
-        android:layout_width="16dp"
-        android:layout_height="13dp"
-        android:background="@color/blanco"
-        android:text="@string/horizontalbtnCuatro"
-        android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.050"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473" />
+        <ImageView
+            android:id="@+id/respuestaUno"
+            android:layout_width="19dp"
+            android:layout_height="303dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="198dp"
+            android:layout_marginBottom="42dp"
+            android:src="@drawable/respuestauno"
+            android:visibility="invisible" />
 
-    <Button
-        android:id="@+id/gurutzegramaCinco"
-        android:layout_width="16dp"
-        android:layout_height="13dp"
-        android:background="@color/blanco"
-        android:text="@string/horizontalbtnCinco"
-        android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.522" />
+        <Button
+            android:id="@+id/gurutzegramaDos"
+            android:layout_width="16dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="149dp"
+            android:layout_marginEnd="306dp"
+            android:layout_marginBottom="223dp"
+            android:background="@color/blanco"
+            android:text="@string/horizontalbtnDos"
+            android:textSize="10dp" />
 
-    <Button
-        android:id="@+id/gurutzegramaSeis"
-        android:layout_width="16dp"
-        android:layout_height="13dp"
-        android:background="@color/blanco"
-        android:text="@string/horizontalbtnSeis"
-        android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.260"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.695" />
+        <ImageView
+            android:id="@+id/respuestaDos"
+            android:layout_width="287dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="144dp"
+            android:layout_marginEnd="39dp"
+            android:layout_marginBottom="221dp"
+            android:src="@drawable/respuestados"
+            android:visibility="invisible" />
 
-    <ImageView
-        android:id="@+id/respuestaUno"
-        android:layout_width="24dp"
-        android:layout_height="327dp"
-        android:src="@drawable/respuestauno"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.470"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427" />
+        <Button
+            android:id="@+id/gurutzegramaTres"
+            android:layout_width="16dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="281dp"
+            android:layout_marginTop="176dp"
+            android:layout_marginEnd="105dp"
+            android:layout_marginBottom="196dp"
+            android:background="@color/blanco"
+            android:text="@string/horizontalbtnTres"
+            android:textSize="10dp" />
 
-    <ImageView
-        android:id="@+id/respuestaDos"
-        android:layout_width="308dp"
-        android:layout_height="22dp"
-        android:src="@drawable/respuestados"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.623"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398" />
+        <ImageView
+            android:id="@+id/respuestaTres"
+            android:layout_width="20dp"
+            android:layout_height="127dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="279dp"
+            android:layout_marginTop="173dp"
+            android:layout_marginEnd="102dp"
+            android:layout_marginBottom="85dp"
+            android:src="@drawable/respuestatres"
+            android:visibility="invisible" />
 
-    <ImageView
-        android:id="@+id/respuestaTres"
-        android:layout_width="22dp"
-        android:layout_height="133dp"
-        android:src="@drawable/respuestatres"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.725"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545" />
+        <Button
+            android:id="@+id/gurutzegramaCuatro"
+            android:layout_width="16dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="192dp"
+            android:layout_marginEnd="353dp"
+            android:layout_marginBottom="180dp"
+            android:background="@color/blanco"
+            android:text="@string/horizontalbtnCuatro"
+            android:textSize="10dp" />
 
-    <ImageView
-        android:id="@+id/respuestaCuatro"
-        android:layout_width="330dp"
-        android:layout_height="21dp"
-        android:src="@drawable/respuestacuatro"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474" />
+        <ImageView
+            android:id="@+id/respuestaCuatro"
+            android:layout_width="298dp"
+            android:layout_height="19dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="190dp"
+            android:layout_marginEnd="71dp"
+            android:layout_marginBottom="176dp"
+            android:src="@drawable/respuestacuatro"
+            android:visibility="invisible" />
 
-    <ImageView
-        android:id="@+id/respuestaCinco"
-        android:layout_width="158dp"
-        android:layout_height="22dp"
-        android:src="@drawable/respuestacinco"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.20"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.523" />
+        <Button
+            android:id="@+id/gurutzegramaCinco"
+            android:layout_width="16dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="223dp"
+            android:layout_marginEnd="321dp"
+            android:layout_marginBottom="149dp"
+            android:background="@color/blanco"
+            android:text="@string/horizontalbtnCinco"
+            android:textSize="10dp" />
 
-    <ImageView
-        android:id="@+id/respuestaSeis"
-        android:layout_width="280dp"
-        android:layout_height="22dp"
-        android:src="@drawable/respuestaseis"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.718"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.700" />
+        <ImageView
+            android:id="@+id/respuestaCinco"
+            android:layout_width="138dp"
+            android:layout_height="17dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="63dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginEnd="200dp"
+            android:layout_marginBottom="151dp"
+            android:src="@drawable/respuestacinco"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/gurutzegramaSeis"
+            android:layout_width="16dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="326dp"
+            android:layout_marginEnd="275dp"
+            android:layout_marginBottom="46dp"
+            android:background="@color/blanco"
+            android:text="@string/horizontalbtnSeis"
+            android:textSize="10dp" />
+
+        <ImageView
+            android:id="@+id/respuestaSeis"
+            android:layout_width="250dp"
+            android:layout_height="22dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="323dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/respuestaseis"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
     <!--android:id="@+id/responderGurutzegrama"-->
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/responderGurutzegrama"
-        android:layout_width="412dp"
-        android:layout_height="241dp"
+        android:layout_width="366dp"
+        android:layout_height="248dp"
+        android:layout_marginStart="24dp"
         android:background="@color/blanco"
         android:elevation="5dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4">
+        app:layout_constraintVertical_bias="0.917">
 
         <TextView
             android:id="@+id/textoPregunta"
@@ -214,7 +256,7 @@
             app:layout_constraintHorizontal_bias="0.586"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.719" />
+            app:layout_constraintVertical_bias="0.617" />
 
         <Button
             android:id="@+id/responderPregunta"
