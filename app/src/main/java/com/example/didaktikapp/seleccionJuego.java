@@ -21,8 +21,9 @@ public class seleccionJuego extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion);
         rellenarJuegos();
-
+        recyclerView = findViewById(R.id.ReciclerView);
         adap = new AdaptadorJuegos (Juegos.getJuegosArrayList());
+        recyclerView.setAdapter(adap);
         adap.setOnItemClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
