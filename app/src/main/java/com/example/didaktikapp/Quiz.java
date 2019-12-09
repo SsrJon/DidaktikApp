@@ -20,7 +20,6 @@ public class Quiz extends AppCompatActivity {
     String res2;
     String res3;
     String correcto;
-    String respuestaUsuario;
     Button respu1;
     Button respu2;
     Button respu3;

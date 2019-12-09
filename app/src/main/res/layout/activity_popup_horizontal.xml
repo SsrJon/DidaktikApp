@@ -9,8 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contendor_PopUpH"
-        android:layout_width="376dp"
-        android:layout_height="154dp"
+        android:layout_width="318dp"
+        android:layout_height="116dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

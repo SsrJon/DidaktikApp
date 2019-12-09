@@ -75,16 +75,19 @@ public class EgiaedoGezurra extends AppCompatActivity {
 
     public void botones(String respuesta){
         if (respuesta.equals(preguntas.get(contador).getResCorrecta())){
-            if (contador < preguntas.size()){
                 puntuacion = puntuacion +1;
-            }else {
-                Intent popUp = new Intent(EgiaedoGezurra.this, Popup.class);
-                String valor  = "quiz";
-                popUp.putExtra("valor", valor );
-                startActivity(popUp);
-            }
+
         }
-        contador = contador + 1;
+        if (contador < preguntas.size()-1){
+            contador = contador + 1;
+        }
+        if (contador >= preguntas.size()-1) {
+            Intent popUp = new Intent(EgiaedoGezurra.this, PopupHorizontal.class);
+            String valor  = "quiz";
+            popUp.putExtra("valor", valor );
+            startActivity(popUp);
+        }
+
         pregun.setText(preguntas.get(contador).getPregunta());
 
 
