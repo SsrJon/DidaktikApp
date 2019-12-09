@@ -2,6 +2,7 @@ package com.example.didaktikapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -13,7 +14,7 @@ import android.widget.ImageButton;
 
 import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
 
-public class PopupHorizontal extends AppCompatActivity {
+public class PopupHorizontal extends Activity {
 
     private ImageButton btnErrepikatu, btnJarraitu;
 

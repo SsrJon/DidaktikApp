@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
-
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -67,12 +66,12 @@ public class MapaActivity extends AppCompatActivity implements
     public static final String JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME";
 
     //Zona accesible en el mapa
-    private static final LatLng BOUND_CORNER_NW = new LatLng(43.202712, -2.91002);
-    private static final LatLng BOUND_CORNER_SE = new LatLng(43.221812, -2.88002);
-    private static final LatLngBounds RESTRICTED_BOUNDS_AREA = new LatLngBounds.Builder()
+   //private static final LatLng BOUND_CORNER_NW = new LatLng(43.202712, -2.91002);
+   // private static final LatLng BOUND_CORNER_SE = new LatLng(43.221812, -2.88002);
+    /*private static final LatLngBounds RESTRICTED_BOUNDS_AREA = new LatLngBounds.Builder()
             .include(BOUND_CORNER_NW)
             .include(BOUND_CORNER_SE)
-            .build();
+            .build();*/
 
 
 
@@ -174,7 +173,7 @@ public class MapaActivity extends AppCompatActivity implements
 
 
                 //Restriccion de zona del mapa
-                    mapboxMap.setLatLngBoundsForCameraTarget(RESTRICTED_BOUNDS_AREA);
+                   // mapboxMap.setLatLngBoundsForCameraTarget(RESTRICTED_BOUNDS_AREA);
 
 
                     // Set up the OfflineManager
@@ -261,7 +260,6 @@ public class MapaActivity extends AppCompatActivity implements
                                 });
                     }
 
-
             }
         });
     }
@@ -279,7 +277,7 @@ public class MapaActivity extends AppCompatActivity implements
                     .elevation(5)
                     .accuracyAlpha(.6f)
                     .accuracyColor(Color.CYAN)
-                    .foregroundDrawable(R.drawable.gps)
+                    .foregroundDrawable(R.drawable.uva_gps)
                     .build();
 
             // Get an instance of the component
