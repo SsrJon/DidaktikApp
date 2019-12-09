@@ -21,9 +21,7 @@ public class seleccionJuego extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion);
         rellenarJuegos();
-        recyclerView = findViewById(R.id.ReciclerView);
         adap = new AdaptadorJuegos (Juegos.getJuegosArrayList());
-        recyclerView.setAdapter(adap);
         adap.setOnItemClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +54,7 @@ public class seleccionJuego extends AppCompatActivity {
     }
 
     public void rellenarJuegos(){
+        Juegos.getJuegosArrayList().clear();
         //Juegos J = new Juegos("Sopa de letras",getDrawable(R.drawable.sopa));
         //Juegos.getJuegosArrayList().add(J);
         Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.quiz));
