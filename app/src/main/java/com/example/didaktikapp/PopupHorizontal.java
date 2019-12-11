@@ -77,9 +77,5 @@ public class PopupHorizontal extends Activity {
 
             }
         });
-
-
-
-
     }
 }
