@@ -24,7 +24,7 @@ public class PopupHorizontal extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_popup_horizontal);
 
-
+        //fg
         Bundle bundle = getIntent().getExtras();
 
 
