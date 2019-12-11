@@ -5,7 +5,7 @@
     <color name="colorPrimaryDark">#707070</color>
     <color name="colorAccent">#2DAD2F</color>
     <color name="Fondo">#F1C68D</color>
-    <color name ="blanco">#FFFF</color>
+    <color name ="blanco">#FFFFFF</color>
 
     //Color fondo PopUps
     <color name="color_fondo_popUps1">#E6E5E4E8</color>
