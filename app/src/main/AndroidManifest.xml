@@ -30,12 +30,15 @@
         <activity
             android:name=".ActivityHutsuneakBete"
             android:screenOrientation="landscape" />
-        <activity android:name=".InicioAventuraActivity" />
+        <activity android:name=".InicioAventuraActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".seleccionJuego" />
         <activity android:name=".Puzzle.PuzzleActivity" />
         <activity android:name=".Puzzle_cuadrados.PuzzleActivity" />
         <activity android:name=".Quiz" />
         <activity android:name=".PantallaCarga">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
