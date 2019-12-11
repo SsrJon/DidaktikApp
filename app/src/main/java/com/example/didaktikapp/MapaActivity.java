@@ -101,13 +101,6 @@ public class MapaActivity extends AppCompatActivity implements
     }
 
 
-
-
-
-
-
-
-
     @Override
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
         this.mapboxMap = mapboxMap;
@@ -266,8 +259,6 @@ public class MapaActivity extends AppCompatActivity implements
         });
     }
 
-
-
     //---------
     @SuppressWarnings( {"MissingPermission"})
     private void enableLocationComponent(@NonNull Style loadedMapStyle) {
@@ -388,7 +379,6 @@ public class MapaActivity extends AppCompatActivity implements
         super.onResume();
         mapView.onResume();
     }
-
 
 
     @Override
