@@ -85,6 +85,8 @@ public class Popup extends Activity {
                     startActivity(intent);
                 }
 
+
+
                 //Intent intent = new Intent(Popup.this, ActivityHutsuneakBete.class);
                 //startActivity(intent);
             }
