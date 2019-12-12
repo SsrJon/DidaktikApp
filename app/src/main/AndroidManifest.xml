@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".HutsuneakTabla"></activity>
+        <activity android:name=".Fotoelejir"></activity>
         <activity
             android:name=".PopupHorizontal"
             android:theme="@style/AppTheme.PopUpPagos"
