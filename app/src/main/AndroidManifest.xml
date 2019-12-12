@@ -26,6 +26,8 @@
             android:name=".EgiaedoGezurra"
             android:screenOrientation="landscape" />
         <activity
+            android:name=".OrdenarImagen" />
+        <activity
             android:name=".Popup"
             android:theme="@style/AppTheme.PopUpPagos"
             tools:ignore="InnerclassSeparator" />

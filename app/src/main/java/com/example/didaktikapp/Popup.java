@@ -79,6 +79,11 @@ public class Popup extends Activity {
                     Intent intent = new Intent(Popup.this, PuzzleActivity.class);
                     startActivity(intent);
                 }
+                else if(getIntent().getStringExtra("valor").equals("ordenarImagen")){
+
+                    Intent intent = new Intent(Popup.this, OrdenarImagen.class);
+                    startActivity(intent);
+                }
 
                 //Intent intent = new Intent(Popup.this, ActivityHutsuneakBete.class);
                 //startActivity(intent);
