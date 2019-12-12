@@ -49,6 +49,9 @@ public class seleccionJuego extends AppCompatActivity {
                 }if (fotoaMandar.equals("Egia edo Gezurra")){
                     Intent intent = new Intent(seleccionJuego.this, EgiaedoGezurra.class);
                     startActivity(intent);
+                }if(fotoaMandar.equals("Argazkia aukeratu")) {
+                    Intent intent = new Intent(seleccionJuego.this, Fotoelejir.class);
+                    startActivity(intent);
                 }
                 if (fotoaMandar.equals("Ordenatu Kronologikoki")){
                     Intent intent = new Intent(seleccionJuego.this, OrdenarImagen.class);
@@ -82,7 +85,9 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J7);
         Juegos J8 = new Juegos("Egia edo Gezurra",getDrawable(R.drawable.rellenar_hueco));
         Juegos.getJuegosArrayList().add(J8);
-        Juegos J9 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+        Juegos J9 = new Juegos("Argazkia aukeratu",getDrawable(R.drawable.rellenar_hueco));
         Juegos.getJuegosArrayList().add(J9);
+        Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+        Juegos.getJuegosArrayList().add(J10);
     }
 }

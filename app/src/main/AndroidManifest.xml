@@ -16,7 +16,8 @@
         android:roundIcon="@drawable/grape1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OrdenarImagen"></activity>
+        <activity android:name=".HutsuneakTabla"></activity>
+        <activity android:name=".Fotoelejir"></activity>
         <activity
             android:name=".PopupHorizontal"
             android:theme="@style/AppTheme.PopUpPagos"
@@ -25,6 +26,8 @@
             android:name=".EgiaedoGezurra"
             android:screenOrientation="landscape" />
         <activity
+            android:name=".OrdenarImagen" />
+        <activity
             android:name=".Popup"
             android:theme="@style/AppTheme.PopUpPagos"
             tools:ignore="InnerclassSeparator" />
@@ -32,7 +35,9 @@
         <activity
             android:name=".ActivityHutsuneakBete"
             android:screenOrientation="landscape" />
-        <activity android:name=".InicioAventuraActivity" />
+        <activity
+            android:name=".InicioAventuraActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".seleccionJuego" />
         <activity android:name=".Puzzle.PuzzleActivity" />
         <activity android:name=".Puzzle_cuadrados.PuzzleActivity" />
