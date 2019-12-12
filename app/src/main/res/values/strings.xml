@@ -104,4 +104,14 @@
     <string name="move_arrows">move arrow</string>
     <string name="test">Move image to fit within square puzzle grid or use arrows.
                         Use buttons to zoom in or out.</string>
+
+    <string name="orden">Hurrengo argazkiak, kronologikoki ordenatu behar duzu.</string>
+    <string name="escribirOrden">Idatzi orden zuzena</string>
+    <string name="foto_A">A</string>
+    <string name="foto_B">B</string>
+    <string name="foto_C">C</string>
+    <string name="foto_D">D</string>
+    <string name="ordenBueno">c,b,a,d</string>
+    <string name="ordenBuenoDos">cbad</string>
+    <string name="ordenBuenoTres">c, b, a, d</string>
 </resources>
