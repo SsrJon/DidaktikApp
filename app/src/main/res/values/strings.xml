@@ -105,6 +105,13 @@
     <string name="test">Move image to fit within square puzzle grid or use arrows.
                         Use buttons to zoom in or out.</string>
 
+
+    <string name="Larrea_eskultura">Vicente Larrearen obra hau (2002an Bilbotik
+etorrita) Arrigorriagako sarreran aurki
+dezakegu, polikiroldegiaren ondoan. Ondare
+kultural arkitektoniko hau, bere izugarrizko
+altueragatik nabarmentzen da.</string>
+
     <string name="orden">Hurrengo argazkiak, kronologikoki ordenatu behar duzu.</string>
     <string name="escribirOrden">Idatzi orden zuzena</string>
     <string name="foto_A">A</string>
