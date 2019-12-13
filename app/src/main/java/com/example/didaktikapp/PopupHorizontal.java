@@ -24,7 +24,7 @@ public class PopupHorizontal extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_popup_horizontal);
 
-        //fg
+
         Bundle bundle = getIntent().getExtras();
 
 
@@ -60,8 +60,19 @@ public class PopupHorizontal extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(PopupHorizontal.this, ActivityHutsuneakBete.class);
-                startActivity(intent);
+                if(getIntent().getStringExtra("valor").equals("hutsuneak")){
+
+                    Intent intent = new Intent(PopupHorizontal.this, ActivityHutsuneakBete.class);
+                    startActivity(intent);
+                }
+
+                if(getIntent().getStringExtra("valor").equals("tabla")){
+
+                    Intent intent = new Intent(PopupHorizontal.this, HutsuneakTabla.class);
+                    startActivity(intent);
+                }
+
+
             }
         });
 

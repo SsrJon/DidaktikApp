@@ -85,6 +85,7 @@ public class HutsuneakTabla extends AppCompatActivity {
 
                         Intent popUp = new Intent(HutsuneakTabla.this, PopupHorizontal.class);
                         String valor  = "tabla";
+                        popUp.putExtra("valor", valor );
                         startActivity(popUp);
 
 

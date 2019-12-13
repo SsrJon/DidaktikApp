@@ -154,6 +154,8 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
         if (contadorButton==3){
 
             Intent popUp = new Intent(ActivityHutsuneakBete.this, PopupHorizontal.class);
+            String valor  = "hutsuneak";
+            popUp.putExtra("valor", valor );
             startActivity(popUp);
             //System.out.println(contadorButton);
             //btnJarraitu.setVisibility(View.VISIBLE);

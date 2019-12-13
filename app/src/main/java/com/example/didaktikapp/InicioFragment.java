@@ -19,7 +19,7 @@ import android.widget.EditText;
 
 public class InicioFragment extends Fragment {
 
-    private Button btnEmpezar, btnPruebas;
+    private Button btnEmpezar;
     private EditText etNombreInicio;
 
 
@@ -39,15 +39,7 @@ public class InicioFragment extends Fragment {
 
         btnEmpezar=root.findViewById(R.id.buttonEmpezar);
         etNombreInicio=root.findViewById(R.id.editTextNombreInicio);
-        btnPruebas=root.findViewById(R.id.buttonPrueba);
 
-        btnPruebas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), HutsuneakTabla.class);
-                startActivity(intent);
-            }
-        });
 
 
         btnEmpezar.setOnClickListener(new View.OnClickListener() {
