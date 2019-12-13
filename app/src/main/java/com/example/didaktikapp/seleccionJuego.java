@@ -56,6 +56,11 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, HutsuneakTabla.class);
                     startActivity(intent);
                 }
+                if (fotoaMandar.equals("Ordenatu Kronologikoki")){
+                    Intent intent = new Intent(seleccionJuego.this, OrdenarImagen.class);
+                    startActivity(intent);
+                }
+
             }
         });
         recyclerView = findViewById(R.id.ReciclerView);
@@ -85,7 +90,5 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J8);
         Juegos J9 = new Juegos("Argazkia aukeratu",getDrawable(R.drawable.rellenar_hueco));
         Juegos.getJuegosArrayList().add(J9);
-        Juegos J10 = new Juegos("Larrea 1",getDrawable(R.drawable.tabla));
-        Juegos.getJuegosArrayList().add(J10);
     }
 }
