@@ -1,14 +1,24 @@
 package com.example.didaktikapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.UiThread;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,9 +26,13 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.gms.location.LocationCallback;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.mapbox.android.core.location.LocationEngine;
+import com.mapbox.android.core.location.LocationEngineProvider;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
+import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Icon;
 import com.mapbox.mapboxsdk.annotations.IconFactory;
@@ -40,20 +54,26 @@ import com.mapbox.mapboxsdk.offline.OfflineRegion;
 import com.mapbox.mapboxsdk.offline.OfflineRegionError;
 import com.mapbox.mapboxsdk.offline.OfflineRegionStatus;
 import com.mapbox.mapboxsdk.offline.OfflineTilePyramidRegionDefinition;
+
 import org.json.JSONObject;
+
 import java.util.List;
+
 import timber.log.Timber;
+
+import static com.mapbox.turf.TurfConstants.UNIT_KILOMETERS;
+
+import com.mapbox.turf.TurfMeasurement;
 
 
 public class MapaActivity extends AppCompatActivity implements
-        OnMapReadyCallback,  PermissionsListener, OnCameraTrackingChangedListener {
-
+        OnMapReadyCallback, PermissionsListener, OnCameraTrackingChangedListener {
     private PermissionsManager permissionsManager;
     private MapView mapView;
     private MapboxMap mapboxMap;
     private LocationComponent locationComponent;
     private boolean isInTrackingMode;
-    int pantalla =0;
+    int pantalla = 0;
 
     private FloatingActionButton juegos;
     private boolean isEndNotified;
@@ -66,23 +86,20 @@ public class MapaActivity extends AppCompatActivity implements
     public static final String JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME";
 
     //Zona accesible en el mapa
-   //private static final LatLng BOUND_CORNER_NW = new LatLng(43.202712, -2.91002);
-   // private static final LatLng BOUND_CORNER_SE = new LatLng(43.221812, -2.88002);
+    //private static final LatLng BOUND_CORNER_NW = new LatLng(43.202712, -2.91002);
+    // private static final LatLng BOUND_CORNER_SE = new LatLng(43.221812, -2.88002);
     /*private static final LatLngBounds RESTRICTED_BOUNDS_AREA = new LatLngBounds.Builder()
             .include(BOUND_CORNER_NW)
             .include(BOUND_CORNER_SE)
             .build();*/
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         // Mapbox access token is configured here. This needs to be called either in your application
         // object or in the same activity which contains the mapview.
         Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
-
         // This contains the MapView in XML and needs to be called after the access token is configured.
         setContentView(R.layout.activity_mapa);
         mapView = findViewById(R.id.mapView);
@@ -92,28 +109,28 @@ public class MapaActivity extends AppCompatActivity implements
         juegos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent  = new Intent(MapaActivity.this,seleccionJuego.class);
+                Intent intent = new Intent(MapaActivity.this, seleccionJuego.class);
                 startActivity(intent);
 
             }
+
         });
     }
-
 
     @Override
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
         this.mapboxMap = mapboxMap;
-
         //Punto 1  Larrea eskultura
-        MarkerOptions punto1 =new MarkerOptions();
+        final MarkerOptions punto1 = new MarkerOptions();
         punto1.title("Larrea eskultura");
-        IconFactory iconFactoryPunto1= IconFactory.getInstance(MapaActivity.this);
-        Icon iconPunto1= iconFactoryPunto1.fromResource(R.drawable.marcador1);
+        IconFactory iconFactoryPunto1 = IconFactory.getInstance(MapaActivity.this);
+        Icon iconPunto1 = iconFactoryPunto1.fromResource(R.drawable.marcador1);
         punto1.icon(iconPunto1);
-        punto1.position(new LatLng(43.211583,-2.886917));
+        punto1.position(new LatLng(43.211583, -2.886917));
         mapboxMap.addMarker(punto1);
 
-        //Punto 2  Arrigorriagako Udaletxea
+
+       /*//Punto 2  Arrigorriagako Udaletxea
         MarkerOptions punto2 =new MarkerOptions();
         punto2.title("Arrigorriagako Udaletxea");
         IconFactory iconFactoryPunto2= IconFactory.getInstance(MapaActivity.this);
@@ -156,7 +173,7 @@ public class MapaActivity extends AppCompatActivity implements
         Icon iconPunto6= iconFactoryPunto6.fromResource(R.drawable.marcador6);
         punto6.icon(iconPunto6);
         punto6.position(new LatLng(43.210500,-2.909417));
-        mapboxMap.addMarker(punto6);
+        mapboxMap.addMarker(punto6);*/
 
         mapboxMap.setStyle(Style.OUTDOORS, new Style.OnStyleLoaded() {
 
@@ -166,58 +183,71 @@ public class MapaActivity extends AppCompatActivity implements
 
 
                 //Restriccion de zona del mapa
-                   // mapboxMap.setLatLngBoundsForCameraTarget(RESTRICTED_BOUNDS_AREA);
+                // mapboxMap.setLatLngBoundsForCameraTarget(RESTRICTED_BOUNDS_AREA);
 
 
-                    // Set up the OfflineManager
-                    offlineManager = OfflineManager.getInstance(MapaActivity.this);
+                // Set up the OfflineManager
+                offlineManager = OfflineManager.getInstance(MapaActivity.this);
 
-                    // la zona del mapa que se va a descargar (bounding box)
-                    LatLngBounds latLngBounds = new LatLngBounds.Builder()
-                            .include(new LatLng(43.201712, -2.901002)) // Northeast
-                            .include(new LatLng(43.223712, -2.889002)) // Southwest
-                            .build();
+                // la zona del mapa que se va a descargar (bounding box)
+                LatLngBounds latLngBounds = new LatLngBounds.Builder()
+                        .include(new LatLng(43.201712, -2.901002)) // Northeast
+                        .include(new LatLng(43.223712, -2.889002)) // Southwest
+                        .build();
 
-                    // Define la region  offline
-                    OfflineTilePyramidRegionDefinition definition = new OfflineTilePyramidRegionDefinition(
-                            style.getUri(),
-                            latLngBounds,
-                            10,
-                            20,
-                            MapaActivity.this.getResources().getDisplayMetrics().density);
+                // Define la region  offline
+                OfflineTilePyramidRegionDefinition definition = new OfflineTilePyramidRegionDefinition(
+                        style.getUri(),
+                        latLngBounds,
+                        10,
+                        20,
+                        MapaActivity.this.getResources().getDisplayMetrics().density);
 
-                    // Set the metadata
-                    byte[] metadata;
-                    try {
-                        JSONObject jsonObject = new JSONObject();
-                        jsonObject.put(JSON_FIELD_REGION_NAME, "Arrigorriaga");
-                        String json = jsonObject.toString();
-                        metadata = json.getBytes(JSON_CHARSET);
-                    } catch (Exception exception) {
-                        Timber.e("Failed to encode metadata: %s", exception.getMessage());
-                        metadata = null;
-                    }
+                // Set the metadata
+                byte[] metadata;
+                try {
+                    JSONObject jsonObject = new JSONObject();
+                    jsonObject.put(JSON_FIELD_REGION_NAME, "Arrigorriaga");
+                    String json = jsonObject.toString();
+                    metadata = json.getBytes(JSON_CHARSET);
+                } catch (Exception exception) {
+                    Timber.e("Failed to encode metadata: %s", exception.getMessage());
+                    metadata = null;
+                }
 
-                    // Crea la region
-                    if (metadata != null) {
-                        offlineManager.createOfflineRegion(
-                                definition,
-                                metadata,
-                                new OfflineManager.CreateOfflineRegionCallback() {
-                                    @Override
-                                    public void onCreate(OfflineRegion offlineRegion) {
-                                        offlineRegion.setDownloadState(OfflineRegion.STATE_ACTIVE);
+                // Crea la region
+                if (metadata != null) {
+                    offlineManager.createOfflineRegion(
+                            definition,
+                            metadata,
+                            new OfflineManager.CreateOfflineRegionCallback() {
+                                @Override
+                                public void onCreate(final OfflineRegion offlineRegion) {
+                                    offlineRegion.setDownloadState(OfflineRegion.STATE_ACTIVE);
 
-                                        // muestra la barra de progreso
-                                        progressBar =findViewById(R.id.progress_bar);
-                                        startProgress();
+                                    // muestra la barra de progreso
+                                    progressBar = findViewById(R.id.progress_bar);
+                                    startProgress();
 
-                                        // Monitoriza la descarga usando setObserver
-                                        offlineRegion.setObserver(new OfflineRegion.OfflineRegionObserver() {
-                                            @Override
-                                            public void onStatusChanged(OfflineRegionStatus status) {
+                                    // Monitoriza la descarga usando setObserver
+                                    offlineRegion.setObserver(new OfflineRegion.OfflineRegionObserver() {
+                                        @SuppressLint("NewApi")
+                                        @Override
+                                        public void onStatusChanged(OfflineRegionStatus status) {
+                                            // Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
 
-                                                // Calculate the download percentage and update the progress bar
+                                            Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
+                                            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(),localizacion.getLatitude()),Point.fromLngLat(punto1.getPosition().getLongitude(),punto1.getPosition().getLatitude()));
+                                            System.out.println(distancia);
+
+                                            if (distancia *1000 <= 9){
+                                                System.out.println("llegue");
+                                                //Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                                //startActivity(intent);
+                                            }
+
+
+                                            // Calculate the download percentage and update the progress bar
                                                 double percentage = status.getRequiredResourceCount() >= 0
                                                         ? (100.0 * status.getCompletedResourceCount() / status.getRequiredResourceCount()) :
                                                         0.0;
@@ -229,6 +259,8 @@ public class MapaActivity extends AppCompatActivity implements
                                                     // Switch to determinate state
                                                     setPercentage((int) Math.round(percentage));
                                                 }
+
+
                                             }
 
                                             @Override
@@ -273,7 +305,6 @@ public class MapaActivity extends AppCompatActivity implements
 
             // Get an instance of the component
             locationComponent = mapboxMap.getLocationComponent();
-
             LocationComponentActivationOptions locationComponentActivationOptions =
                     LocationComponentActivationOptions.builder(this, loadedMapStyle)
                             .locationComponentOptions(customLocationComponentOptions)
@@ -321,7 +352,7 @@ public class MapaActivity extends AppCompatActivity implements
 
     @SuppressWarnings( {"MissingPermission"})
     // @Override
-   /* public void onLocationComponentClick() {
+   /*public void onLocationComponentClick() {
         if (locationComponent.getLastKnownLocation() != null) {
             Toast.makeText(this, String.format(getString(R.string.),
                     locationComponent.getLastKnownLocation().getLatitude(),
@@ -337,6 +368,7 @@ public class MapaActivity extends AppCompatActivity implements
     @Override
     public void onCameraTrackingChanged(int currentMode) {
 // Empty on purpose
+        Toast.makeText(this, "MANUEL", Toast.LENGTH_LONG).show();
     }
 
     @Override
