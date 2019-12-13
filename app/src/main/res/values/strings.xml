@@ -114,4 +114,13 @@
     <string name="ordenBueno">c,b,a,d</string>
     <string name="ordenBuenoDos">cbad</string>
     <string name="ordenBuenoTres">c, b, a, d</string>
+
+
+    <string name="EGpreguntaUno">Andra Maria Magdalena eliza ondare kulturala da.</string>
+    <string name="EGpreguntaDos">Eliza hau, XXI. mendekoa dela uste da.</string>
+    <string name="EGpreguntaTres">Jatorriko eraikuntzatik dena mantenduda.</string>
+    <string name="EGpreguntaCuatro">Elizak Arrigorriagako batailan jatorria du.</string>
+    <string name="egia">Egia</string>
+    <string name="gezurra">Gezurra</string>
+
 </resources>
