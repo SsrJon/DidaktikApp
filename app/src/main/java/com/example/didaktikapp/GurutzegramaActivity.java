@@ -57,7 +57,7 @@ public class GurutzegramaActivity extends AppCompatActivity {
         imagenCinco = findViewById(R.id.respuestaCinco);
         imagenSeis = findViewById(R.id.respuestaSeis);
         contador = 0;
-
+        //Onclick del boton uno para rellenar la palabra uno
         uno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +69,7 @@ public class GurutzegramaActivity extends AppCompatActivity {
 
             }
         });
-
+        //Onclick del boton dos para rellenar la palabra dos
         dos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +80,7 @@ public class GurutzegramaActivity extends AppCompatActivity {
                 mostrar = "2";
             }
         });
-
+        //Onclick del boton tres para rellenar la palabra tres
         tres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +91,7 @@ public class GurutzegramaActivity extends AppCompatActivity {
                 mostrar = "3";
             }
         });
-
+        //Onclick del boton cuatro para rellenar la palabra cuatro
         cuatro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +102,7 @@ public class GurutzegramaActivity extends AppCompatActivity {
                 mostrar = "4";
             }
         });
-
+        //Onclick del boton cinco para rellenar la palabra cinco
         cinco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,7 +113,7 @@ public class GurutzegramaActivity extends AppCompatActivity {
                 mostrar = "5";
             }
         });
-
+        //Onclick del boton seis para rellenar la palabra seis
         seis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,6 +124,7 @@ public class GurutzegramaActivity extends AppCompatActivity {
                 mostrar = "6";
             }
         });
+        //onclick del boton responder comprueba si la respuesta escrita es la correcta con la linea que se esta intentando resolver
         responder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,13 +135,13 @@ public class GurutzegramaActivity extends AppCompatActivity {
                     if(contador == 6){
                         MediaPlayer mediaPlayer= MediaPlayer.create(GurutzegramaActivity.this,R.raw.erantzunzuzena6_audioa);
                         mediaPlayer.start();
-
+                        //popUp para volver a jugar el juego o salir al menu de juegos
                         Intent popUp = new Intent(GurutzegramaActivity.this, Popup.class);
                         String valor  = "gurutzegrama";
                         popUp.putExtra("valor", valor );
                         startActivity(popUp);
                     }
-
+                    //swich para mostrar el resultado si la respuesta a sido correcta
                     switch (mostrar){
                         case "1":
                             uno.setVisibility(View.INVISIBLE);
