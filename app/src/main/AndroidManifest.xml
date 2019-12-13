@@ -32,18 +32,23 @@
             android:name=".Popup"
             android:theme="@style/AppTheme.PopUpPagos"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".GurutzegramaActivity" />
+        <activity android:name=".GurutzegramaActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivityHutsuneakBete"
             android:screenOrientation="landscape" />
         <activity
             android:name=".InicioAventuraActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".seleccionJuego" />
-        <activity android:name=".Puzzle.PuzzleActivity" />
-        <activity android:name=".Puzzle_cuadrados.PuzzleActivity" />
-        <activity android:name=".Quiz" />
-        <activity android:name=".PantallaCarga">
+        <activity android:name=".seleccionJuego"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Puzzle.PuzzleActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Puzzle_cuadrados.PuzzleActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Quiz"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PantallaCarga" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
