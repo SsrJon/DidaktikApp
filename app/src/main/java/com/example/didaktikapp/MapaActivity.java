@@ -115,13 +115,7 @@ public class MapaActivity extends AppCompatActivity implements
             }
 
         });
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            LatLng pyo1 = new LatLng(43.211583, -2.886917);
-            public void run() {
-                jose(pyo1);
-            }
-        }, 1000);
+
     }
 
     @Override
@@ -188,6 +182,18 @@ public class MapaActivity extends AppCompatActivity implements
             public void onStyleLoaded(@NonNull Style style) {
                 enableLocationComponent(style);
 
+                try{
+                    Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
+                    double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
+                    System.out.println("-------" + distancia + "---------");
+                    if (distancia * 1000 <= 9) {
+                        System.out.println("---------LLEGUE------------");
+                        //Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                        //startActivity(intent);
+                    }
+                }catch (Exception I){
+                    System.out.println(I);
+                }
 
                 //Restriccion de zona del mapa
                 // mapboxMap.setLatLngBoundsForCameraTarget(RESTRICTED_BOUNDS_AREA);
@@ -243,7 +249,14 @@ public class MapaActivity extends AppCompatActivity implements
                                         public void onStatusChanged(OfflineRegionStatus status) {
                                             // Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
 
-
+                                            Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
+                                            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
+                                            System.out.println("-------" + distancia + "---------");
+                                            if (distancia * 1000 <= 9) {
+                                                System.out.println("---------LLEGUE------------");
+                                                //Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                                //startActivity(intent);
+                                            }
 
                                             // Calculate the download percentage and update the progress bar
                                                 double percentage = status.getRequiredResourceCount() >= 0
@@ -524,16 +537,8 @@ public class MapaActivity extends AppCompatActivity implements
         //Bloquea el boton hacia atras
 
     }
-    public void jose(LatLng pepe){
-        Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
-        double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(),localizacion.getLatitude()),Point.fromLngLat(pepe.getLongitude(),pepe.getLatitude()));
-        System.out.println("-------"+distancia+"---------");
-        if (distancia *1000 <= 9){
-            System.out.println("---------LLEGUE------------");
-            //Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
-            //startActivity(intent);
-        }
-    };
+
+
 
 
 }
