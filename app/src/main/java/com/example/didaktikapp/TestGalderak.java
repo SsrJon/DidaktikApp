@@ -36,6 +36,7 @@ public class TestGalderak extends AppCompatActivity {
         setContentView(R.layout.activity_test_galderak);
         pregunta = findViewById(R.id.testPregunta);
         respu1 = findViewById(R.id.respuestaTest1);
+        //Onclick de los botones respuesta
         respu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +61,7 @@ public class TestGalderak extends AppCompatActivity {
         Crearpreguntas();
         seleccionarPregunta();
     }
-
+    //Creamos las preguntas con sus opciones y su respuesta
     public void Crearpreguntas(){
         TestGalderak.Pregunta P = new TestGalderak.Pregunta(getString(R.string.testPreguntaUno),getString(R.string.testRespuestaUnoUno),getString(R.string.testRespuestaUnoDos),getString(R.string.testRespuestaUnoTres),getString(R.string.testRespuestaUnoDos));
         preguntas.add(P);
@@ -71,7 +72,7 @@ public class TestGalderak extends AppCompatActivity {
         TestGalderak.Pregunta P3 = new TestGalderak.Pregunta(getString(R.string.testPreguntaCuatro),getString(R.string.testRespuestaCuatroUno),getString(R.string.testRespuestaCuatroDos),getString(R.string.testRespuestaCuatroTres),getString(R.string.testRespuestaCuatroDos));
         preguntas.add(P3);
     }
-
+    //Seleccionamos una de las preguntas al azar sin repetirla
     public void seleccionarPregunta(){
 
         if (preguntas.size() == 4) {
@@ -124,6 +125,7 @@ public class TestGalderak extends AppCompatActivity {
         }
 
     }
+    //Actualizamos la parte superior derecha para saber en que pregunta estamos
     public void respuesta(String cadena){
         if (cadena.equals(correcto)) {
             puntos = puntos +1;
