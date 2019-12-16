@@ -18,28 +18,7 @@ public class OrdenarImagen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ordenar_imagen);
         orden = findViewById(R.id.ordenRespuesta);
-        /*orden.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    // code to execute when EditText loses focus
-                    if (orden.getText().toString().equals( getString(R.string.ordenBueno))||
-                            orden.getText().toString().equals(getString(R.string.ordenBuenoDos)) ||
-                            orden.getText().toString().equals(getString(R.string.ordenBuenoTres))){
-                        MediaPlayer mediaPlayer= MediaPlayer.create(OrdenarImagen.this,R.raw.erantzun_zuzena_3_audioa);
-                        mediaPlayer.start();
-                        //etBaseliza.setEnabled(false);
-                        orden.setKeyListener(null);
-                    }
-                    else{
-                        MediaPlayer mediaPlayer= MediaPlayer.create(OrdenarImagen.this,R.raw.erantzun_okerra_3_audioa);
-                        mediaPlayer.start();
-                    }
-                }
-
-            }
-
-        });*/
+       //comprobamos que lo escrito coincida con la respuesta correcta
         orden.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
@@ -49,6 +28,7 @@ public class OrdenarImagen extends AppCompatActivity {
                         MediaPlayer mediaPlayer= MediaPlayer.create(OrdenarImagen.this,R.raw.erantzun_zuzena_3_audioa);
                         mediaPlayer.start();
                         orden.setKeyListener(null);
+                        //popUp para volver a jugar al juego o ir al menu de juegos
                         Intent popUp = new Intent(OrdenarImagen.this, Popup.class);
                         String valor  = "ordenarImagen";
                         popUp.putExtra("valor", valor );

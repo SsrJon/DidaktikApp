@@ -130,4 +130,21 @@ altueragatik nabarmentzen da.</string>
     <string name="egia">Egia</string>
     <string name="gezurra">Gezurra</string>
 
+    <string name="testPreguntaUno">Zein mendetakoa da?</string>
+    <string name="testRespuestaUnoUno">XV.mendekoa</string>
+    <string name="testRespuestaUnoDos">XII.mendearen hasierakoa</string>
+    <string name="testRespuestaUnoTres">IX.mendekoa</string>
+    <string name="testPreguntaDos">Zer ospatzen da baseliza honetan?</string>
+    <string name="testRespuestaDosUno">San Pedroko jaia</string>
+    <string name="testRespuestaDosDos">Magdalenak</string>
+    <string name="testRespuestaDosTres">Karmengo jaiak</string>
+    <string name="testPreguntaTres">Ze harri motaz eginda dago?</string>
+    <string name="testRespuestaTresUno">Granitoa</string>
+    <string name="testRespuestaTresDos">Basaltoa</string>
+    <string name="testRespuestaTresTres">Hareharria</string>
+    <string name="testPreguntaCuatro">Zein da baseliza honen estilo arkitektonikoa?</string>
+    <string name="testRespuestaCuatroUno">Estilo gotikoa</string>
+    <string name="testRespuestaCuatroDos">Estilo preerromanikoa</string>
+    <string name="testRespuestaCuatroTres">Estilo barrokoa</string>
+
 </resources>
