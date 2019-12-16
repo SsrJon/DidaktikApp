@@ -52,7 +52,6 @@ public class PopupHorizontal extends Activity {
 
         getWindow().setAttributes(params);
 
-//sc
 
 
 
