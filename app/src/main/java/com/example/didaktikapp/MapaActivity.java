@@ -23,7 +23,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.LocationCallback;
@@ -36,6 +38,7 @@ import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Icon;
 import com.mapbox.mapboxsdk.annotations.IconFactory;
+import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.geometry.LatLngBounds;
@@ -58,6 +61,8 @@ import com.mapbox.mapboxsdk.offline.OfflineTilePyramidRegionDefinition;
 import org.json.JSONObject;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import timber.log.Timber;
 
@@ -79,7 +84,9 @@ public class MapaActivity extends AppCompatActivity implements
     private boolean isEndNotified;
     private ProgressBar progressBar;
     private OfflineManager offlineManager;
-
+    TextView llegaste;
+    ImageView mikainfo;
+    int contador= 0;
 
     // JSON encoding/decoding
     public static final String JSON_CHARSET = "UTF-8";
@@ -106,6 +113,8 @@ public class MapaActivity extends AppCompatActivity implements
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
         juegos = findViewById(R.id.btnJuegos);
+        mikainfo = findViewById(R.id.mikahasllegado);
+        llegaste = findViewById(R.id.textohasllegado);
         juegos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,19 +124,48 @@ public class MapaActivity extends AppCompatActivity implements
             }
 
         });
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
+                pepe(localizacion);
+
+            }
+        }, 10000);
+
+
+
+
+       /* Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                LatLng punto1 = new LatLng(43.211583, -2.886917);
+                Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
+                double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getLongitude(), punto1.getLatitude()));
+                Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
+
+                if (distancia * 1000 <= 9) {
+                    System.out.println("llegue");
+                }
+            }
+        }, 3000);*/
     }
 
     @Override
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
         this.mapboxMap = mapboxMap;
+
         //Punto 1  Larrea eskultura
         final MarkerOptions punto1 = new MarkerOptions();
         punto1.title("Larrea eskultura");
         IconFactory iconFactoryPunto1 = IconFactory.getInstance(MapaActivity.this);
-        Icon iconPunto1 = iconFactoryPunto1.fromResource(R.drawable.marcador1);
+        Icon iconPunto1 = iconFactoryPunto1.fromResource(R.drawable.marcador3);
         punto1.icon(iconPunto1);
         punto1.position(new LatLng(43.211583, -2.886917));
         mapboxMap.addMarker(punto1);
+
+        // Clase en la que está el código a ejecutar
+
 
 
        /*//Punto 2  Arrigorriagako Udaletxea
@@ -180,6 +218,27 @@ public class MapaActivity extends AppCompatActivity implements
             @Override
             public void onStyleLoaded(@NonNull Style style) {
                 enableLocationComponent(style);
+
+                mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(@NonNull Marker marker) {
+                        if (marker.getTitle().equals("Larrea eskultura")){
+                            Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
+                            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(),localizacion.getLatitude()),Point.fromLngLat(punto1.getPosition().getLongitude(),punto1.getPosition().getLatitude()));
+                            Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
+                            if (distancia *1000 <= 9){
+                                mikainfo.setVisibility(View.VISIBLE);
+                                llegaste.setVisibility(View.VISIBLE);
+                                Intent intent = new Intent (MapaActivity.this,GurutzegramaActivity.class);
+                                startActivity(intent);
+                            }
+
+                        }
+                        return false;
+                    }
+                });
+
+
 
 
                 //Restriccion de zona del mapa
@@ -236,15 +295,6 @@ public class MapaActivity extends AppCompatActivity implements
                                         public void onStatusChanged(OfflineRegionStatus status) {
                                             // Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
 
-                                            Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
-                                            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(),localizacion.getLatitude()),Point.fromLngLat(punto1.getPosition().getLongitude(),punto1.getPosition().getLatitude()));
-                                            System.out.println(distancia);
-
-                                            if (distancia *1000 <= 9){
-                                                System.out.println("llegue");
-                                                //Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
-                                                //startActivity(intent);
-                                            }
 
 
                                             // Calculate the download percentage and update the progress bar
@@ -292,6 +342,7 @@ public class MapaActivity extends AppCompatActivity implements
     //---------
     @SuppressWarnings( {"MissingPermission"})
     private void enableLocationComponent(@NonNull Style loadedMapStyle) {
+
         // Check if permissions are enabled and if not request
         if (PermissionsManager.areLocationPermissionsGranted(this)) {
 
@@ -348,6 +399,8 @@ public class MapaActivity extends AppCompatActivity implements
             permissionsManager = new PermissionsManager(this);
             permissionsManager.requestLocationPermissions(this);
         }
+
+
     }
 
     @SuppressWarnings( {"MissingPermission"})
@@ -402,6 +455,10 @@ public class MapaActivity extends AppCompatActivity implements
     protected void onStart() {
         super.onStart();
         mapView.onStart();
+    }
+
+    public void Success(){
+
     }
 
     @Override
@@ -527,7 +584,25 @@ public class MapaActivity extends AppCompatActivity implements
 
     }
 
+    public void pepe(Location localizacion){
+            LatLng punto1 = new LatLng(43.211583, -2.886917);
+            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getLongitude(), punto1.getLatitude()));
+            Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
+            if (distancia * 1000 <= 9) {
+                System.out.println("llegue");
+                mikainfo.setVisibility(View.VISIBLE);
+                llegaste.setVisibility(View.VISIBLE);
+            }
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                //que hacer despues de 10 segundos
+                Location GPS = mapboxMap.getLocationComponent().getLastKnownLocation();
+                pepe(GPS);
+            }
+        }, 5000);
 
+    }
 }
 
 
