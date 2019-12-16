@@ -65,6 +65,12 @@ public class PopupHorizontal extends Activity {
                     startActivity(intent);
                 }
 
+                if(getIntent().getStringExtra("valor").equals("egia")){
+
+                    Intent intent = new Intent(PopupHorizontal.this, EgiaedoGezurra.class);
+                    startActivity(intent);
+                }
+
                 if(getIntent().getStringExtra("valor").equals("tabla")){
 
                     Intent intent = new Intent(PopupHorizontal.this, HutsuneakTabla.class);
