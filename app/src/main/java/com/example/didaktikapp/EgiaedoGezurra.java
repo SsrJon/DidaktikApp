@@ -63,13 +63,13 @@ public class EgiaedoGezurra extends AppCompatActivity {
     }
 
     public void Crearpreguntas(){
-        EgiaedoGezurra.Pregunta P = new EgiaedoGezurra.Pregunta("Andra Maria Magdalena eliza ondare kulturala da.","Egia");
+        EgiaedoGezurra.Pregunta P = new EgiaedoGezurra.Pregunta(getString(R.string.EGpreguntaUno),getString(R.string.egia));
         preguntas.add(P);
-        EgiaedoGezurra.Pregunta P1 = new EgiaedoGezurra.Pregunta("Eliza hau, XXI. mendekoa dela uste da.","Gezurra");
+        EgiaedoGezurra.Pregunta P1 = new EgiaedoGezurra.Pregunta(getString(R.string.EGpreguntaDos),getString(R.string.gezurra));
         preguntas.add(P1);
-        EgiaedoGezurra.Pregunta P2 = new EgiaedoGezurra.Pregunta("Jatorriko eraikuntzatik dena mantenduda.","Gezurra");
+        EgiaedoGezurra.Pregunta P2 = new EgiaedoGezurra.Pregunta(getString(R.string.EGpreguntaTres),getString(R.string.gezurra));
         preguntas.add(P2);
-        EgiaedoGezurra.Pregunta P3 = new EgiaedoGezurra.Pregunta("Elizak Arrigorriagako batailan jatorria du.","Egia");
+        EgiaedoGezurra.Pregunta P3 = new EgiaedoGezurra.Pregunta(getString(R.string.EGpreguntaCuatro),getString(R.string.egia));
         preguntas.add(P3);
     }
 
@@ -83,7 +83,7 @@ public class EgiaedoGezurra extends AppCompatActivity {
         }
         if (contador >= preguntas.size()-1) {
             Intent popUp = new Intent(EgiaedoGezurra.this, PopupHorizontal.class);
-            String valor  = "quiz";
+            String valor  = "egia";
             popUp.putExtra("valor", valor );
             startActivity(popUp);
         }
