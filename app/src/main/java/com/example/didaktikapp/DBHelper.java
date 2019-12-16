@@ -1,5 +1,6 @@
 package com.example.didaktikapp;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -7,9 +8,13 @@ import android.provider.BaseColumns;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 import static com.example.didaktikapp.DBHelper.entidadUsuario.TABLE_NAME;
 
 public class DBHelper extends SQLiteOpenHelper {
+
+   ArrayList <Lugar> lugares = new ArrayList<>();
 
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "DidaktikAPP.db";
@@ -23,8 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String SQL_CREATE_TABLE_USUARIO =
             "CREATE TABLE " + TABLE_NAME + " (" +
-                    entidadUsuario._ID + " TEXT PRIMARY KEY AUTOINCREMENT," +
-                    entidadUsuario.COLUMN_NAME_NOMBRE + " TEXT)";
+                    entidadUsuario.COLUMN_NAME_NOMBRE + " TEXT PRIMARY KEY)";
 
     private static final String SQL_DELETE_TABLE_USUARIO =
             "DROP TABLE IF EXISTS " + TABLE_NAME;
@@ -34,7 +38,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public static class entidadProgreso implements BaseColumns {
         public static final String TABLE_NAME = "Progreso";
         public static final String COLUMN_NAME_ID_USUARIO = "ID_usuario" ;
-        public static final String COLUMN_NAME_PTO_0 = "PTO_0" ;
         public static final String COLUMN_NAME_PTO_1 = "PTO_1" ;
         public static final String COLUMN_NAME_PTO_2 = "PTO_2" ;
         public static final String COLUMN_NAME_PTO_3 = "PTO_3" ;
@@ -48,7 +51,6 @@ public class DBHelper extends SQLiteOpenHelper {
                     entidadProgreso._ID + " TEXT PRIMARY KEY AUTOINCREMENT," +
                     entidadProgreso.COLUMN_NAME_ID_USUARIO + " TEXT,"
                     + "FOREIGN KEY('" + entidadProgreso.COLUMN_NAME_ID_USUARIO + "') REFERENCES '" + entidadUsuario.TABLE_NAME + "'('" + entidadUsuario._ID + "'),"+
-                    entidadProgreso.COLUMN_NAME_PTO_0+ "BOOLEAN,"+
                     entidadProgreso.COLUMN_NAME_PTO_1+ "BOOLEAN,"+
                     entidadProgreso.COLUMN_NAME_PTO_2+ "BOOLEAN,"+
                     entidadProgreso.COLUMN_NAME_PTO_3+ "BOOLEAN,"+
@@ -76,27 +78,10 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_TABLE_LUGARES =
             "DROP TABLE IF EXISTS " + entidadLugares.TABLE_NAME;
 
-    public static class entidadVideojuegos implements BaseColumns {
-        public static final String TABLE_NAME = "Videojuego";
-        public static final String TABLE_NAME_VIDEOJUEGO = "nVideojuego";
-        public static final String COLUMN_NAME_LUGAR = "nLugar" ;
-        public static final String COLUMN_NAME_ACTIVADO = "Activado" ;
-    }
-    private static final String SQL_CREATE_TABLE_VIDEOJUEGOS =
-            "CREATE TABLE " + entidadVideojuegos.TABLE_NAME + " (" +
-                    entidadVideojuegos._ID + " TEXT PRIMARY KEY AUTOINCREMENT," +
-                    entidadVideojuegos.TABLE_NAME_VIDEOJUEGO + " TEXT,"+
-                    "FOREIGN KEY('" + entidadVideojuegos.COLUMN_NAME_LUGAR + "') REFERENCES '" + entidadLugares.TABLE_NAME + "'('" + entidadLugares._ID + "'),"+
-                    entidadVideojuegos.COLUMN_NAME_ACTIVADO + " TEXT)";
-
-    private static final String SQL_DELETE_TABLE_VIDEOJUEGOS =
-            "DROP TABLE IF EXISTS " + entidadVideojuegos.TABLE_NAME;
-
-
     @Override
-    public void onCreate(SQLiteDatabase db)
-    {
-
+    public void onCreate(SQLiteDatabase db) {
+        crearLugares();
+        rellenarPuntos(db);
     }
 
     @Override
@@ -108,7 +93,33 @@ public class DBHelper extends SQLiteOpenHelper {
         onUpgrade(db, oldVersion, newVersion);
     }
 
-    public DBHelper(@Nullable Context context) {
+    public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+
+    public void crearLugares(){
+        Lugar L1 = new Lugar("Larrea eskultura",43.211583,-2.886917);
+        Lugar L2 = new Lugar("Arrigorriagako Udaletxea",43.205978,-2.887869);
+        Lugar L3 = new Lugar("Maria Magdalena eliza",43.205548,-2.888705);
+        Lugar L4 = new Lugar("Hiltegi Zaharra",43.204889,-2.887833);
+        Lugar L5 = new Lugar("Landaederreagako Santo Kristo baseliza",43.209306,-2.893722);
+        Lugar L6 = new Lugar("Abrisketako San Pedro baseleizea",43.210500,-2.909417);
+        lugares.add(L1);
+        lugares.add(L2);
+        lugares.add(L3);
+        lugares.add(L4);
+        lugares.add(L5);
+        lugares.add(L6);
+    }
+
+    public void rellenarPuntos(SQLiteDatabase db){
+        for (int i = 0;lugares.size()>i;i++) {
+            ContentValues values = new ContentValues();
+            values.put(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE,lugares.get(i).Lugar);
+            values.put(DBHelper.entidadLugares.COLUMN_NAME_LATITUD, lugares.get(i).Latitud);
+            values.put(DBHelper.entidadLugares.COLUMN_NAME_LONGITUD, lugares.get(i).Longitud);
+            db.insert(DBHelper.entidadLugares.TABLE_NAME, null, values);
+        }
     }
 }

@@ -8,6 +8,7 @@
     tools:context=".InicioAudioFragment">
 
 
+
     <RelativeLayout
         android:layout_width="336dp"
         android:layout_height="613dp"
