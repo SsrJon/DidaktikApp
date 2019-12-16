@@ -16,7 +16,11 @@
         android:roundIcon="@drawable/grape1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Fotoelejir"></activity>
+        <activity android:name=".TestGalderak"></activity>
+        <activity
+            android:name=".HutsuneakTabla"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Fotoelejir" />
         <activity
             android:name=".PopupHorizontal"
             android:theme="@style/AppTheme.PopUpPagos"
@@ -24,20 +28,35 @@
         <activity
             android:name=".EgiaedoGezurra"
             android:screenOrientation="landscape" />
+        <activity android:name=".OrdenarImagen" />
         <activity
             android:name=".Popup"
             android:theme="@style/AppTheme.PopUpPagos"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".GurutzegramaActivity" />
+        <activity
+            android:name=".GurutzegramaActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivityHutsuneakBete"
             android:screenOrientation="landscape" />
-        <activity android:name=".InicioAventuraActivity" />
-        <activity android:name=".seleccionJuego" />
-        <activity android:name=".Puzzle.PuzzleActivity" />
-        <activity android:name=".Puzzle_cuadrados.PuzzleActivity" />
-        <activity android:name=".Quiz" />
-        <activity android:name=".PantallaCarga">
+        <activity
+            android:name=".InicioAventuraActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".seleccionJuego"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Puzzle.PuzzleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Puzzle_cuadrados.PuzzleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Quiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PantallaCarga"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

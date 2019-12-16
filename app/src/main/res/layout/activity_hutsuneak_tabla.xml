@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Fondo"
+    tools:context=".HutsuneakTabla">
+
+    <ImageView
+        android:id="@+id/imageViewTabla"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guiahorizonta2"
+        app:layout_constraintEnd_toEndOf="@+id/guiavertica2"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica1"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizontal"
+        app:srcCompat="@drawable/tabla" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertica1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.09" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertica2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.91" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.76" />
+
+    <EditText
+        android:id="@+id/editTextOndarearen"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guiahorizonta4"
+        app:layout_constraintEnd_toEndOf="@+id/guiavertica4"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica3"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertica3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertica4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.88" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.73" />
+
+    <EditText
+        android:id="@+id/editTextEgilea"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guiahorizonta5"
+        app:layout_constraintEnd_toEndOf="@+id/guiavertica4"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica3"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta4"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextHeldu"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guiahorizonta6"
+        app:layout_constraintEnd_toEndOf="@+id/guiavertica4"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica3"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta5"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextKultural"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guiahorizonta7"
+        app:layout_constraintEnd_toEndOf="@+id/guiavertica4"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica3"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta6"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttonZuzendu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jarraitu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.922" />
+
+    <TextView
+        android:id="@+id/textViewAudio"
+        android:layout_width="537dp"
+        android:layout_height="113dp"
+        android:text="@string/Larrea_eskultura"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.397" />
+</androidx.constraintlayout.widget.ConstraintLayout>

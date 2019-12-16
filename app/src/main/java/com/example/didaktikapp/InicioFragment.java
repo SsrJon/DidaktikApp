@@ -49,6 +49,7 @@ public class InicioFragment extends Fragment {
         etNombreInicio=root.findViewById(R.id.editTextNombreInicio);
 
 
+
         btnEmpezar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

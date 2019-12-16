@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Fondo"
+    tools:context=".OrdenarImagen">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizontaldos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizontaltres"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/iglesia_a"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizontaldos"
+        app:srcCompat="@drawable/iglesia_a" />
+
+    <ImageView
+        android:id="@+id/iglesia_b"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guiavertical"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizontaldos"
+        app:srcCompat="@drawable/iglesia_b" />
+
+    <ImageView
+        android:id="@+id/iglesia_c"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizontaltres"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizontal"
+        app:srcCompat="@drawable/iglesia_c" />
+
+    <ImageView
+        android:id="@+id/iglesia_d"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizontaltres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guiavertical"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizontal"
+        app:srcCompat="@drawable/iglesia_d" />
+
+    <TextView
+        android:id="@+id/textoOrden"
+        android:layout_width="361dp"
+        android:layout_height="46dp"
+        android:text="@string/orden"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizontaldos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <EditText
+        android:id="@+id/ordenRespuesta"
+        android:layout_width="191dp"
+        android:layout_height="41dp"
+        android:hint="@string/escribirOrden"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizontaltres"
+        app:layout_constraintVertical_bias="0.084" />
+
+    <TextView
+        android:id="@+id/fotoA"
+        android:layout_width="11dp"
+        android:layout_height="24dp"
+        android:text="@string/foto_A"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertical"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizontaldos"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/fotoB"
+        android:layout_width="14dp"
+        android:layout_height="21dp"
+        android:text="@string/foto_B"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guiavertical"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizontaldos"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/fotoC"
+        android:layout_width="11dp"
+        android:layout_height="21dp"
+        android:text="@string/foto_C"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizontaltres"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertical"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizontal"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/fotoD"
+        android:layout_width="19dp"
+        android:layout_height="24dp"
+        android:text="@string/foto_D"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizontaltres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guiavertical"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizontal"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
