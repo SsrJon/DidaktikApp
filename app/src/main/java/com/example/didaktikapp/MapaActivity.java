@@ -145,10 +145,11 @@ public class MapaActivity extends AppCompatActivity implements
         String selection = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + " = ?" ;
         String[] selectionArgs = {Nombre};
 
-        Cursor cursor = db.query(DBHelper.entidadProgreso.TABLE_NAME,null,selection,selectionArgs,null,null,null);
-        while(cursor.moveToNext()){
 
-        }
+        //Cursor cursor = db.query(DBHelper.entidadProgreso.TABLE_NAME,null,selection,selectionArgs,null,null,null);
+        //while(cursor.moveToNext()){
+
+        //}
 
 
         //Punto 1  Larrea eskultura
