@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.DatabaseUtils;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
@@ -64,10 +67,12 @@ public class MapaActivity extends AppCompatActivity implements
     TextView llegaste;
     ImageView mikainfo;
     int contador= 0;
-
+    String Nombre ;
     // JSON encoding/decoding
     public static final String JSON_CHARSET = "UTF-8";
     public static final String JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME";
+    DBHelper dbHelper;
+    SQLiteDatabase db;
 
     //Zona accesible en el mapa
 
@@ -81,6 +86,8 @@ public class MapaActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        dbHelper = new DBHelper(getApplicationContext());
+        db = dbHelper.getWritableDatabase();
         super.onCreate(savedInstanceState);
         // Mapbox access token is configured here. This needs to be called either in your application
         // object or in the same activity which contains the mapview.
@@ -102,6 +109,8 @@ public class MapaActivity extends AppCompatActivity implements
             }
 
         });
+        Intent intent = getIntent();
+        Nombre = intent.getStringExtra("nombre");
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
@@ -132,6 +141,15 @@ public class MapaActivity extends AppCompatActivity implements
     @Override
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
         this.mapboxMap = mapboxMap;
+
+        String selection = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + " = ?" ;
+        String[] selectionArgs = {Nombre};
+
+        Cursor cursor = db.query(DBHelper.entidadProgreso.TABLE_NAME,null,selection,selectionArgs,null,null,null);
+        while(cursor.moveToNext()){
+
+        }
+
 
         //Punto 1  Larrea eskultura
         final MarkerOptions punto1 = new MarkerOptions();
@@ -582,6 +600,7 @@ public class MapaActivity extends AppCompatActivity implements
         }, 5000);
 
     }
+
 }
 
 
