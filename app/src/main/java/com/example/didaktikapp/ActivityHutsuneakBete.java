@@ -1,23 +1,28 @@
 package com.example.didaktikapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.DragEvent;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 public class ActivityHutsuneakBete extends AppCompatActivity {
 
-    private Button btnJarraitu;
+    private Button btnJarraitu, btn1, test1, btn2, test2, btn3, test3;
     private EditText etBaseliza, etBerreraiki, etGurutzearen;
     private ImageView imgZuzena1, imgZuzena2, imgZuzena3, imgOkerra1, imgOkerra2, imgOkerra3 ;
+    LinearLayout target1, target2, target3;
     int contadorButton=0;
     int contadorGurutze=0;
     int contadorBerreraiki=0;
@@ -30,104 +35,50 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
         setContentView(R.layout.activity_hutsuneak_bete);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        etBaseliza=findViewById(R.id.editTextBaseliza);
-        etBerreraiki=findViewById(R.id.editTextBerreraiki);
-        etGurutzearen=findViewById(R.id.editTextGurutzearen);
 
-        imgZuzena1=findViewById(R.id.imageViewZuzena1);
-        imgZuzena2=findViewById(R.id.imageViewZuzena2);
-        imgZuzena3=findViewById(R.id.imageViewZuzena3);
-        imgOkerra1=findViewById(R.id.imageViewOkerra1);
-        imgOkerra2=findViewById(R.id.imageViewOkerra2);
-        imgOkerra3=findViewById(R.id.imageViewOkerra3);
+        target1=findViewById(R.id.target1);
+        test1=findViewById(R.id.test1);
+        btn1=findViewById(R.id.btn1);
+        target1.setOnDragListener(dragListener);
+        btn1.setOnLongClickListener(longClickListener);
+
+        target2=findViewById(R.id.target2);
+        test2=findViewById(R.id.test2);
+        btn2=findViewById(R.id.btn2);
+        target2.setOnDragListener(dragListener);
+        btn2.setOnLongClickListener(longClickListener);
+
+        target3=findViewById(R.id.target3);
+        test3=findViewById(R.id.test3);
+        btn3=findViewById(R.id.btn3);
+        target3.setOnDragListener(dragListener);
+        btn3.setOnLongClickListener(longClickListener);
+
+
+
 
         btnJarraitu=findViewById(R.id.buttonJarraitu);
 
 
         //Se activa al quitar el focus
-        etBaseliza.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    // code to execute when EditText loses focus
 
-                    comprobarBaseliza();
-
-
-                }
-            }
-
-        });
 
         //Se activa al darle enter en el teclado
-        etBaseliza.setOnKeyListener(new View.OnKeyListener() {
-            public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                //If the keyevent is a key-down event on the "enter" button
-                if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
 
-                    comprobarBaseliza();
-
-                    return true;
-                }
-                return false;
-            }
-        });
 
         //Se activa al quitar el focus
-        etBerreraiki.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    // code to execute when EditText loses focus
-                    comprobarBerreraiki();
 
-                }
-            }
-
-        });
 
         //Se activa al darle enter en el teclado
-        etBerreraiki.setOnKeyListener(new View.OnKeyListener() {
-            public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                //If the keyevent is a key-down event on the "enter" button
-                if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
 
-                    comprobarBerreraiki();
-
-                    return true;
-                }
-                return false;
-            }
-        });
 
 
 
         //Se activa al darle enter en el teclado
-        etGurutzearen.setOnKeyListener(new View.OnKeyListener() {
-            public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
-                //If the keyevent is a key-down event on the "enter" button
-                if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
 
-                    comprobarGurutzearen();
-
-                    return true;
-                }
-                return false;
-            }
-        });
 
         //Se activa al quitar el focus
-        etGurutzearen.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    // code to execute when EditText loses focus
-                    comprobarGurutzearen();
 
-                }
-            }
-
-        });
 
 
         btnJarraitu.setOnClickListener(new View.OnClickListener() {
@@ -144,6 +95,72 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
 
 
     }
+
+
+
+
+    View.OnLongClickListener longClickListener=new View.OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View v) {
+            ClipData data= ClipData.newPlainText("","");
+            View.DragShadowBuilder myShadowBuilder = new View.DragShadowBuilder(v);
+            v.startDrag(data,myShadowBuilder,v,0);
+
+            return true;
+        }
+    };
+
+    View.OnDragListener dragListener= new View.OnDragListener() {
+        @Override
+        public boolean onDrag(View v, DragEvent event) {
+            int dragEvent = event.getAction();
+            final View view=(View) event.getLocalState();
+
+            switch (dragEvent){
+
+                case DragEvent.ACTION_DRAG_ENTERED:
+                    break;
+
+                case DragEvent.ACTION_DRAG_EXITED:
+                    break;
+
+                case DragEvent.ACTION_DROP:
+
+                    if (view.getId()==R.id.btn1 && v.getId()==R.id.target1){
+                        //Toast.makeText(MainActivity.this, "Dropped", Toast.LENGTH_SHORT).show();
+
+                        ConstraintLayout oldparent =(ConstraintLayout) view.getParent();
+                        oldparent.removeView(view);
+                        LinearLayout newParent =(LinearLayout)v;
+                        test1.setVisibility(View.GONE);
+                        newParent.addView(view);
+                    }
+                    else if (view.getId()==R.id.btn2 && v.getId()==R.id.target2){
+                        //Toast.makeText(MainActivity.this, "Dropped", Toast.LENGTH_SHORT).show();
+
+                        ConstraintLayout oldparent =(ConstraintLayout) view.getParent();
+                        oldparent.removeView(view);
+                        LinearLayout newParent =(LinearLayout)v;
+                        test2.setVisibility(View.GONE);
+                        newParent.addView(view);
+                    }
+                    else if (view.getId()==R.id.btn3 && v.getId()==R.id.target3){
+                        //Toast.makeText(MainActivity.this, "Dropped", Toast.LENGTH_SHORT).show();
+
+                        ConstraintLayout oldparent =(ConstraintLayout) view.getParent();
+                        oldparent.removeView(view);
+                        LinearLayout newParent =(LinearLayout)v;
+                        test3.setVisibility(View.GONE);
+                        newParent.addView(view);
+                    }
+                    break;
+            }
+
+            return true;
+        }
+    };
+
+
 
 
 
