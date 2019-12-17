@@ -37,26 +37,26 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public static class entidadProgreso implements BaseColumns {
         public static final String TABLE_NAME = "Progreso";
-        public static final String COLUMN_NAME_ID_USUARIO = "ID_usuario" ;
-        public static final String COLUMN_NAME_PTO_1 = "PTO_1" ;
-        public static final String COLUMN_NAME_PTO_2 = "PTO_2" ;
-        public static final String COLUMN_NAME_PTO_3 = "PTO_3" ;
-        public static final String COLUMN_NAME_PTO_4 = "PTO_4" ;
-        public static final String COLUMN_NAME_PTO_5 = "PTO_5" ;
-        public static final String COLUMN_NAME_PTO_6 = "PTO_6" ;
+        public static final String COLUMN_NAME_ID_USUARIO = "IDusuario" ;
+        public static final String COLUMN_NAME_PTO_1 = "Punto1" ;
+        public static final String COLUMN_NAME_PTO_2 = "Punto2" ;
+        public static final String COLUMN_NAME_PTO_3 = "Punto3" ;
+        public static final String COLUMN_NAME_PTO_4 = "Punto4" ;
+        public static final String COLUMN_NAME_PTO_5 = "Punto5" ;
+        public static final String COLUMN_NAME_PTO_6 = "Punto6" ;
     }
 
     private static final String SQL_CREATE_TABLE_PROGRESO =
             "CREATE TABLE " + entidadProgreso.TABLE_NAME + " (" +
-                    entidadProgreso._ID + " TEXT PRIMARY KEY AUTOINCREMENT," +
-                    entidadProgreso.COLUMN_NAME_ID_USUARIO + " TEXT,"
-                    + "FOREIGN KEY('" + entidadProgreso.COLUMN_NAME_ID_USUARIO + "') REFERENCES '" + entidadUsuario.TABLE_NAME + "'('" + entidadUsuario._ID + "'),"+
-                    entidadProgreso.COLUMN_NAME_PTO_1+ "BOOLEAN,"+
-                    entidadProgreso.COLUMN_NAME_PTO_2+ "BOOLEAN,"+
-                    entidadProgreso.COLUMN_NAME_PTO_3+ "BOOLEAN,"+
-                    entidadProgreso.COLUMN_NAME_PTO_4+ "BOOLEAN,"+
-                    entidadProgreso.COLUMN_NAME_PTO_5+ "BOOLEAN,"+
-                    entidadProgreso.COLUMN_NAME_PTO_6+ "BOOLEAN)";
+                    //entidadProgreso._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"  +
+                    entidadProgreso.COLUMN_NAME_PTO_1 + " INTEGER,"+
+                    entidadProgreso.COLUMN_NAME_PTO_2 + " INTEGER,"+
+                    entidadProgreso.COLUMN_NAME_PTO_3 + " INTEGER,"+
+                    entidadProgreso.COLUMN_NAME_PTO_4 + " INTEGER,"+
+                    entidadProgreso.COLUMN_NAME_PTO_5 + " INTEGER,"+
+                    entidadProgreso.COLUMN_NAME_PTO_6 + " INTEGER,"+
+                    entidadProgreso.COLUMN_NAME_ID_USUARIO +" TEXT,"+
+                    "FOREIGN KEY('"+  entidadProgreso.COLUMN_NAME_ID_USUARIO + "') REFERENCES '" + entidadUsuario.TABLE_NAME + "'('" + entidadUsuario.COLUMN_NAME_NOMBRE + "'))";
 
     private static final String SQL_DELETE_TABLE_PROGRESO =
             "DROP TABLE IF EXISTS " + entidadProgreso.TABLE_NAME;
@@ -70,7 +70,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String SQL_CREATE_TABLE_LUGARES =
             "CREATE TABLE " + entidadLugares.TABLE_NAME + " (" +
-                    entidadLugares._ID + " TEXT PRIMARY KEY AUTOINCREMENT," +
+                    entidadLugares._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     entidadLugares.COLUMN_NAME_NOMBRE + " TEXT," +
                     entidadLugares.COLUMN_NAME_LATITUD + " TEXT," +
                     entidadLugares.COLUMN_NAME_LONGITUD + " TEXT)";
@@ -80,6 +80,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL(SQL_CREATE_TABLE_USUARIO);
+        db.execSQL(SQL_CREATE_TABLE_PROGRESO);
+        db.execSQL(SQL_CREATE_TABLE_LUGARES);
         crearLugares();
         rellenarPuntos(db);
     }

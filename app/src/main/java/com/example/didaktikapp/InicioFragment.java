@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -18,6 +19,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 
 public class InicioFragment extends Fragment {
 
@@ -55,20 +59,14 @@ public class InicioFragment extends Fragment {
             public void onClick(View v) {
 
                 if (!etNombreInicio.getText().toString().equals("")){
-
-                    ContentValues values = new ContentValues();
-                    values.put(DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE,etNombreInicio.getText().toString());
-                    db.insert(DBHelper.entidadLugares.TABLE_NAME, null, values);
-
-                    ContentValues valores = new ContentValues();
-                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO,etNombreInicio.getText().toString());
-                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1,false);
-                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_2,false);
-                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_3,false);
-                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_4,false);
-                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_5,false);
-                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_6,false);
-                    db.insert(DBHelper.entidadLugares.TABLE_NAME, null, valores);
+                    long existente = DatabaseUtils.queryNumEntries(db, DBHelper.entidadUsuario.TABLE_NAME,
+                            DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE + "=? ", new String[] {etNombreInicio.getText().toString()});
+                    if (existente == 0){
+                        nuevoUsuario();
+                    }else{
+                        Informacion info = (Informacion) getApplicationContext();
+                        info.UsuarioJugando = etNombreInicio.getText().toString();
+                    }
 
                     FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.fragment, new InicioAudioFragment());
@@ -76,8 +74,7 @@ public class InicioFragment extends Fragment {
                 }
 
                 else {
-
-                    System.out.println("Error");
+                    Toast.makeText(getApplicationContext(), "Mezedes izen bat sartu", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -91,6 +88,22 @@ public class InicioFragment extends Fragment {
     public void onBackPressed(){
         //Bloquea el boton hacia atras
         getActivity().getSupportFragmentManager().popBackStack();
+    }
+    public void nuevoUsuario(){
+        ContentValues values = new ContentValues();
+        values.put(DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE,etNombreInicio.getText().toString());
+        db.insert(DBHelper.entidadUsuario.TABLE_NAME, null, values);
+        ContentValues valores = new ContentValues();
+        values.put(DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO,etNombreInicio.getText().toString());
+        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1,0);
+        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_2,0);
+        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_3,0);
+        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_4,0);
+        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_5,0);
+        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_6,0);
+        db.insert(DBHelper.entidadProgreso.TABLE_NAME,null, valores);
+        Informacion info = new Informacion();
+        info.UsuarioJugando = etNombreInicio.getText().toString();
     }
 
 
