@@ -42,6 +42,8 @@ public class InicioAudioFragment extends Fragment {
             public void onClick(View v) {
                 mediaPlayer.stop();
                 Intent intent = new Intent(getActivity(), MapaActivity.class);
+                Bundle args = getArguments();
+                intent.putExtra("nombre",args.getString("nombre"));
                 startActivity(intent);
 
 
