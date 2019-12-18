@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProviders;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.DatabaseUtils;
+import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.mapbox.mapboxsdk.Mapbox.getAccessToken;
 import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 
 public class InicioFragment extends Fragment {
@@ -63,12 +65,12 @@ public class InicioFragment extends Fragment {
                             DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE + "=? ", new String[] {etNombreInicio.getText().toString()});
                     if (existente == 0){
                         nuevoUsuario();
-                    }else{
-                        Informacion info = (Informacion) getApplicationContext();
-                        info.UsuarioJugando = etNombreInicio.getText().toString();
                     }
-
+                    InicioFragment f = new InicioFragment();
                     FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
+                    Bundle args = new Bundle();
+                    args.putString("nombre", etNombreInicio.getText().toString());
+                    f.setArguments(args);
                     fragmentTransaction.replace(R.id.fragment, new InicioAudioFragment());
                     fragmentTransaction.commit();
                 }
@@ -76,8 +78,6 @@ public class InicioFragment extends Fragment {
                 else {
                     Toast.makeText(getApplicationContext(), getString(R.string.izena), Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         });
         return root;
@@ -94,17 +94,14 @@ public class InicioFragment extends Fragment {
         values.put(DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE,etNombreInicio.getText().toString());
         db.insert(DBHelper.entidadUsuario.TABLE_NAME, null, values);
         ContentValues valores = new ContentValues();
-        values.put(DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO,etNombreInicio.getText().toString());
-        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1,0);
-        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_2,0);
-        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_3,0);
-        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_4,0);
-        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_5,0);
-        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_6,0);
+        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO,etNombreInicio.getText().toString());
+        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1,0);
+        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_2,0);
+        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_3,0);
+        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_4,0);
+        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_5,0);
+        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_6,0);
         db.insert(DBHelper.entidadProgreso.TABLE_NAME,null, valores);
-        Informacion info = new Informacion();
-        info.UsuarioJugando = etNombreInicio.getText().toString();
+
     }
-
-
 }
