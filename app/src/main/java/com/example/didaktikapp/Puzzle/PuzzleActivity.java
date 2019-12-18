@@ -22,6 +22,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.didaktikapp.HutsuneakTabla;
+import com.example.didaktikapp.Popup;
+import com.example.didaktikapp.PopupHorizontal;
 import com.example.didaktikapp.R;
 
 import java.io.IOException;
@@ -37,6 +40,7 @@ public class PuzzleActivity extends AppCompatActivity {
     ArrayList<PuzzlePiece> pieces;
     String mCurrentPhotoPath;
     String mCurrentPhotoUri;
+    String Llegada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,9 @@ public class PuzzleActivity extends AppCompatActivity {
         final String assetName = intent.getStringExtra("assetName");
         mCurrentPhotoPath = intent.getStringExtra("mCurrentPhotoPath");
         mCurrentPhotoUri = intent.getStringExtra("mCurrentPhotoUri");
+
+        Intent intento = getIntent();
+        Llegada = intento.getStringExtra("llegada");
 
         // run image related code after the view was laid out
         // to have all dimensions calculated
@@ -119,6 +126,11 @@ public class PuzzleActivity extends AppCompatActivity {
         int cols = 3;
 
         ImageView imageView = findViewById(R.id.imageView);
+        if (Llegada.equals("marcador1")){
+            Drawable foto = getDrawable(R.drawable.imagenpuzzlemarcador1);
+            imageView.setImageDrawable(foto);
+        }
+
         ArrayList<PuzzlePiece> pieces = new ArrayList<>(piecesNumber);
 
         // Get the scaled bitmap of the source image
@@ -291,7 +303,11 @@ public class PuzzleActivity extends AppCompatActivity {
 
     public void checkGameOver() {
         if (isGameOver()) {
-            finish();
+            //finish();
+            Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
+            String valor  = "puzzleM1";
+            popUp.putExtra("valor", valor );
+            startActivity(popUp);
         }
     }
 

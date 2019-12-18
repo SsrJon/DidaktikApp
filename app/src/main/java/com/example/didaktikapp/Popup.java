@@ -3,7 +3,9 @@ package com.example.didaktikapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -21,6 +23,8 @@ public class Popup extends Activity {
 
 
     private ImageButton btnErrepikatu, btnJarraitu;
+    DBHelper dbHelper;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,10 +105,16 @@ public class Popup extends Activity {
         btnJarraitu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dbHelper = new DBHelper(getApplicationContext());
+                db = dbHelper.getWritableDatabase();
+            if(getIntent().getStringExtra("valor").equals("puzzleM1")){
+                ContentValues cv = new ContentValues();
+                cv.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1,1); //These Fields should be your String values of actual column names
+                db.update(DBHelper.entidadProgreso.TABLE_NAME, cv,null,null);
 
-                    Intent intent = new Intent(Popup.this, seleccionJuego.class);
-                    startActivity(intent);
-
+                Intent intent = new Intent(Popup.this, MapaActivity.class);
+                startActivity(intent);
+            }
 
 
             }
