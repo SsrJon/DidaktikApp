@@ -59,16 +59,16 @@ public class Quiz extends AppCompatActivity {
         Crearpreguntas();
         seleccionarPregunta();
     }
-
+    //Creamos las preguntas con sus opciones y su respuesta
     public void Crearpreguntas(){
-        Pregunta P = new Pregunta(" Gaur eguneko Gaztegunea....","hilerria izan zen.","betidanik Gaztegunea izan da.","lehen hiltegia zen.","lehen hiltegia zen.");
+        Pregunta P = new Pregunta(getString(R.string.quizPreguntaUno),getString(R.string.quizrespuestaUnoUno),getString(R.string.quizrespuestaUnoDos),getString(R.string.quizrespuestaUnoTres),getString(R.string.quizrespuestaUnoTres));
         preguntas.add(P);
-        Pregunta P1 = new Pregunta(" Gaur eguneko Gaztegunea....","Hiltegiaren forma originala mantentzen du.","Egurrezkoa da.","Aurreko guztiak zuzenak dira.","Hiltegiaren forma originala mantentzen du.");
+        Pregunta P1 = new Pregunta(getString(R.string.quizPreguntaUno),getString(R.string.quizrespuestaDosUno),getString(R.string.quizrespuestaDosDos),getString(R.string.quizrespuestaDosTres),getString(R.string.quizrespuestaDosUno));
         preguntas.add(P1);
-        Pregunta P2 = new Pregunta(" Eraikina....","1940 eta 1950 urte bitartekoa da.","1960an eraiki zen.","Eraikin berria da.","1940 eta 1950 urte bitartekoa da.");
+        Pregunta P2 = new Pregunta(getString(R.string.quizPreguntaTres),getString(R.string.quizrespuestaTresUno),getString(R.string.quizrespuestaTresDos),getString(R.string.quizrespuestaTresTres),getString(R.string.quizrespuestaTresUno));
         preguntas.add(P2);
     }
-
+    //Seleccionamos una de las preguntas al azar sin repetirla
     public void seleccionarPregunta(){
         if (preguntas.size() == 3) {
             posicion = (int) (Math.random() * 3);
@@ -108,7 +108,7 @@ public class Quiz extends AppCompatActivity {
         }
 
     }
-
+    //Actualizamos la parte superior derecha para saber en que pregunta estamos
     public void respuesta(String cadena){
         if (cadena.equals(correcto)) {
             puntos = puntos +1;
@@ -133,11 +133,11 @@ public class Quiz extends AppCompatActivity {
             }, 2000);
 
             seleccionarPregunta();
-            if (indicador.getText().toString().equals("1/3")){
-                indicador.setText("2/3");
-            }else if(indicador.getText().toString().equals("2/3")){
-                indicador.setText("3/3");
-            }else if(indicador.getText().toString().equals("3/3")){
+            if (indicador.getText().toString().equals(getString(R.string.numeroPreguntaQuizUno))){
+                indicador.setText(getString(R.string.numeroPreguntaQuizDos));
+            }else if(indicador.getText().toString().equals(getString(R.string.numeroPreguntaQuizDos))){
+                indicador.setText(getString(R.string.numeroPreguntaQuizTres));
+            }else if(indicador.getText().toString().equals(getString(R.string.numeroPreguntaQuizTres))){
 
             }
 

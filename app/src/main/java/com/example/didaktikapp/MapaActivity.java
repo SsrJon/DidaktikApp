@@ -147,6 +147,7 @@ public class MapaActivity extends AppCompatActivity implements
         String selection = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + " = ?" ;
         String[] selectionArgs = {Nombre};
 
+
         Cursor cursor = db.query(DBHelper.entidadProgreso.TABLE_NAME,null,selection,selectionArgs,null,null,null);
         while(cursor.moveToNext()){
             int PTO1 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1);
@@ -222,10 +223,6 @@ public class MapaActivity extends AppCompatActivity implements
             punto1.position(new LatLng(43.210500,-2.909417));
             mapboxMap.addMarker(punto1);
         }
-
-
-
-
 
         mapboxMap.setStyle(Style.OUTDOORS, new Style.OnStyleLoaded() {
 

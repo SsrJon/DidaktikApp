@@ -56,15 +56,6 @@ public class InicioFragment extends Fragment {
                     ft.replace(R.id.fragment,  fragment);
                     ft.addToBackStack(null);
                     ft.commit();
-
-
-                    /*InicioFragment f = new InicioFragment();
-                    FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
-                    Bundle args = new Bundle();
-                    args.putString("nombre", etNombreInicio.getText().toString());
-                    f.setArguments(args);
-                    fragmentTransaction.replace(R.id.fragment, new InicioAudioFragment());
-                    fragmentTransaction.commit();*/
                 }else {
                     Toast.makeText(getContext(), "Mezedes izen bat sartu", Toast.LENGTH_SHORT).show();
                 }
