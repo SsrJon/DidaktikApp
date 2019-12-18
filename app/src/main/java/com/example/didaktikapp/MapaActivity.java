@@ -160,10 +160,7 @@ public class MapaActivity extends AppCompatActivity implements
         punto1.icon(iconPunto1);
         punto1.position(new LatLng(43.211583, -2.886917));
         mapboxMap.addMarker(punto1);
-
         // Clase en la que está el código a ejecutar
-
-
 
        /*//Punto 2  Arrigorriagako Udaletxea
         MarkerOptions punto2 =new MarkerOptions();
