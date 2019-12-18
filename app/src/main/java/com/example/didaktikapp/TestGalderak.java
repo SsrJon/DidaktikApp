@@ -150,14 +150,14 @@ public class TestGalderak extends AppCompatActivity {
             }, 2000);
 
             seleccionarPregunta();
-            if (indicador.getText().toString().equals("1/4")){
-                indicador.setText("2/4");
-            }else if(indicador.getText().toString().equals("2/4")){
-                indicador.setText("3/4");
-            }else if(indicador.getText().toString().equals("3/4")){
-                indicador.setText("4/4");
+            if (indicador.getText().toString().equals(getString(R.string.numeroPreguntaTestUno))){
+                indicador.setText(getString(R.string.numeroPreguntaTestDos));
+            }else if(indicador.getText().toString().equals(getString(R.string.numeroPreguntaTestDos))){
+                indicador.setText(getString(R.string.numeroPreguntaTestTres));
+            }else if(indicador.getText().toString().equals(getString(R.string.numeroPreguntaTestTres))){
+                indicador.setText(getString(R.string.numeroPreguntaTestCuatro));
             }
-            else if(indicador.getText().toString().equals("4/4")){
+            else if(indicador.getText().toString().equals(getString(R.string.numeroPreguntaTestCuatro))){
 
             }
 

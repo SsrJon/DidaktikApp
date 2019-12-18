@@ -74,7 +74,7 @@ public class InicioFragment extends Fragment {
                 }
 
                 else {
-                    Toast.makeText(getApplicationContext(), "Mezedes izen bat sartu", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.izena), Toast.LENGTH_SHORT).show();
                 }
 
 
