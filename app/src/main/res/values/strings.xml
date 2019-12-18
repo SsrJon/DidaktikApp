@@ -112,6 +112,8 @@
     <string name="test">Move image to fit within square puzzle grid or use arrows.
                         Use buttons to zoom in or out.</string>
 
+    <string name="izena">Mezedes izen bat sartu</string>
+
 
     <string name="Larrea_eskultura">Vicente Larrearen obra hau (2002an Bilbotik
 etorrita) Arrigorriagako sarreran aurki
@@ -153,5 +155,28 @@ altueragatik nabarmentzen da.</string>
     <string name="testRespuestaCuatroUno">Estilo gotikoa</string>
     <string name="testRespuestaCuatroDos">Estilo preerromanikoa</string>
     <string name="testRespuestaCuatroTres">Estilo barrokoa</string>
+
+    <string name="numeroPreguntaTestUno">1/4</string>
+    <string name="numeroPreguntaTestDos">2/4</string>
+    <string name="numeroPreguntaTestTres">3/4</string>
+    <string name="numeroPreguntaTestCuatro">4/4</string>
+
+    <string name="quizPreguntaUno">Gaur eguneko Gaztegunea....</string>
+    <string name="quizrespuestaUnoUno">Hilerria izan zen.</string>
+    <string name="quizrespuestaUnoDos">Betidanik Gaztegunea izan da.</string>
+    <string name="quizrespuestaUnoTres">Lehen hiltegia zen.</string>
+
+    <string name="quizrespuestaDosUno">Hiltegiaren forma originala mantentzen du.</string>
+    <string name="quizrespuestaDosDos">Egurrezkoa da.</string>
+    <string name="quizrespuestaDosTres">Aurreko guztiak zuzenak dira.</string>
+
+    <string name="quizPreguntaTres">Eraikina....</string>
+    <string name="quizrespuestaTresUno">1940 eta 1950 urte bitartekoa da.</string>
+    <string name="quizrespuestaTresDos">1960an eraiki zen.</string>
+    <string name="quizrespuestaTresTres">Eraikin berria da.</string>
+
+    <string name="numeroPreguntaQuizUno">1/3</string>
+    <string name="numeroPreguntaQuizDos">2/3</string>
+    <string name="numeroPreguntaQuizTres">3/3</string>
 
 </resources>

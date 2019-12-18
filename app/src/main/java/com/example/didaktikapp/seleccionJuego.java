@@ -29,6 +29,7 @@ public class seleccionJuego extends AppCompatActivity {
             public void onClick(View v) {
                 //System.out.println(recyclerView.getChildAdapterPosition(v));
                 String fotoaMandar  = Juegos.getJuegosArrayList().get(recyclerView.getChildAdapterPosition(v)).getNombre();
+               //Todas las condiciones para añadir el intent dependiendo que juegos es.
                 if(fotoaMandar.equals("Quiz")){
                     Intent intent = new Intent(seleccionJuego.this, Quiz.class);
                     startActivity(intent);
