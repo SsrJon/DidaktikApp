@@ -1,28 +1,18 @@
 package com.example.didaktikapp;
 
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.DatabaseUtils;
-import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import static com.mapbox.mapboxsdk.Mapbox.getAccessToken;
 import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 
 public class InicioFragment extends Fragment {
@@ -31,9 +21,6 @@ public class InicioFragment extends Fragment {
     private EditText etNombreInicio;
     DBHelper dbHelper;
     SQLiteDatabase db;
-
-
-
 
     private InicioViewModel mViewModel;
 
@@ -47,10 +34,6 @@ public class InicioFragment extends Fragment {
         dbHelper = new DBHelper(getContext());
         db = dbHelper.getWritableDatabase();
         View root= inflater.inflate(R.layout.inicio_fragment, container, false);
-
-
-
-
         btnEmpezar=root.findViewById(R.id.buttonEmpezar);
         etNombreInicio=root.findViewById(R.id.editTextNombreInicio);
 
@@ -59,24 +42,31 @@ public class InicioFragment extends Fragment {
         btnEmpezar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (!etNombreInicio.getText().toString().equals("")){
                     long existente = DatabaseUtils.queryNumEntries(db, DBHelper.entidadUsuario.TABLE_NAME,
                             DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE + "=? ", new String[] {etNombreInicio.getText().toString()});
                     if (existente == 0){
                         nuevoUsuario();
                     }
-                    InicioFragment f = new InicioFragment();
+                    InicioAudioFragment fragment = new InicioAudioFragment();
+                    Bundle arguments = new Bundle();
+                    arguments.putString( "nombre" , etNombreInicio.getText().toString());
+                    fragment.setArguments(arguments);
+                    FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.fragment,  fragment);
+                    ft.addToBackStack(null);
+                    ft.commit();
+
+
+                    /*InicioFragment f = new InicioFragment();
                     FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
                     Bundle args = new Bundle();
                     args.putString("nombre", etNombreInicio.getText().toString());
                     f.setArguments(args);
                     fragmentTransaction.replace(R.id.fragment, new InicioAudioFragment());
-                    fragmentTransaction.commit();
-                }
-
-                else {
-                    Toast.makeText(getApplicationContext(), "Mezedes izen bat sartu", Toast.LENGTH_SHORT).show();
+                    fragmentTransaction.commit();*/
+                }else {
+                    Toast.makeText(getContext(), "Mezedes izen bat sartu", Toast.LENGTH_SHORT).show();
                 }
             }
         });
