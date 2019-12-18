@@ -260,19 +260,6 @@
         app:layout_constraintVertical_bias="0.75" />
 
     <TextView
-        android:id="@+id/textViewHutsuneak0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/p5_hutsuneak_bete_0"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
-
-    <TextView
         android:id="@+id/textViewHutsuneak3"
         android:layout_width="207dp"
         android:layout_height="40dp"
