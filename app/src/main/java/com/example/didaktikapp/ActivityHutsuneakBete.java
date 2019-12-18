@@ -47,7 +47,7 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
         btn3 = findViewById(R.id.btn3);
         target3.setOnDragListener(dragListener);
         btn3.setOnLongClickListener(longClickListener);
-        
+
     }
 
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
@@ -127,9 +127,6 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
             String valor = "hutsuneak";
             popUp.putExtra("valor", valor);
             startActivity(popUp);
-            //System.out.println(contadorButton);
-            //btnJarraitu.setVisibility(View.VISIBLE);
-
         }
     }
 
