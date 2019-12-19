@@ -16,7 +16,9 @@
         android:roundIcon="@drawable/grape1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestGalderak"></activity>
+        <activity
+            android:name=".TestGalderak"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".HutsuneakTabla"
             android:screenOrientation="landscape" />
@@ -28,7 +30,9 @@
         <activity
             android:name=".EgiaedoGezurra"
             android:screenOrientation="landscape" />
-        <activity android:name=".OrdenarImagen" />
+        <activity
+            android:name=".OrdenarImagen"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Popup"
             android:theme="@style/AppTheme.PopUpPagos"
