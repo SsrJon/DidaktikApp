@@ -3,7 +3,9 @@ package com.example.didaktikapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
@@ -75,7 +77,7 @@ public class MapaActivity extends AppCompatActivity implements
     public static final String JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME";
     DBHelper dbHelper;
     SQLiteDatabase db;
-
+    final MarkerOptions punto1 = new MarkerOptions();
     //Zona accesible en el mapa
 
    private static final LatLng BOUND_CORNER_NW = new LatLng(43.202712, -2.91002);
@@ -144,14 +146,18 @@ public class MapaActivity extends AppCompatActivity implements
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
         this.mapboxMap = mapboxMap;
 
+        SharedPreferences sharedPref = getSharedPreferences("datos",Context.MODE_PRIVATE);
+        Nombre = sharedPref.getString("nombre", null);
+
         String selection = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + " = ?" ;
         String[] selectionArgs = {Nombre};
 
 
         Cursor cursor = db.query(DBHelper.entidadProgreso.TABLE_NAME,null,selection,selectionArgs,null,null,null);
         while(cursor.moveToNext()){
-            int PTO1 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1);
-            int PTO2 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_2);
+            int PTO1 = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1));
+            Toast.makeText(getApplicationContext(), " "+ PTO1, Toast.LENGTH_SHORT).show();
+            int PTO2 = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_2));
             int PTO3 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_3);
             int PTO4 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_4);
             int PTO5 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_5);
@@ -172,7 +178,7 @@ public class MapaActivity extends AppCompatActivity implements
             }
 
         }
-        final MarkerOptions punto1 = new MarkerOptions();
+        //final MarkerOptions punto1 = new MarkerOptions();
         if (Marcadores == 1){
             //Punto 1  Larrea eskultura
             punto1.title("Larrea eskultura");
@@ -238,7 +244,7 @@ public class MapaActivity extends AppCompatActivity implements
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                             Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
                             if (distancia * 1000 <= 9) {
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",1.1);
                                 startActivity(intent);
                             }
@@ -646,8 +652,7 @@ public class MapaActivity extends AppCompatActivity implements
     }
 
     public void pepe(Location localizacion){
-            LatLng punto1 = new LatLng(43.211583, -2.886917);
-            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getLongitude(), punto1.getLatitude()));
+            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
             //Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
             if (distancia * 1000 <= 9) {
                 System.out.println("llegue");

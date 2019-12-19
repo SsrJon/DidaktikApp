@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
@@ -16,6 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
 
@@ -25,6 +28,7 @@ public class Popup extends Activity {
     private ImageButton btnErrepikatu, btnJarraitu;
     DBHelper dbHelper;
     SQLiteDatabase db;
+    String Nombre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +36,6 @@ public class Popup extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_popup);
         Bundle bundle = getIntent().getExtras();
-
 
         btnJarraitu=findViewById(R.id.imageButtonJarraitu);
         btnErrepikatu=findViewById(R.id.imageButtonErrepikatu);
@@ -107,10 +110,19 @@ public class Popup extends Activity {
             public void onClick(View v) {
                 dbHelper = new DBHelper(getApplicationContext());
                 db = dbHelper.getWritableDatabase();
+                SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+                Nombre = sharedPref.getString("nombre", null);
+
             if(getIntent().getStringExtra("valor").equals("puzzleM1")){
-                ContentValues cv = new ContentValues();
-                cv.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1,1); //These Fields should be your String values of actual column names
-                db.update(DBHelper.entidadProgreso.TABLE_NAME, cv,null,null);
+                //String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
+                //db.execSQL(strSQL);
+
+                ContentValues values = new ContentValues();
+                values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1,1);
+                String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                String args [] = {Nombre};
+                int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+                Toast.makeText(getApplicationContext(), " "+ count, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Popup.this, MapaActivity.class);
                 startActivity(intent);
