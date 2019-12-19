@@ -153,7 +153,7 @@ public class MapaActivity extends AppCompatActivity implements
         String[] selectionArgs = {Nombre};
 
 
-        Cursor cursor = db.query(DBHelper.entidadProgreso.TABLE_NAME,null,selection,selectionArgs,null,null,null);
+       Cursor cursor = db.query(DBHelper.entidadProgreso.TABLE_NAME,null,selection,selectionArgs,null,null,null);
         while(cursor.moveToNext()){
             int PTO1 = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1));
             Toast.makeText(getApplicationContext(), " "+ PTO1, Toast.LENGTH_SHORT).show();
