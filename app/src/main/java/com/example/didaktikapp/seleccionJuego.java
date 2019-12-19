@@ -65,6 +65,10 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, TestGalderak.class);
                     startActivity(intent);
                 }
+                if (fotoaMandar.equals("Taula")){
+                    Intent intent = new Intent(seleccionJuego.this, HutsuneakTabla.class);
+                    startActivity(intent);
+                }
 
             }
         });
@@ -99,5 +103,8 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J10);
         Juegos J11 = new Juegos("Test",getDrawable(R.drawable.test));
         Juegos.getJuegosArrayList().add(J11);
+        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+        Juegos.getJuegosArrayList().add(J12);
+
     }
 }

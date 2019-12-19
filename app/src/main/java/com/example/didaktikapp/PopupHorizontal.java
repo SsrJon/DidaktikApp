@@ -12,7 +12,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
-import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
+//import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
 
 public class PopupHorizontal extends Activity {
 
@@ -85,9 +85,12 @@ public class PopupHorizontal extends Activity {
         btnJarraitu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(getIntent().getStringExtra("valor").equals("tabla")){
+                    Intent intent = new Intent(PopupHorizontal.this, MikaExplicando.class);
+                    intent.putExtra("marcador",1.2);
+                    startActivity(intent);
+                }
 
-                Intent intent = new Intent(PopupHorizontal.this, seleccionJuego.class);
-                startActivity(intent);
 
 
 
