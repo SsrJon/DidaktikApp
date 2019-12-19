@@ -216,7 +216,7 @@ public class MapaActivity extends AppCompatActivity implements
 
         }else if(Marcadores == 6){
             //Punto 6 Abrisketako San Pedro baseleizea
-            punto1.title("Abrisketako San Pedro baseleizea");
+            punto1.title("Abrisketako San Pedro baseliza");
             IconFactory iconFactoryPunto6= IconFactory.getInstance(MapaActivity.this);
             Icon iconPunto6= iconFactoryPunto6.fromResource(R.drawable.marcador6);
             punto1.icon(iconPunto6);
@@ -282,7 +282,7 @@ public class MapaActivity extends AppCompatActivity implements
                                 Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
                                 startActivity(intent);
                             }
-                        }else if(marker.getTitle().equals("Abrisketako San Pedro baseleizea")){
+                        }else if(marker.getTitle().equals("Abrisketako San Pedro baseliza")){
                             Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                             Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();

@@ -17,11 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MikaExplicando"></activity>
-        <activity android:name=".TestGalderak" />
+        <activity android:name=".TestGalderak" android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name=".HutsuneakTabla"
             android:screenOrientation="landscape" />
-        <activity android:name=".Fotoelejir" />
+        <activity android:name=".FotoElegir"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".PopupHorizontal"
             android:theme="@style/AppTheme.PopUpPagos"
