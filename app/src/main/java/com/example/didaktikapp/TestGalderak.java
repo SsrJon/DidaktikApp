@@ -131,7 +131,7 @@ public class TestGalderak extends AppCompatActivity {
             puntos = puntos +1;
             puntosCorrectos++;
 
-            mediaPlayerzuzena= MediaPlayer.create(getApplicationContext(),R.raw.erantzun_zuzena_3_audioa);
+            mediaPlayerzuzena= MediaPlayer.create(getApplicationContext(),R.raw.erantzun_zuzena_5_audioa);
             mediaPlayerzuzena.start();
 
             respu1.setClickable(false);
@@ -175,7 +175,7 @@ public class TestGalderak extends AppCompatActivity {
 
         }else{
             puntos = puntos-1;
-            mediaPlayerokerra= MediaPlayer.create(getApplicationContext(),R.raw.erantzun_okerra_3_audioa);
+            mediaPlayerokerra= MediaPlayer.create(getApplicationContext(),R.raw.erantzun_okerra_5_audioa);
             mediaPlayerokerra.start();
             respu1.setClickable(false);
             respu2.setClickable(false);
