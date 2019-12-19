@@ -91,13 +91,13 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J6);
         Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
         Juegos.getJuegosArrayList().add(J7);
-        Juegos J8 = new Juegos("Egia edo Gezurra",getDrawable(R.drawable.rellenar_hueco));
+        Juegos J8 = new Juegos("Egia edo Gezurra",getDrawable(R.drawable.egiagezurra));
         Juegos.getJuegosArrayList().add(J8);
-        Juegos J9 = new Juegos("Argazkia aukeratu",getDrawable(R.drawable.rellenar_hueco));
+        Juegos J9 = new Juegos("Argazkia aukeratu",getDrawable(R.drawable.iglesiaicon));
         Juegos.getJuegosArrayList().add(J9);
         Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
         Juegos.getJuegosArrayList().add(J10);
-        Juegos J11 = new Juegos("Test",getDrawable(R.drawable.rellenar_hueco));
+        Juegos J11 = new Juegos("Test",getDrawable(R.drawable.test));
         Juegos.getJuegosArrayList().add(J11);
     }
 }

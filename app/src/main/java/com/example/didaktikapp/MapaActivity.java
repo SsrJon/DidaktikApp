@@ -582,7 +582,7 @@ public class MapaActivity extends AppCompatActivity implements
     public void pepe(Location localizacion){
             LatLng punto1 = new LatLng(43.211583, -2.886917);
             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getLongitude(), punto1.getLatitude()));
-            Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
             if (distancia * 1000 <= 9) {
                 System.out.println("llegue");
                 mikainfo.setVisibility(View.VISIBLE);
