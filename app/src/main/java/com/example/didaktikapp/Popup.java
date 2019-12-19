@@ -122,9 +122,12 @@ public class Popup extends Activity {
                 String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
                 String args [] = {Nombre};
                 int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
-               Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+               //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Popup.this, MapaActivity.class);
+                startActivity(intent);
+            }else{
+                Intent intent = new Intent(Popup.this,seleccionJuego.class);
                 startActivity(intent);
             }
 
