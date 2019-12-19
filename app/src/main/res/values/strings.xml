@@ -60,6 +60,7 @@
     <string name="respuestaCinco">udaletxea</string>
     <string name="respuestaSeis">larrea eskultura</string>
     <string name="responder">Responder</string>
+
     <string name="p5_hutsuneak_bete_0">Paragrafo honen hutsuneak bete:</string>
 
     <string name="p5_hutsuneak_bete_1">Ermita hau</string>
@@ -68,9 +69,15 @@
 
     <string name="p5_hutsuneak_bete_5">Hainbat aldiz</string>
 
-    <string name="p5_hutsuneak_bete_3">da eta honen forma, besorik gabeko</string>
+    <string name="p5_hutsuneak_bete_3"> forma, besorik gabeko</string>
+
+    <string name="p5_hutsuneak_bete_3_4">da eta honen  </string>
 
     <string name="p5_hutsuneak_bete_4"> itxurakoa da.</string>
+
+    <string name="p5_hutsuneak_bete_r1"> Landaederreagako Santo Kristo baseliza</string>
+    <string name="p5_hutsuneak_bete_r2"> berreraiki</string>
+    <string name="p5_hutsuneak_bete_r3"> gurutzearen</string>
 
     <string name="zuzendu">Zuzendu</string>
 
@@ -104,6 +111,8 @@
     <string name="move_arrows">move arrow</string>
     <string name="test">Move image to fit within square puzzle grid or use arrows.
                         Use buttons to zoom in or out.</string>
+
+    <string name="izena">Mezedes izen bat sartu</string>
 
 
     <string name="Larrea_eskultura">Vicente Larrearen obra hau (2002an Bilbotik
@@ -150,4 +159,28 @@ altueragatik nabarmentzen da.</string>
 
     <string name="explicacionpunto1">Vicente Larrearen obra hau (2002an Bilbotik etorrita) Arrigorriagako sarreran aurki dezakegu, polikiroldegiaren ondoan. Ondare kultural arkitektoniko hau, bere izugarrizko altueragatik nabarmentzen da."</string>
     <string name="explicacionpunto12">“Larrea eskulturaren oinarrizko datuak ikasi dituzuenez, orain honen puzzlea ebatziko duzue. Animo!”</string>
+
+    <string name="numeroPreguntaTestUno">1/4</string>
+    <string name="numeroPreguntaTestDos">2/4</string>
+    <string name="numeroPreguntaTestTres">3/4</string>
+    <string name="numeroPreguntaTestCuatro">4/4</string>
+
+    <string name="quizPreguntaUno">Gaur eguneko Gaztegunea....</string>
+    <string name="quizrespuestaUnoUno">Hilerria izan zen.</string>
+    <string name="quizrespuestaUnoDos">Betidanik Gaztegunea izan da.</string>
+    <string name="quizrespuestaUnoTres">Lehen hiltegia zen.</string>
+
+    <string name="quizrespuestaDosUno">Hiltegiaren forma originala mantentzen du.</string>
+    <string name="quizrespuestaDosDos">Egurrezkoa da.</string>
+    <string name="quizrespuestaDosTres">Aurreko guztiak zuzenak dira.</string>
+
+    <string name="quizPreguntaTres">Eraikina....</string>
+    <string name="quizrespuestaTresUno">1940 eta 1950 urte bitartekoa da.</string>
+    <string name="quizrespuestaTresDos">1960an eraiki zen.</string>
+    <string name="quizrespuestaTresTres">Eraikin berria da.</string>
+
+    <string name="numeroPreguntaQuizUno">1/3</string>
+    <string name="numeroPreguntaQuizDos">2/3</string>
+    <string name="numeroPreguntaQuizTres">3/3</string>
+
 </resources>

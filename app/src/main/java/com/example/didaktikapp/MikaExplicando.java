@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
+import com.example.didaktikapp.Puzzle.PuzzleActivity;
+
+//import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
 
 public class MikaExplicando extends AppCompatActivity {
     TextView texto;
@@ -22,7 +24,14 @@ public class MikaExplicando extends AppCompatActivity {
         setContentView(R.layout.activity_mika_explicando);
         texto = findViewById(R.id.explicacion);
         Intent intent = getIntent();
+        Intent pasar = new Intent();
         continuar = findViewById(R.id.continuar);
+        continuar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.stop();
+            }
+        });
         Marcador = intent.getDoubleExtra("marcador",7);
         if (Marcador == 1.1){
             texto.setText(R.string.explicacionpunto1);
@@ -46,7 +55,7 @@ public class MikaExplicando extends AppCompatActivity {
                 public void onClick(View v) {
                     mediaPlayer.stop();
                     Intent intent = new Intent(MikaExplicando.this, PuzzleActivity.class);
-                    intent.putExtra("llegada","marcadorpuzzle1");
+                    intent.putExtra("llegada","marcador1");
                     startActivity(intent);
                 }
             });

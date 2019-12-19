@@ -29,6 +29,7 @@ public class seleccionJuego extends AppCompatActivity {
             public void onClick(View v) {
                 //System.out.println(recyclerView.getChildAdapterPosition(v));
                 String fotoaMandar  = Juegos.getJuegosArrayList().get(recyclerView.getChildAdapterPosition(v)).getNombre();
+               //Todas las condiciones para añadir el intent dependiendo que juegos es.
                 if(fotoaMandar.equals("Quiz")){
                     Intent intent = new Intent(seleccionJuego.this, Quiz.class);
                     startActivity(intent);
@@ -62,6 +63,10 @@ public class seleccionJuego extends AppCompatActivity {
                 }
                 if (fotoaMandar.equals("Test")){
                     Intent intent = new Intent(seleccionJuego.this, TestGalderak.class);
+                    startActivity(intent);
+                }
+                if (fotoaMandar.equals("Taula")){
+                    Intent intent = new Intent(seleccionJuego.this, HutsuneakTabla.class);
                     startActivity(intent);
                 }
 
@@ -98,5 +103,8 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J10);
         Juegos J11 = new Juegos("Test",getDrawable(R.drawable.rellenar_hueco));
         Juegos.getJuegosArrayList().add(J11);
+        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+        Juegos.getJuegosArrayList().add(J12);
+
     }
 }

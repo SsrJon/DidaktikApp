@@ -2,6 +2,8 @@ package com.example.didaktikapp;
 
 import androidx.fragment.app.FragmentTransaction;
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -37,14 +39,13 @@ public class InicioFragment extends Fragment {
         btnEmpezar=root.findViewById(R.id.buttonEmpezar);
         etNombreInicio=root.findViewById(R.id.editTextNombreInicio);
 
-
-
         btnEmpezar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!etNombreInicio.getText().toString().equals("")){
                     long existente = DatabaseUtils.queryNumEntries(db, DBHelper.entidadUsuario.TABLE_NAME,
                             DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE + "=? ", new String[] {etNombreInicio.getText().toString()});
+                    Toast.makeText(getContext(), "Long: "+existente, Toast.LENGTH_SHORT).show();
                     if (existente == 0){
                         nuevoUsuario();
                     }
@@ -57,14 +58,11 @@ public class InicioFragment extends Fragment {
                     ft.addToBackStack(null);
                     ft.commit();
 
+                    SharedPreferences preferencias = getActivity().getSharedPreferences("datos",Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferencias.edit();
+                    editor.putString("nombre", etNombreInicio.getText().toString());
+                    editor.commit();
 
-                    /*InicioFragment f = new InicioFragment();
-                    FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
-                    Bundle args = new Bundle();
-                    args.putString("nombre", etNombreInicio.getText().toString());
-                    f.setArguments(args);
-                    fragmentTransaction.replace(R.id.fragment, new InicioAudioFragment());
-                    fragmentTransaction.commit();*/
                 }else {
                     Toast.makeText(getContext(), "Mezedes izen bat sartu", Toast.LENGTH_SHORT).show();
                 }

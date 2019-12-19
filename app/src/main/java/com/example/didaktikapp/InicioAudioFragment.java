@@ -26,7 +26,7 @@ public class InicioAudioFragment extends Fragment {
 
     private Button btnContinuar;
     private MediaPlayer mediaPlayer;
-
+    String Nombre;
     public static InicioAudioFragment newInstance() {
         return new InicioAudioFragment();
     }
@@ -36,7 +36,7 @@ public class InicioAudioFragment extends Fragment {
                               Bundle savedInstanceState) {
         View root= inflater.inflate(R.layout.inicio_audio_fragment, container, false);
         Bundle args = getArguments();
-        String Nombre = getArguments().getString("nombre");
+        Nombre = getArguments().getString("nombre");
         Toast.makeText(getContext(), Nombre, Toast.LENGTH_SHORT).show();
 
 
@@ -49,11 +49,8 @@ public class InicioAudioFragment extends Fragment {
             public void onClick(View v) {
                 mediaPlayer.stop();
                 Intent intent = new Intent(getActivity(), MapaActivity.class);
-                Bundle args = getArguments();
-                intent.putExtra("nombre",args.getString("nombre"));
+                intent.putExtra("nombre",Nombre);
                 startActivity(intent);
-
-
             }
         });
 
