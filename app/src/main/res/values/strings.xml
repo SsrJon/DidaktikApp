@@ -45,7 +45,7 @@
     <string name="horizontalDos"> 4.Hainbat alditan berreraiki izan den baseliza. </string>
     <string name="horizontalTres">5.Lehen eskola bat zen. </string>
     <string name="horizontalCuatro">6.Vicente Larreak egin zuen.</string>
-    <string name="verticalUno">1.Arrigorriagako batalian du jatorria.</string>
+    <string name="verticalUno">1.Arrigorriagako batailan du jatorria.</string>
     <string name="verticalDos"> 3.Gaur egunean gaztegunea da. </string>
     <string name="horizontalbtnUno">1</string>
     <string name="horizontalbtnDos">2</string>
@@ -155,6 +155,10 @@ altueragatik nabarmentzen da.</string>
     <string name="testRespuestaCuatroUno">Estilo gotikoa</string>
     <string name="testRespuestaCuatroDos">Estilo preerromanikoa</string>
     <string name="testRespuestaCuatroTres">Estilo barrokoa</string>
+
+
+    <string name="explicacionpunto1">Vicente Larrearen obra hau (2002an Bilbotik etorrita) Arrigorriagako sarreran aurki dezakegu, polikiroldegiaren ondoan. Ondare kultural arkitektoniko hau, bere izugarrizko altueragatik nabarmentzen da."</string>
+    <string name="explicacionpunto12">“Larrea eskulturaren oinarrizko datuak ikasi dituzuenez, orain honen puzzlea ebatziko duzue. Animo!”</string>
 
     <string name="numeroPreguntaTestUno">1/4</string>
     <string name="numeroPreguntaTestDos">2/4</string>

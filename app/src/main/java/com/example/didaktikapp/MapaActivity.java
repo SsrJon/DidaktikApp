@@ -46,6 +46,8 @@ import com.mapbox.mapboxsdk.offline.OfflineRegionError;
 import com.mapbox.mapboxsdk.offline.OfflineRegionStatus;
 import com.mapbox.mapboxsdk.offline.OfflineTilePyramidRegionDefinition;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 import timber.log.Timber;
 import com.mapbox.turf.TurfMeasurement;
@@ -59,7 +61,7 @@ public class MapaActivity extends AppCompatActivity implements
     private LocationComponent locationComponent;
     private boolean isInTrackingMode;
     int pantalla = 0;
-
+    int Marcadores;
     private FloatingActionButton juegos;
     private boolean isEndNotified;
     private ProgressBar progressBar;
@@ -146,69 +148,81 @@ public class MapaActivity extends AppCompatActivity implements
         String[] selectionArgs = {Nombre};
 
 
-        //Cursor cursor = db.query(DBHelper.entidadProgreso.TABLE_NAME,null,selection,selectionArgs,null,null,null);
-        //while(cursor.moveToNext()){
+        Cursor cursor = db.query(DBHelper.entidadProgreso.TABLE_NAME,null,selection,selectionArgs,null,null,null);
+        while(cursor.moveToNext()){
+            int PTO1 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1);
+            int PTO2 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_2);
+            int PTO3 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_3);
+            int PTO4 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_4);
+            int PTO5 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_5);
+            int PTO6 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_6);
 
-        //}
+            if(PTO1 == 0){
+                 Marcadores =1 ;
+            }else if (PTO2 == 0){
+                Marcadores = 2;
+            }else if (PTO3 == 0){
+                Marcadores = 3;
+            }else if (PTO4 == 0){
+                Marcadores = 4;
+            }else if (PTO5 == 0){
+                Marcadores = 5;
+            }else if (PTO6 == 0){
+                Marcadores = 6;
+            }
 
-
-        //Punto 1  Larrea eskultura
+        }
         final MarkerOptions punto1 = new MarkerOptions();
-        punto1.title("Larrea eskultura");
-        IconFactory iconFactoryPunto1 = IconFactory.getInstance(MapaActivity.this);
-        Icon iconPunto1 = iconFactoryPunto1.fromResource(R.drawable.marcador3);
-        punto1.icon(iconPunto1);
-        punto1.position(new LatLng(43.211583, -2.886917));
-        mapboxMap.addMarker(punto1);
+        if (Marcadores == 1){
+            //Punto 1  Larrea eskultura
+            punto1.title("Larrea eskultura");
+            IconFactory iconFactoryPunto1 = IconFactory.getInstance(MapaActivity.this);
+            Icon iconPunto1 = iconFactoryPunto1.fromResource(R.drawable.marcador3);
+            punto1.icon(iconPunto1);
+            punto1.position(new LatLng(43.211583, -2.886917));
+            mapboxMap.addMarker(punto1);
+        }else if (Marcadores == 2){
+            //Punto 2  Arrigorriagako Udaletxea
+            punto1.title("Arrigorriagako Udaletxea");
+            IconFactory iconFactoryPunto2= IconFactory.getInstance(MapaActivity.this);
+            Icon iconPunto2= iconFactoryPunto2.fromResource(R.drawable.marcador2);
+            punto1.icon(iconPunto2);
+            punto1.position(new LatLng(43.205978,-2.887869));
+            mapboxMap.addMarker(punto1);
+        }else if(Marcadores == 3){
+            //Punto 3 Andra Maria Magdalena eliza
+            punto1.title("Maria Magdalena eliza");
+            IconFactory iconFactoryPunto3= IconFactory.getInstance(MapaActivity.this);
+            Icon iconPunto3= iconFactoryPunto3.fromResource(R.drawable.marcador3);
+            punto1.icon(iconPunto3);
+            punto1.position(new LatLng(43.205548,-2.888705));
+            mapboxMap.addMarker(punto1);
+        }else if(Marcadores == 4){
+            //Punto 4 Hiltegi Zaharra
+            punto1.title("Hiltegi Zaharra");
+            IconFactory iconFactoryPunto4= IconFactory.getInstance(MapaActivity.this);
+            Icon iconPunto4= iconFactoryPunto4.fromResource(R.drawable.marcador4);
+            punto1.icon(iconPunto4);
+            punto1.position(new LatLng(43.204889,-2.887833));
+            mapboxMap.addMarker(punto1);
+        }else if(Marcadores ==5){
+            //Punto 5 Landaederreagako Santo Kristo baseliza
+            punto1.title("Landaederreagako Santo Kristo baseliza");
+            IconFactory iconFactoryPunto5= IconFactory.getInstance(MapaActivity.this);
+            Icon iconPunto5= iconFactoryPunto5.fromResource(R.drawable.marcador5);
+            punto1.icon(iconPunto5);
+            punto1.position(new LatLng(43.209306,-2.893722));
+            mapboxMap.addMarker(punto1);
 
-        // Clase en la que está el código a ejecutar
-
-
-
-       /*//Punto 2  Arrigorriagako Udaletxea
-        MarkerOptions punto2 =new MarkerOptions();
-        punto2.title("Arrigorriagako Udaletxea");
-        IconFactory iconFactoryPunto2= IconFactory.getInstance(MapaActivity.this);
-        Icon iconPunto2= iconFactoryPunto2.fromResource(R.drawable.marcador2);
-        punto2.icon(iconPunto2);
-        punto2.position(new LatLng(43.205978,-2.887869));
-        mapboxMap.addMarker(punto2);
-
-        //Punto 3 Andra Maria Magdalena eliza
-        MarkerOptions punto3 =new MarkerOptions();
-        punto3.title("Maria Magdalena eliza");
-        IconFactory iconFactoryPunto3= IconFactory.getInstance(MapaActivity.this);
-        Icon iconPunto3= iconFactoryPunto3.fromResource(R.drawable.marcador3);
-        punto3.icon(iconPunto3);
-        punto3.position(new LatLng(43.205548,-2.888705));
-        mapboxMap.addMarker(punto3);
-
-        //Punto 4 Hiltegi Zaharra
-        MarkerOptions punto4 =new MarkerOptions();
-        punto4.title("Hiltegi Zaharra");
-        IconFactory iconFactoryPunto4= IconFactory.getInstance(MapaActivity.this);
-        Icon iconPunto4= iconFactoryPunto4.fromResource(R.drawable.marcador4);
-        punto4.icon(iconPunto4);
-        punto4.position(new LatLng(43.204889,-2.887833));
-        mapboxMap.addMarker(punto4);
-
-        //Punto 5 Landaederreagako Santo Kristo baseliza
-        MarkerOptions punto5 =new MarkerOptions();
-        punto5.title("Landaederreagako Santo Kristo baseliza");
-        IconFactory iconFactoryPunto5= IconFactory.getInstance(MapaActivity.this);
-        Icon iconPunto5= iconFactoryPunto5.fromResource(R.drawable.marcador5);
-        punto5.icon(iconPunto5);
-        punto5.position(new LatLng(43.209306,-2.893722));
-        mapboxMap.addMarker(punto5);
-
-        //Punto 6 Abrisketako San Pedro baseleizea
-        MarkerOptions punto6 =new MarkerOptions();
-        punto6.title("Abrisketako San Pedro baseleizea");
-        IconFactory iconFactoryPunto6= IconFactory.getInstance(MapaActivity.this);
-        Icon iconPunto6= iconFactoryPunto6.fromResource(R.drawable.marcador6);
-        punto6.icon(iconPunto6);
-        punto6.position(new LatLng(43.210500,-2.909417));
-        mapboxMap.addMarker(punto6);*/
+        }else if(Marcadores == 6){
+            //Punto 6 Abrisketako San Pedro baseleizea
+            punto1.title("Abrisketako San Pedro baseliza");
+            IconFactory iconFactoryPunto6= IconFactory.getInstance(MapaActivity.this);
+            Icon iconPunto6= iconFactoryPunto6.fromResource(R.drawable.marcador6);
+            punto1.icon(iconPunto6);
+            punto1.position(new LatLng(43.210500,-2.909417));
+            mapboxMap.addMarker(punto1);
+        }
 
         mapboxMap.setStyle(Style.OUTDOORS, new Style.OnStyleLoaded() {
 
@@ -219,14 +233,63 @@ public class MapaActivity extends AppCompatActivity implements
                 mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(@NonNull Marker marker) {
-                        if (marker.getTitle().equals("Larrea eskultura")){
+                        if (marker.getTitle().equals("Larrea eskultura")) {
                             Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
-                            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(),localizacion.getLatitude()),Point.fromLngLat(punto1.getPosition().getLongitude(),punto1.getPosition().getLatitude()));
-                            Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
-                            if (distancia *1000 <= 9){
+                            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
+                            Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
+                            if (distancia * 1000 <= 9) {
+                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                intent.putExtra("marcador",1.1);
+                                startActivity(intent);
+                            }
+                        } else if (marker.getTitle().equals("Arrigorriagako Udaletxea")) {
+                            Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
+                            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
+                            Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
+                            if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent (MapaActivity.this,GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                startActivity(intent);
+                            }
+                        } else if (marker.getTitle().equals("Maria Magdalena eliza")) {
+                            Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
+                            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
+                            Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
+                            if (distancia * 1000 <= 9) {
+                                mikainfo.setVisibility(View.VISIBLE);
+                                llegaste.setVisibility(View.VISIBLE);
+                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                startActivity(intent);
+                            }
+                        }else if(marker.getTitle().equals("Hiltegi Zaharra")){
+                            Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
+                            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
+                            Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
+                            if (distancia * 1000 <= 9) {
+                                mikainfo.setVisibility(View.VISIBLE);
+                                llegaste.setVisibility(View.VISIBLE);
+                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                startActivity(intent);
+                            }
+                        }else if(marker.getTitle().equals("Landaederreagako Santo Kristo baseliza")){
+                            Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
+                            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
+                            Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
+                            if (distancia * 1000 <= 9) {
+                                mikainfo.setVisibility(View.VISIBLE);
+                                llegaste.setVisibility(View.VISIBLE);
+                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                startActivity(intent);
+                            }
+                        }else if(marker.getTitle().equals("Abrisketako San Pedro baseliza")){
+                            Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
+                            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
+                            Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
+                            if (distancia * 1000 <= 9) {
+                                mikainfo.setVisibility(View.VISIBLE);
+                                llegaste.setVisibility(View.VISIBLE);
+                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
                                 startActivity(intent);
                             }
                         }
@@ -585,7 +648,7 @@ public class MapaActivity extends AppCompatActivity implements
     public void pepe(Location localizacion){
             LatLng punto1 = new LatLng(43.211583, -2.886917);
             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getLongitude(), punto1.getLatitude()));
-            Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
             if (distancia * 1000 <= 9) {
                 System.out.println("llegue");
                 mikainfo.setVisibility(View.VISIBLE);

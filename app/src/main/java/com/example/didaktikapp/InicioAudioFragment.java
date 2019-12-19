@@ -16,6 +16,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextClock;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 
 public class InicioAudioFragment extends Fragment {
 
@@ -32,6 +35,10 @@ public class InicioAudioFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                               Bundle savedInstanceState) {
         View root= inflater.inflate(R.layout.inicio_audio_fragment, container, false);
+        Bundle args = getArguments();
+        String Nombre = getArguments().getString("nombre");
+        Toast.makeText(getContext(), Nombre, Toast.LENGTH_SHORT).show();
+
 
 
         mediaPlayer= MediaPlayer.create(getActivity(),R.raw.hasiera0_audioa);

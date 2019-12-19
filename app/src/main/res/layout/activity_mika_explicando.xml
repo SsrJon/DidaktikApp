@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Fondo"
+    tools:context=".MikaExplicando">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lienahorizontal"
+        app:srcCompat="@drawable/mika_sin_fondo" />
+
+    <TextView
+        android:id="@+id/explicacion"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="32dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:text="Vicente Larrearen obra hau (2002an Bilbotik etorrita) Arrigorriagako sarreran aurki dezakegu, polikiroldegiaren ondoan. Ondare kultural arkitektoniko hau, bere izugarrizko altueragatik nabarmentzen da."
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/lienahorizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lienahorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lienahorizonta2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <Button
+        android:id="@+id/continuar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/jarraitu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lienahorizonta2"
+        tools:layout_editor_absoluteX="275dp"
+        tools:layout_editor_absoluteY="676dp"
+        android:paddingTop="11dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
