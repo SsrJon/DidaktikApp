@@ -23,7 +23,8 @@
         <activity
             android:name=".HutsuneakTabla"
             android:screenOrientation="landscape" />
-        <activity android:name=".Fotoelejir" />
+        <activity android:name=".FotoElegir"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".PopupHorizontal"
             android:theme="@style/AppTheme.PopUpPagos"

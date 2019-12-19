@@ -51,7 +51,7 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, EgiaedoGezurra.class);
                     startActivity(intent);
                 }if(fotoaMandar.equals("Argazkia aukeratu")) {
-                    Intent intent = new Intent(seleccionJuego.this, Fotoelejir.class);
+                    Intent intent = new Intent(seleccionJuego.this, FotoElegir.class);
                     startActivity(intent);
                 }if(fotoaMandar.equals("Larrea 1")) {
                     Intent intent = new Intent(seleccionJuego.this, HutsuneakTabla.class);
