@@ -110,21 +110,24 @@ public class Popup extends Activity {
             public void onClick(View v) {
                 dbHelper = new DBHelper(getApplicationContext());
                 db = dbHelper.getWritableDatabase();
-                SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences sharedPref = getSharedPreferences("datos",Context.MODE_PRIVATE);
                 Nombre = sharedPref.getString("nombre", null);
 
             if(getIntent().getStringExtra("valor").equals("puzzleM1")){
-                //String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
-                //db.execSQL(strSQL);
+               /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
+                db.execSQL(strSQL);*/
 
                 ContentValues values = new ContentValues();
                 values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1,1);
                 String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
                 String args [] = {Nombre};
                 int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
-                Toast.makeText(getApplicationContext(), " "+ count, Toast.LENGTH_SHORT).show();
+               //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Popup.this, MapaActivity.class);
+                startActivity(intent);
+            }else{
+                Intent intent = new Intent(Popup.this,seleccionJuego.class);
                 startActivity(intent);
             }
 

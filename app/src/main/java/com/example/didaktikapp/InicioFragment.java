@@ -45,7 +45,7 @@ public class InicioFragment extends Fragment {
                 if (!etNombreInicio.getText().toString().equals("")){
                     long existente = DatabaseUtils.queryNumEntries(db, DBHelper.entidadUsuario.TABLE_NAME,
                             DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE + "=? ", new String[] {etNombreInicio.getText().toString()});
-                    Toast.makeText(getContext(), "Long: "+existente, Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(getContext(), "Long: "+existente, Toast.LENGTH_SHORT).show();
                     if (existente == 0){
                         nuevoUsuario();
                     }

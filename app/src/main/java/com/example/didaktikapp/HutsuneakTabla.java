@@ -16,9 +16,7 @@ public class HutsuneakTabla extends AppCompatActivity {
 
     private EditText etOndarearen, etEgilea, etHeldu, etKultural;
     private Button btnZuzendu;
-    private ImageView imgTabla;
-    private TextView tvAudio;
-    private int contador=0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,39 +29,12 @@ public class HutsuneakTabla extends AppCompatActivity {
         etHeldu=findViewById(R.id.editTextHeldu);
         etKultural=findViewById(R.id.editTextKultural);
 
-        imgTabla=findViewById(R.id.imageViewTabla);
-        tvAudio=findViewById(R.id.textViewAudio);
-
         btnZuzendu=findViewById(R.id.buttonZuzendu);
 
-        imgTabla.setVisibility(View.INVISIBLE);
-        etOndarearen.setVisibility(View.INVISIBLE);
-        etEgilea.setVisibility(View.INVISIBLE);
-        etHeldu.setVisibility(View.INVISIBLE);
-        etKultural.setVisibility(View.INVISIBLE);
-
-
-        MediaPlayer mediaPlayer = MediaPlayer.create(HutsuneakTabla.this, R.raw.larrea_eskultura0_audioa);
-        mediaPlayer.start();
 
         btnZuzendu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                btnZuzendu.setText("Zuzendu");
-                tvAudio.setVisibility(View.INVISIBLE);
-                contador++;
-
-
-
-                imgTabla.setVisibility(View.VISIBLE);
-                etOndarearen.setVisibility(View.VISIBLE);
-                etEgilea.setVisibility(View.VISIBLE);
-                etHeldu.setVisibility(View.VISIBLE);
-                etKultural.setVisibility(View.VISIBLE);
-
-                if(contador>1) {
-
 
                     if ((etOndarearen.getText().toString().equals("Larrea eskultura") ||
                             etOndarearen.getText().toString().equals("Larrea Eskultura") ||
@@ -94,7 +65,7 @@ public class HutsuneakTabla extends AppCompatActivity {
                         mediaPlayer.start();
                     }
 
-                }
+
 
             }
         });
