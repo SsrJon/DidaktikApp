@@ -16,15 +16,19 @@
         android:roundIcon="@drawable/uva"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MikaExplicando"
-            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ActivityHutsuneakBete2"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".MikaExplicando"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TestGalderak"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".HutsuneakTabla"
             android:screenOrientation="landscape" />
-        <activity android:name=".FotoElegir"
+        <activity
+            android:name=".FotoElegir"
             android:screenOrientation="landscape" />
         <activity
             android:name=".PopupHorizontal"
@@ -35,7 +39,7 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".OrdenarImagen"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Popup"
             android:theme="@style/AppTheme.PopUpPagos"

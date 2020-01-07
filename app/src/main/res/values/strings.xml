@@ -61,6 +61,7 @@
     <string name="respuestaSeis">larrea eskultura</string>
     <string name="responder">Erantzun</string>
 
+
     <string name="p5_hutsuneak_bete_0">Paragrafo honen hutsuneak bete:</string>
 
     <string name="p5_hutsuneak_bete_1">Ermita hau</string>
@@ -78,6 +79,11 @@
     <string name="p5_hutsuneak_bete_r1"> Landaederreagako Santo Kristo baseliza</string>
     <string name="p5_hutsuneak_bete_r2"> berreraiki</string>
     <string name="p5_hutsuneak_bete_r3"> gurutzearen</string>
+
+    <string name="p2_hutsuneak_bete_r1"> eskola</string>
+    <string name="p2_hutsuneak_bete_r2"> berreraiki</string>
+    <string name="p2_hutsuneak_bete_r3"> sute</string>
+    <string name="p2_hutsuneak_bete_r4"> harriak</string>
 
     <string name="zuzendu">Zuzendu</string>
 
@@ -185,9 +191,6 @@ altueragatik nabarmentzen da.</string>
 
 
     <string name="p2_argazkia_galdera">Zein da Andra Maria Magdalena Eliza?</string>
-
-
-
 
 
 </resources>
