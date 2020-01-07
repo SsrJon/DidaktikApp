@@ -6,15 +6,21 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 public class OrdenarImagen extends AppCompatActivity {
 
     private EditText orden;
     private Button zuzendu;
+    private ImageView iglesiaA;
+    private ImageView iglesiaB;
+    private ImageView iglesiaC;
+    private ImageView iglesiaD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +28,10 @@ public class OrdenarImagen extends AppCompatActivity {
         setContentView(R.layout.activity_ordenar_imagen);
         orden = findViewById(R.id.ordenRespuesta);
         zuzendu = findViewById(R.id.responderOrden);
+        iglesiaA = findViewById(R.id.iglesia_a);
+        iglesiaB = findViewById(R.id.iglesia_b);
+        iglesiaC = findViewById(R.id.iglesia_c);
+        iglesiaD = findViewById(R.id.iglesia_d);
        //comprobamos que lo escrito coincida con la respuesta correcta
        /* orden.setImeActionLabel("Custom text",KeyEvent.KEYCODE_ENTER );
         orden.setOnKeyListener(new View.OnKeyListener() {
@@ -47,6 +57,13 @@ public class OrdenarImagen extends AppCompatActivity {
                 }  return false;
             }
         });*/
+
+        iglesiaA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("tag", "he pulsado la foto A ");
+            }
+        });
 
         zuzendu.setOnClickListener(new View.OnClickListener() {
             @Override
