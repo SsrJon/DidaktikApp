@@ -12,15 +12,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class OrdenarImagen extends AppCompatActivity {
 
-    private EditText orden;
+    private TextView orden;
     private Button zuzendu;
     private ImageView iglesiaA;
     private ImageView iglesiaB;
     private ImageView iglesiaC;
     private ImageView iglesiaD;
+    private String respuesta = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,16 +63,52 @@ public class OrdenarImagen extends AppCompatActivity {
         iglesiaA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("tag", "he pulsado la foto A ");
+                iglesiaA.setEnabled(false);
+                respuesta = respuesta + "a";
+                orden.setText(respuesta);
+
             }
         });
+
+        iglesiaB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iglesiaB.setEnabled(false);
+                respuesta = respuesta + "b";
+                orden.setText(respuesta);
+            }
+        });
+
+        iglesiaC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iglesiaC.setEnabled(false);
+                respuesta = respuesta + "c";
+                orden.setText(respuesta);
+            }
+        });
+        iglesiaD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iglesiaD.setEnabled(false);
+                respuesta = respuesta + "d";
+                orden.setText(respuesta);
+            }
+        });
+
 
         zuzendu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (orden.getText().toString().equals( getString(R.string.ordenBueno))||
-                        orden.getText().toString().equals(getString(R.string.ordenBuenoDos)) ||
-                        orden.getText().toString().equals(getString(R.string.ordenBuenoTres))){
+                orden.setText("");
+                iglesiaA.setEnabled(true);
+                iglesiaB.setEnabled(true);
+                iglesiaC.setEnabled(true);
+                iglesiaD.setEnabled(true);
+
+                if (respuesta.equals( getString(R.string.ordenBueno))||
+                        respuesta.equals(getString(R.string.ordenBuenoDos)) ||
+                        respuesta.equals(getString(R.string.ordenBuenoTres))){
                     MediaPlayer mediaPlayer= MediaPlayer.create(OrdenarImagen.this,R.raw.erantzun_zuzena_3_audioa);
                     mediaPlayer.start();
                     orden.setKeyListener(null);
@@ -81,6 +119,7 @@ public class OrdenarImagen extends AppCompatActivity {
                     startActivity(popUp);
                 }
                 else{
+                    respuesta = "";
                     MediaPlayer mediaPlayer= MediaPlayer.create(OrdenarImagen.this,R.raw.erantzun_okerra_3_audioa);
                     mediaPlayer.start();
                 }
