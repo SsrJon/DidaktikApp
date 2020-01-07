@@ -43,6 +43,10 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, ActivityHutsuneakBete.class);
                     startActivity(intent);
                 }
+                if (fotoaMandar.equals("Hutsuneak bete2")){
+                    Intent intent = new Intent(seleccionJuego.this, ActivityHutsuneakBete2.class);
+                    startActivity(intent);
+                }
                 if (fotoaMandar.equals("Gurutzegrama")){
                     Intent intent = new Intent(seleccionJuego.this, GurutzegramaActivity.class);
                     startActivity(intent);
@@ -105,6 +109,9 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J11);
         Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
         Juegos.getJuegosArrayList().add(J12);
+        Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+        Juegos.getJuegosArrayList().add(J13);
+
 
     }
     public void onBackPressed(){
