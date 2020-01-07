@@ -5,30 +5,27 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.ClipData;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.DragEvent;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-public class ActivityHutsuneakBete extends AppCompatActivity {
+public class ActivityHutsuneakBete2 extends AppCompatActivity {
 
-    private Button  btn1, btn2,  btn3;
-    private LinearLayout target1, target2, target3;
+    private Button btn1, btn2,  btn3, btn4;
+    private LinearLayout target1, target2, target3, target4;
     private int contadorButton = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-        setContentView(R.layout.activity_hutsuneak_bete);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        setContentView(R.layout.activity_hutsuneak_bete2);
+
 
         target1 = findViewById(R.id.target1);
 
@@ -48,7 +45,15 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
         target3.setOnDragListener(dragListener);
         btn3.setOnLongClickListener(longClickListener);
 
+        target4 = findViewById(R.id.target4);
+
+        btn4 = findViewById(R.id.btn4);
+        target4.setOnDragListener(dragListener);
+        btn4.setOnLongClickListener(longClickListener);
+
+
     }
+
 
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
         @Override
@@ -85,7 +90,7 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
                         oldparent.removeView(view);
                         LinearLayout newParent = (LinearLayout) v;
                         newParent.addView(view);
-                        MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete.this, R.raw.erantzun_zuzena4_audioa);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete2.this, R.raw.erantzun_zuzena2_audioa);
                         mediaPlayer.start();
                         contadorButton++;
                         Jarraitu();
@@ -95,7 +100,7 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
                         oldparent.removeView(view);
                         LinearLayout newParent = (LinearLayout) v;
                         newParent.addView(view);
-                        MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete.this, R.raw.erantzun_zuzena4_audioa);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete2.this, R.raw.erantzun_zuzena2_audioa);
                         mediaPlayer.start();
                         contadorButton++;
                         Jarraitu();
@@ -105,12 +110,24 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
                         oldparent.removeView(view);
                         LinearLayout newParent = (LinearLayout) v;
                         newParent.addView(view);
-                        MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete.this, R.raw.erantzun_zuzena4_audioa);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete2.this, R.raw.erantzun_zuzena2_audioa);
                         mediaPlayer.start();
                         contadorButton++;
                         Jarraitu();
-                    } else {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete.this, R.raw.erantzun_okerra4_audioa);
+                    } else if (view.getId() == R.id.btn4 && v.getId() == R.id.target4) {
+
+                        ConstraintLayout oldparent = (ConstraintLayout) view.getParent();
+                        oldparent.removeView(view);
+                        LinearLayout newParent = (LinearLayout) v;
+                        newParent.addView(view);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete2.this, R.raw.erantzun_zuzena2_audioa);
+                        mediaPlayer.start();
+                        contadorButton++;
+                        Jarraitu();
+                    }
+
+                    else {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete2.this, R.raw.erantzun_okerra2_audioa);
                         mediaPlayer.start();
                     }
                     break;
@@ -123,14 +140,19 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
     //comprueba el contador para activar el popup
     private void Jarraitu() {
 
-        if (contadorButton == 3) {
+        if (contadorButton == 4) {
 
-            Intent popUp = new Intent(ActivityHutsuneakBete.this, PopupHorizontal.class);
-            String valor = "hutsuneak";
+            Intent popUp = new Intent(ActivityHutsuneakBete2.this, PopupHorizontal.class);
+            String valor = "hutsuneak2";
             popUp.putExtra("valor", valor);
             startActivity(popUp);
         }
     }
 
-}
 
+
+
+
+
+
+}
