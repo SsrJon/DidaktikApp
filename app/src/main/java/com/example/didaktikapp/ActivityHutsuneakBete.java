@@ -88,6 +88,8 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
                         MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete.this, R.raw.erantzun_zuzena4_audioa);
                         mediaPlayer.start();
                         contadorButton++;
+                        btn1.setKeyListener(null);
+                        target1.setEnabled(false);
                         Jarraitu();
                     } else if (view.getId() == R.id.btn2 && v.getId() == R.id.target2) {
 
@@ -98,6 +100,8 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
                         MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete.this, R.raw.erantzun_zuzena4_audioa);
                         mediaPlayer.start();
                         contadorButton++;
+                        btn2.setKeyListener(null);
+                        target2.setEnabled(false);
                         Jarraitu();
                     } else if (view.getId() == R.id.btn3 && v.getId() == R.id.target3) {
 
@@ -108,6 +112,8 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
                         MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete.this, R.raw.erantzun_zuzena4_audioa);
                         mediaPlayer.start();
                         contadorButton++;
+                        btn3.setKeyListener(null);
+                        target3.setEnabled(false);
                         Jarraitu();
                     } else {
                         MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete.this, R.raw.erantzun_okerra4_audioa);
