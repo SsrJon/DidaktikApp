@@ -80,6 +80,17 @@
     <string name="p5_hutsuneak_bete_r2"> berreraiki</string>
     <string name="p5_hutsuneak_bete_r3"> gurutzearen</string>
 
+
+
+    <string name="p2_hutsuneak_bete_1"> Udaletxe berria lehen </string>
+    <string name="p2_hutsuneak_bete_2"> bat zen. </string>
+    <string name="p2_hutsuneak_bete_3"> Udaletxe zaharra </string>
+    <string name="p2_hutsuneak_bete_4"> zen, </string>
+    <string name="p2_hutsuneak_bete_5"> baten ondorioz. </string>
+    <string name="p2_hutsuneak_bete_6"> Udaletxe berria eraikitzeko, eskola zaharraren, </string>
+    <string name="p2_hutsuneak_bete_7"> erabili ziren.</string>
+
+
     <string name="p2_hutsuneak_bete_r1"> eskola</string>
     <string name="p2_hutsuneak_bete_r2"> berreraiki</string>
     <string name="p2_hutsuneak_bete_r3"> sute</string>

@@ -84,7 +84,7 @@ public class ActivityHutsuneakBete2 extends AppCompatActivity {
 
                 case DragEvent.ACTION_DROP:
 
-                    if (view.getId() == R.id.btn1 && v.getId() == R.id.target1) {
+                    if (view.getId() == R.id.btn1 && v.getId() == R.id.target3) {
 
                         ConstraintLayout oldparent = (ConstraintLayout) view.getParent();
                         oldparent.removeView(view);
@@ -93,6 +93,8 @@ public class ActivityHutsuneakBete2 extends AppCompatActivity {
                         MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete2.this, R.raw.erantzun_zuzena2_audioa);
                         mediaPlayer.start();
                         contadorButton++;
+                        btn1.setKeyListener(null);
+                        target3.setEnabled(false);
                         Jarraitu();
                     } else if (view.getId() == R.id.btn2 && v.getId() == R.id.target2) {
 
@@ -103,8 +105,10 @@ public class ActivityHutsuneakBete2 extends AppCompatActivity {
                         MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete2.this, R.raw.erantzun_zuzena2_audioa);
                         mediaPlayer.start();
                         contadorButton++;
+                        btn2.setKeyListener(null);
+                        target2.setEnabled(false);
                         Jarraitu();
-                    } else if (view.getId() == R.id.btn3 && v.getId() == R.id.target3) {
+                    } else if (view.getId() == R.id.btn3 && v.getId() == R.id.target1) {
 
                         ConstraintLayout oldparent = (ConstraintLayout) view.getParent();
                         oldparent.removeView(view);
@@ -113,6 +117,8 @@ public class ActivityHutsuneakBete2 extends AppCompatActivity {
                         MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete2.this, R.raw.erantzun_zuzena2_audioa);
                         mediaPlayer.start();
                         contadorButton++;
+                        btn3.setKeyListener(null);
+                        target1.setEnabled(false);
                         Jarraitu();
                     } else if (view.getId() == R.id.btn4 && v.getId() == R.id.target4) {
 
@@ -123,6 +129,8 @@ public class ActivityHutsuneakBete2 extends AppCompatActivity {
                         MediaPlayer mediaPlayer = MediaPlayer.create(ActivityHutsuneakBete2.this, R.raw.erantzun_zuzena2_audioa);
                         mediaPlayer.start();
                         contadorButton++;
+                        btn4.setKeyListener(null);
+                        target4.setEnabled(false);
                         Jarraitu();
                     }
 
