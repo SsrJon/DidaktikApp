@@ -157,22 +157,28 @@ public class MapaActivity extends AppCompatActivity implements
        Cursor cursor = db.query(DBHelper.entidadProgreso.TABLE_NAME,null,selection,selectionArgs,null,null,null);
         while(cursor.moveToNext()){
             int PTO1 = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO));
-            Toast.makeText(getApplicationContext(), " "+ PTO1, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Cursor normal "+ PTO1, Toast.LENGTH_SHORT).show();
             Marcadores = PTO1;
         }
+        Toast.makeText(getApplicationContext(), "Cursor normal "+ Marcadores, Toast.LENGTH_SHORT).show();
+
         ArrayList<Lugar> lugares = new ArrayList<>();
         Cursor cursorcantidad = db.query(DBHelper.entidadLugares.TABLE_NAME,null,null,null,null,null,null);
         numLugares =cursorcantidad.getCount();
+        Toast.makeText(getApplicationContext(), "Numero de lugares "+ numLugares, Toast.LENGTH_SHORT).show();
         while (cursorcantidad.moveToNext()){
             int Id = cursorcantidad.getInt(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares._ID));
-            String tittle = cursorcantidad.getString(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE));
-            Toast.makeText(getApplicationContext(),"NOMBRE METER:--"+tittle, Toast.LENGTH_SHORT).show();
+            String nom = cursorcantidad.getString(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE));
+            Toast.makeText(getApplicationContext(),"NOMBRE METER:--"+nom, Toast.LENGTH_SHORT).show();
             double Latitud = cursorcantidad.getDouble(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_LATITUD));
+            Toast.makeText(getApplicationContext(),"LATITUD METER:--"+Latitud, Toast.LENGTH_SHORT).show();
             double Longitud = cursorcantidad.getDouble(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_LONGITUD));
-            Lugar L = new Lugar(Id,tittle,Latitud,Longitud);
+            Lugar L = new Lugar(Id,nom,Latitud,Longitud);
             Toast.makeText(getApplicationContext(),"NOMBRE METIDO:--"+L.getNombre(), Toast.LENGTH_SHORT).show();
             lugares.add(L);
         }
+
+       // Toast.makeText(getApplicationContext(), "Numero de lugares "+ numLugares, Toast.LENGTH_SHORT).show();
 
         if (numLugares > Marcadores ){
             for (int i =0; Marcadores>i;i++) {
@@ -694,17 +700,16 @@ public class MapaActivity extends AppCompatActivity implements
 
     public boolean onOptionsItemSelected (MenuItem item){
         int id = item.getItemId();
-        if(id == R.id.juegos){
-            if (pantalla==0){
-                Log.d("tag", "juegos");
-                Intent intent = new Intent(MapaActivity.this,GurutzegramaActivity.class);
+        if(id == R.id.ezarpenak){
+            Intent intent = new Intent(MapaActivity.this,Ezarpenak.class);
+            startActivity(intent);
+        }
+
+        if(id == R.id.kredituak){
+
+                Intent intent = new Intent(MapaActivity.this,Kredituak.class);
                 startActivity(intent);
 
-                pantalla=1;
-            }else if (pantalla == 1){
-
-                pantalla=0;
-            }
         }
         return super.onOptionsItemSelected(item);
     }

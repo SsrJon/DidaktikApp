@@ -73,6 +73,10 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, HutsuneakTabla.class);
                     startActivity(intent);
                 }
+                if (fotoaMandar.equals("Test0")){
+                    Intent intent = new Intent(seleccionJuego.this, Test0.class);
+                    startActivity(intent);
+                }
 
             }
         });
@@ -111,6 +115,8 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J12);
         Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
         Juegos.getJuegosArrayList().add(J13);
+        Juegos J14 = new Juegos("Test0",getDrawable(R.drawable.test));
+        Juegos.getJuegosArrayList().add(J14);
 
 
     }

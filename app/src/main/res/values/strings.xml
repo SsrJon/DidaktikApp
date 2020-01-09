@@ -28,7 +28,6 @@
     <string name="amaituta">Amaitu duzu!</string>
 
 
-
     <!-- Gurutzegrama-->
     <string name="tituloHorizontalGurutzegrama">Horizontal</string>
     <string name="tituloVerticalGurutzegrama">Bertikal</string>
@@ -187,7 +186,6 @@ altueragatik nabarmentzen da.</string>
     <string name="p2_argazkia_galdera">Zein da Andra Maria Magdalena Eliza?</string>
 
 
-
     <!-- Test punto 0-->
     <string name="p0_test_galdera">Zer da ondare kulturala?</string>
     <string name="p0_test_a"> a. Komunitateko kultura bizi irauteko eta
@@ -197,7 +195,6 @@ belaunaldiei transmititzen diren
 ondasun multzoa, herriari nortasuna
 ematen diona.</string>
     <string name="p0_test_c">c. A eta B zuzenak dira.</string>
-
 
 
 </resources>

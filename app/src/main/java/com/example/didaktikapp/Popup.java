@@ -96,6 +96,11 @@ public class Popup extends Activity {
                     Intent intent = new Intent(Popup.this, TestGalderak.class);
                     startActivity(intent);
                 }
+                else if(getIntent().getStringExtra("valor").equals("test0")){
+
+                    Intent intent = new Intent(Popup.this, Test0.class);
+                    startActivity(intent);
+                }
 
 
 
