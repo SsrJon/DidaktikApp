@@ -37,7 +37,7 @@ public class InicioAudioFragment extends Fragment {
         View root= inflater.inflate(R.layout.inicio_audio_fragment, container, false);
         Bundle args = getArguments();
         Nombre = getArguments().getString("nombre");
-        Toast.makeText(getContext(), Nombre, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), Nombre, Toast.LENGTH_SHORT).show();
 
 
 

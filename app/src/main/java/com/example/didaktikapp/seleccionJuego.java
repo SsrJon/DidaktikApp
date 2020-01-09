@@ -34,8 +34,8 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, Quiz.class);
                     startActivity(intent);
                 }if (fotoaMandar.equals("Puzzle")){
-                    Intent intent = new Intent(seleccionJuego.this, PuzzleActivity.class);
-                    startActivity(intent);
+                   // Intent intent = new Intent(seleccionJuego.this, PuzzleActivity.class);
+                    //startActivity(intent);
                 }if (fotoaMandar.equals("Puzzle irristagarria")){
                     Intent intent = new Intent(seleccionJuego.this, com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity.class);
                     startActivity(intent);
@@ -43,15 +43,19 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, ActivityHutsuneakBete.class);
                     startActivity(intent);
                 }
+                if (fotoaMandar.equals("Hutsuneak bete2")){
+                    Intent intent = new Intent(seleccionJuego.this, ActivityHutsuneakBete2.class);
+                    startActivity(intent);
+                }
                 if (fotoaMandar.equals("Gurutzegrama")){
                     Intent intent = new Intent(seleccionJuego.this, GurutzegramaActivity.class);
                     startActivity(intent);
 
-                }if (fotoaMandar.equals("Egia edo Gezurra")){
+                }if (fotoaMandar.equals("Egia/Gezurra")){
                     Intent intent = new Intent(seleccionJuego.this, EgiaedoGezurra.class);
                     startActivity(intent);
                 }if(fotoaMandar.equals("Argazkia aukeratu")) {
-                    Intent intent = new Intent(seleccionJuego.this, Fotoelejir.class);
+                    Intent intent = new Intent(seleccionJuego.this, FotoElegir.class);
                     startActivity(intent);
                 }if(fotoaMandar.equals("Larrea 1")) {
                     Intent intent = new Intent(seleccionJuego.this, HutsuneakTabla.class);
@@ -95,16 +99,23 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J6);
         Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
         Juegos.getJuegosArrayList().add(J7);
-        Juegos J8 = new Juegos("Egia edo Gezurra",getDrawable(R.drawable.rellenar_hueco));
+        Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.egiagezurra));
         Juegos.getJuegosArrayList().add(J8);
-        Juegos J9 = new Juegos("Argazkia aukeratu",getDrawable(R.drawable.rellenar_hueco));
+        Juegos J9 = new Juegos("Argazkia aukeratu",getDrawable(R.drawable.iglesiaicon));
         Juegos.getJuegosArrayList().add(J9);
         Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
         Juegos.getJuegosArrayList().add(J10);
-        Juegos J11 = new Juegos("Test",getDrawable(R.drawable.rellenar_hueco));
+        Juegos J11 = new Juegos("Test",getDrawable(R.drawable.test));
         Juegos.getJuegosArrayList().add(J11);
         Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
         Juegos.getJuegosArrayList().add(J12);
+        Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+        Juegos.getJuegosArrayList().add(J13);
 
+
+    }
+    public void onBackPressed(){
+        Intent intent = new Intent(seleccionJuego.this,MapaActivity.class);
+        startActivity(intent);
     }
 }

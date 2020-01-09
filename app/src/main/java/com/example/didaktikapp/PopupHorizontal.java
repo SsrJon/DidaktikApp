@@ -65,6 +65,12 @@ public class PopupHorizontal extends Activity {
                     startActivity(intent);
                 }
 
+                if(getIntent().getStringExtra("valor").equals("hutsuneak2")){
+
+                    Intent intent = new Intent(PopupHorizontal.this, ActivityHutsuneakBete2.class);
+                    startActivity(intent);
+                }
+
                 if(getIntent().getStringExtra("valor").equals("egia")){
 
                     Intent intent = new Intent(PopupHorizontal.this, EgiaedoGezurra.class);
@@ -74,6 +80,12 @@ public class PopupHorizontal extends Activity {
                 if(getIntent().getStringExtra("valor").equals("tabla")){
 
                     Intent intent = new Intent(PopupHorizontal.this, HutsuneakTabla.class);
+                    startActivity(intent);
+                }
+
+                if(getIntent().getStringExtra("valor").equals("foto_elegir")){
+
+                    Intent intent = new Intent(PopupHorizontal.this, FotoElegir.class);
                     startActivity(intent);
                 }
 
@@ -88,6 +100,11 @@ public class PopupHorizontal extends Activity {
                 if(getIntent().getStringExtra("valor").equals("tabla")){
                     Intent intent = new Intent(PopupHorizontal.this, MikaExplicando.class);
                     intent.putExtra("marcador",1.2);
+                    startActivity(intent);
+                }
+
+                else{
+                    Intent intent = new Intent(PopupHorizontal.this, seleccionJuego.class);
                     startActivity(intent);
                 }
 

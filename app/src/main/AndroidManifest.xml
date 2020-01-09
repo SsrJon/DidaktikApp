@@ -11,18 +11,30 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/grape1"
+        android:icon="@drawable/uva"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/grape1"
+        android:roundIcon="@drawable/uva"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".ActivityHutsuneakBete2"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".MikaExplicando"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TestGalderak"
+            android:screenOrientation="portrait" />
         <activity android:name=".Test"></activity>
         <activity android:name=".MikaExplicando" />
         <activity android:name=".TestGalderak" />
+
         <activity
             android:name=".HutsuneakTabla"
             android:screenOrientation="landscape" />
-        <activity android:name=".Fotoelejir" />
+        <activity
+            android:name=".FotoElegir"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".PopupHorizontal"
             android:theme="@style/AppTheme.PopUpPagos"
@@ -30,7 +42,9 @@
         <activity
             android:name=".EgiaedoGezurra"
             android:screenOrientation="landscape" />
-        <activity android:name=".OrdenarImagen" />
+        <activity
+            android:name=".OrdenarImagen"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Popup"
             android:theme="@style/AppTheme.PopUpPagos"

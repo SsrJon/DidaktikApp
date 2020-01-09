@@ -45,7 +45,7 @@
     <string name="horizontalDos"> 4.Hainbat alditan berreraiki izan den baseliza. </string>
     <string name="horizontalTres">5.Lehen eskola bat zen. </string>
     <string name="horizontalCuatro">6.Vicente Larreak egin zuen.</string>
-    <string name="verticalUno">1.Arrigorriagako batalian du jatorria.</string>
+    <string name="verticalUno">1.Arrigorriagako batailan du jatorria.</string>
     <string name="verticalDos"> 3.Gaur egunean gaztegunea da. </string>
     <string name="horizontalbtnUno">1</string>
     <string name="horizontalbtnDos">2</string>
@@ -59,7 +59,8 @@
     <string name="respuestaCuatro">san kristo baseliza</string>
     <string name="respuestaCinco">udaletxea</string>
     <string name="respuestaSeis">larrea eskultura</string>
-    <string name="responder">Responder</string>
+    <string name="responder">Erantzun</string>
+
 
     <string name="p5_hutsuneak_bete_0">Paragrafo honen hutsuneak bete:</string>
 
@@ -78,6 +79,22 @@
     <string name="p5_hutsuneak_bete_r1"> Landaederreagako Santo Kristo baseliza</string>
     <string name="p5_hutsuneak_bete_r2"> berreraiki</string>
     <string name="p5_hutsuneak_bete_r3"> gurutzearen</string>
+
+
+
+    <string name="p2_hutsuneak_bete_1"> Udaletxe berria lehen </string>
+    <string name="p2_hutsuneak_bete_2"> bat zen. </string>
+    <string name="p2_hutsuneak_bete_3"> Udaletxe zaharra </string>
+    <string name="p2_hutsuneak_bete_4"> zen, </string>
+    <string name="p2_hutsuneak_bete_5"> baten ondorioz. </string>
+    <string name="p2_hutsuneak_bete_6"> Udaletxe berria eraikitzeko, eskola zaharraren, </string>
+    <string name="p2_hutsuneak_bete_7"> erabili ziren.</string>
+
+
+    <string name="p2_hutsuneak_bete_r1"> eskola</string>
+    <string name="p2_hutsuneak_bete_r2"> berreraiki</string>
+    <string name="p2_hutsuneak_bete_r3"> sute</string>
+    <string name="p2_hutsuneak_bete_r4"> harriak</string>
 
     <string name="zuzendu">Zuzendu</string>
 
@@ -182,5 +199,9 @@ altueragatik nabarmentzen da.</string>
     <string name="numeroPreguntaQuizUno">1/3</string>
     <string name="numeroPreguntaQuizDos">2/3</string>
     <string name="numeroPreguntaQuizTres">3/3</string>
+
+
+    <string name="p2_argazkia_galdera">Zein da Andra Maria Magdalena Eliza?</string>
+
 
 </resources>
