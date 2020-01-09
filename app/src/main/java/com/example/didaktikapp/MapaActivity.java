@@ -70,14 +70,15 @@ public class MapaActivity extends AppCompatActivity implements
     private OfflineManager offlineManager;
     TextView llegaste;
     ImageView mikainfo;
-    int contador= 0;
+    int numLugares = 0;
     String Nombre ;
     // JSON encoding/decoding
     public static final String JSON_CHARSET = "UTF-8";
     public static final String JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME";
     DBHelper dbHelper;
     SQLiteDatabase db;
-    final MarkerOptions punto1 = new MarkerOptions();
+    MarkerOptions punto1 = new MarkerOptions();
+    boolean marcadorpuesto = false;
     //Zona accesible en el mapa
 
    private static final LatLng BOUND_CORNER_NW = new LatLng(43.202712, -2.91002);
@@ -155,31 +156,95 @@ public class MapaActivity extends AppCompatActivity implements
 
         Cursor cursor = db.query(DBHelper.entidadProgreso.TABLE_NAME,null,selection,selectionArgs,null,null,null);
         while(cursor.moveToNext()){
-            int PTO1 = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1));
+            int PTO1 = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO));
             Toast.makeText(getApplicationContext(), " "+ PTO1, Toast.LENGTH_SHORT).show();
-            int PTO2 = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_2));
-            int PTO3 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_3);
-            int PTO4 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_4);
-            int PTO5 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_5);
-            int PTO6 = cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PTO_6);
+            Marcadores = PTO1;
+        }
+        ArrayList<Lugar> lugares = new ArrayList<>();
+        Cursor cursorcantidad = db.query(DBHelper.entidadLugares.TABLE_NAME,null,null,null,null,null,null);
+        numLugares =cursorcantidad.getCount();
+        while (cursorcantidad.moveToNext()){
+            int Id = cursorcantidad.getInt(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares._ID));
+            String tittle = cursorcantidad.getString(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE));
+            Toast.makeText(getApplicationContext(),"NOMBRE METER:--"+tittle, Toast.LENGTH_SHORT).show();
+            double Latitud = cursorcantidad.getDouble(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_LATITUD));
+            double Longitud = cursorcantidad.getDouble(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_LONGITUD));
+            Lugar L = new Lugar(Id,tittle,Latitud,Longitud);
+            Toast.makeText(getApplicationContext(),"NOMBRE METIDO:--"+L.getNombre(), Toast.LENGTH_SHORT).show();
+            lugares.add(L);
+        }
 
-            if(PTO1 == 0){
-                 Marcadores =1 ;
-            }else if (PTO2 == 0){
-                Marcadores = 2;
-            }else if (PTO3 == 0){
-                Marcadores = 3;
-            }else if (PTO4 == 0){
-                Marcadores = 4;
-            }else if (PTO5 == 0){
-                Marcadores = 5;
-            }else if (PTO6 == 0){
-                Marcadores = 6;
+        if (numLugares > Marcadores ){
+            for (int i =0; Marcadores>i;i++) {
+                if (Marcadores == lugares.get(i).getIdlugar()) {
+                    Toast.makeText(getApplicationContext(),"ID:--"+lugares.get(i).getIdlugar(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"NOMBRE:--"+lugares.get(i).getNombre(), Toast.LENGTH_SHORT).show();
+                    punto1.title(lugares.get(i).getNombre());
+                    IconFactory iconFactoryPunto1 = IconFactory.getInstance(MapaActivity.this);
+                    Icon iconPunto1 = iconFactoryPunto1.fromResource(R.drawable.marcador3);
+                    punto1.icon(iconPunto1);
+                    punto1.position(new LatLng(lugares.get(i).Latitud, lugares.get(i).Longitud));
+                    mapboxMap.addMarker(punto1);
+                    marcadorpuesto = true;
+                }
+            }
+            if (!marcadorpuesto) {
+                // final MarkerOptions punto1 = new MarkerOptions();
+                //Punto 1  Larrea eskultura
+                punto1.title("Larrea eskultura");
+                IconFactory iconFactoryPunto1 = IconFactory.getInstance(MapaActivity.this);
+                Icon iconPunto1 = iconFactoryPunto1.fromResource(R.drawable.marcador3);
+                punto1.icon(iconPunto1);
+                punto1.position(new LatLng(43.211583, -2.886917));
+                mapboxMap.addMarker(punto1);
+                final MarkerOptions punto2 = new MarkerOptions();
+                //Punto 2  Arrigorriagako Udaletxea
+                punto2.title("Arrigorriagako Udaletxea");
+                IconFactory iconFactoryPunto2 = IconFactory.getInstance(MapaActivity.this);
+                Icon iconPunto2 = iconFactoryPunto2.fromResource(R.drawable.marcador2);
+                punto2.icon(iconPunto2);
+                punto2.position(new LatLng(43.205978, -2.887869));
+                mapboxMap.addMarker(punto2);
+                final MarkerOptions punto3 = new MarkerOptions();
+                //Punto 3 Andra Maria Magdalena eliza
+                punto3.title("Maria Magdalena eliza");
+                IconFactory iconFactoryPunto3 = IconFactory.getInstance(MapaActivity.this);
+                Icon iconPunto3 = iconFactoryPunto3.fromResource(R.drawable.marcador3);
+                punto3.icon(iconPunto3);
+                punto3.position(new LatLng(43.205548, -2.888705));
+                mapboxMap.addMarker(punto3);
+                final MarkerOptions punto4 = new MarkerOptions();
+                //Punto 4 Hiltegi Zaharra
+                punto4.title("Hiltegi Zaharra");
+                IconFactory iconFactoryPunto4 = IconFactory.getInstance(MapaActivity.this);
+                Icon iconPunto4 = iconFactoryPunto4.fromResource(R.drawable.marcador4);
+                punto4.icon(iconPunto4);
+                punto4.position(new LatLng(43.204889, -2.887833));
+                mapboxMap.addMarker(punto4);
+                final MarkerOptions punto5 = new MarkerOptions();
+                //Punto 5 Landaederreagako Santo Kristo baseliza
+                punto5.title("Landaederreagako Santo Kristo baseliza");
+                IconFactory iconFactoryPunto5 = IconFactory.getInstance(MapaActivity.this);
+                Icon iconPunto5 = iconFactoryPunto5.fromResource(R.drawable.marcador5);
+                punto5.icon(iconPunto5);
+                punto5.position(new LatLng(43.209306, -2.893722));
+                mapboxMap.addMarker(punto5);
+
+                final MarkerOptions punto6 = new MarkerOptions();
+                //Punto 6 Abrisketako San Pedro baseleizea
+                punto6.title("Abrisketako San Pedro baseleizea");
+                IconFactory iconFactoryPunto6 = IconFactory.getInstance(MapaActivity.this);
+                Icon iconPunto6 = iconFactoryPunto6.fromResource(R.drawable.marcador6);
+                punto6.icon(iconPunto6);
+                punto6.position(new LatLng(43.210500, -2.909417));
+                mapboxMap.addMarker(punto6);
             }
 
-        }
+            }
+
+
         //final MarkerOptions punto1 = new MarkerOptions();
-        if (Marcadores == 1){
+        /*if (Marcadores == 1){
             //Punto 1  Larrea eskultura
             punto1.title("Larrea eskultura");
             IconFactory iconFactoryPunto1 = IconFactory.getInstance(MapaActivity.this);
@@ -228,7 +293,7 @@ public class MapaActivity extends AppCompatActivity implements
             punto1.icon(iconPunto6);
             punto1.position(new LatLng(43.210500,-2.909417));
             mapboxMap.addMarker(punto1);
-        }
+        }*/
 
         mapboxMap.setStyle(Style.OUTDOORS, new Style.OnStyleLoaded() {
 
@@ -239,6 +304,7 @@ public class MapaActivity extends AppCompatActivity implements
                 mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(@NonNull Marker marker) {
+                       // String marcador= marker.getTitle();
                         if (marker.getTitle().equals("Larrea eskultura")) {
                             Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));

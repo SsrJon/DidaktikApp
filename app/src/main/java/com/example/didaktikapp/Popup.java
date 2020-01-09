@@ -118,7 +118,7 @@ public class Popup extends Activity {
                 db.execSQL(strSQL);*/
 
                 ContentValues values = new ContentValues();
-                values.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1,1);
+                values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,2);
                 String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
                 String args [] = {Nombre};
                 int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);

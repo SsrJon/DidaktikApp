@@ -16,7 +16,8 @@
         android:roundIcon="@drawable/grape1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MikaExplicando"></activity>
+        <activity android:name=".Test"></activity>
+        <activity android:name=".MikaExplicando" />
         <activity android:name=".TestGalderak" />
         <activity
             android:name=".HutsuneakTabla"
