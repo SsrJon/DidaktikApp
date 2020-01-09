@@ -70,6 +70,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //db.execSQL(SQL_DELETE_TABLE_LUGARES);
+        //db.execSQL(SQL_CREATE_TABLE_PROGRESO);
+        //db.execSQL(SQL_DELETE_TABLE_USUARIO);
         db.execSQL(SQL_CREATE_TABLE_USUARIO);
         db.execSQL(SQL_CREATE_TABLE_PROGRESO);
         db.execSQL(SQL_CREATE_TABLE_LUGARES);
@@ -79,7 +82,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL(SQL_DELETE_TABLE_USUARIO);
+        db.execSQL(SQL_DELETE_TABLE_PROGRESO);
+        db.execSQL(SQL_DELETE_TABLE_LUGARES);
+        onCreate(db);
     }
 
     public void onDowngrade (SQLiteDatabase db,int oldVersion, int newVersion){
@@ -109,7 +115,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void rellenarPuntos(SQLiteDatabase db){
         for (int i = 0;lugares.size()>i;i++) {
             ContentValues values = new ContentValues();
-            values.put(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE,lugares.get(i).Lugar);
+            values.put(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE,lugares.get(i).Nombre);
             values.put(DBHelper.entidadLugares.COLUMN_NAME_LATITUD, lugares.get(i).Latitud);
             values.put(DBHelper.entidadLugares.COLUMN_NAME_LONGITUD, lugares.get(i).Longitud);
             db.insert(DBHelper.entidadLugares.TABLE_NAME, null, values);
