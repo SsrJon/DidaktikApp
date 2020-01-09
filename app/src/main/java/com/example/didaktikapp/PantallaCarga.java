@@ -21,6 +21,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+
 import io.opencensus.tags.Tag;
 
 
@@ -28,6 +30,8 @@ public class PantallaCarga extends AppCompatActivity {
     ImageView progreso;
     DBHelper dbHelper;
     SQLiteDatabase dbsqlite;
+    ArrayList <Lugar> lugarOnline = new ArrayList<>();
+    ArrayList <Lugar> lugarOffline = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +74,15 @@ public class PantallaCarga extends AppCompatActivity {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                   //  Log.d(Tag, document.getId() + " => " + document.getData());
                   //  String Id = document.getData();
+                    long idLugar = document.getLong("Id");
+                    int Id = (int) idLugar;
+                    String nombre = document.getString("Nombre");
+                    double Latitud = document.getDouble("Latitud");
+                    double Longitud = document.getDouble("Longitud");
+                    Lugar L = new Lugar(Id,nombre,Latitud,Longitud);
+                    lugarOnline.add(L);
 
-                }
+                    }
             } else {
                // Log.w(TAG, "Error getting documents.", task.getException());
             }
