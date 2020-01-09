@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "683062192807",
+    "firebase_url": "https://didaktikapp-fad42.firebaseio.com",
+    "project_id": "didaktikapp-fad42",
+    "storage_bucket": "didaktikapp-fad42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683062192807:android:84d14ad5413d16a7920982",
+        "android_client_info": {
+          "package_name": "com.example.didaktikapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683062192807-f2ot17grrp3g0upl9oc7r9vrp9cv7n91.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.didaktikapp",
+            "certificate_hash": "d62cad578e6b4db596335d52ac73ffdc9e9d95b7"
+          }
+        },
+        {
+          "client_id": "683062192807-rtl1q01559l4k3iefsbahdpfqon32bk9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlsaYY3T3uyea2t0QpNfm0W1ienawO4wo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683062192807-rtl1q01559l4k3iefsbahdpfqon32bk9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

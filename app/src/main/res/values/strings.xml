@@ -9,6 +9,8 @@
     <string name="empezar_aventura">Hasi</string>
 
     <string name="continuar">Jarraitu</string>
+
+    <!-- Audio comienzo-->
     <string name="audio1">Kaixo! Ni mika naiz eta zuen laguntzailea izango
         naiz. Ez duzue imajinatzen zer nolako abentura
         miresgarria antolatu dudan! Ba al dakizue zertan
@@ -21,24 +23,13 @@
     <string name="timer_default">00:00</string>
     <string name="timer">Timer</string>
 
-
     <string name="jarraitu">Jarraitu</string>
     <string name="errepikatu">Errepikatu</string>
     <string name="amaituta">Amaitu duzu!</string>
 
-    <!--__________-LIMPIEZA URGENTE ________-->
 
-    <string name="start">Start</string>
-    <string name="resume">Resume</string>
-    <string name="new_game">New Puzzle</string>
-    <string name="grid_size">GridSize:</string>
-    <string name="set3">3</string>
-    <string name="set4">4</string>
-    <string name="set5">5</string>
-    <string name="set6">6</string>
-    <!-- Toast Messages -->
-    <string name="game_paused">Game Paused</string>
 
+    <!-- Gurutzegrama-->
     <string name="tituloHorizontalGurutzegrama">Horizontal</string>
     <string name="tituloVerticalGurutzegrama">Bertikal</string>
     <string name="horizontalUno">2.Bizkaiko baseliza zaharrena da.</string>
@@ -61,7 +52,7 @@
     <string name="respuestaSeis">larrea eskultura</string>
     <string name="responder">Erantzun</string>
 
-
+    <!-- Hutsuneak bete punto 5-->
     <string name="p5_hutsuneak_bete_0">Paragrafo honen hutsuneak bete:</string>
 
     <string name="p5_hutsuneak_bete_1">Ermita hau</string>
@@ -79,6 +70,16 @@
     <string name="p5_hutsuneak_bete_r1"> Landaederreagako Santo Kristo baseliza</string>
     <string name="p5_hutsuneak_bete_r2"> berreraiki</string>
     <string name="p5_hutsuneak_bete_r3"> gurutzearen</string>
+
+
+    <!-- Hutsuneak bete punto 2-->
+    <string name="p2_hutsuneak_bete_1"> Udaletxe berria lehen </string>
+    <string name="p2_hutsuneak_bete_2"> bat zen. </string>
+    <string name="p2_hutsuneak_bete_3"> Udaletxe zaharra </string>
+    <string name="p2_hutsuneak_bete_4"> zen, </string>
+    <string name="p2_hutsuneak_bete_5"> baten ondorioz. </string>
+    <string name="p2_hutsuneak_bete_6"> Udaletxe berria eraikitzeko, eskola zaharraren, </string>
+    <string name="p2_hutsuneak_bete_7"> erabili ziren.</string>
 
     <string name="p2_hutsuneak_bete_r1"> eskola</string>
     <string name="p2_hutsuneak_bete_r2"> berreraiki</string>
@@ -104,29 +105,22 @@
     <string name="title_activity_puzzle">PuzzleActivity</string>
 
     <string name="hint">Argazkia ikusi</string>
-    <!-- Paused UI -->
-    <string name="resize">Resize</string>
-    <!-- Solved UI -->
-    <string name="puzzle_solved">Puzzle Solved ☜</string>
-    <string name="highscore">Best Time: \nBest Moves: </string>
-    <string name="retry">Retry</string>
 
-    <!-- Photo Cropper -->
-    <string name="title_activity_photo_cropping">PhotoCropping</string>
-    <string name="zoom_buttons">zoom</string>
-    <string name="move_arrows">move arrow</string>
-    <string name="test">Move image to fit within square puzzle grid or use arrows.
-                        Use buttons to zoom in or out.</string>
 
     <string name="izena">Mezedes izen bat sartu</string>
 
 
+    <!-- Punto 2-->
     <string name="Larrea_eskultura">Vicente Larrearen obra hau (2002an Bilbotik
 etorrita) Arrigorriagako sarreran aurki
 dezakegu, polikiroldegiaren ondoan. Ondare
 kultural arkitektoniko hau, bere izugarrizko
 altueragatik nabarmentzen da.</string>
 
+    <string name="explicacionpunto1">Vicente Larrearen obra hau (2002an Bilbotik etorrita) Arrigorriagako sarreran aurki dezakegu, polikiroldegiaren ondoan. Ondare kultural arkitektoniko hau, bere izugarrizko altueragatik nabarmentzen da."</string>
+    <string name="explicacionpunto12">“Larrea eskulturaren oinarrizko datuak ikasi dituzuenez, orain honen puzzlea ebatziko duzue. Animo!”</string>
+
+    <!-- Ordenar imagenes punto 3-->
     <string name="orden">Hurrengo argazkiak, kronologikoki ordenatu behar duzu.</string>
     <string name="escribirOrden">Idatzi orden zuzena</string>
     <string name="foto_A">A</string>
@@ -137,7 +131,7 @@ altueragatik nabarmentzen da.</string>
     <string name="ordenBuenoDos">cbad</string>
     <string name="ordenBuenoTres">c, b, a, d</string>
 
-
+    <!-- Egia/Gezurra punto 3-->
     <string name="EGpreguntaUno">Andra Maria Magdalena eliza ondare kulturala da.</string>
     <string name="EGpreguntaDos">Eliza hau, XXI. mendekoa dela uste da.</string>
     <string name="EGpreguntaTres">Jatorriko eraikuntzatik dena mantenduda.</string>
@@ -145,6 +139,7 @@ altueragatik nabarmentzen da.</string>
     <string name="egia">Egia</string>
     <string name="gezurra">Gezurra</string>
 
+    <!-- Test punto 6-->
     <string name="testPreguntaUno">Zein mendetakoa da?</string>
     <string name="testRespuestaUnoUno">XV.mendekoa</string>
     <string name="testRespuestaUnoDos">XII.mendearen hasierakoa</string>
@@ -163,14 +158,12 @@ altueragatik nabarmentzen da.</string>
     <string name="testRespuestaCuatroTres">Estilo barrokoa</string>
 
 
-    <string name="explicacionpunto1">Vicente Larrearen obra hau (2002an Bilbotik etorrita) Arrigorriagako sarreran aurki dezakegu, polikiroldegiaren ondoan. Ondare kultural arkitektoniko hau, bere izugarrizko altueragatik nabarmentzen da."</string>
-    <string name="explicacionpunto12">“Larrea eskulturaren oinarrizko datuak ikasi dituzuenez, orain honen puzzlea ebatziko duzue. Animo!”</string>
-
     <string name="numeroPreguntaTestUno">1/4</string>
     <string name="numeroPreguntaTestDos">2/4</string>
     <string name="numeroPreguntaTestTres">3/4</string>
     <string name="numeroPreguntaTestCuatro">4/4</string>
 
+    <!-- Test punto 4-->
     <string name="quizPreguntaUno">Gaur eguneko Gaztegunea....</string>
     <string name="quizrespuestaUnoUno">Hilerria izan zen.</string>
     <string name="quizrespuestaUnoDos">Betidanik Gaztegunea izan da.</string>
@@ -190,7 +183,21 @@ altueragatik nabarmentzen da.</string>
     <string name="numeroPreguntaQuizTres">3/3</string>
 
 
+    <!-- Imagen correcta acertijo-->
     <string name="p2_argazkia_galdera">Zein da Andra Maria Magdalena Eliza?</string>
+
+
+
+    <!-- Test punto 0-->
+    <string name="p0_test_galdera">Zer da ondare kulturala?</string>
+    <string name="p0_test_a"> a. Komunitateko kultura bizi irauteko eta
+interes handiko ondasun multzoa da.</string>
+    <string name="p0_test_b">b. Iraganetik jasotako eta datozen
+belaunaldiei transmititzen diren
+ondasun multzoa, herriari nortasuna
+ematen diona.</string>
+    <string name="p0_test_c">c. A eta B zuzenak dira.</string>
+
 
 
 </resources>
