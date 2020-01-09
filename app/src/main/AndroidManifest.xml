@@ -16,8 +16,11 @@
         android:roundIcon="@drawable/uva"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityHutsuneakBete2"
-            android:screenOrientation="landscape"/>
+        <activity android:name=".Test0"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ActivityHutsuneakBete2"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".MikaExplicando"
             android:screenOrientation="portrait" />
