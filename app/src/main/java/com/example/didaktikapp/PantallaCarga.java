@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -25,12 +26,15 @@ import io.opencensus.tags.Tag;
 
 public class PantallaCarga extends AppCompatActivity {
     ImageView progreso;
-
+    DBHelper dbHelper;
+    SQLiteDatabase dbsqlite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_carga);
+        dbHelper = new DBHelper(getApplicationContext());
+        dbsqlite = dbHelper.getWritableDatabase();
         Permisos();
            Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -65,7 +69,7 @@ public class PantallaCarga extends AppCompatActivity {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                   //  Log.d(Tag, document.getId() + " => " + document.getData());
-                    
+                  //  String Id = document.getData();
 
                 }
             } else {
