@@ -16,6 +16,7 @@
         android:roundIcon="@drawable/uva"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".ActivityHutsuneakBete2"
             android:screenOrientation="landscape"/>
         <activity
@@ -24,6 +25,10 @@
         <activity
             android:name=".TestGalderak"
             android:screenOrientation="portrait" />
+        <activity android:name=".Test"></activity>
+        <activity android:name=".MikaExplicando" />
+        <activity android:name=".TestGalderak" />
+
         <activity
             android:name=".HutsuneakTabla"
             android:screenOrientation="landscape" />
