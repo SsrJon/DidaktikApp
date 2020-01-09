@@ -83,12 +83,7 @@ public class InicioFragment extends Fragment {
         db.insert(DBHelper.entidadUsuario.TABLE_NAME, null, values);
         ContentValues valores = new ContentValues();
         valores.put(DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO,etNombreInicio.getText().toString());
-        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_1,0);
-        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_2,0);
-        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_3,0);
-        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_4,0);
-        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_5,0);
-        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PTO_6,0);
+        valores.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,1);
         db.insert(DBHelper.entidadProgreso.TABLE_NAME,null, valores);
 
     }

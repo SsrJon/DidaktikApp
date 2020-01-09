@@ -38,23 +38,13 @@ public class DBHelper extends SQLiteOpenHelper {
     public static class entidadProgreso implements BaseColumns {
         public static final String TABLE_NAME = "Progreso";
         public static final String COLUMN_NAME_ID_USUARIO = "IDusuario" ;
-        public static final String COLUMN_NAME_PTO_1 = "Punto1" ;
-        public static final String COLUMN_NAME_PTO_2 = "Punto2" ;
-        public static final String COLUMN_NAME_PTO_3 = "Punto3" ;
-        public static final String COLUMN_NAME_PTO_4 = "Punto4" ;
-        public static final String COLUMN_NAME_PTO_5 = "Punto5" ;
-        public static final String COLUMN_NAME_PTO_6 = "Punto6" ;
+        public static final String COLUMN_NAME_PROGRESO = "Puntos" ;
     }
 
     private static final String SQL_CREATE_TABLE_PROGRESO =
             "CREATE TABLE " + entidadProgreso.TABLE_NAME + " (" +
                     //entidadProgreso._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"  +
-                    entidadProgreso.COLUMN_NAME_PTO_1 + " INTEGER,"+
-                    entidadProgreso.COLUMN_NAME_PTO_2 + " INTEGER,"+
-                    entidadProgreso.COLUMN_NAME_PTO_3 + " INTEGER,"+
-                    entidadProgreso.COLUMN_NAME_PTO_4 + " INTEGER,"+
-                    entidadProgreso.COLUMN_NAME_PTO_5 + " INTEGER,"+
-                    entidadProgreso.COLUMN_NAME_PTO_6 + " INTEGER,"+
+                    entidadProgreso.COLUMN_NAME_PROGRESO + " INTEGER,"+
                     entidadProgreso.COLUMN_NAME_ID_USUARIO +" TEXT,"+
                     "FOREIGN KEY('"+  entidadProgreso.COLUMN_NAME_ID_USUARIO + "') REFERENCES '" + entidadUsuario.TABLE_NAME + "'('" + entidadUsuario.COLUMN_NAME_NOMBRE + "'))";
 
@@ -102,12 +92,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     public void crearLugares(){
-        Lugar L1 = new Lugar("Larrea eskultura",43.211583,-2.886917);
-        Lugar L2 = new Lugar("Arrigorriagako Udaletxea",43.205978,-2.887869);
-        Lugar L3 = new Lugar("Maria Magdalena eliza",43.205548,-2.888705);
-        Lugar L4 = new Lugar("Hiltegi Zaharra",43.204889,-2.887833);
-        Lugar L5 = new Lugar("Landaederreagako Santo Kristo baseliza",43.209306,-2.893722);
-        Lugar L6 = new Lugar("Abrisketako San Pedro baseleizea",43.210500,-2.909417);
+        Lugar L1 = new Lugar(1,"Larrea eskultura",43.211583,-2.886917);
+        Lugar L2 = new Lugar(2,"Arrigorriagako Udaletxea",43.205978,-2.887869);
+        Lugar L3 = new Lugar(3,"Maria Magdalena eliza",43.205548,-2.888705);
+        Lugar L4 = new Lugar(4,"Hiltegi Zaharra",43.204889,-2.887833);
+        Lugar L5 = new Lugar(5,"Landaederreagako Santo Kristo baseliza",43.209306,-2.893722);
+        Lugar L6 = new Lugar(6,"Abrisketako San Pedro baseleizea",43.210500,-2.909417);
         lugares.add(L1);
         lugares.add(L2);
         lugares.add(L3);

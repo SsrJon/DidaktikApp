@@ -21,12 +21,17 @@
         <activity
             android:name=".ActivityHutsuneakBete2"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".MikaExplicando"
             android:screenOrientation="portrait" />
         <activity
             android:name=".TestGalderak"
             android:screenOrientation="portrait" />
+        <activity android:name=".Test"></activity>
+        <activity android:name=".MikaExplicando" />
+        <activity android:name=".TestGalderak" />
+
         <activity
             android:name=".HutsuneakTabla"
             android:screenOrientation="landscape" />
