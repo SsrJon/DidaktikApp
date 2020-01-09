@@ -59,7 +59,7 @@ public class OrdenarImagen extends AppCompatActivity {
                 }  return false;
             }
         });*/
-
+        //onclick de las fotos, cuando se pulsa en la foto se añade la letra correspondiente para realizar la respuesta
         iglesiaA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +96,7 @@ public class OrdenarImagen extends AppCompatActivity {
             }
         });
 
-
+        //onclick del boton zuzendo, comprueba que la respuesta sea correcta o no si lo es salta el popup sino volver a intentar
         zuzendu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,7 +124,7 @@ public class OrdenarImagen extends AppCompatActivity {
                     mediaPlayer.start();
                 }
                 zuzendu.setClickable(false);
-
+                //Recoge si se ha pulsado zuzendo o no y en el caso de que se falle la resuesta se restringe el volver a darle al boton por 3 segundos
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     public void run() {
