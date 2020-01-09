@@ -694,17 +694,16 @@ public class MapaActivity extends AppCompatActivity implements
 
     public boolean onOptionsItemSelected (MenuItem item){
         int id = item.getItemId();
-        if(id == R.id.juegos){
-            if (pantalla==0){
-                Log.d("tag", "juegos");
-                Intent intent = new Intent(MapaActivity.this,GurutzegramaActivity.class);
+        if(id == R.id.ezarpenak){
+            Intent intent = new Intent(MapaActivity.this,Ezarpenak.class);
+            startActivity(intent);
+        }
+
+        if(id == R.id.kredituak){
+
+                Intent intent = new Intent(MapaActivity.this,Kredituak.class);
                 startActivity(intent);
 
-                pantalla=1;
-            }else if (pantalla == 1){
-
-                pantalla=0;
-            }
         }
         return super.onOptionsItemSelected(item);
     }

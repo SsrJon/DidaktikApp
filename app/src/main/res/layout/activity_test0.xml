@@ -12,46 +12,156 @@
         android:layout_width="295dp"
         android:layout_height="49dp"
         android:text="@string/p0_test_a"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.431"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186" />
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizonta13"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertica1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica18"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta12"
+        app:layout_constraintVertical_bias="0.483" />
 
     <TextView
         android:id="@+id/textViewB"
         android:layout_width="297dp"
         android:layout_height="58dp"
         android:text="@string/p0_test_b"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.331" />
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizonta14"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertica1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica18"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta13"
+        app:layout_constraintVertical_bias="0.54" />
 
     <TextView
         android:id="@+id/textViewC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="124dp"
         android:text="@string/p0_test_c"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertica1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica18"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta14"
+        app:layout_constraintVertical_bias="0.451" />
 
     <TextView
         android:id="@+id/textViewGaldera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="166dp"
+        android:layout_height="23dp"
         android:text="@string/p0_test_galdera"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizonta11"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertica17"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica2"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta2" />
+
+    <ImageView
+        android:id="@+id/imageViewMal"
+        android:layout_width="39dp"
+        android:layout_height="21dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizonta13"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertica18"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica2"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta12"
+        app:layout_constraintVertical_bias="0.254"
+        app:srcCompat="@drawable/mal" />
+
+    <ImageView
+        android:id="@+id/imageViewMal2"
+        android:layout_width="39dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizonta14"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertica18"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica2"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta13"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/mal" />
+
+    <ImageView
+        android:id="@+id/imageViewBien"
+        android:layout_width="41dp"
+        android:layout_height="25dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertica18"
+        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica2"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta14"
+        app:srcCompat="@drawable/zuzena" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertica1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.94" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertica17"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.53" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertica18"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.19" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertica2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.06" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta11"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.14" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta14"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.49" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta12"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta13"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
