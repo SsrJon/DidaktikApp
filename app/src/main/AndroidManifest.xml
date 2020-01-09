@@ -26,8 +26,6 @@
             android:name=".TestGalderak"
             android:screenOrientation="portrait" />
         <activity android:name=".Test"></activity>
-        <activity android:name=".MikaExplicando" />
-        <activity android:name=".TestGalderak" />
 
         <activity
             android:name=".HutsuneakTabla"
