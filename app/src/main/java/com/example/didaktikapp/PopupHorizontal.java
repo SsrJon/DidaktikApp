@@ -12,7 +12,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
-//import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
 
 public class PopupHorizontal extends Activity {
 
@@ -23,6 +22,7 @@ public class PopupHorizontal extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_popup_horizontal);
+
 
 
         Bundle bundle = getIntent().getExtras();
