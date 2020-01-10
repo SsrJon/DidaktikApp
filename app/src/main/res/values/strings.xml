@@ -197,4 +197,23 @@ ematen diona.</string>
     <string name="p0_test_c">c. A eta B zuzenak dira.</string>
 
 
+    <!-- Creditos-->
+
+    <string name="creditos_usuario_1">David Chacón</string>
+    <string name="creditos_usuario_2">Kevin Díaz-Medino</string>
+    <string name="creditos_usuario_3">Jon Ander De Castro</string>
+
+    <string name="creditos_usuario_4">Izaro Ouro</string>
+    <string name="creditos_usuario_5">Ainhoa Redondo</string>
+    <string name="creditos_usuario_6">Fran Rodríguez</string>
+    <string name="creditos_usuario_7">Janire Seoane</string>
+    <string name="creditos_usuario_8">Endika Torralba</string>
+    <string name="creditos_usuario_9">Noelia Vargas</string>
+
+    <string name="creditos_label_1">Garapen taldea</string>
+    <string name="creditos_label_2">Testuak/audioak</string>
+
+
+
+
 </resources>
