@@ -81,7 +81,6 @@ public class PantallaCarga extends AppCompatActivity {
                     double Longitud = document.getDouble("Longitud");
                     Lugar L = new Lugar(Id,nombre,Latitud,Longitud);
                     lugarOnline.add(L);
-
                     }
             } else {
                // Log.w(TAG, "Error getting documents.", task.getException());
