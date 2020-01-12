@@ -115,6 +115,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void rellenarPuntos(SQLiteDatabase db){
         for (int i = 0;lugares.size()>i;i++) {
             ContentValues values = new ContentValues();
+            values.put(entidadLugares._ID,lugares.get(i).Idlugar);
             values.put(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE,lugares.get(i).Nombre);
             values.put(DBHelper.entidadLugares.COLUMN_NAME_LATITUD, lugares.get(i).Latitud);
             values.put(DBHelper.entidadLugares.COLUMN_NAME_LONGITUD, lugares.get(i).Longitud);
