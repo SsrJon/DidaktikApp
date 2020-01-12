@@ -29,7 +29,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-import io.opencensus.tags.Tag;
+
 
 
 public class PantallaCarga extends AppCompatActivity {
@@ -38,6 +38,8 @@ public class PantallaCarga extends AppCompatActivity {
     SQLiteDatabase dbsqlite;
     ArrayList <Lugar> lugarOnline = new ArrayList<>();
     private static ConnectivityManager manager;
+    boolean Actualizada = false;
+    boolean descargada = false;
 
 
 
@@ -56,8 +58,10 @@ public class PantallaCarga extends AppCompatActivity {
 
         if (isWiFi && isConnected){
             descargarBDonline();
-            BorrarBDLocal();
-            ActualizarBD();
+            comprobacion();
+
+        }else {
+            Actualizada= true;
         }
 
         Permisos();
@@ -66,9 +70,11 @@ public class PantallaCarga extends AppCompatActivity {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                // acciones que se ejecutan tras los milisegundos
-                Intent intent = new Intent(PantallaCarga.this, InicioAventuraActivity.class);
-                startActivity(intent);
+                if (Actualizada) {
+                    // acciones que se ejecutan tras los milisegundos
+                    Intent intent = new Intent(PantallaCarga.this, InicioAventuraActivity.class);
+                    startActivity(intent);
+                }
             }
         }, 5000);
 
@@ -104,9 +110,9 @@ public class PantallaCarga extends AppCompatActivity {
                                 double Longitud = document.getDouble("Longitud");
                                 Lugar L = new Lugar(Id, nombre, Latitud, Longitud);
                                 lugarOnline.add(L);
-                                Toast.makeText(getApplicationContext(), "NOMBRE METER:--" + L.getNombre(), Toast.LENGTH_SHORT).show();
                             }
-
+                            Toast.makeText(getApplicationContext(), "LUGARES ONLINE " + lugarOnline.size(), Toast.LENGTH_SHORT).show();
+                            descargada = true;
 
                         }
 
@@ -120,21 +126,40 @@ public class PantallaCarga extends AppCompatActivity {
         }
 
         private void ActualizarBD(){
-        for (int i = 0 ; lugarOnline.size()>i;i++){
-          int ID =  lugarOnline.get(i).Idlugar;
-          String Nombre = lugarOnline.get(i).Nombre;
-          double Latitud = lugarOnline.get(i).Latitud;
-          double Longitud = lugarOnline.get(i).Longitud;
-           ContentValues values = new ContentValues();
+        for (int i = 0 ; i<lugarOnline.size();i++){
+            dbHelper = new DBHelper(getApplicationContext());
+            dbsqlite = dbHelper.getWritableDatabase();
+          int ID =  lugarOnline.get(i).getIdlugar();
+            Toast.makeText(getApplicationContext(), "HOLA "+ID, Toast.LENGTH_SHORT).show();
+          String Nombre = lugarOnline.get(i).getNombre();
+          double Latitud = lugarOnline.get(i).getLatitud();
+          double Longitud = lugarOnline.get(i).getLongitud();
+            final String Insert_Data="INSERT INTO "+DBHelper.entidadLugares.TABLE_NAME+" VALUES('"+ID+"','"+Nombre+"',"+Latitud+","+Longitud+")";
+            dbsqlite.execSQL(Insert_Data);
+           /*ContentValues values = new ContentValues();
            values.put(DBHelper.entidadLugares._ID,ID);
            values.put(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE,Nombre);
            values.put(DBHelper.entidadLugares.COLUMN_NAME_LATITUD, Latitud);
            values.put(DBHelper.entidadLugares.COLUMN_NAME_LONGITUD, Longitud);
-           dbsqlite.insert(DBHelper.entidadLugares.TABLE_NAME, null, values);
+           dbsqlite.insert(DBHelper.entidadLugares.TABLE_NAME, null, values);*/
         }
             Toast.makeText(getApplicationContext(), "ACTUALIZADA", Toast.LENGTH_SHORT).show();
+            Actualizada = true;
         }
+        public void comprobacion(){
+            if (descargada){
+                BorrarBDLocal();
+                ActualizarBD();
+            }else{
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                       comprobacion();
 
+                    }
+                }, 1000);
+            }
+        }
 
     }
 
