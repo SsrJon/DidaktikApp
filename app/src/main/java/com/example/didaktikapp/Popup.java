@@ -104,6 +104,7 @@ public class Popup extends Activity {
 
 
 
+
                 //Intent intent = new Intent(Popup.this, ActivityHutsuneakBete.class);
                 //startActivity(intent);
             }
@@ -131,10 +132,16 @@ public class Popup extends Activity {
 
                 Intent intent = new Intent(Popup.this, MapaActivity.class);
                 startActivity(intent);
+            }else if (getIntent().getStringExtra("valor").equals("Historia")){
+
+                Intent intent = new Intent(Popup.this, MapaActivity.class);
+                startActivity(intent);
             }else{
                 Intent intent = new Intent(Popup.this,seleccionJuego.class);
                 startActivity(intent);
             }
+
+
 
 
             }
