@@ -17,8 +17,8 @@
         android:roundIcon="@drawable/uva"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Ezarpenak"></activity>
-        <activity android:name=".Kredituak" />
+        <activity android:name=".Ezarpenak"  android:screenOrientation="portrait"/>
+        <activity android:name=".Kredituak" android:screenOrientation="portrait" />
         <activity
             android:name=".Test0"
             android:screenOrientation="portrait" />
