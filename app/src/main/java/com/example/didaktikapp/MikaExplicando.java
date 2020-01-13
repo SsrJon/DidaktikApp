@@ -16,7 +16,7 @@ import com.example.didaktikapp.Puzzle.PuzzleActivity;
 public class MikaExplicando extends AppCompatActivity {
     TextView texto;
     double Marcador = 7;
-    double Punto=0;
+    //double Punto=1;
     private MediaPlayer mediaPlayer;
     Button continuar;
     @Override
@@ -33,9 +33,9 @@ public class MikaExplicando extends AppCompatActivity {
                 mediaPlayer.stop();
             }
         });
-        Marcador = intent.getDoubleExtra("marcador",7);
-        Punto = intent.getDoubleExtra("punto",0);
-        if (Punto == 0){
+        Marcador = intent.getDoubleExtra("marcador",0);
+        //Punto = intent.getDoubleExtra("punto",0);
+        if (Marcador == 0){
             texto.setText(R.string.audio_p0);
             mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.gunea0_audioa);
             mediaPlayer.start();
