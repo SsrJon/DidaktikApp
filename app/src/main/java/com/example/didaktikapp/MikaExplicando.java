@@ -59,7 +59,8 @@ public class MikaExplicando extends AppCompatActivity {
                 public void onClick(View v) {
                     mediaPlayer.stop();
                     Intent intent = new Intent(MikaExplicando.this,HutsuneakTabla.class);
-                    intent.putExtra("llegada","marcador");
+                    String valor  = "historia0";
+                    intent.putExtra("valor", valor );
                     startActivity(intent);
                 }
             });
@@ -72,7 +73,8 @@ public class MikaExplicando extends AppCompatActivity {
                 public void onClick(View v) {
                     mediaPlayer.stop();
                     Intent intent = new Intent(MikaExplicando.this, PuzzleActivity.class);
-                    intent.putExtra("llegada","marcador1");
+                    String valor  = "historia0";
+                    intent.putExtra("valor", valor );
                     startActivity(intent);
                 }
             });

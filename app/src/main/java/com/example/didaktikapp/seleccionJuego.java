@@ -34,8 +34,8 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, Quiz.class);
                     startActivity(intent);
                 }if (fotoaMandar.equals("Puzzle")){
-                   // Intent intent = new Intent(seleccionJuego.this, PuzzleActivity.class);
-                    //startActivity(intent);
+                    Intent intent = new Intent(seleccionJuego.this, PuzzleActivity.class);
+                    startActivity(intent);
                 }if (fotoaMandar.equals("Puzzle irristagarria")){
                     Intent intent = new Intent(seleccionJuego.this, com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity.class);
                     startActivity(intent);

@@ -132,9 +132,15 @@ public class Popup extends Activity {
 
                 Intent intent = new Intent(Popup.this, MapaActivity.class);
                 startActivity(intent);
-            }else if (getIntent().getStringExtra("valor").equals("Historia")){
+            }else if (getIntent().getStringExtra("valor").equals("Historia0")){
 
                 Intent intent = new Intent(Popup.this, MapaActivity.class);
+                String valor  = "historia0";
+                intent.putExtra("valor", valor );
+                startActivity(intent);
+            }else if (getIntent().getStringExtra("valor").equals("puzzleLibre")) {
+
+                Intent intent = new Intent(Popup.this, seleccionJuego.class);
                 startActivity(intent);
             }else{
                 Intent intent = new Intent(Popup.this,seleccionJuego.class);
