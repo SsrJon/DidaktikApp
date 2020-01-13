@@ -77,7 +77,7 @@ public class Test0 extends AppCompatActivity {
                     if (getIntent().getStringExtra("valor").equals("Historia")){
 
                         Intent popUp = new Intent(Test0.this, Popup.class);
-                        String valor  = "Historia";
+                        String valor  = "Historia0";
                         popUp.putExtra("valor", valor );
                         startActivity(popUp);
                     }

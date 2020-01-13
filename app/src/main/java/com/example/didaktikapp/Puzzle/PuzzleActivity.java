@@ -126,10 +126,10 @@ public class PuzzleActivity extends AppCompatActivity {
         int cols = 3;
 
         ImageView imageView = findViewById(R.id.imageView);
-        if (Llegada.equals("marcador1")){
+        //if (Llegada.equals("marcador1")){
             Drawable foto = getDrawable(R.drawable.imagenpuzzlemarcador1);
             imageView.setImageDrawable(foto);
-        }
+        //}
 
         ArrayList<PuzzlePiece> pieces = new ArrayList<>(piecesNumber);
 
@@ -303,11 +303,31 @@ public class PuzzleActivity extends AppCompatActivity {
 
     public void checkGameOver() {
         if (isGameOver()) {
+
+
             //finish();
-            Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
-            String valor  = "puzzleM1";
-            popUp.putExtra("valor", valor );
-            startActivity(popUp);
+
+
+            try {
+                if (getIntent().getStringExtra("valor").equals("historia0")){
+
+                    Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
+                    String valor  = "puzzleM1";
+                    popUp.putExtra("valor", valor );
+                    startActivity(popUp);
+                }
+            }
+            catch (Exception e){
+                Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
+                String valor  = "puzzleLibre";
+                popUp.putExtra("valor", valor );
+                startActivity(popUp);
+            }
+
+
+
+
+
         }
     }
 

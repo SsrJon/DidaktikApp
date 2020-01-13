@@ -66,7 +66,7 @@ public class InicioAudioFragment extends Fragment {
                 if (contadorBoton==2){
                     mediaPlayer.stop();
                     Intent intent = new Intent(getActivity(), MikaExplicando.class);
-                    intent.putExtra("punto",0);
+                    intent.putExtra("marcador",0);
                     startActivity(intent);
                 }
 
