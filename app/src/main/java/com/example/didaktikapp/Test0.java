@@ -15,6 +15,8 @@ public class Test0 extends AppCompatActivity {
     private TextView tvA, tvB, tvC;
     private ImageView imgMal, imgMal2, imgBien;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,8 @@ public class Test0 extends AppCompatActivity {
         imgMal=findViewById(R.id.imageViewMal);
         imgMal2=findViewById(R.id.imageViewMal2);
         imgBien=findViewById(R.id.imageViewBien);
+
+
 
         tvA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,10 +72,24 @@ public class Test0 extends AppCompatActivity {
                 imgBien.setVisibility(View.VISIBLE);
                 delayRespuesta();
 
-                Intent popUp = new Intent(Test0.this, Popup.class);
-                String valor  = "test0";
-                popUp.putExtra("valor", valor );
-                startActivity(popUp);
+
+                try {
+                    if (getIntent().getStringExtra("valor").equals("Historia")){
+
+                        Intent popUp = new Intent(Test0.this, Popup.class);
+                        String valor  = "Historia";
+                        popUp.putExtra("valor", valor );
+                        startActivity(popUp);
+                    }
+                }
+                catch (Exception e){
+                    Intent popUp = new Intent(Test0.this, Popup.class);
+                    String valor  = "test0";
+                    popUp.putExtra("valor", valor );
+                    startActivity(popUp);
+                }
+
+
             }
         });
 

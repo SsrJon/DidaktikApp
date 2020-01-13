@@ -20,6 +20,21 @@
         ekingo diogu!.
     </string>
 
+    <string name="audio2">Gure herriko ondare kulturalak ezagutzeko eta
+hauen historia ikasteko, Arrigorriagatik ibilbide bat
+prestatu dut. Horretarako, zuen inguruan ageri
+diren sei kultura ondare hautatu ditut eta ondare
+bakoitzean jarduera eta erronka dibertigarri
+batzuk topatuko dituzue. Gure herriari buruz gehiago jakin nahi baduzue, has dezagun
+ibilbidea!</string>
+
+    <string name="audio_p0">Beno beno neska-mutilak, lehenengo gunera
+joateko, gakoa eman baino lehen, ondare
+kulturala zer den gogoraraztea beharrezkoa
+da. Gogoan duzue klasean landutakoa? Ba,
+animo, hasi lehenengo galderarekin!</string>
+
+
     <string name="timer_default">00:00</string>
     <string name="timer">Timer</string>
 
