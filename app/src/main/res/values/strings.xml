@@ -35,6 +35,27 @@ da. Gogoan duzue klasean landutakoa? Ba,
 animo, hasi lehenengo galderarekin!</string>
 
 
+    <!--Punto 2 audios -->
+
+    <string name="audio_p2">Orain gauden lekua udaletxe zaharra da, hau,
+1940.urtean berreraiki zen, sute suntsigarri
+baten ostean. Ondoan, udaletxe berria ikus
+daiteke eta udaletxea izan baino lehen eskola
+bat izan zen. Udaletxe berria eraikitzeko,
+eskola zaharra eusten zuten harriak erabili
+ziren.</string>
+
+
+    <!-- Punto 3 audios-->
+
+    <string name="audio_p3">Lagun maiteak, Arrigorriagako Andra Maria
+Magdalena elizara heldu gara. Eliza honek,
+Arrigorriagako batailan du jatorria
+(870.urtean gutxi gora behera). Honen sorrera
+IX. mendean dela uste da, nahiz eta jatorriko
+eraikuntzatik ezer ez mantendu.</string>
+
+
     <string name="timer_default">00:00</string>
     <string name="timer">Timer</string>
 
@@ -124,7 +145,7 @@ animo, hasi lehenengo galderarekin!</string>
     <string name="izena">Mezedes izen bat sartu</string>
 
 
-    <!-- Punto 2-->
+    <!-- Punto 1-->
     <string name="Larrea_eskultura">Vicente Larrearen obra hau (2002an Bilbotik
 etorrita) Arrigorriagako sarreran aurki
 dezakegu, polikiroldegiaren ondoan. Ondare

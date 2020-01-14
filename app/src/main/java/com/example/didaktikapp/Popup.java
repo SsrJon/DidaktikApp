@@ -74,6 +74,10 @@ public class Popup extends Activity {
                     Intent intent = new Intent(Popup.this, Quiz.class);
                     startActivity(intent);
                 }
+                else if (getIntent().getStringExtra("valor").equals("hutsuneak3historia")) {
+                    Intent intent = new Intent(Popup.this, Quiz.class);
+                    startActivity(intent);
+                }
 
                 else if(getIntent().getStringExtra("valor").equals("gurutzegrama")){
 
@@ -98,6 +102,15 @@ public class Popup extends Activity {
                 }
                 else if(getIntent().getStringExtra("valor").equals("test0")){
 
+                    Intent intent = new Intent(Popup.this, Test0.class);
+                    startActivity(intent);
+                }
+                else if (getIntent().getStringExtra("valor").equals("puzzleLibre")){
+
+                    Intent intent = new Intent(Popup.this, com.example.didaktikapp.Puzzle.PuzzleActivity.class);
+                    startActivity(intent);
+                }
+                else if (getIntent().getStringExtra("valor").equals("Historia0")){
                     Intent intent = new Intent(Popup.this, Test0.class);
                     startActivity(intent);
                 }
@@ -141,6 +154,13 @@ public class Popup extends Activity {
             }else if (getIntent().getStringExtra("valor").equals("puzzleLibre")) {
 
                 Intent intent = new Intent(Popup.this, seleccionJuego.class);
+                startActivity(intent);
+            }else if (getIntent().getStringExtra("valor").equals("hutsuneak3historia")) {
+
+
+                Intent intent = new Intent(Popup.this, OrdenarImagen.class);
+                String valor  = "historia3_2";
+                intent.putExtra("valor", valor );
                 startActivity(intent);
             }else{
                 Intent intent = new Intent(Popup.this,seleccionJuego.class);

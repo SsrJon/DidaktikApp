@@ -78,7 +78,42 @@ public class MikaExplicando extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-        }else if(Marcador ==3){
+        }else if(Marcador ==2.1){
+
+            texto.setText(R.string.audio_p2);
+            mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.arrigorriagako_udaletxea_audioa);
+            mediaPlayer.start();
+            continuar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mediaPlayer.stop();
+                    Intent intent = new Intent(MikaExplicando.this, ActivityHutsuneakBete2.class);
+                    String valor  = "historia2";
+                    intent.putExtra("valor", valor );
+                    startActivity(intent);
+                }
+            });
+
+
+
+
+
+        }else if(Marcador ==3.1){
+
+            texto.setText(R.string.audio_p3);
+            mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.andra_maria_magdalena_eliza_audioa);
+            mediaPlayer.start();
+            continuar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mediaPlayer.stop();
+                    Intent intent = new Intent(MikaExplicando.this, Quiz.class);
+                    String valor  = "historia3";
+                    intent.putExtra("valor", valor );
+                    startActivity(intent);
+                }
+            });
+
 
         }else if(Marcador ==4){
 
