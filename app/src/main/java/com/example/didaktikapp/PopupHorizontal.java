@@ -3,7 +3,11 @@ package com.example.didaktikapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -16,6 +20,9 @@ import android.widget.ImageButton;
 public class PopupHorizontal extends Activity {
 
     private ImageButton btnErrepikatu, btnJarraitu;
+    DBHelper dbHelper;
+    SQLiteDatabase db;
+    String Nombre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +77,10 @@ public class PopupHorizontal extends Activity {
                     Intent intent = new Intent(PopupHorizontal.this, ActivityHutsuneakBete2.class);
                     startActivity(intent);
                 }
+                 if (getIntent().getStringExtra("valor").equals("hutsuneak2historia")){
+                     Intent intent = new Intent(PopupHorizontal.this, ActivityHutsuneakBete2.class);
+                     startActivity(intent);
+                 }
 
                 if(getIntent().getStringExtra("valor").equals("egia")){
 
@@ -88,6 +99,13 @@ public class PopupHorizontal extends Activity {
                     Intent intent = new Intent(PopupHorizontal.this, FotoElegir.class);
                     startActivity(intent);
                 }
+                 if (getIntent().getStringExtra("valor").equals("tablaLibre")){
+                     Intent intent = new Intent(PopupHorizontal.this, HutsuneakTabla.class);
+                     startActivity(intent);
+                 }
+                  if (getIntent().getStringExtra("valor").equals("Historia")){
+
+                  }
 
 
             }
@@ -97,6 +115,13 @@ public class PopupHorizontal extends Activity {
         btnJarraitu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                dbHelper = new DBHelper(getApplicationContext());
+                db = dbHelper.getWritableDatabase();
+                SharedPreferences sharedPref = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                Nombre = sharedPref.getString("nombre", null);
+
+
                 if(getIntent().getStringExtra("valor").equals("tabla")){
                     Intent intent = new Intent(PopupHorizontal.this, MikaExplicando.class);
                     intent.putExtra("marcador",1.2);
@@ -109,8 +134,17 @@ public class PopupHorizontal extends Activity {
 
                     Intent intent = new Intent(PopupHorizontal.this, seleccionJuego.class);
                     startActivity(intent);
-                }
-                else{
+                }else if (getIntent().getStringExtra("valor").equals("hutsuneak2historia")) {
+
+                    ContentValues values = new ContentValues();
+                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,3);
+                    String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                    String args [] = {Nombre};
+                    int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+
+                    Intent intent = new Intent(PopupHorizontal.this, MapaActivity.class);
+                    startActivity(intent);
+                }else{
                     Intent intent = new Intent(PopupHorizontal.this, seleccionJuego.class);
                     startActivity(intent);
                 }

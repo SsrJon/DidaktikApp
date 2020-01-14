@@ -147,10 +147,22 @@ public class Quiz extends AppCompatActivity {
                 respu2.setClickable(false);
                 respu3.setClickable(false);
 
-                Intent popUp = new Intent(Quiz.this, Popup.class);
-                String valor  = "quiz";
-                popUp.putExtra("valor", valor );
-                startActivity(popUp);
+                try {
+                    if (getIntent().getStringExtra("valor").equals("historia3")){
+
+                        Intent popUp = new Intent(Quiz.this, Popup.class);
+                        String valor  = "hutsuneak3historia";
+                        popUp.putExtra("valor", valor );
+                        startActivity(popUp);
+                    }
+                }
+                catch (Exception e){
+                    Intent popUp = new Intent(Quiz.this, Popup.class);
+                    String valor  = "quiz";
+                    popUp.putExtra("valor", valor );
+                    startActivity(popUp);
+                }
+
             }
 
         }else{

@@ -150,10 +150,28 @@ public class ActivityHutsuneakBete2 extends AppCompatActivity {
 
         if (contadorButton == 4) {
 
-            Intent popUp = new Intent(ActivityHutsuneakBete2.this, PopupHorizontal.class);
-            String valor = "hutsuneak2";
-            popUp.putExtra("valor", valor);
-            startActivity(popUp);
+            try {
+                if (getIntent().getStringExtra("valor").equals("historia2")){
+
+                    Intent popUp = new Intent(ActivityHutsuneakBete2.this, PopupHorizontal.class);
+                    String valor  = "hutsuneak2historia";
+                    popUp.putExtra("valor", valor );
+                    startActivity(popUp);
+                }
+            }
+            catch (Exception e){
+                Intent popUp = new Intent(ActivityHutsuneakBete2.this, PopupHorizontal.class);
+                String valor  = "hutsuneak2";
+                popUp.putExtra("valor", valor );
+                startActivity(popUp);
+            }
+
+
+
+
+
+
+
         }
     }
 
