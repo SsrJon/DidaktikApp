@@ -55,6 +55,39 @@ Arrigorriagako batailan du jatorria
 IX. mendean dela uste da, nahiz eta jatorriko
 eraikuntzatik ezer ez mantendu.</string>
 
+    <!-- Punto 4 audios-->
+
+    <string name="audio_p4">Gaur egunean Gaztegune moduan ezagutzen
+duguna, lehen hiltegia zen. Fabrika honek,
+garai hartako forma eta materiala
+(adreiluzkoa eta harlanezkoa) mantentzen du,
+hortaz, tximinia zilindrikoa ikus daiteke.
+Eraikinaren tipologia eta materiala kontuan
+hartuta, 1940 eta 1950 urte bitartekoa da.</string>
+
+    <!-- Punto 5 audios-->
+
+    <string name="audio_p5">Buf lagunak, ia ibilbidearen amaieran gaude.
+Oraingoan, Landaederreagako Santo Kristo
+Baselizan gaude. Lehenengoz 1655an eraiki
+zen, nahiz eta, harrezkero, hainbat aldiz
+berreraiki izan den. Formari dagokionez, goitik
+ikusita ez dauka forma jakinik: besorik gabeko
+gurutzearen itxura dauka.</string>
+
+    <!-- Punto 6 audios-->
+    <string name="audio_p6">Neska-mutilak, hau Abrisketako San Pedro
+Baseliza da eta abentura honi amaiera ematen
+dion ondare kulturala da. Ermita honek,
+erromanikoaren aurretiko estiloen aztarna
+arkitektonikoak ditu eta Bizkaiko zaharrena da
+(XII. mendearen hasierakoa). Eraikigai gisa
+berriro erabilita, barruan hilarri erromatarren
+aztarnak aurkitu dira baita irudi
+prerromanikoak dituen harearrizko bloke
+handi bat ere. Absideko leihoan ere dekorazio
+prerromanikoa ikusten da.</string>
+
 
     <string name="timer_default">00:00</string>
     <string name="timer">Timer</string>
