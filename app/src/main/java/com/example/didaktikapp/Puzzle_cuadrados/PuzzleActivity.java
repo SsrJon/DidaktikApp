@@ -569,15 +569,26 @@ public class PuzzleActivity extends AppCompatActivity  {
         String gameMoves = Integer.toString(gameData[1]);
         StringBuilder stringBuilder = new StringBuilder();
 
-        
+        /*   try {
+            if (getIntent().getStringExtra("valor").equals("hutsuneak5historia")){
+
+                Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
+                String valor  = "deslizar5historia";
+                popUp.putExtra("valor", valor );
+                startActivity(popUp);
+            }
+        }
+        catch (Exception e){
+            Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
+            String valor  = "deslizar";
+            popUp.putExtra("valor", valor );
+            startActivity(popUp);
+        }*/
 
         Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
         String valor  = "deslizar";
         popUp.putExtra("valor", valor );
         startActivity(popUp);
-
-
-
         //TODO: add support for photos taken by the app...change puzzleNum for these, and add lines in file as needed
         if (puzzleNum == -1) {
             return;
