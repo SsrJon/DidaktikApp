@@ -94,6 +94,10 @@ public class Popup extends Activity {
 
                     Intent intent = new Intent(Popup.this, OrdenarImagen.class);
                     startActivity(intent);
+                }else if(getIntent().getStringExtra("valor").equals("ordenar3historia")){
+
+                    Intent intent = new Intent(Popup.this, OrdenarImagen.class);
+                    startActivity(intent);
                 }
                 else if(getIntent().getStringExtra("valor").equals("test")){
 
@@ -155,14 +159,26 @@ public class Popup extends Activity {
 
                 Intent intent = new Intent(Popup.this, seleccionJuego.class);
                 startActivity(intent);
-            }else if (getIntent().getStringExtra("valor").equals("hutsuneak3historia")) {
-
+            }else if (getIntent().getStringExtra("valor").equals("quiz3historia")) {
 
                 Intent intent = new Intent(Popup.this, OrdenarImagen.class);
-                String valor  = "historia3_2";
+                String valor  = "ordenar3historia";
                 intent.putExtra("valor", valor );
                 startActivity(intent);
-            }else{
+            }else if(getIntent().getStringExtra("valor").equals("ordenar3_1historia")){
+               /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
+                db.execSQL(strSQL);*/
+
+                    ContentValues values = new ContentValues();
+                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,4);
+                    String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                    String args [] = {Nombre};
+                    int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+                    //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(Popup.this, MapaActivity.class);
+                    startActivity(intent);
+                }else{
                 Intent intent = new Intent(Popup.this,seleccionJuego.class);
                 startActivity(intent);
             }

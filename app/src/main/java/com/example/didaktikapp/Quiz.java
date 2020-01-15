@@ -151,7 +151,7 @@ public class Quiz extends AppCompatActivity {
                     if (getIntent().getStringExtra("valor").equals("historia3")){
 
                         Intent popUp = new Intent(Quiz.this, Popup.class);
-                        String valor  = "hutsuneak3historia";
+                        String valor  = "quiz3historia";
                         popUp.putExtra("valor", valor );
                         startActivity(popUp);
                     }
