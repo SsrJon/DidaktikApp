@@ -113,10 +113,30 @@ public class OrdenarImagen extends AppCompatActivity {
                     mediaPlayer.start();
                     orden.setKeyListener(null);
                     //popUp para volver a jugar al juego o ir al menu de juegos
-                    Intent popUp = new Intent(OrdenarImagen.this, Popup.class);
-                    String valor  = "ordenarImagen";
-                    popUp.putExtra("valor", valor );
-                    startActivity(popUp);
+
+
+
+
+                    try {
+                        if (getIntent().getStringExtra("valor").equals("ordenar3historia")){
+
+                            Intent popUp = new Intent(OrdenarImagen.this, Popup.class);
+                            String valor  = "ordenar3_1historia";
+                            popUp.putExtra("valor", valor );
+                            startActivity(popUp);
+                        }
+                    }
+                    catch (Exception e){
+                        Intent popUp = new Intent(OrdenarImagen.this, Popup.class);
+                        String valor  = "ordenarImagen";
+                        popUp.putExtra("valor", valor );
+                        startActivity(popUp);
+                    }
+
+
+
+
+
                 }
                 else{
                     respuesta = "";
