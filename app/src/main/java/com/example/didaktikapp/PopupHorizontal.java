@@ -16,6 +16,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
+import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
+
 
 public class PopupHorizontal extends Activity {
 
@@ -71,10 +73,18 @@ public class PopupHorizontal extends Activity {
                     Intent intent = new Intent(PopupHorizontal.this, ActivityHutsuneakBete.class);
                     startActivity(intent);
                 }
+                if (getIntent().getStringExtra("valor").equals("hutsuneak5historia")) {
+                    Intent intent = new Intent(PopupHorizontal.this, ActivityHutsuneakBete.class);
+                    startActivity(intent);
+                }
 
                 if(getIntent().getStringExtra("valor").equals("hutsuneak2")){
 
                     Intent intent = new Intent(PopupHorizontal.this, ActivityHutsuneakBete2.class);
+                    startActivity(intent);
+                }if(getIntent().getStringExtra("valor").equals("egia3historia")){
+
+                    Intent intent = new Intent(PopupHorizontal.this, EgiaedoGezurra.class);
                     startActivity(intent);
                 }
                  if (getIntent().getStringExtra("valor").equals("hutsuneak2historia")){
@@ -143,6 +153,18 @@ public class PopupHorizontal extends Activity {
                     int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
 
                     Intent intent = new Intent(PopupHorizontal.this, MapaActivity.class);
+                    startActivity(intent);
+                }else if (getIntent().getStringExtra("valor").equals("egia3historia")) {
+
+                    Intent intent = new Intent(PopupHorizontal.this, OrdenarImagen.class);
+                    String valor  = "egia3_1historia";
+                    intent.putExtra("valor", valor );
+                    startActivity(intent);
+                }else if (getIntent().getStringExtra("valor").equals("hutsuneak5historia")) {
+
+                    Intent intent = new Intent(PopupHorizontal.this, PuzzleActivity.class);
+                    String valor  = "hutsuneak5_1historia";
+                    intent.putExtra("valor", valor );
                     startActivity(intent);
                 }else{
                     Intent intent = new Intent(PopupHorizontal.this, seleccionJuego.class);

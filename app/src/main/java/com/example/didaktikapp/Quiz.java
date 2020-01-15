@@ -148,10 +148,10 @@ public class Quiz extends AppCompatActivity {
                 respu3.setClickable(false);
 
                 try {
-                    if (getIntent().getStringExtra("valor").equals("historia3")){
+                    if (getIntent().getStringExtra("valor").equals("historia4")){
 
                         Intent popUp = new Intent(Quiz.this, Popup.class);
-                        String valor  = "quiz3historia";
+                        String valor  = "quiz4historia";
                         popUp.putExtra("valor", valor );
                         startActivity(popUp);
                     }

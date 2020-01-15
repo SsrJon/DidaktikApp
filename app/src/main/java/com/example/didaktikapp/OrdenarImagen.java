@@ -118,7 +118,7 @@ public class OrdenarImagen extends AppCompatActivity {
 
 
                     try {
-                        if (getIntent().getStringExtra("valor").equals("ordenar3historia")){
+                        if (getIntent().getStringExtra("valor").equals("egia3_1historia")){
 
                             Intent popUp = new Intent(OrdenarImagen.this, Popup.class);
                             String valor  = "ordenar3_1historia";

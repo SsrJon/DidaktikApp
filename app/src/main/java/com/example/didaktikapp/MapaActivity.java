@@ -349,7 +349,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",4.1);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Landaederreagako Santo Kristo baseliza")){
@@ -359,7 +360,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",5.1);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Abrisketako San Pedro baseliza")){
@@ -369,7 +371,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",6.1);
                                 startActivity(intent);
                             }
                         }

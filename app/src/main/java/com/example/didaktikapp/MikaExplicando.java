@@ -107,7 +107,7 @@ public class MikaExplicando extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     mediaPlayer.stop();
-                    Intent intent = new Intent(MikaExplicando.this, Quiz.class);
+                    Intent intent = new Intent(MikaExplicando.this, EgiaedoGezurra.class);
                     String valor  = "historia3";
                     intent.putExtra("valor", valor );
                     startActivity(intent);
@@ -115,12 +115,54 @@ public class MikaExplicando extends AppCompatActivity {
             });
 
 
-        }else if(Marcador ==4){
+        }else if(Marcador ==4.1){
 
-        }else if(Marcador ==5){
+            texto.setText(R.string.audio_p4);
+            mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.lehenengo_hiltegia_audioa);
+            mediaPlayer.start();
+            continuar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mediaPlayer.stop();
+                    Intent intent = new Intent(MikaExplicando.this, Quiz.class);
+                    String valor  = "historia4";
+                    intent.putExtra("valor", valor );
+                    startActivity(intent);
+                }
+            });
 
-        }else if(Marcador ==6){
 
+        }else if(Marcador ==5.1){
+            texto.setText(R.string.audio_p5);
+            mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.santo_cristo_de_landarreaga_ermita_audioa);
+            mediaPlayer.start();
+            continuar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mediaPlayer.stop();
+                    Intent intent = new Intent(MikaExplicando.this, ActivityHutsuneakBete.class);
+                    String valor  = "historia5";
+                    intent.putExtra("valor", valor );
+                    startActivity(intent);
+                }
+            });
+
+
+        }else if(Marcador ==6.1){
+
+            texto.setText(R.string.audio_p6);
+            mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.abrisketako_san_pedro_ermita_audioa);
+            mediaPlayer.start();
+            continuar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mediaPlayer.stop();
+                    Intent intent = new Intent(MikaExplicando.this, TestGalderak.class);
+                    String valor  = "historia6";
+                    intent.putExtra("valor", valor );
+                    startActivity(intent);
+                }
+            });
         }
     }
 }
