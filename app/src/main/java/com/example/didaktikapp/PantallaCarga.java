@@ -6,10 +6,14 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -25,7 +29,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-import io.opencensus.tags.Tag;
+
 
 
 public class PantallaCarga extends AppCompatActivity {
@@ -33,26 +37,44 @@ public class PantallaCarga extends AppCompatActivity {
     DBHelper dbHelper;
     SQLiteDatabase dbsqlite;
     ArrayList <Lugar> lugarOnline = new ArrayList<>();
-    ArrayList <Lugar> lugarOffline = new ArrayList<>();
+    private static ConnectivityManager manager;
+    boolean Actualizada = false;
+    boolean descargada = false;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_carga);
+        //Comprobar si tiene internet
+        ConnectivityManager cm = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+        //Comprobar si tiene WIFI
+        boolean isWiFi = activeNetwork.getType() == ConnectivityManager.TYPE_WIFI;
+
+        if (isWiFi && isConnected){
+            descargarBDonline();
+            comprobacion();
+
+        }else {
+            Actualizada= true;
+        }
+
         Permisos();
-        descargarBDonline();
-        RecibirBDLocal();
-
-
-
 
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                // acciones que se ejecutan tras los milisegundos
-                Intent intent = new Intent(PantallaCarga.this, InicioAventuraActivity.class);
-                startActivity(intent);
+                if (Actualizada) {
+                    // acciones que se ejecutan tras los milisegundos
+                    Intent intent = new Intent(PantallaCarga.this, InicioAventuraActivity.class);
+                    startActivity(intent);
+                }
             }
         }, 5000);
 
@@ -88,61 +110,56 @@ public class PantallaCarga extends AppCompatActivity {
                                 double Longitud = document.getDouble("Longitud");
                                 Lugar L = new Lugar(Id, nombre, Latitud, Longitud);
                                 lugarOnline.add(L);
-                                Toast.makeText(getApplicationContext(), "NOMBRE METER:--" + L.getNombre(), Toast.LENGTH_SHORT).show();
                             }
-
+                            Toast.makeText(getApplicationContext(), "LUGARES ONLINE " + lugarOnline.size(), Toast.LENGTH_SHORT).show();
+                            descargada = true;
 
                         }
 
                     });
         }
 
-        private void RecibirBDLocal(){
+        private void BorrarBDLocal(){
             dbHelper = new DBHelper(getApplicationContext());
             dbsqlite = dbHelper.getWritableDatabase();
-            Cursor cursorcantidad = dbsqlite.query(DBHelper.entidadLugares.TABLE_NAME,null,null,null,null,null,null);
-            while (cursorcantidad.moveToNext()){
-                int Id = cursorcantidad.getInt(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares._ID));
-                String nom = cursorcantidad.getString(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE));
-                double Latitud = cursorcantidad.getDouble(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_LATITUD));
-                double Longitud = cursorcantidad.getDouble(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_LONGITUD));
-                Lugar L = new Lugar(Id,nom,Latitud,Longitud);
-                lugarOffline.add(L);
-            }
+            dbsqlite.execSQL("DELETE FROM "+ DBHelper.entidadLugares.TABLE_NAME);
         }
 
-        private void compararBD(){
-        int numOnline = lugarOnline.size();
-        int numOfline = lugarOffline.size();
-        if (numOnline < numOfline){
-            boolean encontrado2 = false;
-            for (int i = 0;lugarOffline.size()>i && !encontrado2;i++){
-                for (int k=0; lugarOnline.size()>k;k++){
-                    if(lugarOffline.get(i).getNombre().equals(lugarOnline.get(k).getNombre())){
-                        encontrado2 = true;
+        private void ActualizarBD(){
+        for (int i = 0 ; i<lugarOnline.size();i++){
+            dbHelper = new DBHelper(getApplicationContext());
+            dbsqlite = dbHelper.getWritableDatabase();
+          int ID =  lugarOnline.get(i).getIdlugar();
+            Toast.makeText(getApplicationContext(), "HOLA "+ID, Toast.LENGTH_SHORT).show();
+          String Nombre = lugarOnline.get(i).getNombre();
+          double Latitud = lugarOnline.get(i).getLatitud();
+          double Longitud = lugarOnline.get(i).getLongitud();
+            final String Insert_Data="INSERT INTO "+DBHelper.entidadLugares.TABLE_NAME+" VALUES('"+ID+"','"+Nombre+"',"+Latitud+","+Longitud+")";
+            dbsqlite.execSQL(Insert_Data);
+           /*ContentValues values = new ContentValues();
+           values.put(DBHelper.entidadLugares._ID,ID);
+           values.put(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE,Nombre);
+           values.put(DBHelper.entidadLugares.COLUMN_NAME_LATITUD, Latitud);
+           values.put(DBHelper.entidadLugares.COLUMN_NAME_LONGITUD, Longitud);
+           dbsqlite.insert(DBHelper.entidadLugares.TABLE_NAME, null, values);*/
+        }
+            Toast.makeText(getApplicationContext(), "ACTUALIZADA", Toast.LENGTH_SHORT).show();
+            Actualizada = true;
+        }
+        public void comprobacion(){
+            if (descargada){
+                BorrarBDLocal();
+                ActualizarBD();
+            }else{
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                       comprobacion();
+
                     }
-                }
-                if(!encontrado2){
-                    lugarOffline.remove(i);
-                }
+                }, 1000);
             }
-        }else if (numOnline>numOfline){
-            boolean encontrado = false;
-            for (int i = 0;lugarOnline.size()>i && !encontrado;i++){
-                for (int k=0; lugarOffline.size()>k;k++){
-                    if(lugarOffline.get(k).getNombre().equals(lugarOnline.get(i).getNombre())){
-                        encontrado = true;
-                    }
-                }
-                if(!encontrado){
-                    lugarOffline.add(lugarOnline.get(i));
-                }
-            }
-        } else {
-
         }
 
-
-        }
     }
 
