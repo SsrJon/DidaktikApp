@@ -67,7 +67,7 @@ public class InicioFragment extends Fragment {
                     SharedPreferences.Editor editor = preferencias.edit();
                     editor.putString("nombre", etNombreInicio.getText().toString());
                     editor.commit();
-                    Intent intent = new Intent(getApplicationContext(),MapaActivity.class);
+                    Intent intent = new Intent(getActivity(),MapaActivity.class);
                     startActivity(intent);
                 }
                 }else {

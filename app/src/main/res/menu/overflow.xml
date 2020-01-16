@@ -14,7 +14,11 @@
     <item
         android:id="@+id/borrado"
         android:title="Ezabatu guztia" />
+    <item android:id="@+id/admin"
+        android:title="Kudeatzaile menua"/>
+
     <item android:title="Kredituak" />
+
 
 
 </menu>

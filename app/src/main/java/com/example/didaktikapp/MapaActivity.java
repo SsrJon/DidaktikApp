@@ -712,6 +712,10 @@ public class MapaActivity extends AppCompatActivity implements
                 pantalla=0;
             }
         }
+        if (id == R.id.admin){
+            Intent intent = new Intent(MapaActivity.this,Menu_admin.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 

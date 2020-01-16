@@ -17,20 +17,20 @@
         android:roundIcon="@drawable/uva"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Test0"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".Menu_admin"></activity>
+        <activity
+            android:name=".Test0"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivityHutsuneakBete2"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".MikaExplicando"
             android:screenOrientation="portrait" />
         <activity
             android:name=".TestGalderak"
             android:screenOrientation="portrait" />
-        <activity android:name=".Test"></activity>
-
+        <activity android:name=".Test" />
         <activity
             android:name=".HutsuneakTabla"
             android:screenOrientation="landscape" />
