@@ -238,7 +238,7 @@ public class MapaActivity extends AppCompatActivity implements
 
                 final MarkerOptions punto6 = new MarkerOptions();
                 //Punto 6 Abrisketako San Pedro baseleizea
-                punto6.title("Abrisketako San Pedro baseleizea");
+                punto6.title("Abrisketako San Pedro baseliza");
                 IconFactory iconFactoryPunto6 = IconFactory.getInstance(MapaActivity.this);
                 Icon iconPunto6 = iconFactoryPunto6.fromResource(R.drawable.marcador6);
                 punto6.icon(iconPunto6);

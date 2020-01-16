@@ -222,7 +222,9 @@ public class PuzzleActivity extends AppCompatActivity  {
                 if (!hintShowing) {  // show hint only if isnt already showing to remove redundant calls
                     hintImage.setVisibility(View.VISIBLE);
                     hintImage.setClickable(true);
-                    hintHandler.postDelayed(futureRunnable, 1000);  // set to remove image in 1 second
+                    hintHandler.postDelayed(futureRunnable, 1000);
+
+
                 }
             }
         });
@@ -569,8 +571,8 @@ public class PuzzleActivity extends AppCompatActivity  {
         String gameMoves = Integer.toString(gameData[1]);
         StringBuilder stringBuilder = new StringBuilder();
 
-        /*   try {
-            if (getIntent().getStringExtra("valor").equals("hutsuneak5historia")){
+          try {
+            if (getIntent().getStringExtra("valor").equals("hutsuneak5_1historia")){
 
                 Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
                 String valor  = "deslizar5historia";
@@ -583,12 +585,9 @@ public class PuzzleActivity extends AppCompatActivity  {
             String valor  = "deslizar";
             popUp.putExtra("valor", valor );
             startActivity(popUp);
-        }*/
+        }
 
-        Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
-        String valor  = "deslizar";
-        popUp.putExtra("valor", valor );
-        startActivity(popUp);
+
         //TODO: add support for photos taken by the app...change puzzleNum for these, and add lines in file as needed
         if (puzzleNum == -1) {
             return;
