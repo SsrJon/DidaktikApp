@@ -27,7 +27,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     private static final String SQL_CREATE_TABLE_USUARIO =
-            "CREATE TABLE " + TABLE_NAME + " (" +
+            "CREATE TABLE " + entidadUsuario.TABLE_NAME + " (" +
                     entidadUsuario.COLUMN_NAME_NOMBRE + " TEXT PRIMARY KEY)";
 
     private static final String SQL_DELETE_TABLE_USUARIO =

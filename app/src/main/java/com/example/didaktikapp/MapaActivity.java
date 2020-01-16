@@ -180,11 +180,11 @@ public class MapaActivity extends AppCompatActivity implements
 
        // Toast.makeText(getApplicationContext(), "Numero de lugares "+ numLugares, Toast.LENGTH_SHORT).show();
 
-        if (numLugares > Marcadores ){
-            for (int i =0; Marcadores>i;i++) {
+        if (numLugares > Marcadores ) {
+            for (int i = 0; Marcadores > i; i++) {
                 if (Marcadores == lugares.get(i).getIdlugar()) {
-                    Toast.makeText(getApplicationContext(),"ID:--"+lugares.get(i).getIdlugar(), Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getApplicationContext(),"NOMBRE:--"+lugares.get(i).getNombre(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "ID:--" + lugares.get(i).getIdlugar(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "NOMBRE:--" + lugares.get(i).getNombre(), Toast.LENGTH_SHORT).show();
                     punto1.title(lugares.get(i).getNombre());
                     IconFactory iconFactoryPunto1 = IconFactory.getInstance(MapaActivity.this);
                     Icon iconPunto1 = iconFactoryPunto1.fromResource(R.drawable.marcador3);
@@ -194,7 +194,8 @@ public class MapaActivity extends AppCompatActivity implements
                     marcadorpuesto = true;
                 }
             }
-            if (!marcadorpuesto) {
+        }
+            if (Marcadores > numLugares) {
                 // final MarkerOptions punto1 = new MarkerOptions();
                 //Punto 1  Larrea eskultura
                 punto1.title("Larrea eskultura");
@@ -203,6 +204,7 @@ public class MapaActivity extends AppCompatActivity implements
                 punto1.icon(iconPunto1);
                 punto1.position(new LatLng(43.211583, -2.886917));
                 mapboxMap.addMarker(punto1);
+
                 final MarkerOptions punto2 = new MarkerOptions();
                 //Punto 2  Arrigorriagako Udaletxea
                 punto2.title("Arrigorriagako Udaletxea");
@@ -211,6 +213,7 @@ public class MapaActivity extends AppCompatActivity implements
                 punto2.icon(iconPunto2);
                 punto2.position(new LatLng(43.205978, -2.887869));
                 mapboxMap.addMarker(punto2);
+
                 final MarkerOptions punto3 = new MarkerOptions();
                 //Punto 3 Andra Maria Magdalena eliza
                 punto3.title("Maria Magdalena eliza");
@@ -219,6 +222,7 @@ public class MapaActivity extends AppCompatActivity implements
                 punto3.icon(iconPunto3);
                 punto3.position(new LatLng(43.205548, -2.888705));
                 mapboxMap.addMarker(punto3);
+
                 final MarkerOptions punto4 = new MarkerOptions();
                 //Punto 4 Hiltegi Zaharra
                 punto4.title("Hiltegi Zaharra");
@@ -227,6 +231,7 @@ public class MapaActivity extends AppCompatActivity implements
                 punto4.icon(iconPunto4);
                 punto4.position(new LatLng(43.204889, -2.887833));
                 mapboxMap.addMarker(punto4);
+
                 final MarkerOptions punto5 = new MarkerOptions();
                 //Punto 5 Landaederreagako Santo Kristo baseliza
                 punto5.title("Landaederreagako Santo Kristo baseliza");
@@ -246,7 +251,7 @@ public class MapaActivity extends AppCompatActivity implements
                 mapboxMap.addMarker(punto6);
             }
 
-            }
+
 
 
         //final MarkerOptions punto1 = new MarkerOptions();

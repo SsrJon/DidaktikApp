@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -17,9 +18,11 @@ public class Menu_admin extends AppCompatActivity {
     Button borrarUsuario;
     Button borrarProgreso;
     Button desbloquearProgreso;
+    Button cambiarnombre;
     DBHelper dbHelper;
     SQLiteDatabase db;
     String Nombre;
+    EditText cambiarNombre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,33 @@ public class Menu_admin extends AppCompatActivity {
         db = dbHelper.getWritableDatabase();
         SharedPreferences sharedPref = getSharedPreferences("datos", Context.MODE_PRIVATE);
         Nombre = sharedPref.getString("nombre", null);
+        cambiarNombre = findViewById(R.id.aldatuizenalabel);
+        cambiarNombre.setHint(Nombre);
+
+        cambiarnombre = findViewById(R.id.cambiarnombre);
+        cambiarnombre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nombrenuevo;
+                nombrenuevo = cambiarNombre.getText().toString();
+                //Actualizar nombre
+                ContentValues values = new ContentValues();
+                values.put(DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE,nombrenuevo);
+                String seleccion = DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE + "= ?";
+                String args [] = {Nombre};
+                int count = db.update(DBHelper.entidadUsuario.TABLE_NAME,values,seleccion,args);
+                //actualizar nombre progreso
+                ContentValues valuespro = new ContentValues();
+                valuespro.put(DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO,nombrenuevo);
+                String seleccionpro = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                String argspro [] = {Nombre};
+                int countpro = db.update(DBHelper.entidadProgreso.TABLE_NAME,valuespro,seleccionpro,argspro);
+                SharedPreferences preferencias = getApplicationContext().getSharedPreferences("datos",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferencias.edit();
+                editor.putString("nombre", nombrenuevo);
+                editor.commit();
+            }
+        });
         borrarProgreso = findViewById(R.id.borrarProgre);
         borrarProgreso.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +80,6 @@ public class Menu_admin extends AppCompatActivity {
             }
         });
         desbloquearProgreso = findViewById(R.id.desbloquearProgre);
-
         desbloquearProgreso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
