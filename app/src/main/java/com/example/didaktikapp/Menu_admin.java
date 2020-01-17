@@ -57,6 +57,8 @@ public class Menu_admin extends AppCompatActivity {
                 SharedPreferences.Editor editor = preferencias.edit();
                 editor.putString("nombre", nombrenuevo);
                 editor.commit();
+                Intent intent = new Intent(Menu_admin.this,PantallaCarga.class);
+                startActivity(intent);
             }
         });
         borrarProgreso = findViewById(R.id.borrarProgre);
@@ -78,11 +80,12 @@ public class Menu_admin extends AppCompatActivity {
             public void onClick(View v) {
                 try{
                     System.out.println("Hola");
-                    db.execSQL("DELETE FROM "+ DBHelper.entidadUsuario.TABLE_NAME + " WHERE " + DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE + " LIKE " + Nombre);
+                    db.execSQL("DELETE FROM "+ DBHelper.entidadUsuario.TABLE_NAME + " WHERE " + DBHelper.entidadUsuario. COLUMN_NAME_NOMBRE + " LIKE " + "'+"+Nombre+"+'" );
                     System.out.println("adios");
                     Intent intent = new Intent(Menu_admin.this,PantallaCarga.class);
                     startActivity(intent);
                 }catch (Exception e){
+                    System.out.println(e);
                     Intent intent = new Intent(Menu_admin.this,PantallaCarga.class);
                     startActivity(intent);
                 }
