@@ -225,6 +225,22 @@ public class PuzzleActivity extends AppCompatActivity  {
                     hintHandler.postDelayed(futureRunnable, 1000);
 
 
+                    try {
+                        if (getIntent().getStringExtra("valor").equals("hutsuneak5_1historia")){
+
+                            Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
+                            String valor  = "deslizar5historia";
+                            popUp.putExtra("valor", valor );
+                            startActivity(popUp);
+                        }
+                    }
+                    catch (Exception e){
+                        Intent popUp = new Intent(PuzzleActivity.this, Popup.class);
+                        String valor  = "deslizar";
+                        popUp.putExtra("valor", valor );
+                        startActivity(popUp);
+                    }
+
                 }
             }
         });

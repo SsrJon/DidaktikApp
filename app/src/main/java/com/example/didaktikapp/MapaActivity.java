@@ -174,7 +174,7 @@ public class MapaActivity extends AppCompatActivity implements
 
        // Toast.makeText(getApplicationContext(), "Numero de lugares "+ numLugares, Toast.LENGTH_SHORT).show();
 
-        if (numLugares > Marcadores ) {
+        if (numLugares >= Marcadores ) {
             for (int i = 0; Marcadores > i; i++) {
                 if (Marcadores == lugares.get(i).getIdlugar()) {
                     punto1.title(lugares.get(i).getNombre());
@@ -702,10 +702,10 @@ public class MapaActivity extends AppCompatActivity implements
 
     public boolean onOptionsItemSelected (MenuItem item){
         int id = item.getItemId();
-        if(id == R.id.ezarpenak){
+        /*if(id == R.id.ezarpenak){
             Intent intent = new Intent(MapaActivity.this,Ezarpenak.class);
             startActivity(intent);
-        }
+        }*/
 
         if(id == R.id.kredituak){
 

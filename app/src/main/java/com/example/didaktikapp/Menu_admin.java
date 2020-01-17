@@ -68,15 +68,25 @@ public class Menu_admin extends AppCompatActivity {
                 String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
                 String args [] = {Nombre};
                 int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+                Intent intent = new Intent(Menu_admin.this,MapaActivity.class);
+                startActivity(intent);
             }
         });
         borrarUsuario = findViewById(R.id.erabiltzaileaEzabatu);
         borrarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db.execSQL("DELETE FROM "+ DBHelper.entidadUsuario.TABLE_NAME + " WHERE " + DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE + " LIKE " + Nombre);
-                Intent intent = new Intent(Menu_admin.this,PantallaCarga.class);
-                startActivity(intent);
+                try{
+                    System.out.println("Hola");
+                    db.execSQL("DELETE FROM "+ DBHelper.entidadUsuario.TABLE_NAME + " WHERE " + DBHelper.entidadUsuario.COLUMN_NAME_NOMBRE + " LIKE " + Nombre);
+                    System.out.println("adios");
+                    Intent intent = new Intent(Menu_admin.this,PantallaCarga.class);
+                    startActivity(intent);
+                }catch (Exception e){
+                    Intent intent = new Intent(Menu_admin.this,PantallaCarga.class);
+                    startActivity(intent);
+                }
+
             }
         });
         desbloquearProgreso = findViewById(R.id.desbloquearProgre);
@@ -88,6 +98,8 @@ public class Menu_admin extends AppCompatActivity {
                 String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
                 String args [] = {Nombre};
                 int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+                Intent intent = new Intent(Menu_admin.this,MapaActivity.class);
+                startActivity(intent);
             }
         });
     }
