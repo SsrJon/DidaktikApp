@@ -117,7 +117,6 @@ public class PantallaCarga extends AppCompatActivity {
                                 Lugar L = new Lugar(Id, nombre, Latitud, Longitud);
                                 lugarOnline.add(L);
                             }
-                            Toast.makeText(getApplicationContext(), "LUGARES ONLINE " + lugarOnline.size(), Toast.LENGTH_SHORT).show();
                             descargada = true;
 
                         }
@@ -136,7 +135,7 @@ public class PantallaCarga extends AppCompatActivity {
             dbHelper = new DBHelper(getApplicationContext());
             dbsqlite = dbHelper.getWritableDatabase();
           int ID =  lugarOnline.get(i).getIdlugar();
-            Toast.makeText(getApplicationContext(), "HOLA "+ID, Toast.LENGTH_SHORT).show();
+          //   Toast.makeText(getApplicationContext(), "HOLA "+ID, Toast.LENGTH_SHORT).show();
           String Nombre = lugarOnline.get(i).getNombre();
           double Latitud = lugarOnline.get(i).getLatitud();
           double Longitud = lugarOnline.get(i).getLongitud();
@@ -149,7 +148,6 @@ public class PantallaCarga extends AppCompatActivity {
            values.put(DBHelper.entidadLugares.COLUMN_NAME_LONGITUD, Longitud);
            dbsqlite.insert(DBHelper.entidadLugares.TABLE_NAME, null, values);*/
         }
-            Toast.makeText(getApplicationContext(), "ACTUALIZADA", Toast.LENGTH_SHORT).show();
             Actualizada = true;
         }
         public void comprobacion(){
