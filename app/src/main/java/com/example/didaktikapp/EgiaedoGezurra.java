@@ -82,10 +82,29 @@ public class EgiaedoGezurra extends AppCompatActivity {
             contador = contador + 1;
         }
         if (contador >= preguntas.size()-1) {
-            Intent popUp = new Intent(EgiaedoGezurra.this, PopupHorizontal.class);
-            String valor  = "egia";
-            popUp.putExtra("valor", valor );
-            startActivity(popUp);
+
+
+
+            try {
+                if (getIntent().getStringExtra("valor").equals("historia3")){
+
+                    Intent popUp = new Intent(EgiaedoGezurra.this, PopupHorizontal.class);
+                    String valor  = "egia3historia";
+                    popUp.putExtra("valor", valor );
+                    startActivity(popUp);
+                }
+            }
+            catch (Exception e){
+                Intent popUp = new Intent(EgiaedoGezurra.this, PopupHorizontal.class);
+                String valor  = "egia";
+                popUp.putExtra("valor", valor );
+                startActivity(popUp);
+            }
+
+
+
+
+
         }
 
         pregun.setText(preguntas.get(contador).getPregunta());

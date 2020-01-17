@@ -39,6 +39,7 @@ public class PantallaCarga extends AppCompatActivity {
     ArrayList <Lugar> lugarOnline = new ArrayList<>();
     private static ConnectivityManager manager;
     boolean Actualizada = false;
+    boolean isWiFi;
     boolean descargada = false;
 
 
@@ -54,7 +55,12 @@ public class PantallaCarga extends AppCompatActivity {
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
         //Comprobar si tiene WIFI
-        boolean isWiFi = activeNetwork.getType() == ConnectivityManager.TYPE_WIFI;
+        if(isConnected){
+             isWiFi = activeNetwork.getType() == ConnectivityManager.TYPE_WIFI;
+        }else{
+             isWiFi = false;
+        }
+
 
         if (isWiFi && isConnected){
             descargarBDonline();

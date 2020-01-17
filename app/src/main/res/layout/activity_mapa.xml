@@ -14,10 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/Fondo"
-        mapbox:mapbox_cameraTargetLat="43.209712"
-        mapbox:mapbox_cameraTargetLng="-2.889002"
+        mapbox:mapbox_cameraTargetLat="43.209368"
+        mapbox:mapbox_cameraTargetLng="-2.889088"
         mapbox:mapbox_cameraZoom="14.5"
-        mapbox:mapbox_cameraZoomMin="5"
+        mapbox:mapbox_cameraZoomMin="12"
         tools:layout_editor_absoluteX="28dp"
         tools:layout_editor_absoluteY="0dp">
 

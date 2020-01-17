@@ -54,11 +54,23 @@ public class HutsuneakTabla extends AppCompatActivity {
                         MediaPlayer mediaPlayer = MediaPlayer.create(HutsuneakTabla.this, R.raw.erantzun_zuzena1_audioa);
                         mediaPlayer.start();
 
-                        Intent popUp = new Intent(HutsuneakTabla.this, PopupHorizontal.class);
-                        String valor  = "tabla";
-                        popUp.putExtra("valor", valor );
-                        startActivity(popUp);
 
+
+                        try {
+                            if (getIntent().getStringExtra("valor").equals("historia0")){
+
+                                Intent popUp = new Intent(HutsuneakTabla.this, PopupHorizontal.class);
+                                String valor  = "tabla";
+                                popUp.putExtra("valor", valor );
+                                startActivity(popUp);
+                            }
+                        }
+                        catch (Exception e){
+                            Intent popUp = new Intent(HutsuneakTabla.this, PopupHorizontal.class);
+                            String valor  = "tablaLibre";
+                            popUp.putExtra("valor", valor );
+                            startActivity(popUp);
+                        }
 
                     } else {
                         MediaPlayer mediaPlayer = MediaPlayer.create(HutsuneakTabla.this, R.raw.erantzun_okerra1_audioa);
