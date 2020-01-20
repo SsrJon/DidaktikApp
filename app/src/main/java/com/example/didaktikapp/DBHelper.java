@@ -27,7 +27,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     private static final String SQL_CREATE_TABLE_USUARIO =
-            "CREATE TABLE " + TABLE_NAME + " (" +
+            "CREATE TABLE " + entidadUsuario.TABLE_NAME + " (" +
                     entidadUsuario.COLUMN_NAME_NOMBRE + " TEXT PRIMARY KEY)";
 
     private static final String SQL_DELETE_TABLE_USUARIO =
@@ -115,6 +115,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void rellenarPuntos(SQLiteDatabase db){
         for (int i = 0;lugares.size()>i;i++) {
             ContentValues values = new ContentValues();
+            values.put(entidadLugares._ID,lugares.get(i).Idlugar);
             values.put(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE,lugares.get(i).Nombre);
             values.put(DBHelper.entidadLugares.COLUMN_NAME_LATITUD, lugares.get(i).Latitud);
             values.put(DBHelper.entidadLugares.COLUMN_NAME_LONGITUD, lugares.get(i).Longitud);

@@ -3,6 +3,7 @@ package com.example.didaktikapp;
 import androidx.fragment.app.FragmentTransaction;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
@@ -48,21 +49,27 @@ public class InicioFragment extends Fragment {
                    // Toast.makeText(getContext(), "Long: "+existente, Toast.LENGTH_SHORT).show();
                     if (existente == 0){
                         nuevoUsuario();
-                    }
-                    InicioAudioFragment fragment = new InicioAudioFragment();
-                    Bundle arguments = new Bundle();
-                    arguments.putString( "nombre" , etNombreInicio.getText().toString());
-                    fragment.setArguments(arguments);
-                    FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.replace(R.id.fragment,  fragment);
-                    ft.addToBackStack(null);
-                    ft.commit();
+                        InicioAudioFragment fragment = new InicioAudioFragment();
+                        Bundle arguments = new Bundle();
+                        arguments.putString( "nombre" , etNombreInicio.getText().toString());
+                        fragment.setArguments(arguments);
+                        FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        ft.replace(R.id.fragment,  fragment);
+                        ft.addToBackStack(null);
+                        ft.commit();
 
+                        SharedPreferences preferencias = getActivity().getSharedPreferences("datos",Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferencias.edit();
+                        editor.putString("nombre", etNombreInicio.getText().toString());
+                        editor.commit();
+                    } else {
                     SharedPreferences preferencias = getActivity().getSharedPreferences("datos",Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferencias.edit();
                     editor.putString("nombre", etNombreInicio.getText().toString());
                     editor.commit();
-
+                    Intent intent = new Intent(getActivity(),MapaActivity.class);
+                    startActivity(intent);
+                }
                 }else {
                     Toast.makeText(getContext(), "Mezedes izen bat sartu", Toast.LENGTH_SHORT).show();
                 }

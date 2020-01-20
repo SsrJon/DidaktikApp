@@ -157,34 +157,26 @@ public class MapaActivity extends AppCompatActivity implements
        Cursor cursor = db.query(DBHelper.entidadProgreso.TABLE_NAME,null,selection,selectionArgs,null,null,null);
         while(cursor.moveToNext()){
             int PTO1 = cursor.getInt(cursor.getColumnIndexOrThrow(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO));
-            Toast.makeText(getApplicationContext(), "Cursor normal "+ PTO1, Toast.LENGTH_SHORT).show();
             Marcadores = PTO1;
         }
-        Toast.makeText(getApplicationContext(), "Cursor normal "+ Marcadores, Toast.LENGTH_SHORT).show();
 
         ArrayList<Lugar> lugares = new ArrayList<>();
         Cursor cursorcantidad = db.query(DBHelper.entidadLugares.TABLE_NAME,null,null,null,null,null,null);
         numLugares =cursorcantidad.getCount();
-        Toast.makeText(getApplicationContext(), "Numero de lugares "+ numLugares, Toast.LENGTH_SHORT).show();
         while (cursorcantidad.moveToNext()){
             int Id = cursorcantidad.getInt(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares._ID));
             String nom = cursorcantidad.getString(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE));
-            Toast.makeText(getApplicationContext(),"NOMBRE METER:--"+nom, Toast.LENGTH_SHORT).show();
             double Latitud = cursorcantidad.getDouble(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_LATITUD));
-            Toast.makeText(getApplicationContext(),"LATITUD METER:--"+Latitud, Toast.LENGTH_SHORT).show();
             double Longitud = cursorcantidad.getDouble(cursorcantidad.getColumnIndexOrThrow(DBHelper.entidadLugares.COLUMN_NAME_LONGITUD));
             Lugar L = new Lugar(Id,nom,Latitud,Longitud);
-            Toast.makeText(getApplicationContext(),"NOMBRE METIDO:--"+L.getNombre(), Toast.LENGTH_SHORT).show();
             lugares.add(L);
         }
 
        // Toast.makeText(getApplicationContext(), "Numero de lugares "+ numLugares, Toast.LENGTH_SHORT).show();
 
-        if (numLugares > Marcadores ){
-            for (int i =0; Marcadores>i;i++) {
+        if (numLugares >= Marcadores ) {
+            for (int i = 0; Marcadores > i; i++) {
                 if (Marcadores == lugares.get(i).getIdlugar()) {
-                    Toast.makeText(getApplicationContext(),"ID:--"+lugares.get(i).getIdlugar(), Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getApplicationContext(),"NOMBRE:--"+lugares.get(i).getNombre(), Toast.LENGTH_SHORT).show();
                     punto1.title(lugares.get(i).getNombre());
                     IconFactory iconFactoryPunto1 = IconFactory.getInstance(MapaActivity.this);
                     Icon iconPunto1 = iconFactoryPunto1.fromResource(R.drawable.marcador3);
@@ -194,7 +186,8 @@ public class MapaActivity extends AppCompatActivity implements
                     marcadorpuesto = true;
                 }
             }
-            if (!marcadorpuesto) {
+        }
+            if (Marcadores > numLugares) {
                 // final MarkerOptions punto1 = new MarkerOptions();
                 //Punto 1  Larrea eskultura
                 punto1.title("Larrea eskultura");
@@ -203,6 +196,7 @@ public class MapaActivity extends AppCompatActivity implements
                 punto1.icon(iconPunto1);
                 punto1.position(new LatLng(43.211583, -2.886917));
                 mapboxMap.addMarker(punto1);
+
                 final MarkerOptions punto2 = new MarkerOptions();
                 //Punto 2  Arrigorriagako Udaletxea
                 punto2.title("Arrigorriagako Udaletxea");
@@ -211,6 +205,7 @@ public class MapaActivity extends AppCompatActivity implements
                 punto2.icon(iconPunto2);
                 punto2.position(new LatLng(43.205978, -2.887869));
                 mapboxMap.addMarker(punto2);
+
                 final MarkerOptions punto3 = new MarkerOptions();
                 //Punto 3 Andra Maria Magdalena eliza
                 punto3.title("Maria Magdalena eliza");
@@ -219,6 +214,7 @@ public class MapaActivity extends AppCompatActivity implements
                 punto3.icon(iconPunto3);
                 punto3.position(new LatLng(43.205548, -2.888705));
                 mapboxMap.addMarker(punto3);
+
                 final MarkerOptions punto4 = new MarkerOptions();
                 //Punto 4 Hiltegi Zaharra
                 punto4.title("Hiltegi Zaharra");
@@ -227,6 +223,7 @@ public class MapaActivity extends AppCompatActivity implements
                 punto4.icon(iconPunto4);
                 punto4.position(new LatLng(43.204889, -2.887833));
                 mapboxMap.addMarker(punto4);
+
                 final MarkerOptions punto5 = new MarkerOptions();
                 //Punto 5 Landaederreagako Santo Kristo baseliza
                 punto5.title("Landaederreagako Santo Kristo baseliza");
@@ -238,7 +235,7 @@ public class MapaActivity extends AppCompatActivity implements
 
                 final MarkerOptions punto6 = new MarkerOptions();
                 //Punto 6 Abrisketako San Pedro baseleizea
-                punto6.title("Abrisketako San Pedro baseleizea");
+                punto6.title("Abrisketako San Pedro baseliza");
                 IconFactory iconFactoryPunto6 = IconFactory.getInstance(MapaActivity.this);
                 Icon iconPunto6 = iconFactoryPunto6.fromResource(R.drawable.marcador6);
                 punto6.icon(iconPunto6);
@@ -246,7 +243,7 @@ public class MapaActivity extends AppCompatActivity implements
                 mapboxMap.addMarker(punto6);
             }
 
-            }
+
 
 
         //final MarkerOptions punto1 = new MarkerOptions();
@@ -327,7 +324,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",2.1);
                                 startActivity(intent);
                             }
                         } else if (marker.getTitle().equals("Maria Magdalena eliza")) {
@@ -337,7 +335,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",3.1);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Hiltegi Zaharra")){
@@ -347,7 +346,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",4.1);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Landaederreagako Santo Kristo baseliza")){
@@ -357,7 +357,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",5.1);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Abrisketako San Pedro baseliza")){
@@ -367,7 +368,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",6.1);
                                 startActivity(intent);
                             }
                         }
@@ -700,16 +702,20 @@ public class MapaActivity extends AppCompatActivity implements
 
     public boolean onOptionsItemSelected (MenuItem item){
         int id = item.getItemId();
-        if(id == R.id.ezarpenak){
+        /*if(id == R.id.ezarpenak){
             Intent intent = new Intent(MapaActivity.this,Ezarpenak.class);
             startActivity(intent);
-        }
+        }*/
 
         if(id == R.id.kredituak){
 
                 Intent intent = new Intent(MapaActivity.this,Kredituak.class);
                 startActivity(intent);
 
+        }
+        if (id == R.id.admin){
+            Intent intent = new Intent(MapaActivity.this,Menu_admin.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -723,8 +729,9 @@ public class MapaActivity extends AppCompatActivity implements
     }
 
     public void pepe(Location localizacion){
-            double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
-            //Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
+            double distancia;
+        distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
+        //Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
             if (distancia * 1000 <= 9) {
                 System.out.println("llegue");
                 mikainfo.setVisibility(View.VISIBLE);

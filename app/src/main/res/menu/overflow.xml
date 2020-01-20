@@ -8,12 +8,16 @@
         app:actionLayout="@layout/switch_item"
         app:showAsAction="always" />
 
-    <item
-        android:id="@+id/ezarpenak"
-        android:title="Ezarpenak" />
+
+
+
+    <item android:id="@+id/admin"
+        android:title="Kudeatzaile menua"/>
+
 
     <item android:id="@+id/kredituak"
         android:title="Kredituak" />
+
 
 
 </menu>
