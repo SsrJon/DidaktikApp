@@ -89,6 +89,12 @@ handi bat ere. Absideko leihoan ere dekorazio
 prerromanikoa ikusten da.</string>
 
 
+    <!-- Final -->
+
+    <string name="final_7">Oso ondo! Leku guztiak ezagutu dituzu.
+        Bidai honetan ikasitakoarekin hurrengo ariketa egingo duzue.</string>
+
+
     <string name="timer_default">00:00</string>
     <string name="timer">Timer</string>
 

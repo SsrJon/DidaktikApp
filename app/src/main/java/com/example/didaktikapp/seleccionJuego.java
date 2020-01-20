@@ -22,7 +22,7 @@ public class seleccionJuego extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion);
-        rellenarJuegos();
+        //rellenarJuegos();
         adap = new AdaptadorJuegos (Juegos.getJuegosArrayList());
         adap.setOnItemClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +87,8 @@ public class seleccionJuego extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void rellenarJuegos(){
+    /*public void rellenarJuegos(){
+
         Juegos.getJuegosArrayList().clear();
         //Juegos J = new Juegos("Sopa de letras",getDrawable(R.drawable.sopa));
         //Juegos.getJuegosArrayList().add(J);
@@ -103,7 +104,7 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J6);
         Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
         Juegos.getJuegosArrayList().add(J7);
-        Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.egiagezurra));
+        Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
         Juegos.getJuegosArrayList().add(J8);
         Juegos J9 = new Juegos("Argazkia aukeratu",getDrawable(R.drawable.iglesiaicon));
         Juegos.getJuegosArrayList().add(J9);
@@ -119,7 +120,11 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J14);
 
 
+
+
     }
+
+     */
     public void onBackPressed(){
         Intent intent = new Intent(seleccionJuego.this,MapaActivity.class);
         startActivity(intent);

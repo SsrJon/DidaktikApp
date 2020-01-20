@@ -146,6 +146,10 @@ public class PopupHorizontal extends Activity {
                     startActivity(intent);
                 }else if (getIntent().getStringExtra("valor").equals("hutsuneak2historia")) {
 
+
+                    Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                    Juegos.getJuegosArrayList().add(J13);
+
                     ContentValues values = new ContentValues();
                     values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,3);
                     String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";

@@ -136,10 +136,24 @@ public class GurutzegramaActivity extends AppCompatActivity {
                         MediaPlayer mediaPlayer= MediaPlayer.create(GurutzegramaActivity.this,R.raw.erantzunzuzena6_audioa);
                         mediaPlayer.start();
                         //popUp para volver a jugar el juego o salir al menu de juegos
-                        Intent popUp = new Intent(GurutzegramaActivity.this, Popup.class);
-                        String valor  = "gurutzegrama";
-                        popUp.putExtra("valor", valor );
-                        startActivity(popUp);
+
+                        try {
+                            if (getIntent().getStringExtra("valor").equals("historia7")){
+
+                                Intent popUp = new Intent(GurutzegramaActivity.this, Popup.class);
+                                String valor  = "gurutzegrama7historia";
+                                popUp.putExtra("valor", valor );
+                                startActivity(popUp);
+                            }
+                        }
+                        catch (Exception e){
+                            Intent popUp = new Intent(GurutzegramaActivity.this, Popup.class);
+                            String valor  = "gurutzegrama";
+                            popUp.putExtra("valor", valor );
+                            startActivity(popUp);
+                        }
+
+
                     }
                     //swich para mostrar el resultado si la respuesta a sido correcta
                     switch (mostrar){
