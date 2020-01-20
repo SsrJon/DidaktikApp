@@ -32,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/creditos_usuario_3"
+        android:textSize="0sp"
         app:layout_constraintBottom_toTopOf="@+id/guiahorizontal9"
         app:layout_constraintEnd_toStartOf="@+id/guiavertica23"
         app:layout_constraintStart_toStartOf="@+id/guiavertica22"
