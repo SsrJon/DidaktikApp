@@ -1,16 +1,16 @@
 package com.example.didaktikapp;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.didaktikapp.Puzzle.PuzzleActivity;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.didaktikapp.sopadeletras.features.wordsearch.WordSearchActivity;
 
 
 public class seleccionJuego extends AppCompatActivity {
@@ -73,6 +73,10 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, HutsuneakTabla.class);
                     startActivity(intent);
                 }
+                if(fotoaMandar.equals("Sopilla")){
+                    Intent intent = new Intent(seleccionJuego.this, WordSearchActivity.class);
+                    startActivity(intent);
+                }
 
             }
         });
@@ -111,6 +115,8 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J12);
         Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
         Juegos.getJuegosArrayList().add(J13);
+        Juegos J14 = new Juegos("Sopilla",getDrawable(R.drawable.rellenar_hueco));
+        Juegos.getJuegosArrayList().add(J14);
 
 
     }
