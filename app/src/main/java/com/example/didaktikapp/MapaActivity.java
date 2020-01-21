@@ -236,7 +236,7 @@ public class MapaActivity extends AppCompatActivity implements
 
                 final MarkerOptions punto6 = new MarkerOptions();
                 //Punto 6 Abrisketako San Pedro baseleizea
-                punto6.title("Abrisketako San Pedro baseleizea");
+                punto6.title("Abrisketako San Pedro baseliza");
                 IconFactory iconFactoryPunto6 = IconFactory.getInstance(MapaActivity.this);
                 Icon iconPunto6 = iconFactoryPunto6.fromResource(R.drawable.marcador6);
                 punto6.icon(iconPunto6);
@@ -325,7 +325,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",2.1);
                                 startActivity(intent);
                             }
                         } else if (marker.getTitle().equals("Maria Magdalena eliza")) {
@@ -335,7 +336,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",3.1);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Hiltegi Zaharra")){
@@ -345,7 +347,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",4.1);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Landaederreagako Santo Kristo baseliza")){
@@ -355,7 +358,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",5.1);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Abrisketako San Pedro baseliza")){
@@ -365,7 +369,8 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 mikainfo.setVisibility(View.VISIBLE);
                                 llegaste.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(MapaActivity.this, GurutzegramaActivity.class);
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",6.1);
                                 startActivity(intent);
                             }
                         }
@@ -698,17 +703,16 @@ public class MapaActivity extends AppCompatActivity implements
 
     public boolean onOptionsItemSelected (MenuItem item){
         int id = item.getItemId();
-        if(id == R.id.juegos){
-            if (pantalla==0){
-                Log.d("tag", "juegos");
-                Intent intent = new Intent(MapaActivity.this,GurutzegramaActivity.class);
+        if(id == R.id.ezarpenak){
+            Intent intent = new Intent(MapaActivity.this,Ezarpenak.class);
+            startActivity(intent);
+        }
+
+        if(id == R.id.kredituak){
+
+                Intent intent = new Intent(MapaActivity.this,Kredituak.class);
                 startActivity(intent);
 
-                pantalla=1;
-            }else if (pantalla == 1){
-
-                pantalla=0;
-            }
         }
         if (id == R.id.admin){
             Intent intent = new Intent(MapaActivity.this,Menu_admin.class);

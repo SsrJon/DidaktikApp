@@ -20,6 +20,75 @@
         ekingo diogu!.
     </string>
 
+    <string name="audio2">Gure herriko ondare kulturalak ezagutzeko eta
+hauen historia ikasteko, Arrigorriagatik ibilbide bat
+prestatu dut. Horretarako, zuen inguruan ageri
+diren sei kultura ondare hautatu ditut eta ondare
+bakoitzean jarduera eta erronka dibertigarri
+batzuk topatuko dituzue. Gure herriari buruz gehiago jakin nahi baduzue, has dezagun
+ibilbidea!</string>
+
+    <string name="audio_p0">Beno beno neska-mutilak, lehenengo gunera
+joateko, gakoa eman baino lehen, ondare
+kulturala zer den gogoraraztea beharrezkoa
+da. Gogoan duzue klasean landutakoa? Ba,
+animo, hasi lehenengo galderarekin!</string>
+
+
+    <!--Punto 2 audios -->
+
+    <string name="audio_p2">Orain gauden lekua udaletxe zaharra da, hau,
+1940.urtean berreraiki zen, sute suntsigarri
+baten ostean. Ondoan, udaletxe berria ikus
+daiteke eta udaletxea izan baino lehen eskola
+bat izan zen. Udaletxe berria eraikitzeko,
+eskola zaharra eusten zuten harriak erabili
+ziren.</string>
+
+
+    <!-- Punto 3 audios-->
+
+    <string name="audio_p3">Lagun maiteak, Arrigorriagako Andra Maria
+Magdalena elizara heldu gara. Eliza honek,
+Arrigorriagako batailan du jatorria
+(870.urtean gutxi gora behera). Honen sorrera
+IX. mendean dela uste da, nahiz eta jatorriko
+eraikuntzatik ezer ez mantendu.</string>
+
+    <!-- Punto 4 audios-->
+
+    <string name="audio_p4">Gaur egunean Gaztegune moduan ezagutzen
+duguna, lehen hiltegia zen. Fabrika honek,
+garai hartako forma eta materiala
+(adreiluzkoa eta harlanezkoa) mantentzen du,
+hortaz, tximinia zilindrikoa ikus daiteke.
+Eraikinaren tipologia eta materiala kontuan
+hartuta, 1940 eta 1950 urte bitartekoa da.</string>
+
+    <!-- Punto 5 audios-->
+
+    <string name="audio_p5">Buf lagunak, ia ibilbidearen amaieran gaude.
+Oraingoan, Landaederreagako Santo Kristo
+Baselizan gaude. Lehenengoz 1655an eraiki
+zen, nahiz eta, harrezkero, hainbat aldiz
+berreraiki izan den. Formari dagokionez, goitik
+ikusita ez dauka forma jakinik: besorik gabeko
+gurutzearen itxura dauka.</string>
+
+    <!-- Punto 6 audios-->
+    <string name="audio_p6">Neska-mutilak, hau Abrisketako San Pedro
+Baseliza da eta abentura honi amaiera ematen
+dion ondare kulturala da. Ermita honek,
+erromanikoaren aurretiko estiloen aztarna
+arkitektonikoak ditu eta Bizkaiko zaharrena da
+(XII. mendearen hasierakoa). Eraikigai gisa
+berriro erabilita, barruan hilarri erromatarren
+aztarnak aurkitu dira baita irudi
+prerromanikoak dituen harearrizko bloke
+handi bat ere. Absideko leihoan ere dekorazio
+prerromanikoa ikusten da.</string>
+
+
     <string name="timer_default">00:00</string>
     <string name="timer">Timer</string>
 
@@ -109,7 +178,7 @@
     <string name="izena">Mezedes izen bat sartu</string>
 
 
-    <!-- Punto 2-->
+    <!-- Punto 1-->
     <string name="Larrea_eskultura">Vicente Larrearen obra hau (2002an Bilbotik
 etorrita) Arrigorriagako sarreran aurki
 dezakegu, polikiroldegiaren ondoan. Ondare
@@ -117,7 +186,7 @@ kultural arkitektoniko hau, bere izugarrizko
 altueragatik nabarmentzen da.</string>
 
     <string name="explicacionpunto1">Vicente Larrearen obra hau (2002an Bilbotik etorrita) Arrigorriagako sarreran aurki dezakegu, polikiroldegiaren ondoan. Ondare kultural arkitektoniko hau, bere izugarrizko altueragatik nabarmentzen da."</string>
-    <string name="explicacionpunto12">“Larrea eskulturaren oinarrizko datuak ikasi dituzuenez, orain honen puzzlea ebatziko duzue. Animo!”</string>
+    <string name="explicacionpunto12">Larrea eskulturaren oinarrizko datuak ikasi dituzuenez, orain honen puzzlea ebatziko duzue. Animo!</string>
 
     <!-- Ordenar imagenes punto 3-->
     <string name="orden">Hurrengo argazkiak, kronologikoki ordenatu behar duzu.</string>
@@ -264,6 +333,27 @@ ematen diona.</string>
 <string name="grayscale">Grayscale</string>
 
 <string name="game_data_desc">:gridSize Grid, :wordCount Words</string>
+
+
+
+    <!-- Creditos-->
+
+    <string name="creditos_usuario_1">David Chacón</string>
+    <string name="creditos_usuario_2">Kevin Díaz-Medino</string>
+    <string name="creditos_usuario_3">Jon Ander De Castro</string>
+
+    <string name="creditos_usuario_4">Izaro Ouro</string>
+    <string name="creditos_usuario_5">Ainhoa Redondo</string>
+    <string name="creditos_usuario_6">Fran Rodríguez</string>
+    <string name="creditos_usuario_7">Janire Seoane</string>
+    <string name="creditos_usuario_8">Endika Torralba</string>
+    <string name="creditos_usuario_9">Noelia Vargas</string>
+
+    <string name="creditos_label_1">Garapen taldea</string>
+    <string name="creditos_label_2">Testuak/audioak</string>
+
+
+
 
 
 </resources>

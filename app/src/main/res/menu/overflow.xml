@@ -9,8 +9,9 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/juegos"
+        android:id="@+id/ezarpenak"
         android:title="Ezarpenak" />
+
     <item
         android:id="@+id/borrado"
         android:title="Ezabatu guztia" />
@@ -18,6 +19,9 @@
         android:title="Kudeatzaile menua"/>
 
     <item android:title="Kredituak" />
+
+    <item android:id="@+id/kredituak"
+        android:title="Kredituak" />
 
 
 

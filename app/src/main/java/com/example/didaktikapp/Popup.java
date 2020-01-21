@@ -73,6 +73,13 @@ public class Popup extends Activity {
 
                     Intent intent = new Intent(Popup.this, Quiz.class);
                     startActivity(intent);
+                } else if(getIntent().getStringExtra("valor").equals("quiz4historia")){
+                    Intent intent = new Intent(Popup.this, Quiz.class);
+                    startActivity(intent);
+                }
+                else if (getIntent().getStringExtra("valor").equals("hutsuneak3historia")) {
+                    Intent intent = new Intent(Popup.this, Quiz.class);
+                    startActivity(intent);
                 }
 
                 else if(getIntent().getStringExtra("valor").equals("gurutzegrama")){
@@ -86,16 +93,35 @@ public class Popup extends Activity {
                     Intent intent = new Intent(Popup.this, PuzzleActivity.class);
                     startActivity(intent);
                 }
+
+                else if(getIntent().getStringExtra("valor").equals("deslizar5historia")){
+                    Intent intent = new Intent(Popup.this, PuzzleActivity.class);
+                    startActivity(intent);
+                }
                 else if(getIntent().getStringExtra("valor").equals("ordenarImagen")){
 
                     Intent intent = new Intent(Popup.this, OrdenarImagen.class);
                     startActivity(intent);
-                }
-                else if(getIntent().getStringExtra("valor").equals("test")){
+                }else if(getIntent().getStringExtra("valor").equals("test")){
 
                     Intent intent = new Intent(Popup.this, TestGalderak.class);
                     startActivity(intent);
                 }
+                else if(getIntent().getStringExtra("valor").equals("test0")){
+
+                    Intent intent = new Intent(Popup.this, Test0.class);
+                    startActivity(intent);
+                }
+                else if (getIntent().getStringExtra("valor").equals("puzzleLibre")){
+
+                    Intent intent = new Intent(Popup.this, com.example.didaktikapp.Puzzle.PuzzleActivity.class);
+                    startActivity(intent);
+                }
+                else if (getIntent().getStringExtra("valor").equals("Historia0")){
+                    Intent intent = new Intent(Popup.this, Test0.class);
+                    startActivity(intent);
+                }
+
 
 
 
@@ -126,10 +152,61 @@ public class Popup extends Activity {
 
                 Intent intent = new Intent(Popup.this, MapaActivity.class);
                 startActivity(intent);
+            }else if (getIntent().getStringExtra("valor").equals("Historia0")){
+
+                Intent intent = new Intent(Popup.this, MapaActivity.class);
+                String valor  = "historia0";
+                intent.putExtra("valor", valor );
+                startActivity(intent);
+            }else if (getIntent().getStringExtra("valor").equals("puzzleLibre")) {
+
+                Intent intent = new Intent(Popup.this, seleccionJuego.class);
+                startActivity(intent);
+            }else if(getIntent().getStringExtra("valor").equals("ordenar3_1historia")){
+               /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
+                db.execSQL(strSQL);*/
+
+                    ContentValues values = new ContentValues();
+                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,4);
+                    String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                    String args [] = {Nombre};
+                    int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+                    //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(Popup.this, MapaActivity.class);
+                    startActivity(intent);
+            }else if(getIntent().getStringExtra("valor").equals("quiz4historia")){
+               /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
+                db.execSQL(strSQL);*/
+
+                ContentValues values = new ContentValues();
+                values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,5);
+                String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                String args [] = {Nombre};
+                int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+                //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(Popup.this, MapaActivity.class);
+                startActivity(intent);
+            }else if(getIntent().getStringExtra("valor").equals("deslizar5historia")){
+               /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
+                db.execSQL(strSQL);*/
+
+                ContentValues values = new ContentValues();
+                values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,6);
+                String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                String args [] = {Nombre};
+                int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+                //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(Popup.this, MapaActivity.class);
+                startActivity(intent);
             }else{
                 Intent intent = new Intent(Popup.this,seleccionJuego.class);
                 startActivity(intent);
             }
+
+
 
 
             }
