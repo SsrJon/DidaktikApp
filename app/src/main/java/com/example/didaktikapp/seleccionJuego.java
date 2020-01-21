@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.didaktikapp.sopadeletras.features.wordsearch.WordSearchActivity;
+
 
 public class seleccionJuego extends AppCompatActivity {
     AdaptadorJuegos adap;
