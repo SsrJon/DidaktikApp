@@ -80,7 +80,7 @@ public class MapaActivity extends AppCompatActivity implements
     MarkerOptions punto1 = new MarkerOptions();
     boolean marcadorpuesto = false;
     //Zona accesible en el mapa
-
+    boolean Detener = false;
    private static final LatLng BOUND_CORNER_NW = new LatLng(43.202712, -2.91002);
    private static final LatLng BOUND_CORNER_SE = new LatLng(43.221812, -2.88002);
     private static final LatLngBounds RESTRICTED_BOUNDS_AREA = new LatLngBounds.Builder()
@@ -108,6 +108,7 @@ public class MapaActivity extends AppCompatActivity implements
         juegos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Detener = true;
                 Intent intent = new Intent(MapaActivity.this, seleccionJuego.class);
                 startActivity(intent);
 
@@ -847,22 +848,25 @@ public class MapaActivity extends AppCompatActivity implements
     }
 
     public void pepe(Location localizacion){
+        if(!Detener){
             double distancia;
-        distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
-        //Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
+            distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
+            //Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
             if (distancia * 1000 <= 9) {
                 System.out.println("llegue");
                 mikainfo.setVisibility(View.VISIBLE);
                 llegaste.setVisibility(View.VISIBLE);
             }
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                //que hacer despues de 10 segundos
-                Location GPS = mapboxMap.getLocationComponent().getLastKnownLocation();
-                pepe(GPS);
-            }
-        }, 5000);
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    //que hacer despues de 10 segundos
+                    Location GPS = mapboxMap.getLocationComponent().getLastKnownLocation();
+                    pepe(GPS);
+                }
+            }, 5000);
+        }
+
 
     }
 

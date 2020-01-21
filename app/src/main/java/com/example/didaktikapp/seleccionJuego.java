@@ -1,16 +1,14 @@
 package com.example.didaktikapp;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.didaktikapp.Puzzle.PuzzleActivity;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class seleccionJuego extends AppCompatActivity {
@@ -34,8 +32,8 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, Quiz.class);
                     startActivity(intent);
                 }if (fotoaMandar.equals("Puzzle")){
-                    Intent intent = new Intent(seleccionJuego.this, PuzzleActivity.class);
-                    startActivity(intent);
+                   // Intent intent = new Intent(seleccionJuego.this, PuzzleActivity.class);
+                    //startActivity(intent);
                 }if (fotoaMandar.equals("Puzzle irristagarria")){
                     Intent intent = new Intent(seleccionJuego.this, com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity.class);
                     startActivity(intent);
@@ -75,6 +73,10 @@ public class seleccionJuego extends AppCompatActivity {
                 }
                 if (fotoaMandar.equals("Test0")){
                     Intent intent = new Intent(seleccionJuego.this, Test0.class);
+                    startActivity(intent);
+                }
+                if(fotoaMandar.equals("Sopilla")){
+                    Intent intent = new Intent(seleccionJuego.this, WordSearchActivity.class);
                     startActivity(intent);
                 }
 
@@ -118,6 +120,8 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J13);
         Juegos J14 = new Juegos("Test0",getDrawable(R.drawable.test));
         Juegos.getJuegosArrayList().add(J14);
+        Juegos J15 = new Juegos("Sopilla",getDrawable(R.drawable.rellenar_hueco));
+        Juegos.getJuegosArrayList().add(J15);
 
 
 
