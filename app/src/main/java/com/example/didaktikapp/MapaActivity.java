@@ -438,6 +438,7 @@ public class MapaActivity extends AppCompatActivity implements
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",1.1);
+                                intent.putExtra("pasado",true);
                                 startActivity(intent);
                             }
                         } else if (marker.getTitle().equals("Arrigorriagako Udaletxea")) {
@@ -452,6 +453,7 @@ public class MapaActivity extends AppCompatActivity implements
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",2.1);
+                                intent.putExtra("pasado",true);
                                 startActivity(intent);
                             }
                         } else if (marker.getTitle().equals("Maria Magdalena eliza")) {
@@ -465,6 +467,7 @@ public class MapaActivity extends AppCompatActivity implements
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",3.1);
+                                intent.putExtra("pasado",true);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Hiltegi Zaharra")){
@@ -478,6 +481,7 @@ public class MapaActivity extends AppCompatActivity implements
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",4.1);
+                                intent.putExtra("pasado",true);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Landaederreagako Santo Kristo baseliza")){
@@ -491,6 +495,7 @@ public class MapaActivity extends AppCompatActivity implements
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",5.1);
+                                intent.putExtra("pasado",true);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Abrisketako San Pedro baseliza")){
@@ -504,6 +509,7 @@ public class MapaActivity extends AppCompatActivity implements
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",6.1);
+                                intent.putExtra("pasado",true);
                                 startActivity(intent);
                             }
                         }

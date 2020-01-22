@@ -1,9 +1,8 @@
 package com.example.didaktikapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,7 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.util.ArrayList;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Menu_admin extends AppCompatActivity {
     Button borrarUsuario;
@@ -34,6 +34,35 @@ public class Menu_admin extends AppCompatActivity {
         Nombre = sharedPref.getString("nombre", null);
         cambiarNombre = findViewById(R.id.aldatuizenalabel);
         cambiarNombre.setHint(Nombre);
+
+
+        //Precaucion
+        AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
+        dialogo1.setTitle("Importante");
+        dialogo1.setMessage("¿Cual es la contraseña de administrador ?");
+        dialogo1.setCancelable(false);
+
+        dialogo1.setPositiveButton("Muztio", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+                aceptar();
+            }
+        });
+        dialogo1.setNegativeButton("Mika", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+                cancelar();
+            }
+        });
+        dialogo1.setNeutralButton("Arrigorriaga", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        cancelar();
+                    }
+                });
+                dialogo1.show();
+
+
+
+        //Precaucion
 
         cambiarnombre = findViewById(R.id.cambiarnombre);
         cambiarnombre.setOnClickListener(new View.OnClickListener() {
@@ -140,5 +169,14 @@ public class Menu_admin extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J14);
 
     }
+    public void aceptar () {
+
+    }
+
+    public void cancelar () {
+        Intent intent = new Intent(Menu_admin.this,MapaActivity.class);
+        startActivity(intent);
+    }
+
 
 }
