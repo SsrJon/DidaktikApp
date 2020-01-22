@@ -1,26 +1,25 @@
 package com.example.didaktikapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
@@ -47,12 +46,14 @@ import com.mapbox.mapboxsdk.offline.OfflineRegion;
 import com.mapbox.mapboxsdk.offline.OfflineRegionError;
 import com.mapbox.mapboxsdk.offline.OfflineRegionStatus;
 import com.mapbox.mapboxsdk.offline.OfflineTilePyramidRegionDefinition;
+import com.mapbox.turf.TurfMeasurement;
+
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import timber.log.Timber;
-import com.mapbox.turf.TurfMeasurement;
 
 
 public class MapaActivity extends AppCompatActivity implements
@@ -80,7 +81,7 @@ public class MapaActivity extends AppCompatActivity implements
     MarkerOptions punto1 = new MarkerOptions();
     boolean marcadorpuesto = false;
     //Zona accesible en el mapa
-
+    boolean Detener = false;
    private static final LatLng BOUND_CORNER_NW = new LatLng(43.202712, -2.91002);
    private static final LatLng BOUND_CORNER_SE = new LatLng(43.221812, -2.88002);
     private static final LatLngBounds RESTRICTED_BOUNDS_AREA = new LatLngBounds.Builder()
@@ -108,6 +109,7 @@ public class MapaActivity extends AppCompatActivity implements
         juegos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Detener = true;
                 Intent intent = new Intent(MapaActivity.this, seleccionJuego.class);
                 startActivity(intent);
 
@@ -184,8 +186,125 @@ public class MapaActivity extends AppCompatActivity implements
                     punto1.position(new LatLng(lugares.get(i).Latitud, lugares.get(i).Longitud));
                     mapboxMap.addMarker(punto1);
                     marcadorpuesto = true;
+
+                    if (Marcadores==2){
+                        Juegos.getJuegosArrayList().clear();
+                        Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                        Juegos.getJuegosArrayList().add(J14);
+                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                        Juegos.getJuegosArrayList().add(J12);
+                        Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                        Juegos.getJuegosArrayList().add(J4);
+                    }
+
+                    if (Marcadores==3){
+
+                        Juegos.getJuegosArrayList().clear();
+                        Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                        Juegos.getJuegosArrayList().add(J14);
+                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                        Juegos.getJuegosArrayList().add(J12);
+                        Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                        Juegos.getJuegosArrayList().add(J4);
+                        Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                        Juegos.getJuegosArrayList().add(J13);
+                    }
+
+                    if (Marcadores==4){
+
+                        Juegos.getJuegosArrayList().clear();
+                        Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                        Juegos.getJuegosArrayList().add(J14);
+                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                        Juegos.getJuegosArrayList().add(J12);
+                        Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                        Juegos.getJuegosArrayList().add(J4);
+                        Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                        Juegos.getJuegosArrayList().add(J13);
+                        Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
+                        Juegos.getJuegosArrayList().add(J8);
+                        Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+                        Juegos.getJuegosArrayList().add(J10);
+                    }
+
+                    if (Marcadores==5){
+
+                        Juegos.getJuegosArrayList().clear();
+                        Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                        Juegos.getJuegosArrayList().add(J14);
+                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                        Juegos.getJuegosArrayList().add(J12);
+                        Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                        Juegos.getJuegosArrayList().add(J4);
+                        Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                        Juegos.getJuegosArrayList().add(J13);
+                        Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
+                        Juegos.getJuegosArrayList().add(J8);
+                        Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+                        Juegos.getJuegosArrayList().add(J10);
+                        Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.quiz));
+                        Juegos.getJuegosArrayList().add(J2);
+                    }
+
+                    if (Marcadores==6){
+
+                        Juegos.getJuegosArrayList().clear();
+                        Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                        Juegos.getJuegosArrayList().add(J14);
+                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                        Juegos.getJuegosArrayList().add(J12);
+                        Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                        Juegos.getJuegosArrayList().add(J4);
+                        Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                        Juegos.getJuegosArrayList().add(J13);
+                        Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
+                        Juegos.getJuegosArrayList().add(J8);
+                        Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+                        Juegos.getJuegosArrayList().add(J10);
+                        Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.quiz));
+                        Juegos.getJuegosArrayList().add(J2);
+                        Juegos J6 = new Juegos("Puzzle irristagarria",getDrawable(R.drawable.puzzletearrastro));
+                        Juegos.getJuegosArrayList().add(J6);
+                        Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
+                        Juegos.getJuegosArrayList().add(J7);
+                    }
+
+                    if (Marcadores==7){
+
+                        Juegos.getJuegosArrayList().clear();
+                        Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                        Juegos.getJuegosArrayList().add(J14);
+                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                        Juegos.getJuegosArrayList().add(J12);
+                        Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                        Juegos.getJuegosArrayList().add(J4);
+                        Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                        Juegos.getJuegosArrayList().add(J13);
+                        Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
+                        Juegos.getJuegosArrayList().add(J8);
+                        Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+                        Juegos.getJuegosArrayList().add(J10);
+                        Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.quiz));
+                        Juegos.getJuegosArrayList().add(J2);
+                        Juegos J6 = new Juegos("Puzzle irristagarria",getDrawable(R.drawable.puzzletearrastro));
+                        Juegos.getJuegosArrayList().add(J6);
+                        Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
+                        Juegos.getJuegosArrayList().add(J7);
+                        Juegos J11 = new Juegos("Test",getDrawable(R.drawable.quiz));
+                        Juegos.getJuegosArrayList().add(J11);
+                        Juegos J3 = new Juegos("Gurutzegrama",getDrawable(R.drawable.cruzada));
+                        Juegos.getJuegosArrayList().add(J3);
+                    }
+
+
+
+
+
                 }
-            }
+
+                }
+
+
         }
             if (Marcadores > numLugares) {
                 // final MarkerOptions punto1 = new MarkerOptions();
@@ -311,21 +430,30 @@ public class MapaActivity extends AppCompatActivity implements
                         if (marker.getTitle().equals("Larrea eskultura")) {
                             Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
-                           // Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
+                             // Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",1.1);
+                                startActivity(intent);
+                            }else if(Marcadores > numLugares){
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",1.1);
+                                intent.putExtra("pasado",true);
                                 startActivity(intent);
                             }
                         } else if (marker.getTitle().equals("Arrigorriagako Udaletxea")) {
                             Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                             //Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
+
                             if (distancia * 1000 <= 9) {
-                                mikainfo.setVisibility(View.VISIBLE);
-                                llegaste.setVisibility(View.VISIBLE);
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",2.1);
+                                startActivity(intent);
+                            }else if(Marcadores > numLugares){
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",2.1);
+                                intent.putExtra("pasado",true);
                                 startActivity(intent);
                             }
                         } else if (marker.getTitle().equals("Maria Magdalena eliza")) {
@@ -333,10 +461,13 @@ public class MapaActivity extends AppCompatActivity implements
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                             //Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
                             if (distancia * 1000 <= 9) {
-                                mikainfo.setVisibility(View.VISIBLE);
-                                llegaste.setVisibility(View.VISIBLE);
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",3.1);
+                                startActivity(intent);
+                            }else if(Marcadores > numLugares){
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",3.1);
+                                intent.putExtra("pasado",true);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Hiltegi Zaharra")){
@@ -344,10 +475,13 @@ public class MapaActivity extends AppCompatActivity implements
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                             //Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
                             if (distancia * 1000 <= 9) {
-                                mikainfo.setVisibility(View.VISIBLE);
-                                llegaste.setVisibility(View.VISIBLE);
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",4.1);
+                                startActivity(intent);
+                            }else if(Marcadores > numLugares){
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",4.1);
+                                intent.putExtra("pasado",true);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Landaederreagako Santo Kristo baseliza")){
@@ -355,10 +489,13 @@ public class MapaActivity extends AppCompatActivity implements
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                             //Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
                             if (distancia * 1000 <= 9) {
-                                mikainfo.setVisibility(View.VISIBLE);
-                                llegaste.setVisibility(View.VISIBLE);
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",5.1);
+                                startActivity(intent);
+                            }else if(Marcadores > numLugares){
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",5.1);
+                                intent.putExtra("pasado",true);
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Abrisketako San Pedro baseliza")){
@@ -366,10 +503,13 @@ public class MapaActivity extends AppCompatActivity implements
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                             //Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
                             if (distancia * 1000 <= 9) {
-                                mikainfo.setVisibility(View.VISIBLE);
-                                llegaste.setVisibility(View.VISIBLE);
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",6.1);
+                                startActivity(intent);
+                            }else if(Marcadores > numLugares){
+                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                                intent.putExtra("marcador",6.1);
+                                intent.putExtra("pasado",true);
                                 startActivity(intent);
                             }
                         }
@@ -729,22 +869,25 @@ public class MapaActivity extends AppCompatActivity implements
     }
 
     public void pepe(Location localizacion){
+        if(!Detener){
             double distancia;
-        distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
-        //Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
+            distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
+            //Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
             if (distancia * 1000 <= 9) {
                 System.out.println("llegue");
                 mikainfo.setVisibility(View.VISIBLE);
                 llegaste.setVisibility(View.VISIBLE);
             }
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                //que hacer despues de 10 segundos
-                Location GPS = mapboxMap.getLocationComponent().getLastKnownLocation();
-                pepe(GPS);
-            }
-        }, 5000);
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    //que hacer despues de 10 segundos
+                    Location GPS = mapboxMap.getLocationComponent().getLastKnownLocation();
+                    pepe(GPS);
+                }
+            }, 5000);
+        }
+
 
     }
 

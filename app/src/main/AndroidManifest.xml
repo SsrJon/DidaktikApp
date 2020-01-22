@@ -16,6 +16,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/uva"
         android:supportsRtl="true"
+        android:name=".sopadeletras.WordSearchApp"
         android:theme="@style/AppTheme">
 
         <activity android:name=".Menu_admin"></activity>
@@ -32,12 +33,15 @@
             android:name=".MikaExplicando"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".sopadeletras.features.wordsearch.WordSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".TestGalderak"
             android:screenOrientation="portrait" />
         <activity android:name=".Test" />
         <activity
             android:name=".HutsuneakTabla"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FotoElegir"
             android:screenOrientation="landscape" />

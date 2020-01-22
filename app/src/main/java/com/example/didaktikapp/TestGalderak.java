@@ -167,10 +167,28 @@ public class TestGalderak extends AppCompatActivity {
                 respu2.setClickable(false);
                 respu3.setClickable(false);
 
-                Intent popUp = new Intent(TestGalderak.this, Popup.class);
-                String valor  = "test";
-                popUp.putExtra("valor", valor );
-                startActivity(popUp);
+
+                try {
+                    if (getIntent().getStringExtra("valor").equals("historia6")){
+
+                        Intent popUp = new Intent(TestGalderak.this, Popup.class);
+                        String valor  = "testgalderak6historia";
+                        popUp.putExtra("valor", valor );
+                        startActivity(popUp);
+                    }
+                }
+                catch (Exception e){
+                    Intent popUp = new Intent(TestGalderak.this, Popup.class);
+                    String valor  = "test";
+                    popUp.putExtra("valor", valor );
+                    startActivity(popUp);
+                }
+
+
+
+
+
+
             }
 
         }else{

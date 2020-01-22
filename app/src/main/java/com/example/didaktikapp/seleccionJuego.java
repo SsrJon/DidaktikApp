@@ -1,16 +1,16 @@
 package com.example.didaktikapp;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.didaktikapp.Puzzle.PuzzleActivity;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.didaktikapp.sopadeletras.features.wordsearch.WordSearchActivity;
 
 
 public class seleccionJuego extends AppCompatActivity {
@@ -22,7 +22,7 @@ public class seleccionJuego extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion);
-        rellenarJuegos();
+        //rellenarJuegos();
         adap = new AdaptadorJuegos (Juegos.getJuegosArrayList());
         adap.setOnItemClickListener(new View.OnClickListener() {
             @Override
@@ -34,8 +34,8 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, Quiz.class);
                     startActivity(intent);
                 }if (fotoaMandar.equals("Puzzle")){
-                    Intent intent = new Intent(seleccionJuego.this, PuzzleActivity.class);
-                    startActivity(intent);
+                   // Intent intent = new Intent(seleccionJuego.this, PuzzleActivity.class);
+                    //startActivity(intent);
                 }if (fotoaMandar.equals("Puzzle irristagarria")){
                     Intent intent = new Intent(seleccionJuego.this, com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity.class);
                     startActivity(intent);
@@ -77,6 +77,10 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, Test0.class);
                     startActivity(intent);
                 }
+                if(fotoaMandar.equals("Hizki salda")){
+                    Intent intent = new Intent(seleccionJuego.this, WordSearchActivity.class);
+                    startActivity(intent);
+                }
 
             }
         });
@@ -87,7 +91,8 @@ public class seleccionJuego extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void rellenarJuegos(){
+    /*public void rellenarJuegos(){
+
         Juegos.getJuegosArrayList().clear();
         //Juegos J = new Juegos("Sopa de letras",getDrawable(R.drawable.sopa));
         //Juegos.getJuegosArrayList().add(J);
@@ -103,7 +108,7 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J6);
         Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
         Juegos.getJuegosArrayList().add(J7);
-        Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.egiagezurra));
+        Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
         Juegos.getJuegosArrayList().add(J8);
         Juegos J9 = new Juegos("Argazkia aukeratu",getDrawable(R.drawable.iglesiaicon));
         Juegos.getJuegosArrayList().add(J9);
@@ -117,9 +122,15 @@ public class seleccionJuego extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J13);
         Juegos J14 = new Juegos("Test0",getDrawable(R.drawable.test));
         Juegos.getJuegosArrayList().add(J14);
+        Juegos J15 = new Juegos("Sopilla",getDrawable(R.drawable.rellenar_hueco));
+        Juegos.getJuegosArrayList().add(J15);
+
+
 
 
     }
+
+     */
     public void onBackPressed(){
         Intent intent = new Intent(seleccionJuego.this,MapaActivity.class);
         startActivity(intent);

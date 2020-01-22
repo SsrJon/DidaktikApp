@@ -1,26 +1,22 @@
 package com.example.didaktikapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Point;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
+import com.example.didaktikapp.sopadeletras.features.wordsearch.WordSearchActivity;
 
 public class Popup extends Activity {
 
@@ -29,6 +25,8 @@ public class Popup extends Activity {
     DBHelper dbHelper;
     SQLiteDatabase db;
     String Nombre;
+    int destruir;
+    boolean admin = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +49,9 @@ public class Popup extends Activity {
 
         getWindow().setLayout((int)(width/1.5), (int)(height/4));
 
-
+        Intent intent = getIntent();
+        admin = intent.getBooleanExtra("pasado",false);
+        Toast.makeText(getApplicationContext(),"HOla : "+admin ,Toast.LENGTH_LONG);
 
         //Se las asignamos
         WindowManager.LayoutParams params = getWindow().getAttributes();
@@ -60,9 +60,6 @@ public class Popup extends Activity {
         params.y = 20;
 
         getWindow().setAttributes(params);
-
-
-
 
 
         btnErrepikatu.setOnClickListener(new View.OnClickListener() {
@@ -122,11 +119,32 @@ public class Popup extends Activity {
                     startActivity(intent);
                 }
 
+                else if(getIntent().getStringExtra("valor").equals("testgalderak6historia")){
+                    Intent intent = new Intent(Popup.this, TestGalderak.class);
+                    startActivity(intent);
 
+                }
+                else if(getIntent().getStringExtra("valor").equals("gurutzegrama7historia")){
+                    Intent intent = new Intent(Popup.this, GurutzegramaActivity.class);
+                    startActivity(intent);
 
+                }else if(getIntent().getStringExtra("valor").equals("sopa2_1historia")){
 
-                //Intent intent = new Intent(Popup.this, ActivityHutsuneakBete.class);
-                //startActivity(intent);
+                    Intent intent = new Intent(Popup.this, WordSearchActivity.class);
+                    startActivity(intent);
+
+                }else if(getIntent().getStringExtra("valor").equals("sopa2")){
+                    Intent intent = new Intent(Popup.this, WordSearchActivity.class);
+                    startActivity(intent);
+                }else if(getIntent().getStringExtra("valor").equals("tabla")){
+
+                    Intent intent = new Intent(Popup.this, HutsuneakTabla.class);
+                    startActivity(intent);
+                }else if (getIntent().getStringExtra("valor").equals("tablaLibre")){
+                    Intent intent = new Intent(Popup.this, HutsuneakTabla.class);
+                    startActivity(intent);
+                }
+
             }
         });
 
@@ -134,85 +152,134 @@ public class Popup extends Activity {
         btnJarraitu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                destruir=1;
                 dbHelper = new DBHelper(getApplicationContext());
                 db = dbHelper.getWritableDatabase();
                 SharedPreferences sharedPref = getSharedPreferences("datos",Context.MODE_PRIVATE);
                 Nombre = sharedPref.getString("nombre", null);
 
-            if(getIntent().getStringExtra("valor").equals("puzzleM1")){
-               /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
-                db.execSQL(strSQL);*/
 
-                ContentValues values = new ContentValues();
-                values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,2);
-                String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
-                String args [] = {Nombre};
-                int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
-               //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+                if(getIntent().getStringExtra("valor").equals("puzzleM1")){
+                   /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
+                    db.execSQL(strSQL);*/
 
-                Intent intent = new Intent(Popup.this, MapaActivity.class);
-                startActivity(intent);
-            }else if (getIntent().getStringExtra("valor").equals("Historia0")){
+                    Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                    Juegos.getJuegosArrayList().add(J14);
 
-                Intent intent = new Intent(Popup.this, MapaActivity.class);
-                String valor  = "historia0";
-                intent.putExtra("valor", valor );
-                startActivity(intent);
-            }else if (getIntent().getStringExtra("valor").equals("puzzleLibre")) {
+                    Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                    Juegos.getJuegosArrayList().add(J12);
+                    Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                    Juegos.getJuegosArrayList().add(J4);
 
-                Intent intent = new Intent(Popup.this, seleccionJuego.class);
-                startActivity(intent);
-            }else if(getIntent().getStringExtra("valor").equals("ordenar3_1historia")){
-               /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
-                db.execSQL(strSQL);*/
-
-                    ContentValues values = new ContentValues();
-                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,4);
-                    String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
-                    String args [] = {Nombre};
-                    int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
-                    //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+                    if(!admin){
+                        ContentValues values = new ContentValues();
+                        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,2);
+                        String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                        String args [] = {Nombre};
+                        int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+                        //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+                    }
 
                     Intent intent = new Intent(Popup.this, MapaActivity.class);
                     startActivity(intent);
-            }else if(getIntent().getStringExtra("valor").equals("quiz4historia")){
+                }else if (getIntent().getStringExtra("valor").equals("Historia0")){
+                    Intent intent = new Intent(Popup.this, MapaActivity.class);
+                    String valor  = "historia0";
+                    intent.putExtra("valor", valor );
+                    startActivity(intent);
+                }else if (getIntent().getStringExtra("valor").equals("puzzleLibre")) {
+                    Intent intent = new Intent(Popup.this, seleccionJuego.class);
+                    startActivity(intent);
+                }else if(getIntent().getStringExtra("valor").equals("ordenar3_1historia")){
                /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
                 db.execSQL(strSQL);*/
 
-                ContentValues values = new ContentValues();
-                values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,5);
-                String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
-                String args [] = {Nombre};
-                int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
-                //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+                    Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
+                    Juegos.getJuegosArrayList().add(J8);
+                    Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+                    Juegos.getJuegosArrayList().add(J10);
+                    if(!admin){
+                        ContentValues values = new ContentValues();
+                        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,4);
+                        String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                        String args [] = {Nombre};
+                        int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+                    }
+                    //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Popup.this, MapaActivity.class);
+                    startActivity(intent);
 
-                Intent intent = new Intent(Popup.this, MapaActivity.class);
-                startActivity(intent);
-            }else if(getIntent().getStringExtra("valor").equals("deslizar5historia")){
-               /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
-                db.execSQL(strSQL);*/
+                }else if(getIntent().getStringExtra("valor").equals("quiz4historia")){
+                   /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
+                    db.execSQL(strSQL);*/
 
-                ContentValues values = new ContentValues();
-                values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,6);
-                String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
-                String args [] = {Nombre};
-                int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
-                //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+                    Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.quiz));
+                    Juegos.getJuegosArrayList().add(J2);
 
-                Intent intent = new Intent(Popup.this, MapaActivity.class);
-                startActivity(intent);
-            }else{
+                    if(!admin) {
+                        ContentValues values = new ContentValues();
+                        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO, 5);
+                        String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                        String args[] = {Nombre};
+                        int count = db.update(DBHelper.entidadProgreso.TABLE_NAME, values, seleccion, args);
+                        //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+                    }
+                    Intent intent = new Intent(Popup.this, MapaActivity.class);
+                    startActivity(intent);
+                }else if(getIntent().getStringExtra("valor").equals("deslizar5historia")){
+                   /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
+                    db.execSQL(strSQL);*/
+                    Juegos J6 = new Juegos("Puzzle irristagarria",getDrawable(R.drawable.puzzletearrastro));
+                    Juegos.getJuegosArrayList().add(J6);
+                    Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
+                    Juegos.getJuegosArrayList().add(J7);
+
+                    if(!admin){
+                        ContentValues values = new ContentValues();
+                        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,6);
+                        String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                        String args [] = {Nombre};
+                        int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+                        //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
+                    }
+                    Intent intent = new Intent(Popup.this, MapaActivity.class);
+                    startActivity(intent);
+                }else if(getIntent().getStringExtra("valor").equals("testgalderak6historia")){
+                    Intent intent = new Intent(Popup.this, MikaExplicando.class);
+                    intent.putExtra("marcador",7.1);
+                    startActivity(intent);
+                }else if(getIntent().getStringExtra("valor").equals("gurutzegrama7historia")){
+                    Juegos J11 = new Juegos("Test",getDrawable(R.drawable.quiz));
+                    Juegos.getJuegosArrayList().add(J11);
+                    Juegos J3 = new Juegos("Gurutzegrama",getDrawable(R.drawable.cruzada));
+                    Juegos.getJuegosArrayList().add(J3);
+
+                    if(!admin){
+                        ContentValues values = new ContentValues();
+                        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,7);
+                        String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                        String args [] = {Nombre};
+                        int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+                    }
+                    Intent intent = new Intent(Popup.this, MapaActivity.class);
+                    startActivity(intent);
+                }else{
+
                 Intent intent = new Intent(Popup.this,seleccionJuego.class);
                 startActivity(intent);
-            }
-
-
-
-
+                }
             }
         });
 
 
 
     }
+
+
+    public void onDestroy() {
+
+        super.onDestroy();
+        btnJarraitu.callOnClick();
+    }
+
 }

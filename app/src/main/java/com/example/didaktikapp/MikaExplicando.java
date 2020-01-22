@@ -164,5 +164,21 @@ public class MikaExplicando extends AppCompatActivity {
                 }
             });
         }
+
+
+        else if(Marcador ==7.1){
+
+            texto.setText(R.string.final_7);
+            continuar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MikaExplicando.this, GurutzegramaActivity.class);
+                    String valor  = "historia7";
+                    intent.putExtra("valor", valor );
+                    startActivity(intent);
+                }
+            });
+        }
+
     }
 }
