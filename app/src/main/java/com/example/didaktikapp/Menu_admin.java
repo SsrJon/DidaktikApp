@@ -167,7 +167,7 @@ public class Menu_admin extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J13);
         Juegos J14 = new Juegos("Ondare kulturala",getDrawable(R.drawable.quiz));
         Juegos.getJuegosArrayList().add(J14);
-        Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.rellenar_hueco));
+        Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.sopa));
         Juegos.getJuegosArrayList().add(J15);
 
     }

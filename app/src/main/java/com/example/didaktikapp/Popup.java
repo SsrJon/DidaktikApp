@@ -190,7 +190,25 @@ public class Popup extends Activity {
                 }else if (getIntent().getStringExtra("valor").equals("puzzleLibre")) {
                     Intent intent = new Intent(Popup.this, seleccionJuego.class);
                     startActivity(intent);
-                }else if(getIntent().getStringExtra("valor").equals("ordenar3_1historia")){
+                }else if(getIntent().getStringExtra("valor").equals("sopa2_1historia")){
+
+                    Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                    Juegos.getJuegosArrayList().add(J13);
+                    Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.sopa));
+                    Juegos.getJuegosArrayList().add(J15);
+
+                    ContentValues values = new ContentValues();
+                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,3);
+                    String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                    String args [] = {Nombre};
+                    int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+
+                    Intent intent = new Intent(Popup.this, MapaActivity.class);
+                    startActivity(intent);
+
+
+                }
+                else if(getIntent().getStringExtra("valor").equals("ordenar3_1historia")){
                /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
                 db.execSQL(strSQL);*/
 
