@@ -1,16 +1,9 @@
 package com.example.didaktikapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -18,11 +11,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -37,13 +33,11 @@ public class PantallaCarga extends AppCompatActivity {
     DBHelper dbHelper;
     SQLiteDatabase dbsqlite;
     ArrayList <Lugar> lugarOnline = new ArrayList<>();
+    ArrayList <Lugar> lugarOffline = new ArrayList<>();
     private static ConnectivityManager manager;
     boolean Actualizada = false;
     boolean isWiFi;
     boolean descargada = false;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +54,6 @@ public class PantallaCarga extends AppCompatActivity {
         }else{
              isWiFi = false;
         }
-
 
         if (isWiFi && isConnected){
             descargarBDonline();

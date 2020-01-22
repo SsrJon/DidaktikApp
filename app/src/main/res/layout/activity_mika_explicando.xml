@@ -27,6 +27,7 @@
         android:text=""
         android:autoSizeMaxTextSize="120sp"
         android:autoSizeMinTextSize="12sp"
+        android:autoSizeTextType ="uniform"
         android:textStyle="bold"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/lienahorizontal"
