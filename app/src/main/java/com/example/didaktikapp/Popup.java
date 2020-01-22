@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
+import com.example.didaktikapp.sopadeletras.features.wordsearch.WordSearchActivity;
 
 public class Popup extends Activity {
 
@@ -59,9 +60,6 @@ public class Popup extends Activity {
         params.y = 20;
 
         getWindow().setAttributes(params);
-
-
-
 
 
         btnErrepikatu.setOnClickListener(new View.OnClickListener() {
@@ -130,13 +128,23 @@ public class Popup extends Activity {
                     Intent intent = new Intent(Popup.this, GurutzegramaActivity.class);
                     startActivity(intent);
 
+                }else if(getIntent().getStringExtra("valor").equals("sopa2_1historia")){
+
+                    Intent intent = new Intent(Popup.this, WordSearchActivity.class);
+                    startActivity(intent);
+
+                }else if(getIntent().getStringExtra("valor").equals("sopa2")){
+                    Intent intent = new Intent(Popup.this, WordSearchActivity.class);
+                    startActivity(intent);
+                }else if(getIntent().getStringExtra("valor").equals("tabla")){
+
+                    Intent intent = new Intent(Popup.this, HutsuneakTabla.class);
+                    startActivity(intent);
+                }else if (getIntent().getStringExtra("valor").equals("tablaLibre")){
+                    Intent intent = new Intent(Popup.this, HutsuneakTabla.class);
+                    startActivity(intent);
                 }
 
-
-
-
-                //Intent intent = new Intent(Popup.this, ActivityHutsuneakBete.class);
-                //startActivity(intent);
             }
         });
 
@@ -149,6 +157,7 @@ public class Popup extends Activity {
                 db = dbHelper.getWritableDatabase();
                 SharedPreferences sharedPref = getSharedPreferences("datos",Context.MODE_PRIVATE);
                 Nombre = sharedPref.getString("nombre", null);
+
 
                 if(getIntent().getStringExtra("valor").equals("puzzleM1")){
                    /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
@@ -199,6 +208,7 @@ public class Popup extends Activity {
                     //Toast.makeText(getApplicationContext(), " Actualizar lineas "+ count, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Popup.this, MapaActivity.class);
                     startActivity(intent);
+
                 }else if(getIntent().getStringExtra("valor").equals("quiz4historia")){
                    /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
                     db.execSQL(strSQL);*/
@@ -254,6 +264,7 @@ public class Popup extends Activity {
                     Intent intent = new Intent(Popup.this, MapaActivity.class);
                     startActivity(intent);
                 }else{
+
                 Intent intent = new Intent(Popup.this,seleccionJuego.class);
                 startActivity(intent);
                 }
@@ -266,6 +277,7 @@ public class Popup extends Activity {
 
 
     public void onDestroy() {
+
         super.onDestroy();
         btnJarraitu.callOnClick();
     }

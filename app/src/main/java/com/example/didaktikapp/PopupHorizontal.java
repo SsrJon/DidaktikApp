@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 
 import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
+import com.example.didaktikapp.sopadeletras.features.wordsearch.WordSearchActivity;
 
 
 public class PopupHorizontal extends Activity {
@@ -98,21 +99,12 @@ public class PopupHorizontal extends Activity {
                     startActivity(intent);
                 }
 
-                if(getIntent().getStringExtra("valor").equals("tabla")){
-
-                    Intent intent = new Intent(PopupHorizontal.this, HutsuneakTabla.class);
-                    startActivity(intent);
-                }
-
                 if(getIntent().getStringExtra("valor").equals("foto_elegir")){
 
                     Intent intent = new Intent(PopupHorizontal.this, FotoElegir.class);
                     startActivity(intent);
                 }
-                 if (getIntent().getStringExtra("valor").equals("tablaLibre")){
-                     Intent intent = new Intent(PopupHorizontal.this, HutsuneakTabla.class);
-                     startActivity(intent);
-                 }
+
                   if (getIntent().getStringExtra("valor").equals("Historia")){
 
                   }
@@ -132,17 +124,9 @@ public class PopupHorizontal extends Activity {
                 Nombre = sharedPref.getString("nombre", null);
 
 
-                if(getIntent().getStringExtra("valor").equals("tabla")){
-                    Intent intent = new Intent(PopupHorizontal.this, MikaExplicando.class);
-                    intent.putExtra("marcador",1.2);
-                    startActivity(intent);
-                } else if (getIntent().getStringExtra("valor").equals("Historia")){
+                 if (getIntent().getStringExtra("valor").equals("Historia")){
 
                     Intent intent = new Intent(PopupHorizontal.this, MapaActivity.class);
-                    startActivity(intent);
-                }else if (getIntent().getStringExtra("valor").equals("tablaLibre")) {
-
-                    Intent intent = new Intent(PopupHorizontal.this, seleccionJuego.class);
                     startActivity(intent);
                 }else if (getIntent().getStringExtra("valor").equals("hutsuneak2historia")) {
 
@@ -205,18 +189,16 @@ public class PopupHorizontal extends Activity {
             startActivity(intent);
         }else if (getIntent().getStringExtra("valor").equals("hutsuneak2historia")) {
 
-
-            Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
-            Juegos.getJuegosArrayList().add(J13);
-
-            ContentValues values = new ContentValues();
-            values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,3);
-            String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
-            String args [] = {Nombre};
-            int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
-
-            Intent intent = new Intent(PopupHorizontal.this, MapaActivity.class);
+            Intent intent = new Intent(PopupHorizontal.this, WordSearchActivity.class);
+            String valor  = "sopa2historia";
+            intent.putExtra("valor", valor );
             startActivity(intent);
+
+
+/*
+
+
+ */
         }else if (getIntent().getStringExtra("valor").equals("egia3historia")) {
 
             Intent intent = new Intent(PopupHorizontal.this, OrdenarImagen.class);

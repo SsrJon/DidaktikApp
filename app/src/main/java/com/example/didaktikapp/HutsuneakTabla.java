@@ -22,7 +22,6 @@ public class HutsuneakTabla extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hutsuneak_tabla);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         etOndarearen=findViewById(R.id.editTextOndarearen);
         etEgilea=findViewById(R.id.editTextEgilea);
@@ -59,14 +58,14 @@ public class HutsuneakTabla extends AppCompatActivity {
                         try {
                             if (getIntent().getStringExtra("valor").equals("historia0")){
 
-                                Intent popUp = new Intent(HutsuneakTabla.this, PopupHorizontal.class);
+                                Intent popUp = new Intent(HutsuneakTabla.this, Popup.class);
                                 String valor  = "tabla";
                                 popUp.putExtra("valor", valor );
                                 startActivity(popUp);
                             }
                         }
                         catch (Exception e){
-                            Intent popUp = new Intent(HutsuneakTabla.this, PopupHorizontal.class);
+                            Intent popUp = new Intent(HutsuneakTabla.this, Popup.class);
                             String valor  = "tablaLibre";
                             popUp.putExtra("valor", valor );
                             startActivity(popUp);

@@ -8,134 +8,141 @@
     tools:context=".HutsuneakTabla">
 
     <ImageView
-        android:id="@+id/imageViewTabla"
+        android:id="@+id/imageView9"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/guiahorizonta2"
-        app:layout_constraintEnd_toEndOf="@+id/guiavertica2"
-        app:layout_constraintStart_toStartOf="@+id/guiavertica1"
-        app:layout_constraintTop_toTopOf="@+id/guiahorizontal"
-        app:srcCompat="@drawable/tabla" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guiavertica1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.09" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guiavertica2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.91" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guiahorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guiahorizonta2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.76" />
-
-    <EditText
-        android:id="@+id/editTextOndarearen"
-        android:layout_width="250dp"
-        android:layout_height="55dp"
-        app:layout_constraintBottom_toBottomOf="@+id/guiahorizonta4"
-        app:layout_constraintEnd_toEndOf="@+id/guiavertica4"
-        app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintStart_toStartOf="@+id/guiavertica3"
-        app:layout_constraintTop_toTopOf="@+id/guiahorizonta3"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guiavertica3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.45" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guiavertica4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.88" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guiahorizonta3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.13" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guiahorizonta4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.27" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guiahorizonta5"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.42" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guiahorizonta6"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.58" />
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizonta15"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertica25"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica24"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta7"
+        app:srcCompat="@drawable/tabla2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guiahorizonta7"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.73" />
+        app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta16"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta17"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta18"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.37" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta19"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta20"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.56" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta21"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta22"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiahorizonta15"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertica24"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertica26"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertica27"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiavertica25"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <EditText
+        android:id="@+id/editTextOndarearen"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizonta17"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertica27"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica26"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta16" />
 
     <EditText
         android:id="@+id/editTextEgilea"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="55dp"
-        app:layout_constraintBottom_toBottomOf="@+id/guiahorizonta5"
-        app:layout_constraintEnd_toEndOf="@+id/guiavertica4"
-        app:layout_constraintStart_toStartOf="@+id/guiavertica3"
-        app:layout_constraintTop_toTopOf="@+id/guiahorizonta4"
-        app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizonta19"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertica27"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica26"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta18" />
 
     <EditText
         android:id="@+id/editTextHeldu"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/guiahorizonta6"
-        app:layout_constraintEnd_toEndOf="@+id/guiavertica4"
-        app:layout_constraintStart_toStartOf="@+id/guiavertica3"
-        app:layout_constraintTop_toTopOf="@+id/guiahorizonta5"
-        app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizonta21"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertica27"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica26"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta20" />
 
     <EditText
         android:id="@+id/editTextKultural"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="55dp"
-        app:layout_constraintBottom_toBottomOf="@+id/guiahorizonta7"
-        app:layout_constraintEnd_toEndOf="@+id/guiavertica4"
-        app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintStart_toStartOf="@+id/guiavertica3"
-        app:layout_constraintTop_toTopOf="@+id/guiahorizonta6"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintBottom_toTopOf="@+id/guiahorizonta15"
+        app:layout_constraintEnd_toStartOf="@+id/guiavertica27"
+        app:layout_constraintStart_toStartOf="@+id/guiavertica26"
+        app:layout_constraintTop_toTopOf="@+id/guiahorizonta22" />
 
     <Button
         android:id="@+id/buttonZuzendu"

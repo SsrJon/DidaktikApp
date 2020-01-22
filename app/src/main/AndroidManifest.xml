@@ -41,7 +41,7 @@
         <activity android:name=".Test" />
         <activity
             android:name=".HutsuneakTabla"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FotoElegir"
             android:screenOrientation="landscape" />

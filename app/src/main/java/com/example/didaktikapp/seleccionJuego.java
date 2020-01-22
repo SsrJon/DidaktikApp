@@ -77,7 +77,7 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, Test0.class);
                     startActivity(intent);
                 }
-                if(fotoaMandar.equals("Sopilla")){
+                if(fotoaMandar.equals("Hizki salda")){
                     Intent intent = new Intent(seleccionJuego.this, WordSearchActivity.class);
                     startActivity(intent);
                 }
