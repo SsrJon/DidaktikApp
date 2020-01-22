@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.didaktikapp.sopadeletras.features.wordsearch.WordSearchActivity;
+
 
 public class seleccionJuego extends AppCompatActivity {
     AdaptadorJuegos adap;
@@ -75,7 +77,7 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, Test0.class);
                     startActivity(intent);
                 }
-                if(fotoaMandar.equals("Sopilla")){
+                if(fotoaMandar.equals("Hizki salda")){
                     Intent intent = new Intent(seleccionJuego.this, WordSearchActivity.class);
                     startActivity(intent);
                 }

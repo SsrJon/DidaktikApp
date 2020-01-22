@@ -13,7 +13,9 @@ import android.widget.TextView;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.didaktikapp.ActivityHutsuneakBete2;
 import com.example.didaktikapp.Popup;
+import com.example.didaktikapp.PopupHorizontal;
 import com.example.didaktikapp.R;
 import com.example.didaktikapp.sopadeletras.WordSearchApp;
 import com.example.didaktikapp.sopadeletras.commons.DurationFormatter;
@@ -275,6 +277,27 @@ public class WordSearchActivity extends FullscreenActivity {
 
     private void showFinishGame(int gameId) {
             WordSearchApp.setMenujuegos(false);
+
+
+        try {
+            if (getIntent().getStringExtra("valor").equals("sopa2historia")){
+
+                Intent popUp = new Intent(WordSearchActivity.this, Popup.class);
+                String valor  = "sopa2_1historia";
+                popUp.putExtra("valor", valor );
+                startActivity(popUp);
+            }
+        }
+        catch (Exception e){
+            Intent intent = new Intent(WordSearchActivity.this, Popup.class);
+            String valor  = "sopa2";
+            intent.putExtra("valor", valor );
+            startActivity(intent);
+
+        }
+
+
+
             Intent intent = new Intent(WordSearchActivity.this, Popup.class);
             startActivity(intent);
     }

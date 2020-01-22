@@ -22,6 +22,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
+import com.example.didaktikapp.sopadeletras.features.wordsearch.WordSearchActivity;
 
 public class Popup extends Activity {
 
@@ -62,9 +63,6 @@ public class Popup extends Activity {
         params.y = 20;
 
         getWindow().setAttributes(params);
-
-
-
 
 
         btnErrepikatu.setOnClickListener(new View.OnClickListener() {
@@ -133,13 +131,23 @@ public class Popup extends Activity {
                     Intent intent = new Intent(Popup.this, GurutzegramaActivity.class);
                     startActivity(intent);
 
+                }else if(getIntent().getStringExtra("valor").equals("sopa2_1historia")){
+
+                    Intent intent = new Intent(Popup.this, WordSearchActivity.class);
+                    startActivity(intent);
+
+                }else if(getIntent().getStringExtra("valor").equals("sopa2")){
+                    Intent intent = new Intent(Popup.this, WordSearchActivity.class);
+                    startActivity(intent);
+                }else if(getIntent().getStringExtra("valor").equals("tabla")){
+
+                    Intent intent = new Intent(Popup.this, HutsuneakTabla.class);
+                    startActivity(intent);
+                }else if (getIntent().getStringExtra("valor").equals("tablaLibre")){
+                    Intent intent = new Intent(Popup.this, HutsuneakTabla.class);
+                    startActivity(intent);
                 }
 
-
-
-
-                //Intent intent = new Intent(Popup.this, ActivityHutsuneakBete.class);
-                //startActivity(intent);
             }
         });
 
@@ -162,7 +170,7 @@ public class Popup extends Activity {
                 Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                 Juegos.getJuegosArrayList().add(J14);
 
-                Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
                 Juegos.getJuegosArrayList().add(J12);
                 Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
                 Juegos.getJuegosArrayList().add(J4);
@@ -262,7 +270,36 @@ public class Popup extends Activity {
                 Intent intent = new Intent(Popup.this, MapaActivity.class);
                 startActivity(intent);
 
-            }else{
+            }else if(getIntent().getStringExtra("valor").equals("sopa2_1historia")){
+                Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                Juegos.getJuegosArrayList().add(J13);
+                Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.rellenar_hueco));
+                Juegos.getJuegosArrayList().add(J15);
+
+
+                ContentValues values = new ContentValues();
+                values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,3);
+                String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                String args [] = {Nombre};
+                int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
+
+                Intent intent = new Intent(Popup.this, MapaActivity.class);
+                startActivity(intent);
+
+            }else if(getIntent().getStringExtra("valor").equals("sopa2")){
+                Intent intent = new Intent(Popup.this, seleccionJuego.class);
+                startActivity(intent);
+            } else if(getIntent().getStringExtra("valor").equals("tabla")){
+                    Intent intent = new Intent(Popup.this, MikaExplicando.class);
+                    intent.putExtra("marcador",1.2);
+                    startActivity(intent);
+
+            } else if (getIntent().getStringExtra("valor").equals("tablaLibre")) {
+
+                Intent intent = new Intent(Popup.this, seleccionJuego.class);
+                startActivity(intent);
+            }
+            else{
 
                 Intent intent = new Intent(Popup.this,seleccionJuego.class);
                 startActivity(intent);
@@ -296,7 +333,7 @@ public class Popup extends Activity {
             Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
             Juegos.getJuegosArrayList().add(J14);
 
-            Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+            Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
             Juegos.getJuegosArrayList().add(J12);
             Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
             Juegos.getJuegosArrayList().add(J4);
