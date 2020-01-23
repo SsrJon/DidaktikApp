@@ -298,8 +298,8 @@ public class WordSearchActivity extends FullscreenActivity {
 
 
 
-            Intent intent = new Intent(WordSearchActivity.this, Popup.class);
-            startActivity(intent);
+           /* Intent intent = new Intent(WordSearchActivity.this, Popup.class);
+            startActivity(intent);*/
     }
 
     private void setGameAsAlreadyFinished() {
