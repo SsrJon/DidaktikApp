@@ -8,6 +8,17 @@
 
 
     <ImageView
+        android:id="@+id/imageViewBotella"
+        android:layout_width="354dp"
+        android:layout_height="380dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/botella1"
+        android:alpha=".60"/>
+
+    <ImageView
         android:id="@+id/arrowUp"
         android:layout_width="143dp"
         android:layout_height="136dp"
@@ -30,7 +41,6 @@
         android:layout_width="143dp"
         android:layout_height="139dp"
         android:src="@drawable/uva" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

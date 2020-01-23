@@ -18,7 +18,8 @@
         android:roundIcon="@drawable/uva"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MikaFinal"></activity>
+        <activity android:name=".MikaFinal"
+            android:screenOrientation="portrait"/>
         <activity android:name=".Menu_admin" />
         <activity
             android:name=".Ezarpenak"
