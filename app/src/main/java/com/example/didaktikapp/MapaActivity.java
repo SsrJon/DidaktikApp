@@ -310,7 +310,7 @@ public class MapaActivity extends AppCompatActivity implements
         }
             if (Marcadores > numLugares) {
                 Juegos.getJuegosArrayList().clear();
-                Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.test));
                 Juegos.getJuegosArrayList().add(J14);
                 Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
                 Juegos.getJuegosArrayList().add(J12);
@@ -322,7 +322,7 @@ public class MapaActivity extends AppCompatActivity implements
                 Juegos.getJuegosArrayList().add(J8);
                 Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
                 Juegos.getJuegosArrayList().add(J10);
-                Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.quiz));
+                Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.test2));
                 Juegos.getJuegosArrayList().add(J2);
                 Juegos J6 = new Juegos("Puzzle irristagarria",getDrawable(R.drawable.puzzletearrastro));
                 Juegos.getJuegosArrayList().add(J6);
@@ -332,6 +332,8 @@ public class MapaActivity extends AppCompatActivity implements
                 Juegos.getJuegosArrayList().add(J11);
                 Juegos J3 = new Juegos("Gurutzegrama",getDrawable(R.drawable.cruzada));
                 Juegos.getJuegosArrayList().add(J3);
+                Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.sopa));
+                Juegos.getJuegosArrayList().add(J15);
                 // final MarkerOptions punto1 = new MarkerOptions();
                 //Punto 1  Larrea eskultura
                 punto1.title("Larrea eskultura");
