@@ -169,17 +169,9 @@ public class PopupHorizontal extends Activity {
         Nombre = sharedPref.getString("nombre", null);
 
 
-        if(getIntent().getStringExtra("valor").equals("tabla")){
-            Intent intent = new Intent(PopupHorizontal.this, MikaExplicando.class);
-            intent.putExtra("marcador",1.2);
-            startActivity(intent);
-        } else if (getIntent().getStringExtra("valor").equals("Historia")){
+       if (getIntent().getStringExtra("valor").equals("Historia")){
 
             Intent intent = new Intent(PopupHorizontal.this, MapaActivity.class);
-            startActivity(intent);
-        }else if (getIntent().getStringExtra("valor").equals("tablaLibre")) {
-
-            Intent intent = new Intent(PopupHorizontal.this, seleccionJuego.class);
             startActivity(intent);
         }else if (getIntent().getStringExtra("valor").equals("hutsuneak2historia")) {
 

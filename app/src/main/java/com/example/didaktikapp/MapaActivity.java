@@ -466,6 +466,7 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",1.1);
+                                intent.putExtra("pasado",false);
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
@@ -481,6 +482,7 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",2.1);
+                                intent.putExtra("pasado",false);
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
@@ -495,6 +497,7 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",3.1);
+                                intent.putExtra("pasado",false);
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
@@ -509,6 +512,7 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",4.1);
+                                intent.putExtra("pasado",false);
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
@@ -523,6 +527,7 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",5.1);
+                                intent.putExtra("pasado",false);
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
@@ -537,6 +542,7 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",6.1);
+                                intent.putExtra("pasado",false);
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
