@@ -96,7 +96,7 @@ public class MikaFinal extends AppCompatActivity {
                         arrowUp.setVisibility(View.VISIBLE);
 
                     }
-                }, 3000);
+                }, 2000);
             }
         });
 
@@ -114,7 +114,7 @@ public class MikaFinal extends AppCompatActivity {
                         arrowDown.setVisibility(View.VISIBLE);
 
                     }
-                }, 3000);
+                }, 2000);
             }
         });
 
@@ -132,7 +132,7 @@ public class MikaFinal extends AppCompatActivity {
                         arrowRight.setVisibility(View.VISIBLE);
 
                     }
-                }, 3000);
+                }, 2000);
             }
         });
 
@@ -151,7 +151,7 @@ public class MikaFinal extends AppCompatActivity {
                         arrowLeft.setVisibility(View.VISIBLE);
 
                     }
-                }, 3000);
+                }, 2000);
             }
         });
 
