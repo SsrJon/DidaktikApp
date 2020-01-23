@@ -208,6 +208,8 @@ public class MapaActivity extends AppCompatActivity implements
                         Juegos.getJuegosArrayList().add(J4);
                         Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
                         Juegos.getJuegosArrayList().add(J13);
+                        Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.sopa));
+                        Juegos.getJuegosArrayList().add(J15);
                     }
 
                     if (Marcadores==4){

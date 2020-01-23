@@ -131,16 +131,10 @@ public class PopupHorizontal extends Activity {
                 }else if (getIntent().getStringExtra("valor").equals("hutsuneak2historia")) {
 
 
-                    Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
-                    Juegos.getJuegosArrayList().add(J13);
 
-                    ContentValues values = new ContentValues();
-                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,3);
-                    String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
-                    String args [] = {Nombre};
-                    int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
-
-                    Intent intent = new Intent(PopupHorizontal.this, MapaActivity.class);
+                    Intent intent = new Intent(PopupHorizontal.this, WordSearchActivity.class);
+                     String valor  = "sopa2historia";
+                     intent.putExtra("valor", valor );
                     startActivity(intent);
                 }else if (getIntent().getStringExtra("valor").equals("egia3historia")) {
 
