@@ -29,6 +29,7 @@ public class MikaFinal extends AppCompatActivity {
     private ImageView arrowDown;
     private ImageView arrowRight;
     private ImageView arrowLeft;
+    private ImageView botella;
 
     // Button
     private Button pauseBtn;
@@ -47,6 +48,7 @@ public class MikaFinal extends AppCompatActivity {
     private Handler handler = new Handler();
     private Timer timer = new Timer();
 
+
     // Status Check
     private boolean pause_flg = false;
 
@@ -58,10 +60,11 @@ public class MikaFinal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mika_final);
 
-        arrowUp = (ImageView)findViewById(R.id.arrowUp);
-        arrowDown = (ImageView)findViewById(R.id.arrowDown);
-        arrowRight = (ImageView)findViewById(R.id.arrowRight);
-        arrowLeft = (ImageView)findViewById(R.id.arrowLeft);
+        arrowUp = findViewById(R.id.arrowUp);
+        arrowDown = findViewById(R.id.arrowDown);
+        arrowRight = findViewById(R.id.arrowRight);
+        arrowLeft = findViewById(R.id.arrowLeft);
+        botella=findViewById(R.id.imageViewBotella);
 
         // Get Screen Size.
         WindowManager wm = getWindowManager();
@@ -82,6 +85,8 @@ public class MikaFinal extends AppCompatActivity {
         arrowLeft.setY(-80.0f);
 
 
+
+
         arrowUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +94,8 @@ public class MikaFinal extends AppCompatActivity {
                 MediaPlayer mediaPlayer = MediaPlayer.create(MikaFinal.this, R.raw.correct);
                 mediaPlayer.start();
                 contadorClicks++;
+                botellaProgreso();
+
 
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
@@ -107,6 +114,7 @@ public class MikaFinal extends AppCompatActivity {
                 MediaPlayer mediaPlayer = MediaPlayer.create(MikaFinal.this, R.raw.correct);
                 mediaPlayer.start();
                 contadorClicks++;
+                botellaProgreso();
 
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
@@ -125,6 +133,7 @@ public class MikaFinal extends AppCompatActivity {
                 MediaPlayer mediaPlayer = MediaPlayer.create(MikaFinal.this, R.raw.correct);
                 mediaPlayer.start();
                 contadorClicks++;
+                botellaProgreso();
 
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
@@ -143,13 +152,13 @@ public class MikaFinal extends AppCompatActivity {
                 MediaPlayer mediaPlayer = MediaPlayer.create(MikaFinal.this, R.raw.correct);
                 mediaPlayer.start();
                 contadorClicks++;
+                botellaProgreso();
 
 
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         arrowLeft.setVisibility(View.VISIBLE);
-
                     }
                 }, 2000);
             }
@@ -171,6 +180,24 @@ public class MikaFinal extends AppCompatActivity {
             }
         }, 0, 8);
 
+
+
+
+    }
+
+    public void botellaProgreso(){
+
+        if (contadorClicks==5){
+            botella.setImageResource(R.drawable.botella2);
+        } else if (contadorClicks==10){
+            botella.setImageResource(R.drawable.botella3);
+        } else if (contadorClicks==15){
+            botella.setImageResource(R.drawable.botella4);
+        } else if (contadorClicks==20){
+            botella.setImageResource(R.drawable.botella5);
+        } else if (contadorClicks==25){
+            botella.setImageResource(R.drawable.botella6);
+        }
 
 
 
