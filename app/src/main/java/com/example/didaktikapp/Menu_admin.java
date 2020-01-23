@@ -149,8 +149,6 @@ public class Menu_admin extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J3);
         Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
         Juegos.getJuegosArrayList().add(J4);
-        Juegos J5 = new Juegos("Muztioa egin",getDrawable(R.drawable.muztio));
-        Juegos.getJuegosArrayList().add(J5);
         Juegos J6 = new Juegos("Puzzle irristagarria",getDrawable(R.drawable.puzzletearrastro));
         Juegos.getJuegosArrayList().add(J6);
         Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
@@ -169,6 +167,8 @@ public class Menu_admin extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J14);
         Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.sopa));
         Juegos.getJuegosArrayList().add(J15);
+        Juegos J16 = new Juegos("Mika",getDrawable(R.drawable.muztio));
+        Juegos.getJuegosArrayList().add(J16);
 
     }
     public void aceptar () {
