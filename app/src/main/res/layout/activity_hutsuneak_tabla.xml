@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Fondo"
+    style="@style/AppTheme"
     tools:context=".HutsuneakTabla">
 
     <ImageView
@@ -112,6 +112,7 @@
         android:id="@+id/editTextOndarearen"
         android:layout_width="0dp"
         android:layout_height="52dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/guiahorizonta17"
         app:layout_constraintEnd_toStartOf="@+id/guiavertica27"
         app:layout_constraintStart_toStartOf="@+id/guiavertica26"
@@ -121,6 +122,7 @@
         android:id="@+id/editTextEgilea"
         android:layout_width="0dp"
         android:layout_height="55dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/guiahorizonta19"
         app:layout_constraintEnd_toStartOf="@+id/guiavertica27"
         app:layout_constraintStart_toStartOf="@+id/guiavertica26"
@@ -130,6 +132,7 @@
         android:id="@+id/editTextHeldu"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/guiahorizonta21"
         app:layout_constraintEnd_toStartOf="@+id/guiavertica27"
         app:layout_constraintStart_toStartOf="@+id/guiavertica26"
@@ -139,6 +142,7 @@
         android:id="@+id/editTextKultural"
         android:layout_width="0dp"
         android:layout_height="55dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/guiahorizonta15"
         app:layout_constraintEnd_toStartOf="@+id/guiavertica27"
         app:layout_constraintStart_toStartOf="@+id/guiavertica26"
