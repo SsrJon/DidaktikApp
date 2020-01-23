@@ -50,9 +50,8 @@ public class Popup extends Activity {
 
         getWindow().setLayout((int)(width/1.5), (int)(height/4));
 
-        Intent intent = getIntent();
-        admin = intent.getBooleanExtra("pasado",false);
-        Toast.makeText(getApplicationContext(),"HOla : "+admin ,Toast.LENGTH_LONG);
+        SharedPreferences sharedpreferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        admin = sharedpreferences.getBoolean("pasado",false);
 
         //Se las asignamos
         WindowManager.LayoutParams params = getWindow().getAttributes();

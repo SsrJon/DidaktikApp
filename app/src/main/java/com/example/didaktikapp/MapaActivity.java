@@ -428,7 +428,8 @@ public class MapaActivity extends AppCompatActivity implements
                 mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(@NonNull Marker marker) {
-                       // String marcador= marker.getTitle();
+                        SharedPreferences sharedpreferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                        // String marcador= marker.getTitle();
                         if (marker.getTitle().equals("Larrea eskultura")) {
                             Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
@@ -436,12 +437,13 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",1.1);
-                                intent.putExtra("pasado",false);
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",1.1);
-                                intent.putExtra("pasado",true);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putBoolean("pasado", true);
+                                editor.commit();
                                 startActivity(intent);
                             }
                         } else if (marker.getTitle().equals("Arrigorriagako Udaletxea")) {
@@ -452,12 +454,13 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",2.1);
-                                intent.putExtra("pasado",false);
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",2.1);
-                                intent.putExtra("pasado",true);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putBoolean("pasado", true);
+                                editor.commit();
                                 startActivity(intent);
                             }
                         } else if (marker.getTitle().equals("Maria Magdalena eliza")) {
@@ -467,12 +470,13 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",3.1);
-                                intent.putExtra("pasado",false);
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",3.1);
-                                intent.putExtra("pasado",true);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putBoolean("pasado", true);
+                                editor.commit();
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Hiltegi Zaharra")){
@@ -482,12 +486,13 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",4.1);
-                                intent.putExtra("pasado",false);
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",4.1);
-                                intent.putExtra("pasado",true);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putBoolean("pasado", true);
+                                editor.commit();
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Landaederreagako Santo Kristo baseliza")){
@@ -497,12 +502,13 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",5.1);
-                                intent.putExtra("pasado",false);
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",5.1);
-                                intent.putExtra("pasado",true);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putBoolean("pasado", true);
+                                editor.commit();
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Abrisketako San Pedro baseliza")){
@@ -512,12 +518,14 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",6.1);
-                                intent.putExtra("pasado",false);
+
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",6.1);
-                                intent.putExtra("pasado",true);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putBoolean("pasado", true);
+                                editor.commit();
                                 startActivity(intent);
                             }
                         }
