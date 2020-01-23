@@ -269,7 +269,7 @@ public class MapaActivity extends AppCompatActivity implements
                         Juegos.getJuegosArrayList().add(J7);
                     }
 
-                    if (Marcadores==7){
+                  /*  if (Marcadores==7){
 
                         Juegos.getJuegosArrayList().clear();
                         Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
@@ -294,7 +294,7 @@ public class MapaActivity extends AppCompatActivity implements
                         Juegos.getJuegosArrayList().add(J11);
                         Juegos J3 = new Juegos("Gurutzegrama",getDrawable(R.drawable.cruzada));
                         Juegos.getJuegosArrayList().add(J3);
-                    }
+                    }*/
 
 
 
@@ -307,6 +307,29 @@ public class MapaActivity extends AppCompatActivity implements
 
         }
             if (Marcadores > numLugares) {
+                Juegos.getJuegosArrayList().clear();
+                Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                Juegos.getJuegosArrayList().add(J14);
+                Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                Juegos.getJuegosArrayList().add(J12);
+                Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                Juegos.getJuegosArrayList().add(J4);
+                Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                Juegos.getJuegosArrayList().add(J13);
+                Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
+                Juegos.getJuegosArrayList().add(J8);
+                Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+                Juegos.getJuegosArrayList().add(J10);
+                Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.quiz));
+                Juegos.getJuegosArrayList().add(J2);
+                Juegos J6 = new Juegos("Puzzle irristagarria",getDrawable(R.drawable.puzzletearrastro));
+                Juegos.getJuegosArrayList().add(J6);
+                Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
+                Juegos.getJuegosArrayList().add(J7);
+                Juegos J11 = new Juegos("Test",getDrawable(R.drawable.quiz));
+                Juegos.getJuegosArrayList().add(J11);
+                Juegos J3 = new Juegos("Gurutzegrama",getDrawable(R.drawable.cruzada));
+                Juegos.getJuegosArrayList().add(J3);
                 // final MarkerOptions punto1 = new MarkerOptions();
                 //Punto 1  Larrea eskultura
                 punto1.title("Larrea eskultura");
