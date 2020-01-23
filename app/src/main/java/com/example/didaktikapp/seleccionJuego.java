@@ -81,6 +81,10 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, WordSearchActivity.class);
                     startActivity(intent);
                 }
+                if(fotoaMandar.equals("Mika")){
+                    Intent intent = new Intent(seleccionJuego.this, MikaFinal.class);
+                    startActivity(intent);
+                }
 
             }
         });
