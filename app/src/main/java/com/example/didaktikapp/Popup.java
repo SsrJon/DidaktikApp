@@ -296,9 +296,6 @@ public class Popup extends Activity {
                 }
             }
         });
-
-
-
     }
 
 

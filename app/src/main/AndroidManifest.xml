@@ -22,9 +22,6 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Menu_admin" />
         <activity
-            android:name=".Ezarpenak"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Kredituak"
             android:screenOrientation="portrait" />
         <activity

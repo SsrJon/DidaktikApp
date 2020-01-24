@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/blanco"
     tools:context="com.example.didaktikapp.sopadeletras.features.wordsearch.WordSearchActivity">
 
     <RelativeLayout
@@ -136,9 +137,10 @@
                 app:snapToGrid="START_END" />
 
             <ScrollView
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#dfdfdf"
+                android:background="@color/Fondo"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp">
 
