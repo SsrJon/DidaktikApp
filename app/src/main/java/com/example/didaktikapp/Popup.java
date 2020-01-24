@@ -143,6 +143,12 @@ public class Popup extends Activity {
                 }else if (getIntent().getStringExtra("valor").equals("tablaLibre")){
                     Intent intent = new Intent(Popup.this, HutsuneakTabla.class);
                     startActivity(intent);
+                } else if(getIntent().getStringExtra("valor").equals("mika7historia")){
+                    Intent intent = new Intent(Popup.this, MikaFinal.class);
+                    startActivity(intent);
+                }else if(getIntent().getStringExtra("valor").equals("mikalibre")){
+                    Intent intent = new Intent(Popup.this, MikaFinal.class);
+                    startActivity(intent);
                 }
 
             }
@@ -275,10 +281,21 @@ public class Popup extends Activity {
                     intent.putExtra("marcador",7.1);
                     startActivity(intent);
                 }else if(getIntent().getStringExtra("valor").equals("gurutzegrama7historia")){
+
+                    Intent intent = new Intent(Popup.this, MikaFinal.class);
+                    String valor  = "mika";
+                    intent.putExtra("valor", valor );
+                    startActivity(intent);
+
+                }
+                else if(getIntent().getStringExtra("valor").equals("mika7historia")){
+
                     Juegos J11 = new Juegos("Test",getDrawable(R.drawable.quiz));
                     Juegos.getJuegosArrayList().add(J11);
                     Juegos J3 = new Juegos("Gurutzegrama",getDrawable(R.drawable.cruzada));
                     Juegos.getJuegosArrayList().add(J3);
+                    Juegos J16 = new Juegos("Mika",getDrawable(R.drawable.muztio));
+                    Juegos.getJuegosArrayList().add(J16);
 
                     if(!admin){
                         ContentValues values = new ContentValues();
@@ -289,7 +306,11 @@ public class Popup extends Activity {
                     }
                     Intent intent = new Intent(Popup.this, MapaActivity.class);
                     startActivity(intent);
-                }else{
+
+                }else if(getIntent().getStringExtra("valor").equals("mikalibre")){
+                    Intent intent = new Intent(Popup.this, seleccionJuego.class);
+                    startActivity(intent);
+                } else{
 
                 Intent intent = new Intent(Popup.this,seleccionJuego.class);
                 startActivity(intent);
