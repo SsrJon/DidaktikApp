@@ -2,6 +2,7 @@ package com.example.didaktikapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -17,6 +18,8 @@ import com.example.didaktikapp.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import static android.view.View.INVISIBLE;
 
 public class MikaFinal extends AppCompatActivity {
 
@@ -90,7 +93,7 @@ public class MikaFinal extends AppCompatActivity {
         arrowUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                arrowUp.setVisibility(View.INVISIBLE);
+                arrowUp.setVisibility(INVISIBLE);
                 MediaPlayer mediaPlayer = MediaPlayer.create(MikaFinal.this, R.raw.correct);
                 mediaPlayer.start();
                 contadorClicks++;
@@ -110,7 +113,7 @@ public class MikaFinal extends AppCompatActivity {
         arrowDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                arrowDown.setVisibility(View.INVISIBLE);
+                arrowDown.setVisibility(INVISIBLE);
                 MediaPlayer mediaPlayer = MediaPlayer.create(MikaFinal.this, R.raw.correct);
                 mediaPlayer.start();
                 contadorClicks++;
@@ -129,7 +132,7 @@ public class MikaFinal extends AppCompatActivity {
         arrowRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                arrowRight.setVisibility(View.INVISIBLE);
+                arrowRight.setVisibility(INVISIBLE);
                 MediaPlayer mediaPlayer = MediaPlayer.create(MikaFinal.this, R.raw.correct);
                 mediaPlayer.start();
                 contadorClicks++;
@@ -148,7 +151,7 @@ public class MikaFinal extends AppCompatActivity {
         arrowLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                arrowLeft.setVisibility(View.INVISIBLE);
+                arrowLeft.setVisibility(INVISIBLE);
                 MediaPlayer mediaPlayer = MediaPlayer.create(MikaFinal.this, R.raw.correct);
                 mediaPlayer.start();
                 contadorClicks++;
@@ -197,6 +200,39 @@ public class MikaFinal extends AppCompatActivity {
             botella.setImageResource(R.drawable.botella5);
         } else if (contadorClicks==25){
             botella.setImageResource(R.drawable.botella6);
+            arrowDown.setVisibility(INVISIBLE);
+            arrowUp.setVisibility(INVISIBLE);
+            arrowRight.setVisibility(INVISIBLE);
+            arrowLeft.setVisibility(INVISIBLE);
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+
+                    try {
+                        if (getIntent().getStringExtra("valor").equals("mika")){
+
+                            Intent popUp = new Intent(MikaFinal.this, Popup.class);
+                            String valor  = "mika7historia";
+                            popUp.putExtra("valor", valor );
+                            startActivity(popUp);
+                        }
+                    }
+                    catch (Exception e){
+                        Intent popUp = new Intent(MikaFinal.this, Popup.class);
+                        String valor  = "mikalibre";
+                        popUp.putExtra("valor", valor );
+                        startActivity(popUp);
+                    }
+                }
+            }, 2000);
+
+
+
+
+
+
+
         }
 
 
