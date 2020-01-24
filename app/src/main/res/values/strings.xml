@@ -359,7 +359,8 @@ ematen diona.</string>
     <string name="creditos_label_2">Testuak/audioak</string>
 
 
-
+    <!-- Admin-->
+    <string name="preguntaAdmin">¿Cual es la contraseña de administrador ?</string>
 
 
 </resources>
