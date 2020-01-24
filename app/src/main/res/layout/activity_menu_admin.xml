@@ -132,7 +132,7 @@
         app:layout_constraintVertical_bias="0.221" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/responderAdmin"
+        android:id="@+id/responderAdminlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/Fondo"

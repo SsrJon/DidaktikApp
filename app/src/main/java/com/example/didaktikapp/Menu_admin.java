@@ -1,5 +1,6 @@
 package com.example.didaktikapp;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,7 +24,7 @@ public class Menu_admin extends AppCompatActivity {
     EditText cambiarNombre;
     EditText escribirAdmin;
     Button respoderAdmin;
-    ConstraintLayout responderAdmin;
+    ConstraintLayout responderAdminLayout;
 
 
     @Override
@@ -37,6 +38,7 @@ public class Menu_admin extends AppCompatActivity {
         cambiarNombre = findViewById(R.id.aldatuizenalabel);
         cambiarNombre.setHint(Nombre);
         escribirAdmin = findViewById(R.id.escribirAdmin);
+        responderAdminLayout = findViewById(R.id.responderAdminlayout);
 
 
         //Precaucion
@@ -66,7 +68,7 @@ public class Menu_admin extends AppCompatActivity {
 
 
         //Precaucion
-
+*/
         cambiarnombre = findViewById(R.id.cambiarnombre);
         cambiarnombre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,13 +141,13 @@ public class Menu_admin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        */
+
        respoderAdmin =findViewById(R.id.respoderAdmin);
        respoderAdmin.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                if(escribirAdmin.getText().toString().equals("muztio")){
-                   responderAdmin.setVisibility(View.INVISIBLE);
+                   responderAdminLayout.setVisibility(View.INVISIBLE);
                }else{
                    Intent intent = new Intent(Menu_admin.this,MapaActivity.class);
                    startActivity(intent);
