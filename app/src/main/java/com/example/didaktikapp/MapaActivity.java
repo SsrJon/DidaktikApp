@@ -196,9 +196,7 @@ public class MapaActivity extends AppCompatActivity implements
                         Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
                         Juegos.getJuegosArrayList().add(J4);
                     }
-
                     if (Marcadores==3){
-
                         Juegos.getJuegosArrayList().clear();
                         Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
@@ -213,7 +211,6 @@ public class MapaActivity extends AppCompatActivity implements
                     }
 
                     if (Marcadores==4){
-
                         Juegos.getJuegosArrayList().clear();
                         Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
@@ -230,7 +227,6 @@ public class MapaActivity extends AppCompatActivity implements
                     }
 
                     if (Marcadores==5){
-
                         Juegos.getJuegosArrayList().clear();
                         Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
@@ -249,7 +245,6 @@ public class MapaActivity extends AppCompatActivity implements
                     }
 
                     if (Marcadores==6){
-
                         Juegos.getJuegosArrayList().clear();
                         Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
@@ -307,7 +302,6 @@ public class MapaActivity extends AppCompatActivity implements
                 Juegos.getJuegosArrayList().add(J15);
                 Juegos J16 = new Juegos("Mika",getDrawable(R.drawable.muztio));
                 Juegos.getJuegosArrayList().add(J16);
-
 
                 // final MarkerOptions punto1 = new MarkerOptions();
                 //Punto 1  Larrea eskultura
