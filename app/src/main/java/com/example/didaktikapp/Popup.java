@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity;
 import com.example.didaktikapp.sopadeletras.features.wordsearch.WordSearchActivity;
@@ -28,6 +27,7 @@ public class Popup extends Activity {
     String Nombre;
     int destruir;
     boolean admin = false;
+    boolean seleccionado = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +65,7 @@ public class Popup extends Activity {
         btnErrepikatu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                seleccionado=true;
                 if(getIntent().getStringExtra("valor").equals("quiz")){
 
                     Intent intent = new Intent(Popup.this, Quiz.class);
@@ -158,6 +158,7 @@ public class Popup extends Activity {
         btnJarraitu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                seleccionado = true;
                 destruir=1;
                 dbHelper = new DBHelper(getApplicationContext());
                 db = dbHelper.getWritableDatabase();
@@ -321,9 +322,12 @@ public class Popup extends Activity {
 
 
     public void onDestroy() {
-
         super.onDestroy();
-        btnJarraitu.callOnClick();
+        if(!seleccionado){
+            Intent intent = getIntent();
+            startActivity(intent);
+        }
+
     }
 
 }

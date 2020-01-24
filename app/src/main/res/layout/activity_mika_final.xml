@@ -18,6 +18,20 @@
         app:srcCompat="@drawable/botella1"
         android:alpha=".60"/>
 
+    <TextView
+        android:id="@+id/porcentaje"
+        android:layout_width="67dp"
+        android:layout_height="65dp"
+        android:text="0%"
+        android:gravity="center"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.648" />
+
     <ImageView
         android:id="@+id/arrowUp"
         android:layout_width="143dp"
