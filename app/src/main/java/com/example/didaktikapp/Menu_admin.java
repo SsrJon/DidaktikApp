@@ -36,6 +36,7 @@ public class Menu_admin extends AppCompatActivity {
         Nombre = sharedPref.getString("nombre", null);
         cambiarNombre = findViewById(R.id.aldatuizenalabel);
         cambiarNombre.setHint(Nombre);
+        escribirAdmin = findViewById(R.id.escribirAdmin);
 
 
         //Precaucion
@@ -139,7 +140,7 @@ public class Menu_admin extends AppCompatActivity {
             }
         });
         */
-
+       respoderAdmin =findViewById(R.id.respoderAdmin);
        respoderAdmin.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {

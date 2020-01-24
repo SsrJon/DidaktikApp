@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/textViewA"
-        android:layout_width="295dp"
-        android:layout_height="49dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:autoSizeMaxTextSize="120sp"
         android:autoSizeMinTextSize="12sp"
         android:autoSizeTextType ="uniform"
@@ -24,8 +24,8 @@
 
     <TextView
         android:id="@+id/textViewB"
-        android:layout_width="297dp"
-        android:layout_height="58dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:autoSizeMaxTextSize="120sp"
         android:autoSizeMinTextSize="12sp"
         android:autoSizeTextType ="uniform"
@@ -33,27 +33,24 @@
         android:text="@string/p0_test_b"
         app:layout_constraintBottom_toTopOf="@+id/guiahorizonta14"
         app:layout_constraintEnd_toStartOf="@+id/guiavertica1"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guiavertica18"
         app:layout_constraintTop_toTopOf="@+id/guiahorizonta13"
-        app:layout_constraintVertical_bias="0.54" />
+         />
 
     <TextView
         android:id="@+id/textViewC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="124dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:autoSizeMaxTextSize="120sp"
         android:autoSizeMinTextSize="12sp"
         android:autoSizeTextType ="uniform"
         android:textStyle="bold"
         android:text="@string/p0_test_c"
         app:layout_constraintBottom_toTopOf="@+id/guiahorizontal"
-        app:layout_constraintEnd_toStartOf="@+id/guiavertica1"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@id/guiavertica1"
         app:layout_constraintStart_toStartOf="@+id/guiavertica18"
         app:layout_constraintTop_toTopOf="@+id/guiahorizonta14"
-        app:layout_constraintVertical_bias="0.451" />
+         />
 
     <TextView
         android:id="@+id/textViewGaldera"
@@ -120,7 +117,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.53" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guiavertica18"
@@ -141,7 +138,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="0.527" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guiahorizonta2"

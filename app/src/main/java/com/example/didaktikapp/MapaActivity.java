@@ -245,7 +245,6 @@ public class MapaActivity extends AppCompatActivity implements
                     }
 
                     if (Marcadores==6){
-
                         Juegos.getJuegosArrayList().clear();
                         Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
