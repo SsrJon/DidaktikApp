@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -49,9 +50,8 @@ public class Popup extends Activity {
 
         getWindow().setLayout((int)(width/1.5), (int)(height/4));
 
-        Intent intent = getIntent();
-        admin = intent.getBooleanExtra("pasado",false);
-        Toast.makeText(getApplicationContext(),"HOla : "+admin ,Toast.LENGTH_LONG);
+        SharedPreferences sharedpreferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        admin = sharedpreferences.getBoolean("pasado",false);
 
         //Se las asignamos
         WindowManager.LayoutParams params = getWindow().getAttributes();
@@ -158,7 +158,7 @@ public class Popup extends Activity {
                 SharedPreferences sharedPref = getSharedPreferences("datos",Context.MODE_PRIVATE);
                 Nombre = sharedPref.getString("nombre", null);
 
-
+                Log.d("tag", "onClick: "+ getIntent().getStringExtra("valor"));
                 if(getIntent().getStringExtra("valor").equals("puzzleM1")){
                    /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
                     db.execSQL(strSQL);*/
@@ -187,7 +187,15 @@ public class Popup extends Activity {
                     String valor  = "historia0";
                     intent.putExtra("valor", valor );
                     startActivity(intent);
-                }else if (getIntent().getStringExtra("valor").equals("puzzleLibre")) {
+                }else if (getIntent().getStringExtra("valor").equals("tablaLibre")) {
+
+                    Intent intent = new Intent(Popup.this, seleccionJuego.class);
+                    startActivity(intent);
+                } else if(getIntent().getStringExtra("valor").equals("tabla")){
+                    Intent intent = new Intent(Popup.this, MikaExplicando.class);
+                    intent.putExtra("marcador",1.2);
+                    startActivity(intent);
+                } else if (getIntent().getStringExtra("valor").equals("puzzleLibre")) {
                     Intent intent = new Intent(Popup.this, seleccionJuego.class);
                     startActivity(intent);
                 }else if(getIntent().getStringExtra("valor").equals("sopa2_1historia")){

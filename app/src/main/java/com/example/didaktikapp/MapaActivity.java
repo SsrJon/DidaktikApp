@@ -280,6 +280,7 @@ public class MapaActivity extends AppCompatActivity implements
         }
             if (Marcadores > numLugares) {
                 Juegos.getJuegosArrayList().clear();
+
                 Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.test));
                 Juegos.getJuegosArrayList().add(J14);
                 Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
@@ -293,17 +294,35 @@ public class MapaActivity extends AppCompatActivity implements
                 Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
                 Juegos.getJuegosArrayList().add(J10);
                 Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.test2));
+
                 Juegos.getJuegosArrayList().add(J2);
+                Juegos J3 = new Juegos("Gurutzegrama",getDrawable(R.drawable.cruzada));
+                Juegos.getJuegosArrayList().add(J3);
+                Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                Juegos.getJuegosArrayList().add(J4);
                 Juegos J6 = new Juegos("Puzzle irristagarria",getDrawable(R.drawable.puzzletearrastro));
                 Juegos.getJuegosArrayList().add(J6);
                 Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
                 Juegos.getJuegosArrayList().add(J7);
+                Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
+                Juegos.getJuegosArrayList().add(J8);
+                Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+                Juegos.getJuegosArrayList().add(J10);
                 Juegos J11 = new Juegos("Test",getDrawable(R.drawable.quiz));
                 Juegos.getJuegosArrayList().add(J11);
-                Juegos J3 = new Juegos("Gurutzegrama",getDrawable(R.drawable.cruzada));
-                Juegos.getJuegosArrayList().add(J3);
+
+                Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
+                Juegos.getJuegosArrayList().add(J12);
+                Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                Juegos.getJuegosArrayList().add(J13);
+                Juegos J14 = new Juegos("Ondare kulturala",getDrawable(R.drawable.quiz));
+                Juegos.getJuegosArrayList().add(J14);
                 Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.sopa));
                 Juegos.getJuegosArrayList().add(J15);
+                Juegos J16 = new Juegos("Mika",getDrawable(R.drawable.muztio));
+                Juegos.getJuegosArrayList().add(J16);;
+
+
                 // final MarkerOptions punto1 = new MarkerOptions();
                 //Punto 1  Larrea eskultura
                 punto1.title("Larrea eskultura");
@@ -423,7 +442,8 @@ public class MapaActivity extends AppCompatActivity implements
                 mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(@NonNull Marker marker) {
-                       // String marcador= marker.getTitle();
+                        SharedPreferences sharedpreferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                        // String marcador= marker.getTitle();
                         if (marker.getTitle().equals("Larrea eskultura")) {
                             Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
@@ -435,7 +455,9 @@ public class MapaActivity extends AppCompatActivity implements
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",1.1);
-                                intent.putExtra("pasado",true);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putBoolean("pasado", true);
+                                editor.commit();
                                 startActivity(intent);
                             }
                         } else if (marker.getTitle().equals("Arrigorriagako Udaletxea")) {
@@ -450,7 +472,9 @@ public class MapaActivity extends AppCompatActivity implements
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",2.1);
-                                intent.putExtra("pasado",true);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putBoolean("pasado", true);
+                                editor.commit();
                                 startActivity(intent);
                             }
                         } else if (marker.getTitle().equals("Maria Magdalena eliza")) {
@@ -464,7 +488,9 @@ public class MapaActivity extends AppCompatActivity implements
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",3.1);
-                                intent.putExtra("pasado",true);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putBoolean("pasado", true);
+                                editor.commit();
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Hiltegi Zaharra")){
@@ -478,7 +504,9 @@ public class MapaActivity extends AppCompatActivity implements
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",4.1);
-                                intent.putExtra("pasado",true);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putBoolean("pasado", true);
+                                editor.commit();
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Landaederreagako Santo Kristo baseliza")){
@@ -492,7 +520,9 @@ public class MapaActivity extends AppCompatActivity implements
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",5.1);
-                                intent.putExtra("pasado",true);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putBoolean("pasado", true);
+                                editor.commit();
                                 startActivity(intent);
                             }
                         }else if(marker.getTitle().equals("Abrisketako San Pedro baseliza")){
@@ -502,11 +532,14 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",6.1);
+
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",6.1);
-                                intent.putExtra("pasado",true);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putBoolean("pasado", true);
+                                editor.commit();
                                 startActivity(intent);
                             }
                         }
