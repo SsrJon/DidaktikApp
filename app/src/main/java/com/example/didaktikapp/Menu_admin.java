@@ -183,6 +183,8 @@ public class Menu_admin extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J3);
         Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.sopa));
         Juegos.getJuegosArrayList().add(J15);
+        Juegos J16 = new Juegos("Mika",getDrawable(R.drawable.muztio));
+        Juegos.getJuegosArrayList().add(J16);
 
     }
     public void aceptar () {

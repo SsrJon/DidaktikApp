@@ -302,6 +302,7 @@ public class MapaActivity extends AppCompatActivity implements
                 Juegos.getJuegosArrayList().add(J15);
                 Juegos J16 = new Juegos("Mika",getDrawable(R.drawable.muztio));
                 Juegos.getJuegosArrayList().add(J16);
+
                 // final MarkerOptions punto1 = new MarkerOptions();
                 //Punto 1  Larrea eskultura
                 punto1.title("Larrea eskultura");
