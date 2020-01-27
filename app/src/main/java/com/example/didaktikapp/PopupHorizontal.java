@@ -1,9 +1,6 @@
 package com.example.didaktikapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -26,6 +23,7 @@ public class PopupHorizontal extends Activity {
     DBHelper dbHelper;
     SQLiteDatabase db;
     String Nombre;
+    boolean seleccionado = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +66,7 @@ public class PopupHorizontal extends Activity {
         btnErrepikatu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                seleccionado = true;
                 if(getIntent().getStringExtra("valor").equals("hutsuneak")){
 
                     Intent intent = new Intent(PopupHorizontal.this, ActivityHutsuneakBete.class);
@@ -117,7 +115,7 @@ public class PopupHorizontal extends Activity {
         btnJarraitu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                seleccionado = true;
                 dbHelper = new DBHelper(getApplicationContext());
                 db = dbHelper.getWritableDatabase();
                 SharedPreferences sharedPref = getSharedPreferences("datos", Context.MODE_PRIVATE);
@@ -160,49 +158,12 @@ public class PopupHorizontal extends Activity {
         });
     }
 
-
-
     public void onDestroy() {
-        dbHelper = new DBHelper(getApplicationContext());
-        db = dbHelper.getWritableDatabase();
-        SharedPreferences sharedPref = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        Nombre = sharedPref.getString("nombre", null);
-
-
-       if (getIntent().getStringExtra("valor").equals("Historia")){
-
-            Intent intent = new Intent(PopupHorizontal.this, MapaActivity.class);
-            startActivity(intent);
-        }else if (getIntent().getStringExtra("valor").equals("hutsuneak2historia")) {
-
-            Intent intent = new Intent(PopupHorizontal.this, WordSearchActivity.class);
-            String valor  = "sopa2historia";
-            intent.putExtra("valor", valor );
-            startActivity(intent);
-
-
-/*
-
-
- */
-        }else if (getIntent().getStringExtra("valor").equals("egia3historia")) {
-
-            Intent intent = new Intent(PopupHorizontal.this, OrdenarImagen.class);
-            String valor  = "egia3_1historia";
-            intent.putExtra("valor", valor );
-            startActivity(intent);
-        }else if (getIntent().getStringExtra("valor").equals("hutsuneak5historia")) {
-
-            Intent intent = new Intent(PopupHorizontal.this, PuzzleActivity.class);
-            String valor  = "hutsuneak5_1historia";
-            intent.putExtra("valor", valor );
-            startActivity(intent);
-        }else{
-            Intent intent = new Intent(PopupHorizontal.this, seleccionJuego.class);
+        super.onDestroy();
+        if(!seleccionado){
+            Intent intent = getIntent();
+            finish();
             startActivity(intent);
         }
-
-
-        super.onDestroy();
     }
 }

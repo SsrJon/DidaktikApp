@@ -1,7 +1,6 @@
 package com.example.didaktikapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Point;
 import android.media.MediaPlayer;
@@ -12,9 +11,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import com.example.didaktikapp.R;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -57,11 +57,26 @@ public class MikaFinal extends AppCompatActivity {
 
     private int contadorClicks=0;
 
+    TextView porcentaje;
+    int porciento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mika_final);
+        porcentaje = findViewById(R.id.porcentaje);
+        AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
+        dialogo1.setTitle("AZKEN JOLASA !!!");
+        dialogo1.setMessage("Joku honetan mikak ikutu behar dituzu muztio botila bete arte, SORTE ON!!!!");
+        dialogo1.setCancelable(false);
+        dialogo1.setIcon(R.drawable.mika_sin_fondo);
+
+        dialogo1.setPositiveButton("Onartu", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo1, int id) {
+            }
+        });
+
+        dialogo1.show();
 
         arrowUp = findViewById(R.id.arrowUp);
         arrowDown = findViewById(R.id.arrowDown);
@@ -157,7 +172,6 @@ public class MikaFinal extends AppCompatActivity {
                 contadorClicks++;
                 botellaProgreso();
 
-
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     public void run() {
@@ -183,14 +197,12 @@ public class MikaFinal extends AppCompatActivity {
             }
         }, 0, 8);
 
-
-
-
     }
 
     public void botellaProgreso(){
-
-        if (contadorClicks==5){
+        porciento = porciento + 4;
+        porcentaje.setText(porciento + "%");
+        if (contadorClicks==1){
             botella.setImageResource(R.drawable.botella2);
         } else if (contadorClicks==10){
             botella.setImageResource(R.drawable.botella3);
@@ -204,39 +216,21 @@ public class MikaFinal extends AppCompatActivity {
             arrowUp.setVisibility(INVISIBLE);
             arrowRight.setVisibility(INVISIBLE);
             arrowLeft.setVisibility(INVISIBLE);
+            try {
+                if (getIntent().getStringExtra("valor").equals("mika")){
 
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                public void run() {
-
-                    try {
-                        if (getIntent().getStringExtra("valor").equals("mika")){
-
-                            Intent popUp = new Intent(MikaFinal.this, Popup.class);
-                            String valor  = "mika7historia";
-                            popUp.putExtra("valor", valor );
-                            startActivity(popUp);
-                        }
-                    }
-                    catch (Exception e){
-                        Intent popUp = new Intent(MikaFinal.this, Popup.class);
-                        String valor  = "mikalibre";
-                        popUp.putExtra("valor", valor );
-                        startActivity(popUp);
-                    }
+                    Intent popUp = new Intent(MikaFinal.this, Popup.class);
+                    String valor  = "mika7historia";
+                    popUp.putExtra("valor", valor );
+                    startActivity(popUp);
                 }
-            }, 2000);
-
-
-
-
-
-
-
+                } catch (Exception e){
+                    Intent popUp = new Intent(MikaFinal.this, Popup.class);
+                    String valor  = "mikalibre";
+                    popUp.putExtra("valor", valor );
+                    startActivity(popUp);
+                }
         }
-
-
-
     }
 
 
