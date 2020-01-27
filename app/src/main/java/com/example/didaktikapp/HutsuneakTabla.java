@@ -35,6 +35,7 @@ public class HutsuneakTabla extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //Si los datos son correctos
                     if ((etOndarearen.getText().toString().equals("Larrea eskultura") ||
                             etOndarearen.getText().toString().equals("Larrea Eskultura") ||
                             etOndarearen.getText().toString().equals("larrea eskultura") ||
@@ -48,12 +49,18 @@ public class HutsuneakTabla extends AppCompatActivity {
                             (etKultural.getText().toString().equals("Ondare kultural arkitektonikoa") ||
                                     etKultural.getText().toString().equals("Ondare Kultural Arkitektonikoa") ||
                                     etKultural.getText().toString().equals("ondare kultural arkitektonikoa") ||
+                                    etKultural.getText().toString().equals("arkitektonikoa") ||
+                                    etKultural.getText().toString().equals("Arkitektonikoa") ||
+                                    etKultural.getText().toString().equals("kultural arkitektonikoa") ||
+                                    etKultural.getText().toString().equals("Kultural arkitektonikoa") ||
                                     etKultural.getText().toString().equals("ONDARE KULTURAL ARKITEKTONIKOA"))) {
 
                         MediaPlayer mediaPlayer = MediaPlayer.create(HutsuneakTabla.this, R.raw.erantzun_zuzena1_audioa);
                         mediaPlayer.start();
 
 
+                        //Intent al popup, el primero se ejecuta cuando estas haciendo el recorrido (desde el mapa),
+                        //el segundo cuando entras desde el menú de juegos
 
                         try {
                             if (getIntent().getStringExtra("valor").equals("historia0")){
