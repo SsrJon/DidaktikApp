@@ -19,6 +19,8 @@ import android.widget.LinearLayout;
 
 public class ActivityHutsuneakBete extends AppCompatActivity {
 
+    //Esta pantalla es un juego de arrastrar los elementos a sus correspondientes casillas.
+
     private Button  btn1, btn2,  btn3;
     private LinearLayout target1, target2, target3;
     private int contadorButton = 0;
@@ -30,6 +32,7 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
         setContentView(R.layout.activity_hutsuneak_bete);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
+        //Se defienen los elementos y se les da listener de arrastre y long click
         target1 = findViewById(R.id.target1);
 
         btn1 = findViewById(R.id.btn1);
@@ -62,7 +65,7 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
     };
 
 
-
+        //Listener de arrastre, se activa cuando se suelta el elemento
     View.OnDragListener dragListener = new View.OnDragListener() {
         @Override
         public boolean onDrag(View v, DragEvent event) {
@@ -79,8 +82,11 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
 
                 case DragEvent.ACTION_DROP:
 
+                    //Si el elemento arrastrado coincide con el target
                     if (view.getId() == R.id.btn1 && v.getId() == R.id.target1) {
 
+                        //el elemento se añade al target,se bloquea su movimiento, suena un audio,
+                        // se suma a un contador y se llama a jarraitu() para comprobar si el juego ha acabado
                         ConstraintLayout oldparent = (ConstraintLayout) view.getParent();
                         oldparent.removeView(view);
                         LinearLayout newParent = (LinearLayout) v;
@@ -129,9 +135,12 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
     //comprueba el contador para activar el popup
     private void Jarraitu() {
 
+        //Si los tres elementos estan en el target
         if (contadorButton == 3) {
 
 
+            //Intent a popupHorizontal, el primero se ejecuta cuando estas haciendo el recorrido (desde el mapa),
+            //el segundo cuando entras desde el menú de juegos
             try {
                 if (getIntent().getStringExtra("valor").equals("historia5")){
 
@@ -147,10 +156,6 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
                 popUp.putExtra("valor", valor);
                 startActivity(popUp);
             }
-
-
-
-
 
 
         }

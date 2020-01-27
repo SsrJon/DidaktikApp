@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class FotoElegir extends AppCompatActivity {
+    //Juego elegir imagen correcta
+
      ImageView foto1;
      ImageView foto2;
      ImageView foto3;
@@ -27,6 +29,8 @@ public class FotoElegir extends AppCompatActivity {
         foto4 = findViewById(R.id.Opcion4);
 
 
+
+        //Click listener para cada imageview
 
         foto1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +90,7 @@ public class FotoElegir extends AppCompatActivity {
     }
 
 
+    //Bloquea clickable durante 3 segundos, tiempo suficiente para que suene el audio
     public void bloquearClick(){
 
         foto1.setClickable(false);

@@ -124,7 +124,8 @@ public class GurutzegramaActivity extends AppCompatActivity {
                 mostrar = "6";
             }
         });
-        //onclick del boton responder comprueba si la respuesta escrita es la correcta con la linea que se esta intentando resolver
+        //onclick del boton responder comprueba si la respuesta escrita es la correcta
+        // con la linea que se esta intentando resolver
         responder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,6 +138,8 @@ public class GurutzegramaActivity extends AppCompatActivity {
                         mediaPlayer.start();
                         //popUp para volver a jugar el juego o salir al menu de juegos
 
+                        //Intent a popup, el primero se ejecuta cuando estas haciendo el recorrido (desde el mapa),
+                        //el segundo cuando entras desde el menú de juegos
                         try {
                             if (getIntent().getStringExtra("valor").equals("historia7")){
 
@@ -155,7 +158,7 @@ public class GurutzegramaActivity extends AppCompatActivity {
 
 
                     }
-                    //swich para mostrar el resultado si la respuesta a sido correcta
+                    //switch para mostrar el resultado si la respuesta ha sido correcta
                     switch (mostrar){
                         case "1":
                             uno.setVisibility(View.INVISIBLE);

@@ -192,7 +192,7 @@ public class MapaActivity extends AppCompatActivity implements
                         Juegos.getJuegosArrayList().clear();
                         Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
-                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
                         Juegos.getJuegosArrayList().add(J12);
                         Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
                         Juegos.getJuegosArrayList().add(J4);
@@ -201,7 +201,7 @@ public class MapaActivity extends AppCompatActivity implements
                         Juegos.getJuegosArrayList().clear();
                         Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
-                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
                         Juegos.getJuegosArrayList().add(J12);
                         Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
                         Juegos.getJuegosArrayList().add(J4);
@@ -215,7 +215,7 @@ public class MapaActivity extends AppCompatActivity implements
                         Juegos.getJuegosArrayList().clear();
                         Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
-                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
                         Juegos.getJuegosArrayList().add(J12);
                         Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
                         Juegos.getJuegosArrayList().add(J4);
@@ -231,7 +231,7 @@ public class MapaActivity extends AppCompatActivity implements
                         Juegos.getJuegosArrayList().clear();
                         Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
-                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
                         Juegos.getJuegosArrayList().add(J12);
                         Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
                         Juegos.getJuegosArrayList().add(J4);
@@ -249,7 +249,7 @@ public class MapaActivity extends AppCompatActivity implements
                         Juegos.getJuegosArrayList().clear();
                         Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
-                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
                         Juegos.getJuegosArrayList().add(J12);
                         Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
                         Juegos.getJuegosArrayList().add(J4);
@@ -279,7 +279,7 @@ public class MapaActivity extends AppCompatActivity implements
 
                 Juegos J14 = new Juegos("Ondare", getDrawable(R.drawable.test));
                 Juegos.getJuegosArrayList().add(J14);
-                Juegos J12 = new Juegos("Taula", getDrawable(R.drawable.tabla));
+                Juegos J12 = new Juegos("Taula", getDrawable(R.drawable.tabla2));
                 Juegos.getJuegosArrayList().add(J12);
                 Juegos J4 = new Juegos("Puzzle", getDrawable(R.drawable.puzzle));
                 Juegos.getJuegosArrayList().add(J4);
@@ -721,15 +721,6 @@ public class MapaActivity extends AppCompatActivity implements
 
     }
 
-    @SuppressWarnings( {"MissingPermission"})
-    // @Override
-   /*public void onLocationComponentClick() {
-        if (locationComponent.getLastKnownLocation() != null) {
-            Toast.makeText(this, String.format(getString(R.string.),
-                    locationComponent.getLastKnownLocation().getLatitude(),
-                    locationComponent.getLastKnownLocation().getLongitude()), Toast.LENGTH_LONG).show();
-        }
-    }*/
 
     @Override
     public void onCameraTrackingDismissed() {
@@ -749,7 +740,7 @@ public class MapaActivity extends AppCompatActivity implements
 
     @Override
     public void onExplanationNeeded(List<String> permissionsToExplain) {
-       // Toast.makeText(this, "JUANJO", Toast.LENGTH_LONG).show();
+
     }
 
     @Override
@@ -762,7 +753,7 @@ public class MapaActivity extends AppCompatActivity implements
                 }
             });
         } else {
-            //Toast.makeText(this, "MANUEL", Toast.LENGTH_LONG).show();
+
             finish();
         }
     }
