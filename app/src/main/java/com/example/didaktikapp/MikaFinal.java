@@ -172,7 +172,6 @@ public class MikaFinal extends AppCompatActivity {
                 contadorClicks++;
                 botellaProgreso();
 
-
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     public void run() {
@@ -217,39 +216,21 @@ public class MikaFinal extends AppCompatActivity {
             arrowUp.setVisibility(INVISIBLE);
             arrowRight.setVisibility(INVISIBLE);
             arrowLeft.setVisibility(INVISIBLE);
+            try {
+                if (getIntent().getStringExtra("valor").equals("mika")){
 
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                public void run() {
-
-                    try {
-                        if (getIntent().getStringExtra("valor").equals("mika")){
-
-                            Intent popUp = new Intent(MikaFinal.this, Popup.class);
-                            String valor  = "mika7historia";
-                            popUp.putExtra("valor", valor );
-                            startActivity(popUp);
-                        }
-                    }
-                    catch (Exception e){
-                        Intent popUp = new Intent(MikaFinal.this, Popup.class);
-                        String valor  = "mikalibre";
-                        popUp.putExtra("valor", valor );
-                        startActivity(popUp);
-                    }
+                    Intent popUp = new Intent(MikaFinal.this, Popup.class);
+                    String valor  = "mika7historia";
+                    popUp.putExtra("valor", valor );
+                    startActivity(popUp);
                 }
-            }, 2000);
-
-
-
-
-
-
-
+                } catch (Exception e){
+                    Intent popUp = new Intent(MikaFinal.this, Popup.class);
+                    String valor  = "mikalibre";
+                    popUp.putExtra("valor", valor );
+                    startActivity(popUp);
+                }
         }
-
-
-
     }
 
 
