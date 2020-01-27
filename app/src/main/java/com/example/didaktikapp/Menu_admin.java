@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -130,10 +131,11 @@ public class Menu_admin extends AppCompatActivity {
         desbloquearProgreso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Cursor cursorcantidad = db.query(DBHelper.entidadLugares.TABLE_NAME,null,null,null,null,null,null);
+                int numLugares =cursorcantidad.getCount();
                 rellenarJuegos();
                 ContentValues values = new ContentValues();
-                values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,7);
+                values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,numLugares+1);
                 String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
                 String args [] = {Nombre};
                 int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
