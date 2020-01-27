@@ -1,6 +1,7 @@
 package com.example.didaktikapp;
 
 import android.Manifest;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -19,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.didaktikapp.sopadeletras.data.sqlite.DbHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -60,7 +62,7 @@ public class PantallaCarga extends AppCompatActivity {
 
         if (isWiFi && isConnected){
             descargarBDonline();
-            comprobacion();
+            entrarComprobacion();
 
         }else {
             Actualizada= true;
@@ -114,6 +116,7 @@ public class PantallaCarga extends AppCompatActivity {
                                 lugarOnline.add(L);
                             }
                             descargada = true;
+                            Toast.makeText(getApplicationContext(),"Lugaresct online"+lugarOnline.size(),Toast.LENGTH_LONG).show();
 
                         }
 
@@ -121,6 +124,7 @@ public class PantallaCarga extends AppCompatActivity {
         }
 
         private void DescargarBDLocal(){
+        Toast.makeText(getApplicationContext(),"Entro en descargar BD local",Toast.LENGTH_LONG).show();
             dbHelper = new DBHelper(getApplicationContext());
             dbsqlite = dbHelper.getWritableDatabase();
             Cursor cursorcantidad = dbsqlite.query(DBHelper.entidadLugares.TABLE_NAME,null,null,null,null,null,null);
@@ -132,50 +136,94 @@ public class PantallaCarga extends AppCompatActivity {
                 Lugar L = new Lugar(Id,nom,Latitud,Longitud);
                 lugarOffline.add(L);
             }
+            Toast.makeText(getApplicationContext(),"Lugarres local"+lugarOffline.size(),Toast.LENGTH_LONG).show();
+
         }
 
         private void ActualizarBD(){
-        boolean Encontrado = false;
+           /* Toast.makeText(getApplicationContext(),"Entro en Actualizar BD",Toast.LENGTH_LONG).show();
+
+
             HashMap<Integer, Integer> comparacion = new HashMap<>();
-            comparacion.put(lugarOffline.get(0).getIdlugar(), 1);
+            int i=0;
+            while(lugarOffline.size()>i){
+                Toast.makeText(getApplicationContext(),"Entro a crear hasmap",Toast.LENGTH_LONG).show();
+                comparacion.put(lugarOffline.get(i).getIdlugar(), 1);
+                i = i+1;
+            }*/
+            /*comparacion.put(lugarOffline.get(0).getIdlugar(), 1);
             comparacion.put(lugarOffline.get(1).getIdlugar(), 1);
             comparacion.put(lugarOffline.get(2).getIdlugar(), 1);
             comparacion.put(lugarOffline.get(3).getIdlugar(), 1);
             comparacion.put(lugarOffline.get(4).getIdlugar(), 1);
-            comparacion.put(lugarOffline.get(5).getIdlugar(), 1);
+            comparacion.put(lugarOffline.get(5).getIdlugar(), 1);*/
 
-            for(int i=0;lugarOnline.size()>i;i++){
-                Encontrado = false;
+            for(int j=0;lugarOnline.size()>j;j++){
+               boolean Encontrado = false;
                 for(int k = 0;lugarOffline.size()>k&&!Encontrado;k++){
-                    if(lugarOnline.get(i).getIdlugar()==lugarOnline.get(k).getIdlugar()){
-                        lugarOffline.get(k).setNombre(lugarOnline.get(i).getNombre());
-                        lugarOffline.get(k).setLatitud(lugarOnline.get(i).getLatitud());
-                        lugarOffline.get(k).setLongitud(lugarOnline.get(i).getLongitud());
-                        comparacion.get(k);
-                        comparacion.put(lugarOffline.get(k).getIdlugar(),0);
+                    if(lugarOnline.get(j).getIdlugar()==lugarOffline.get(k).getIdlugar()){
+                        lugarOffline.get(k).setNombre(lugarOnline.get(j).getNombre());
+                        lugarOffline.get(k).setLatitud(lugarOnline.get(j).getLatitud());
+                        lugarOffline.get(k).setLongitud(lugarOnline.get(j).getLongitud());
                         Encontrado = true;
                     }
                 }
                 if (!Encontrado){
-                    lugarOffline.add(lugarOnline.get(i));
+                    lugarOffline.add(lugarOnline.get(j));
+                    ContentValues values = new ContentValues();
+                    values.put(DBHelper.entidadLugares.COLUMN_NAME_NOMBRE,lugarOnline.get(j).Nombre);
+                    values.put(DBHelper.entidadLugares._ID,lugarOnline.get(j).Idlugar);
+                    values.put(DBHelper.entidadLugares.COLUMN_NAME_LATITUD,lugarOnline.get(j).Latitud);
+                    values.put(DBHelper.entidadLugares.COLUMN_NAME_LONGITUD,lugarOnline.get(j).Longitud);
+                    dbsqlite.insert(DBHelper.entidadLugares.TABLE_NAME, null, values);
                 }
+            }
+            boolean Encontrado;
+            for(int j=0;lugarOffline.size()>j;j++){
+                Log.d("david", "compruebo: "+lugarOffline.get(j).Nombre);
+                //Toast.makeText(getApplicationContext(),"compruebo: "+lugarOffline.get(j).Nombre,Toast.LENGTH_LONG).show();
+                Encontrado = false;
+                for(int k = 0;lugarOnline.size()>k&&!Encontrado;k++){
+                    if(lugarOffline.get(j).getIdlugar()==lugarOnline.get(k).getIdlugar()){
+                        Log.d("david", lugarOffline.get(j).Nombre);
+                        //Toast.makeText(getApplicationContext(),"Ecuentro: "+lugarOffline.get(j).Nombre,Toast.LENGTH_LONG).show();
+                        Encontrado = true;
+                    }
+                }
+                Toast.makeText(getApplicationContext(),"miro if borrar: "+lugarOffline.get(j).Nombre,Toast.LENGTH_LONG).show();
+                if (!Encontrado){
+                    Log.d("david", "Entro a borrar: " + lugarOffline.get(j).Nombre);
+                    //Toast.makeText(getApplicationContext(),"Entro a borrar: " + lugarOffline.get(j).Nombre,Toast.LENGTH_LONG).show();
+                    dbsqlite.delete(DBHelper.entidadLugares.TABLE_NAME, DBHelper.entidadLugares._ID + "=" + lugarOffline.get(j).Idlugar, null);
+                    }
             }
 
 
-            Iterator<Map.Entry<Integer, Integer>> it = comparacion.entrySet().iterator();
+          /*  Iterator<Map.Entry<Integer, Integer>> it = comparacion.entrySet().iterator();
 
             while (it.hasNext()) {
                 Map.Entry<Integer, Integer> e = it.next();
-                if(e.getValue()==1){
-                    lugarOffline.remove(e.getKey());
+
+                Toast.makeText(getApplicationContext(),"Entro a borrar",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Entro a borrar : "+lugarOffline.get(e.getKey()-1),Toast.LENGTH_LONG).show();
+
+                if(e.getValue()==0){
+                    Toast.makeText(getApplicationContext(),"Entro a borrar",Toast.LENGTH_LONG).show();
+                    dbsqlite.delete(DBHelper.entidadLugares.TABLE_NAME, DBHelper.entidadLugares._ID + "=" + lugarOffline.get(e.getKey()-1).Idlugar, null);
+                    lugarOffline.remove(lugarOffline.get(e.getKey()-1));
                 }
 
-            }
-            Toast.makeText(getApplicationContext(),"Lugaresctualizados"+lugarOffline.size(),Toast.LENGTH_LONG).show();
+            }*/
+
+
             Actualizada = true;
         }
+
         public void comprobacion(){
+            Toast.makeText(getApplicationContext(),"Lugaresctualizados entro en comprobacion ",Toast.LENGTH_LONG).show();
+
             if (descargada){
+                Toast.makeText(getApplicationContext(),"Lugaresctualizados entro el IF en comprobacion ",Toast.LENGTH_LONG).show();
                 DescargarBDLocal();
                 ActualizarBD();
             }else{
@@ -183,9 +231,21 @@ public class PantallaCarga extends AppCompatActivity {
                 handler.postDelayed(new Runnable() {
                     public void run() {
                        comprobacion();
+                   }
+                }, 500);
+            }
+        }
 
+        public void entrarComprobacion(){
+            if (descargada){
+                comprobacion();
+            }else{
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        comprobacion();
                     }
-                }, 1000);
+                }, 500);
             }
         }
 

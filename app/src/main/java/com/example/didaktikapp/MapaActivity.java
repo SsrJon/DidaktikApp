@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -276,36 +277,36 @@ public class MapaActivity extends AppCompatActivity implements
             if (Marcadores > numLugares) {
                 Juegos.getJuegosArrayList().clear();
 
-                Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.test));
+                Juegos J14 = new Juegos("Ondare", getDrawable(R.drawable.test));
                 Juegos.getJuegosArrayList().add(J14);
-                Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla));
+                Juegos J12 = new Juegos("Taula", getDrawable(R.drawable.tabla));
                 Juegos.getJuegosArrayList().add(J12);
-                Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                Juegos J4 = new Juegos("Puzzle", getDrawable(R.drawable.puzzle));
                 Juegos.getJuegosArrayList().add(J4);
-                Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                Juegos J13 = new Juegos("Hutsuneak bete2", getDrawable(R.drawable.rellenar_hueco));
                 Juegos.getJuegosArrayList().add(J13);
-                Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
+                Juegos J8 = new Juegos("Egia/Gezurra", getDrawable(R.drawable.true_false));
                 Juegos.getJuegosArrayList().add(J8);
-                Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+                Juegos J10 = new Juegos("Ordenatu Kronologikoki", getDrawable(R.drawable.cronologia));
                 Juegos.getJuegosArrayList().add(J10);
-                Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.test2));
+                Juegos J2 = new Juegos("Quiz", getDrawable(R.drawable.test2));
                 Juegos.getJuegosArrayList().add(J2);
-                Juegos J3 = new Juegos("Gurutzegrama",getDrawable(R.drawable.cruzada));
+                Juegos J3 = new Juegos("Gurutzegrama", getDrawable(R.drawable.cruzada));
                 Juegos.getJuegosArrayList().add(J3);
-                Juegos J6 = new Juegos("Puzzle irristagarria",getDrawable(R.drawable.puzzletearrastro));
+                Juegos J6 = new Juegos("Puzzle irristagarria", getDrawable(R.drawable.puzzletearrastro));
                 Juegos.getJuegosArrayList().add(J6);
-                Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
+                Juegos J7 = new Juegos("Hutsuneak bete", getDrawable(R.drawable.rellenar_hueco));
                 Juegos.getJuegosArrayList().add(J7);
-                Juegos J11 = new Juegos("Test",getDrawable(R.drawable.quiz));
+                Juegos J11 = new Juegos("Test", getDrawable(R.drawable.quiz));
                 Juegos.getJuegosArrayList().add(J11);
-                Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.sopa));
+                Juegos J15 = new Juegos("Hizki salda", getDrawable(R.drawable.sopa));
                 Juegos.getJuegosArrayList().add(J15);
-                Juegos J16 = new Juegos("Mika",getDrawable(R.drawable.muztio));
+                Juegos J16 = new Juegos("Mika", getDrawable(R.drawable.muztio));
                 Juegos.getJuegosArrayList().add(J16);
 
                 // final MarkerOptions punto1 = new MarkerOptions();
                 //Punto 1  Larrea eskultura
-                punto1.title("Larrea eskultura");
+                /*punto1.title("Larrea eskultura");
                 IconFactory iconFactoryPunto1 = IconFactory.getInstance(MapaActivity.this);
                 Icon iconPunto1 = iconFactoryPunto1.fromResource(R.drawable.marcador3);
                 punto1.icon(iconPunto1);
@@ -355,10 +356,35 @@ public class MapaActivity extends AppCompatActivity implements
                 Icon iconPunto6 = iconFactoryPunto6.fromResource(R.drawable.marcador6);
                 punto6.icon(iconPunto6);
                 punto6.position(new LatLng(43.210500, -2.909417));
-                mapboxMap.addMarker(punto6);
-            }
+                mapboxMap.addMarker(punto6);*/
 
+                for(int i = 0;lugares.size()>i;i++) {
 
+                    punto1.title(lugares.get(i).Nombre);
+                    IconFactory iconFactoryPunto6 = IconFactory.getInstance(MapaActivity.this);
+                    double numes =  Math.random()*6;
+                    int nume = (int) numes;
+                    Log.d("david",""+nume);
+                    Icon iconPunto6;
+                    if(nume == 0){
+                        iconPunto6 = iconFactoryPunto6.fromResource(R.drawable.marcador1);
+                    }else if(nume == 1){
+                        iconPunto6 = iconFactoryPunto6.fromResource(R.drawable.marcador2);
+                    }else if(nume == 2){
+                        iconPunto6 = iconFactoryPunto6.fromResource(R.drawable.marcador3);
+                    }else if(nume == 3){
+                        iconPunto6 = iconFactoryPunto6.fromResource(R.drawable.marcador4);
+                    }else if(nume == 4){
+                        iconPunto6 = iconFactoryPunto6.fromResource(R.drawable.marcador5);
+                    }else if(nume == 5){
+                        iconPunto6 = iconFactoryPunto6.fromResource(R.drawable.marcador6);
+                    }else{
+                        iconPunto6 = iconFactoryPunto6.fromResource(R.drawable.marcador1);
+                    }
+                    punto1.icon(iconPunto6);
+                    punto1.position(new LatLng(lugares.get(i).Latitud, lugares.get(i).Longitud));
+                    mapboxMap.addMarker(punto1);
+                }
 
 
         //final MarkerOptions punto1 = new MarkerOptions();
@@ -412,6 +438,7 @@ public class MapaActivity extends AppCompatActivity implements
             punto1.position(new LatLng(43.210500,-2.909417));
             mapboxMap.addMarker(punto1);
         }*/
+        }
 
         mapboxMap.setStyle(Style.OUTDOORS, new Style.OnStyleLoaded() {
 
@@ -739,6 +766,8 @@ public class MapaActivity extends AppCompatActivity implements
             finish();
         }
     }
+
+
 
     //-----
 
