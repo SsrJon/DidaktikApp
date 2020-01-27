@@ -24,6 +24,8 @@ import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 
 public class InicioAudioFragment extends Fragment {
 
+    //fragmento que se muestra al inicio de la aplicación
+
     private InicioAudioViewModel mViewModel;
 
     private Button btnContinuar;
@@ -53,6 +55,8 @@ public class InicioAudioFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 contadorBoton++;
+
+                //Cambia el audio y los textos
 
                if (contadorBoton==1){
                    mediaPlayer.stop();
