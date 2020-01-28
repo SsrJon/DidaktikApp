@@ -134,8 +134,6 @@ public class GurutzegramaActivity extends AppCompatActivity {
                 if(respuestaEscrita.getText().toString().equals(respuesta)){
                     contador++;
                     if(contador == 6){
-                        MediaPlayer mediaPlayer= MediaPlayer.create(GurutzegramaActivity.this,R.raw.erantzunzuzena6_audioa);
-                        mediaPlayer.start();
                         //popUp para volver a jugar el juego o salir al menu de juegos
 
                         //Intent a popup, el primero se ejecuta cuando estas haciendo el recorrido (desde el mapa),

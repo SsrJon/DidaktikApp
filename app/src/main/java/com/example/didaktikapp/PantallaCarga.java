@@ -34,7 +34,7 @@ import java.util.Map;
 
 
 public class PantallaCarga extends AppCompatActivity {
-    ImageView progreso;
+
     DBHelper dbHelper;
     SQLiteDatabase dbsqlite;
     ArrayList <Lugar> lugarOnline = new ArrayList<>();
@@ -116,7 +116,6 @@ public class PantallaCarga extends AppCompatActivity {
                                 lugarOnline.add(L);
                             }
                             descargada = true;
-                            Toast.makeText(getApplicationContext(),"Lugaresct online"+lugarOnline.size(),Toast.LENGTH_LONG).show();
 
                         }
 
@@ -124,7 +123,6 @@ public class PantallaCarga extends AppCompatActivity {
         }
 
         private void DescargarBDLocal(){
-        Toast.makeText(getApplicationContext(),"Entro en descargar BD local",Toast.LENGTH_LONG).show();
             dbHelper = new DBHelper(getApplicationContext());
             dbsqlite = dbHelper.getWritableDatabase();
             Cursor cursorcantidad = dbsqlite.query(DBHelper.entidadLugares.TABLE_NAME,null,null,null,null,null,null);
@@ -136,8 +134,6 @@ public class PantallaCarga extends AppCompatActivity {
                 Lugar L = new Lugar(Id,nom,Latitud,Longitud);
                 lugarOffline.add(L);
             }
-            Toast.makeText(getApplicationContext(),"Lugarres local"+lugarOffline.size(),Toast.LENGTH_LONG).show();
-
         }
 
         private void ActualizarBD(){
@@ -190,7 +186,6 @@ public class PantallaCarga extends AppCompatActivity {
                         Encontrado = true;
                     }
                 }
-                Toast.makeText(getApplicationContext(),"miro if borrar: "+lugarOffline.get(j).Nombre,Toast.LENGTH_LONG).show();
                 if (!Encontrado){
                     Log.d("david", "Entro a borrar: " + lugarOffline.get(j).Nombre);
                     //Toast.makeText(getApplicationContext(),"Entro a borrar: " + lugarOffline.get(j).Nombre,Toast.LENGTH_LONG).show();
@@ -220,10 +215,7 @@ public class PantallaCarga extends AppCompatActivity {
         }
 
         public void comprobacion(){
-            Toast.makeText(getApplicationContext(),"Lugaresctualizados entro en comprobacion ",Toast.LENGTH_LONG).show();
-
             if (descargada){
-                Toast.makeText(getApplicationContext(),"Lugaresctualizados entro el IF en comprobacion ",Toast.LENGTH_LONG).show();
                 DescargarBDLocal();
                 ActualizarBD();
             }else{

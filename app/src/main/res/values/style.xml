@@ -20,7 +20,10 @@
       <item name="android:background">@color/Botones</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:autoSizeMaxTextSize">30sp</item>
+        <item name="android:autoSizeMinTextSize">18sp</item>
+        <item name="android:autoSizeTextType">uniform</item>
     </style>
 
 
