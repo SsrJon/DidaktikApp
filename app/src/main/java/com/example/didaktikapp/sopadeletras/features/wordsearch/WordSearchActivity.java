@@ -19,6 +19,7 @@ import com.example.didaktikapp.PopupHorizontal;
 import com.example.didaktikapp.R;
 import com.example.didaktikapp.sopadeletras.WordSearchApp;
 import com.example.didaktikapp.sopadeletras.commons.DurationFormatter;
+import com.example.didaktikapp.sopadeletras.commons.Timer;
 import com.example.didaktikapp.sopadeletras.commons.Util;
 import com.example.didaktikapp.sopadeletras.custom.LetterBoard;
 import com.example.didaktikapp.sopadeletras.custom.StreakView;
@@ -144,7 +145,8 @@ public class WordSearchActivity extends FullscreenActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        mViewModel.resumeGame();
+       // mViewModel.resumeGame();
+        
     }
 
     @Override

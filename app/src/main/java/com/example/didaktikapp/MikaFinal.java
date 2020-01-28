@@ -216,6 +216,8 @@ public class MikaFinal extends AppCompatActivity {
             arrowUp.setVisibility(INVISIBLE);
             arrowRight.setVisibility(INVISIBLE);
             arrowLeft.setVisibility(INVISIBLE);
+            MediaPlayer mediaPlayer= MediaPlayer.create(MikaFinal.this,R.raw.erantzunzuzena6_audioa);
+            mediaPlayer.start();
             try {
                 if (getIntent().getStringExtra("valor").equals("mika")){
 
@@ -230,6 +232,8 @@ public class MikaFinal extends AppCompatActivity {
                     popUp.putExtra("valor", valor );
                     startActivity(popUp);
                 }
+        }else if(contadorClicks>25){
+            porcentaje.setVisibility(INVISIBLE);
         }
     }
 

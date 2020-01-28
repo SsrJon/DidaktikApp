@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
+            android:visibility="invisible"
             android:textColor="@android:color/white"
             android:textSize="8pt"
             android:text="00:00"/>
@@ -47,6 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="8pt"
+                android:visibility="invisible"
                 android:textColor="@android:color/white"
                 android:text="1"/>
 
@@ -54,6 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="8pt"
+                android:visibility="invisible"
                 android:textColor="@android:color/white"
                 android:text="/"/>
 
@@ -62,6 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="8pt"
+                android:visibility="invisible"
                 android:textColor="@android:color/white"
                 android:text="1"/>
 

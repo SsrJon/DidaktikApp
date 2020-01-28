@@ -59,6 +59,7 @@ import timber.log.Timber;
 
 public class MapaActivity extends AppCompatActivity implements
         OnMapReadyCallback, PermissionsListener, OnCameraTrackingChangedListener {
+
     private PermissionsManager permissionsManager;
     private MapView mapView;
     private MapboxMap mapboxMap;
@@ -96,6 +97,10 @@ public class MapaActivity extends AppCompatActivity implements
         dbHelper = new DBHelper(getApplicationContext());
         db = dbHelper.getWritableDatabase();
         super.onCreate(savedInstanceState);
+        SharedPreferences sharedpreferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putBoolean("pasado", false);
+        editor.commit();
         // Mapbox access token is configured here. This needs to be called either in your application
         // object or in the same activity which contains the mapview.
         Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
@@ -539,7 +544,6 @@ public class MapaActivity extends AppCompatActivity implements
                             if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",6.1);
-
                                 startActivity(intent);
                             }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);

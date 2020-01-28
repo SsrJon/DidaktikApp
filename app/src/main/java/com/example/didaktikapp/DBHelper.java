@@ -103,7 +103,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Lugar L3 = new Lugar(3,"Maria Magdalena eliza",43.205548,-2.888705);
         Lugar L4 = new Lugar(4,"Hiltegi Zaharra",43.204889,-2.887833);
         Lugar L5 = new Lugar(5,"Landaederreagako Santo Kristo baseliza",43.209306,-2.893722);
-        Lugar L6 = new Lugar(6,"Abrisketako San Pedro baseleizea",43.210500,-2.909417);
+        Lugar L6 = new Lugar(6,"Abrisketako San Pedro baseliza",43.210500,-2.909417);
         lugares.add(L1);
         lugares.add(L2);
         lugares.add(L3);

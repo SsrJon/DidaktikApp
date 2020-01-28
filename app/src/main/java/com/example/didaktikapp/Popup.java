@@ -212,16 +212,15 @@ public class Popup extends Activity {
                     Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.sopa));
                     Juegos.getJuegosArrayList().add(J15);
 
-                    ContentValues values = new ContentValues();
-                    values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,3);
-                    String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
-                    String args [] = {Nombre};
-                    int count = db.update(DBHelper.entidadProgreso.TABLE_NAME,values,seleccion,args);
-
+                    if(!admin) {
+                        ContentValues values = new ContentValues();
+                        values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO, 3);
+                        String seleccion = DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO + "= ?";
+                        String args[] = {Nombre};
+                        int count = db.update(DBHelper.entidadProgreso.TABLE_NAME, values, seleccion, args);
+                    }
                     Intent intent = new Intent(Popup.this, MapaActivity.class);
                     startActivity(intent);
-
-
                 }
                 else if(getIntent().getStringExtra("valor").equals("ordenar3_1historia")){
                /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
