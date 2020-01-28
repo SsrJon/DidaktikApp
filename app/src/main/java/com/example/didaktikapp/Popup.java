@@ -277,6 +277,7 @@ public class Popup extends Activity {
                     Intent intent = new Intent(Popup.this, MapaActivity.class);
                     startActivity(intent);
                 }else if(getIntent().getStringExtra("valor").equals("testgalderak6historia")){
+
                     Intent intent = new Intent(Popup.this, MikaExplicando.class);
                     intent.putExtra("marcador",7.1);
                     startActivity(intent);
