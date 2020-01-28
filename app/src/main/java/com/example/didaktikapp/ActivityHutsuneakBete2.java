@@ -64,6 +64,7 @@ public class ActivityHutsuneakBete2 extends AppCompatActivity {
             View.DragShadowBuilder myShadowBuilder = new View.DragShadowBuilder(v);
             v.startDrag(data, myShadowBuilder, v, 0);
 
+
             return true;
         }
     };
@@ -78,12 +79,15 @@ public class ActivityHutsuneakBete2 extends AppCompatActivity {
             switch (dragEvent) {
 
                 case DragEvent.ACTION_DRAG_ENTERED:
+
                     break;
 
                 case DragEvent.ACTION_DRAG_EXITED:
                     break;
 
                 case DragEvent.ACTION_DROP:
+
+
                         //Si el elemento arrastrado coincide con el target
                     if (view.getId() == R.id.btn1 && v.getId() == R.id.target3) {
 
@@ -142,6 +146,8 @@ public class ActivityHutsuneakBete2 extends AppCompatActivity {
                         mediaPlayer.start();
                     }
                     break;
+
+
             }
 
             return true;

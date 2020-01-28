@@ -146,7 +146,7 @@ public class WordSearchActivity extends FullscreenActivity {
     protected void onStart() {
         super.onStart();
        // mViewModel.resumeGame();
-        
+
     }
 
     @Override
