@@ -61,10 +61,12 @@ public class Popup extends Activity {
 
         getWindow().setAttributes(params);
 
-
+        //Botón del popup para repetir los juegos
         btnErrepikatu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Recibe el string del juego que se va a repetir
                 seleccionado=true;
                 if(getIntent().getStringExtra("valor").equals("quiz")){
 
@@ -154,22 +156,27 @@ public class Popup extends Activity {
             }
         });
 
-
+        //Botón continuar del popup
         btnJarraitu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
                 seleccionado = true;
                 destruir=1;
                 dbHelper = new DBHelper(getApplicationContext());
                 db = dbHelper.getWritableDatabase();
                 SharedPreferences sharedPref = getSharedPreferences("datos",Context.MODE_PRIVATE);
                 Nombre = sharedPref.getString("nombre", null);
-
                 Log.d("tag", "onClick: "+ getIntent().getStringExtra("valor"));
+
+                //Recibe el string del juego
                 if(getIntent().getStringExtra("valor").equals("puzzleM1")){
                    /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
                     db.execSQL(strSQL);*/
 
+                   //Desbloquea los juegos en el menu
                     Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                     Juegos.getJuegosArrayList().add(J14);
 
@@ -178,6 +185,7 @@ public class Popup extends Activity {
                     Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
                     Juegos.getJuegosArrayList().add(J4);
 
+                    //Si el usuario no ha entrado al menu_admin, desbloquea el siguiente marcador
                     if(!admin){
                         ContentValues values = new ContentValues();
                         values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,2);

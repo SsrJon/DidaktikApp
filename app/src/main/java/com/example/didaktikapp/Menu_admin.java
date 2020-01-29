@@ -41,35 +41,7 @@ public class Menu_admin extends AppCompatActivity {
         escribirAdmin = findViewById(R.id.escribirAdmin);
         responderAdminLayout = findViewById(R.id.responderAdminlayout);
 
-
-        //Precaucion
-       /* AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
-        dialogo1.setTitle("Importante");
-        dialogo1.setMessage("¿Cual es la contraseña de administrador ?");
-        dialogo1.setCancelable(false);
-
-        dialogo1.setPositiveButton("Muztio", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialogo1, int id) {
-                aceptar();
-            }
-        });
-        dialogo1.setNegativeButton("Mika", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialogo1, int id) {
-                cancelar();
-            }
-        });
-        dialogo1.setNeutralButton("Arrigorriaga", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        cancelar();
-                    }
-                });
-        dialogo1.show();
-
-
-
-        //Precaucion
-*/
+        //Cambia el nombre del alumno
         cambiarnombre = findViewById(R.id.cambiarnombre);
         cambiarnombre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +68,8 @@ public class Menu_admin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //Borra el progreso actual del usuario
         borrarProgreso = findViewById(R.id.borrarProgre);
         borrarProgreso.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,14 +83,15 @@ public class Menu_admin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //Borra el usuario actual
         borrarUsuario = findViewById(R.id.erabiltzaileaEzabatu);
         borrarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try{
-                    System.out.println("Hola");
+
                     db.execSQL("DELETE FROM "+ DBHelper.entidadUsuario.TABLE_NAME + " WHERE " + DBHelper.entidadUsuario. COLUMN_NAME_NOMBRE + " LIKE " + "'+"+Nombre+"+'" );
-                    System.out.println("adios");
                     Intent intent = new Intent(Menu_admin.this,PantallaCarga.class);
                     startActivity(intent);
                 }catch (Exception e){
@@ -127,6 +102,7 @@ public class Menu_admin extends AppCompatActivity {
 
             }
         });
+        //Desbloquea todos los marcadores y juegos con el usuario actual
         desbloquearProgreso = findViewById(R.id.desbloquearProgre);
         desbloquearProgreso.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,6 +120,7 @@ public class Menu_admin extends AppCompatActivity {
             }
         });
 
+        //Contraseña que se piede al entrar a la pantalla
        respoderAdmin =findViewById(R.id.respoderAdmin);
        respoderAdmin.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -159,6 +136,7 @@ public class Menu_admin extends AppCompatActivity {
 
     }
 
+    //Añade todos los juegos al menu de juegos (recycler)
     public void rellenarJuegos(){
 
         Juegos.getJuegosArrayList().clear();
@@ -191,14 +169,7 @@ public class Menu_admin extends AppCompatActivity {
         Juegos.getJuegosArrayList().add(J16);
 
     }
-    public void aceptar () {
 
-    }
-
-    public void cancelar () {
-        Intent intent = new Intent(Menu_admin.this,MapaActivity.class);
-        startActivity(intent);
-    }
 
 
 }

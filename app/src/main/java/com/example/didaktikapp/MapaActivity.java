@@ -127,28 +127,14 @@ public class MapaActivity extends AppCompatActivity implements
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
+                //Ubicacion actual
                 Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                 pepe(localizacion);
 
             }
         }, 10000);
 
-
-
-
-       /* Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                LatLng punto1 = new LatLng(43.211583, -2.886917);
-                Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
-                double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getLongitude(), punto1.getLatitude()));
-                Toast.makeText(getApplicationContext(), "Distancia = "+distancia, Toast.LENGTH_SHORT).show();
-
-                if (distancia * 1000 <= 9) {
-                    System.out.println("llegue");
-                }
-            }
-        }, 3000);*/
+        
     }
 
     @Override
