@@ -36,24 +36,16 @@ public class HutsuneakTabla extends AppCompatActivity {
             public void onClick(View v) {
 
                 //Si los datos son correctos
-                    if ((etOndarearen.getText().toString().equals("Larrea eskultura") ||
-                            etOndarearen.getText().toString().equals("Larrea Eskultura") ||
-                            etOndarearen.getText().toString().equals("larrea eskultura") ||
-                            etOndarearen.getText().toString().equals("LARREA ESKULTURA")) &&
-                            (etEgilea.getText().toString().equals("Vicente Larrea") ||
-                                    etEgilea.getText().toString().equals("Vicente larrea") ||
-                                    etEgilea.getText().toString().equals("vicente larrea") ||
-                                    etEgilea.getText().toString().equals("VICENTE LARREA")) &&
-                            (etHeldu.getText().toString().equals("2002an") ||
+                    if ((etOndarearen.getText().toString().toUpperCase().equals("LARREA ESKULTURA")
+                        &&
+                            (etEgilea.getText().toString().toUpperCase().equals("VICENTE LARREA")
+                                  &&
+                            (etHeldu.getText().toString().toUpperCase().equals("2002AN") ||
                                     etHeldu.getText().toString().equals("2002")) &&
-                            (etKultural.getText().toString().equals("Ondare kultural arkitektonikoa") ||
-                                    etKultural.getText().toString().equals("Ondare Kultural Arkitektonikoa") ||
-                                    etKultural.getText().toString().equals("ondare kultural arkitektonikoa") ||
-                                    etKultural.getText().toString().equals("arkitektonikoa") ||
-                                    etKultural.getText().toString().equals("Arkitektonikoa") ||
-                                    etKultural.getText().toString().equals("kultural arkitektonikoa") ||
-                                    etKultural.getText().toString().equals("Kultural arkitektonikoa") ||
-                                    etKultural.getText().toString().equals("ONDARE KULTURAL ARKITEKTONIKOA"))) {
+                            (etKultural.getText().toString().toUpperCase().equals("ONDARE KULTURAL ARKITEKTONIKOA") ||
+                                    etKultural.getText().toString().toUpperCase().equals("ARKITEKTONIKOA") ||
+                                    etKultural.getText().toString().toUpperCase().equals("KULTURAL ARKITEKTONIKOA") 
+                            )))) {
 
                         MediaPlayer mediaPlayer = MediaPlayer.create(HutsuneakTabla.this, R.raw.erantzun_zuzena1_audioa);
                         mediaPlayer.start();

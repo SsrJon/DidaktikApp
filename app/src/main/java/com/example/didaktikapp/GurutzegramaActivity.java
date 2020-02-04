@@ -1,5 +1,6 @@
 package com.example.didaktikapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -38,6 +39,14 @@ public class GurutzegramaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
+
+        dialogo1.setTitle("GURUTZEGRAMA");
+        dialogo1.setMessage("Joku honetan zenbakiak sakatzerakoan zure erantzuna idatzi beharko duzu");
+        dialogo1.setCancelable(false);
+        dialogo1.setIcon(R.drawable.mika_sin_fondo);
+
 
         setContentView(R.layout.activity_gurutzegrama);
         uno = findViewById(R.id.gurutzegramaUno);
@@ -131,7 +140,7 @@ public class GurutzegramaActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("tag", "hola  "+respuestaEscrita.getText().toString());
                 Log.d("tag", "adios "+respuesta);
-                if(respuestaEscrita.getText().toString().equals(respuesta)){
+                if(respuestaEscrita.getText().toString().toUpperCase().equals(respuesta.toUpperCase())){
                     contador++;
                     if(contador == 6){
                         //popUp para volver a jugar el juego o salir al menu de juegos
