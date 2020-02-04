@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.didaktikapp.Puzzle.PuzzleActivity;
 import com.example.didaktikapp.sopadeletras.features.wordsearch.WordSearchActivity;
 
 
@@ -30,20 +31,20 @@ public class seleccionJuego extends AppCompatActivity {
                 //System.out.println(recyclerView.getChildAdapterPosition(v));
                 String fotoaMandar  = Juegos.getJuegosArrayList().get(recyclerView.getChildAdapterPosition(v)).getNombre();
                //Todas las condiciones para añadir el intent dependiendo que juegos es.
-                if(fotoaMandar.equals("Quiz")){
+                if(fotoaMandar.equals("Hiltegia quiz")){
                     Intent intent = new Intent(seleccionJuego.this, Quiz.class);
                     startActivity(intent);
-                }if (fotoaMandar.equals("Puzzle")){
-                   // Intent intent = new Intent(seleccionJuego.this, PuzzleActivity.class);
-                    //startActivity(intent);
-                }if (fotoaMandar.equals("Puzzle irristagarria")){
+                }if (fotoaMandar.equals("Larrea eskultura puzzle")){
+                    Intent intent = new Intent(seleccionJuego.this, PuzzleActivity.class);
+                    startActivity(intent);
+                }if (fotoaMandar.equals("Landaederreaga puzzle")){
                     Intent intent = new Intent(seleccionJuego.this, com.example.didaktikapp.Puzzle_cuadrados.PuzzleActivity.class);
                     startActivity(intent);
-                }if (fotoaMandar.equals("Hutsuneak bete")){
+                }if (fotoaMandar.equals("Landaederreaga hutsuneak")){
                     Intent intent = new Intent(seleccionJuego.this, ActivityHutsuneakBete.class);
                     startActivity(intent);
                 }
-                if (fotoaMandar.equals("Hutsuneak bete2")){
+                if (fotoaMandar.equals("Udaletxea hutsuneak")){
                     Intent intent = new Intent(seleccionJuego.this, ActivityHutsuneakBete2.class);
                     startActivity(intent);
                 }
@@ -51,33 +52,30 @@ public class seleccionJuego extends AppCompatActivity {
                     Intent intent = new Intent(seleccionJuego.this, GurutzegramaActivity.class);
                     startActivity(intent);
 
-                }if (fotoaMandar.equals("Egia/Gezurra")){
+                }if (fotoaMandar.equals("Magdalena Egia/Gezurra")){
                     Intent intent = new Intent(seleccionJuego.this, EgiaedoGezurra.class);
                     startActivity(intent);
-                }if(fotoaMandar.equals("Argazkia aukeratu")) {
+                }/*if(fotoaMandar.equals("Argazkia aukeratu")) {
                     Intent intent = new Intent(seleccionJuego.this, FotoElegir.class);
                     startActivity(intent);
-                }if(fotoaMandar.equals("Larrea 1")) {
+                }*/
+                if(fotoaMandar.equals("Larrea eskultura taula")) {
                     Intent intent = new Intent(seleccionJuego.this, HutsuneakTabla.class);
                     startActivity(intent);
                 }
-                if (fotoaMandar.equals("Ordenatu Kronologikoki")){
+                if (fotoaMandar.equals("Magdalena Ordenatu Kronologikoki")){
                     Intent intent = new Intent(seleccionJuego.this, OrdenarImagen.class);
                     startActivity(intent);
                 }
-                if (fotoaMandar.equals("Test")){
+                if (fotoaMandar.equals("San Pedro quiz")){
                     Intent intent = new Intent(seleccionJuego.this, TestGalderak.class);
                     startActivity(intent);
                 }
-                if (fotoaMandar.equals("Taula")){
-                    Intent intent = new Intent(seleccionJuego.this, HutsuneakTabla.class);
-                    startActivity(intent);
-                }
-                if (fotoaMandar.equals("Test0")){
+                if (fotoaMandar.equals("Ondare kulturala")){
                     Intent intent = new Intent(seleccionJuego.this, Test0.class);
                     startActivity(intent);
                 }
-                if(fotoaMandar.equals("Hizki salda")){
+                if(fotoaMandar.equals("Udaletxea hizki salda")){
                     Intent intent = new Intent(seleccionJuego.this, WordSearchActivity.class);
                     startActivity(intent);
                 }
