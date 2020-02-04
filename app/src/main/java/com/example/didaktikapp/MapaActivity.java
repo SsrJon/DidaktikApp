@@ -181,80 +181,86 @@ public class MapaActivity extends AppCompatActivity implements
 
                     if (Marcadores==2){
                         Juegos.getJuegosArrayList().clear();
-                        Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                        Juegos J14 = new Juegos("Ondare kulturala",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
-                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
+                        Juegos J12 = new Juegos("Larrea eskultura taula",getDrawable(R.drawable.tabla2));
                         Juegos.getJuegosArrayList().add(J12);
-                        Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                        Juegos J4 = new Juegos("Larrea eskultura puzzle",getDrawable(R.drawable.puzzle));
                         Juegos.getJuegosArrayList().add(J4);
                     }
                     if (Marcadores==3){
                         Juegos.getJuegosArrayList().clear();
-                        Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                        Juegos J14 = new Juegos("Ondare kulturala",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
-                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
+                        Juegos J12 = new Juegos("Larrea eskultura taula",getDrawable(R.drawable.tabla2));
                         Juegos.getJuegosArrayList().add(J12);
-                        Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                        Juegos J4 = new Juegos("Larrea eskultura puzzle",getDrawable(R.drawable.puzzle));
                         Juegos.getJuegosArrayList().add(J4);
-                        Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                        Juegos J13 = new Juegos("Udaletxea hutsuneak",getDrawable(R.drawable.rellenar_hueco));
                         Juegos.getJuegosArrayList().add(J13);
-                        Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.sopa));
+                        Juegos J15 = new Juegos("Udaletxea hizki salda",getDrawable(R.drawable.sopa));
                         Juegos.getJuegosArrayList().add(J15);
                     }
 
                     if (Marcadores==4){
                         Juegos.getJuegosArrayList().clear();
-                        Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                        Juegos J14 = new Juegos("Ondare kulturala",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
-                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
+                        Juegos J12 = new Juegos("Larrea eskultura taula",getDrawable(R.drawable.tabla2));
                         Juegos.getJuegosArrayList().add(J12);
-                        Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                        Juegos J4 = new Juegos("Larrea eskultura puzzle",getDrawable(R.drawable.puzzle));
                         Juegos.getJuegosArrayList().add(J4);
-                        Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                        Juegos J13 = new Juegos("Udaletxea hutsuneak",getDrawable(R.drawable.rellenar_hueco));
                         Juegos.getJuegosArrayList().add(J13);
-                        Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
+                        Juegos J15 = new Juegos("Udaletxea hizki salda",getDrawable(R.drawable.sopa));
+                        Juegos.getJuegosArrayList().add(J15);
+                        Juegos J8 = new Juegos("Magdalena Egia/Gezurra",getDrawable(R.drawable.true_false));
                         Juegos.getJuegosArrayList().add(J8);
-                        Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+                        Juegos J10 = new Juegos("Magdalena Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
                         Juegos.getJuegosArrayList().add(J10);
                     }
 
                     if (Marcadores==5){
                         Juegos.getJuegosArrayList().clear();
-                        Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                        Juegos J14 = new Juegos("Ondare kulturala",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
-                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
+                        Juegos J12 = new Juegos("Larrea eskultura taula",getDrawable(R.drawable.tabla2));
                         Juegos.getJuegosArrayList().add(J12);
-                        Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                        Juegos J4 = new Juegos("Larrea eskultura puzzle",getDrawable(R.drawable.puzzle));
                         Juegos.getJuegosArrayList().add(J4);
-                        Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                        Juegos J13 = new Juegos("Udaletxea hutsuneak",getDrawable(R.drawable.rellenar_hueco));
                         Juegos.getJuegosArrayList().add(J13);
-                        Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
+                        Juegos J15 = new Juegos("Udaletxea hizki salda",getDrawable(R.drawable.sopa));
+                        Juegos.getJuegosArrayList().add(J15);
+                        Juegos J8 = new Juegos("Magdalena Egia/Gezurra",getDrawable(R.drawable.true_false));
                         Juegos.getJuegosArrayList().add(J8);
-                        Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+                        Juegos J10 = new Juegos("Magdalena Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
                         Juegos.getJuegosArrayList().add(J10);
-                        Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.quiz));
+                        Juegos J2 = new Juegos("Hiltegia quiz",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J2);
                     }
 
                     if (Marcadores==6){
                         Juegos.getJuegosArrayList().clear();
-                        Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
+                        Juegos J14 = new Juegos("Ondare kulturala",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J14);
-                        Juegos J12 = new Juegos("Taula",getDrawable(R.drawable.tabla2));
+                        Juegos J12 = new Juegos("Larrea eskultura taula",getDrawable(R.drawable.tabla2));
                         Juegos.getJuegosArrayList().add(J12);
-                        Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
+                        Juegos J4 = new Juegos("Larrea eskultura puzzle",getDrawable(R.drawable.puzzle));
                         Juegos.getJuegosArrayList().add(J4);
-                        Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
+                        Juegos J13 = new Juegos("Udaletxea hutsuneak",getDrawable(R.drawable.rellenar_hueco));
                         Juegos.getJuegosArrayList().add(J13);
-                        Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
+                        Juegos J15 = new Juegos("Udaletxea hizki salda",getDrawable(R.drawable.sopa));
+                        Juegos.getJuegosArrayList().add(J15);
+                        Juegos J8 = new Juegos("Magdalena Egia/Gezurra",getDrawable(R.drawable.true_false));
                         Juegos.getJuegosArrayList().add(J8);
-                        Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
+                        Juegos J10 = new Juegos("Magdalena Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
                         Juegos.getJuegosArrayList().add(J10);
-                        Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.quiz));
+                        Juegos J2 = new Juegos("Hiltegia quiz",getDrawable(R.drawable.quiz));
                         Juegos.getJuegosArrayList().add(J2);
-                        Juegos J6 = new Juegos("Puzzle irristagarria",getDrawable(R.drawable.puzzletearrastro));
+                        Juegos J6 = new Juegos("Landaederreaga puzzle",getDrawable(R.drawable.puzzletearrastro));
                         Juegos.getJuegosArrayList().add(J6);
-                        Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
+                        Juegos J7 = new Juegos("Landaederreaga hutsuneak",getDrawable(R.drawable.rellenar_hueco));
                         Juegos.getJuegosArrayList().add(J7);
                     }
 
@@ -446,99 +452,99 @@ public class MapaActivity extends AppCompatActivity implements
                             Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                              // Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
-                            if (distancia * 1000 <= 9) {
+                            //if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",1.1);
                                 startActivity(intent);
-                            }else if(Marcadores > numLugares){
+                            /*}else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",1.1);
                                 SharedPreferences.Editor editor = sharedpreferences.edit();
                                 editor.putBoolean("pasado", true);
                                 editor.commit();
                                 startActivity(intent);
-                            }
+                            }*/
                         } else if (marker.getTitle().equals("Arrigorriagako Udaletxea")) {
                             Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                             //Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
 
-                            if (distancia * 1000 <= 9) {
+                           // if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",2.1);
                                 startActivity(intent);
-                            }else if(Marcadores > numLugares){
-                                Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
+                            //}else if(Marcadores > numLugares){
+                              /*/  Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",2.1);
                                 SharedPreferences.Editor editor = sharedpreferences.edit();
                                 editor.putBoolean("pasado", true);
-                                editor.commit();
+                                editor.commit();*/
                                 startActivity(intent);
-                            }
+                            //}
                         } else if (marker.getTitle().equals("Maria Magdalena eliza")) {
                             Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                             //Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
-                            if (distancia * 1000 <= 9) {
+                         //   if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",3.1);
                                 startActivity(intent);
-                            }else if(Marcadores > numLugares){
+                            /*}else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",3.1);
                                 SharedPreferences.Editor editor = sharedpreferences.edit();
                                 editor.putBoolean("pasado", true);
                                 editor.commit();
                                 startActivity(intent);
-                            }
+                            }*/
                         }else if(marker.getTitle().equals("Hiltegi Zaharra")){
                            Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                             //Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
-                            if (distancia * 1000 <= 9) {
+                          //  if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",4.1);
                                 startActivity(intent);
-                            }else if(Marcadores > numLugares){
+                            /*}else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",4.1);
                                 SharedPreferences.Editor editor = sharedpreferences.edit();
                                 editor.putBoolean("pasado", true);
                                 editor.commit();
                                 startActivity(intent);
-                            }
+                            }*/
                         }else if(marker.getTitle().equals("Landaederreagako Santo Kristo baseliza")){
                            Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                             //Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
-                            if (distancia * 1000 <= 9) {
+                           // if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",5.1);
                                 startActivity(intent);
-                            }else if(Marcadores > numLugares){
+                          /*  }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",5.1);
                                 SharedPreferences.Editor editor = sharedpreferences.edit();
                                 editor.putBoolean("pasado", true);
                                 editor.commit();
                                 startActivity(intent);
-                            }
+                            }*/
                         }else if(marker.getTitle().equals("Abrisketako San Pedro baseliza")){
                             Location localizacion = mapboxMap.getLocationComponent().getLastKnownLocation();
                             double distancia = TurfMeasurement.distance(Point.fromLngLat(localizacion.getLongitude(), localizacion.getLatitude()), Point.fromLngLat(punto1.getPosition().getLongitude(), punto1.getPosition().getLatitude()));
                             //Toast.makeText(getApplicationContext(), "Distancia = " + distancia, Toast.LENGTH_SHORT).show();
-                            if (distancia * 1000 <= 9) {
+                            //if (distancia * 1000 <= 9) {
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",6.1);
                                 startActivity(intent);
-                            }else if(Marcadores > numLugares){
+                           /* }else if(Marcadores > numLugares){
                                 Intent intent = new Intent(MapaActivity.this, MikaExplicando.class);
                                 intent.putExtra("marcador",6.1);
                                 SharedPreferences.Editor editor = sharedpreferences.edit();
                                 editor.putBoolean("pasado", true);
                                 editor.commit();
                                 startActivity(intent);
-                            }
+                            }*/
                         }
                         return false;
                     }

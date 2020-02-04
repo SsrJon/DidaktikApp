@@ -176,6 +176,7 @@ public class Popup extends Activity {
                    /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
                     db.execSQL(strSQL);*/
 
+                   /*
                    //Desbloquea los juegos en el menu
                     Juegos J14 = new Juegos("Ondare",getDrawable(R.drawable.quiz));
                     Juegos.getJuegosArrayList().add(J14);
@@ -184,6 +185,8 @@ public class Popup extends Activity {
                     Juegos.getJuegosArrayList().add(J12);
                     Juegos J4 = new Juegos("Puzzle",getDrawable(R.drawable.puzzle));
                     Juegos.getJuegosArrayList().add(J4);
+
+                    */
 
                     //Si el usuario no ha entrado al menu_admin, desbloquea el siguiente marcador
                     if(!admin){
@@ -215,10 +218,13 @@ public class Popup extends Activity {
                     startActivity(intent);
                 }else if(getIntent().getStringExtra("valor").equals("sopa2_1historia")){
 
+                    /*
                     Juegos J13 = new Juegos("Hutsuneak bete2",getDrawable(R.drawable.rellenar_hueco));
                     Juegos.getJuegosArrayList().add(J13);
                     Juegos J15 = new Juegos("Hizki salda",getDrawable(R.drawable.sopa));
                     Juegos.getJuegosArrayList().add(J15);
+
+                     */
 
                     if(!admin) {
                         ContentValues values = new ContentValues();
@@ -234,10 +240,13 @@ public class Popup extends Activity {
                /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
                 db.execSQL(strSQL);*/
 
+               /*
                     Juegos J8 = new Juegos("Egia/Gezurra",getDrawable(R.drawable.true_false));
                     Juegos.getJuegosArrayList().add(J8);
                     Juegos J10 = new Juegos("Ordenatu Kronologikoki",getDrawable(R.drawable.cronologia));
                     Juegos.getJuegosArrayList().add(J10);
+
+                */
                     if(!admin){
                         ContentValues values = new ContentValues();
                         values.put(DBHelper.entidadProgreso.COLUMN_NAME_PROGRESO,4);
@@ -253,8 +262,11 @@ public class Popup extends Activity {
                    /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
                     db.execSQL(strSQL);*/
 
+                   /*
                     Juegos J2 = new Juegos("Quiz",getDrawable(R.drawable.quiz));
                     Juegos.getJuegosArrayList().add(J2);
+
+                    */
 
                     if(!admin) {
                         ContentValues values = new ContentValues();
@@ -269,10 +281,13 @@ public class Popup extends Activity {
                 }else if(getIntent().getStringExtra("valor").equals("deslizar5historia")){
                    /* String strSQL = "UPDATE "+DBHelper.entidadProgreso.TABLE_NAME+" SET "+DBHelper.entidadProgreso.COLUMN_NAME_PTO_1+" = " + 1 +" WHERE "+DBHelper.entidadProgreso.COLUMN_NAME_ID_USUARIO+" = "+ Nombre;
                     db.execSQL(strSQL);*/
+                   /*
                     Juegos J6 = new Juegos("Puzzle irristagarria",getDrawable(R.drawable.puzzletearrastro));
                     Juegos.getJuegosArrayList().add(J6);
                     Juegos J7 = new Juegos("Hutsuneak bete",getDrawable(R.drawable.rellenar_hueco));
                     Juegos.getJuegosArrayList().add(J7);
+
+                    */
 
                     if(!admin){
                         ContentValues values = new ContentValues();
@@ -299,12 +314,15 @@ public class Popup extends Activity {
                 }
                 else if(getIntent().getStringExtra("valor").equals("mika7historia")){
 
+                    /*
                     Juegos J11 = new Juegos("Test",getDrawable(R.drawable.quiz));
                     Juegos.getJuegosArrayList().add(J11);
                     Juegos J3 = new Juegos("Gurutzegrama",getDrawable(R.drawable.cruzada));
                     Juegos.getJuegosArrayList().add(J3);
                     Juegos J16 = new Juegos("Mika",getDrawable(R.drawable.muztio));
                     Juegos.getJuegosArrayList().add(J16);
+
+                     */
 
                     if(!admin){
                         ContentValues values = new ContentValues();

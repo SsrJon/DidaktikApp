@@ -168,6 +168,7 @@ public class Menu_admin extends AppCompatActivity {
         Juegos J16 = new Juegos("Mika",getDrawable(R.drawable.muztio));
         Juegos.getJuegosArrayList().add(J16);
 
+
     }
 
 
