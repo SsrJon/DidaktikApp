@@ -195,7 +195,7 @@ altueragatik nabarmentzen da.</string>
     <string name="explicacionpunto12">Larrea eskulturaren oinarrizko datuak ikasi dituzuenez, orain honen puzzlea ebatziko duzue. Animo!</string>
 
     <!-- Ordenar imagenes punto 3-->
-    <string name="orden">Hurrengo argazkiak, kronologikoki ordenatu behar duzu.</string>
+    <string name="orden">Hurrengo argazkiak, kronologikoki ordenatu behar duzu. Horretarako argazkiak sakatu. </string>
     <string name="escribirOrden">Idatzi orden zuzena</string>
     <string name="foto_A">A</string>
     <string name="foto_B">B</string>
@@ -360,7 +360,18 @@ ematen diona.</string>
 
 
     <!-- Admin-->
-    <string name="preguntaAdmin">¿Cual es la contraseña de administrador ?</string>
+    <string name="preguntaAdmin">Administratzaile pasahitza sartu</string>
+    <string name="explicacion_gurutze">Joku honetan zenbakiak sakatzerakoan zure erantzuna idatzi beharko duzu</string>
+    <string name="guru">GURUTZEGRAMA</string>
+    <string name="mika_final">Joku honetan mikak ikutu behar dituzu muztio botila bete arte, SORTE ON!!!!</string>
+    <string name="ultimo">AZKEN JOLASA !!!</string>
+    <string name="hutsuneak_bete_explicacion">Joku honetan aukerak mantendu eta arrastatu toki egokira</string>
+    <string name="hutsuneak_bete_titulo">HUTSUNEAK BETE</string>
+    <string name="erabiltzaile_izena_aldatu">Erabiltzaile izena aldatu</string>
+    <string name="dena_borratu">Dena borratu</string>
+    <string name="desblokeatu_guztia">Desblokeatu guztia</string>
+    <string name="erabiltzailea_ezabatu">Erabiltzailea ezabatu</string>
+    <string name="aldatu">Aldatu</string>
 
 
 </resources>

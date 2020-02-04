@@ -1,5 +1,6 @@
 package com.example.didaktikapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -28,6 +29,11 @@ public class ActivityHutsuneakBete2 extends AppCompatActivity {
         setContentView(R.layout.activity_hutsuneak_bete2);
 
         //Se defienen los elementos y se les da listener de arrastre y long click
+        AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
+        dialogo1.setTitle(R.string.hutsuneak_bete_titulo);
+        dialogo1.setMessage(R.string.hutsuneak_bete_explicacion);
+        dialogo1.setIcon(R.drawable.mika_sin_fondo);
+        dialogo1.show();
 
         target1 = findViewById(R.id.target1);
 

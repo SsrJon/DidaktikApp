@@ -66,8 +66,8 @@ public class MikaFinal extends AppCompatActivity {
         setContentView(R.layout.activity_mika_final);
         porcentaje = findViewById(R.id.porcentaje);
         AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
-        dialogo1.setTitle("AZKEN JOLASA !!!");
-        dialogo1.setMessage("Joku honetan mikak ikutu behar dituzu muztio botila bete arte, SORTE ON!!!!");
+        dialogo1.setTitle(R.string.ultimo);
+        dialogo1.setMessage(R.string.mika_final);
         dialogo1.setCancelable(false);
         dialogo1.setIcon(R.drawable.mika_sin_fondo);
 

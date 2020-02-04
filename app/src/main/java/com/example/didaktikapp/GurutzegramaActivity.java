@@ -42,10 +42,10 @@ public class GurutzegramaActivity extends AppCompatActivity {
 
         AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
 
-        dialogo1.setTitle("GURUTZEGRAMA");
-        dialogo1.setMessage("Joku honetan zenbakiak sakatzerakoan zure erantzuna idatzi beharko duzu");
-        dialogo1.setCancelable(false);
+        dialogo1.setTitle(R.string.guru);
+        dialogo1.setMessage(R.string.explicacion_gurutze);
         dialogo1.setIcon(R.drawable.mika_sin_fondo);
+        dialogo1.show();
 
 
         setContentView(R.layout.activity_gurutzegrama);

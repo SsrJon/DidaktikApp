@@ -1,5 +1,6 @@
 package com.example.didaktikapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -31,6 +32,12 @@ public class ActivityHutsuneakBete extends AppCompatActivity {
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_hutsuneak_bete);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
+        dialogo1.setTitle(R.string.hutsuneak_bete_titulo);
+        dialogo1.setMessage(R.string.hutsuneak_bete_explicacion);
+        dialogo1.setIcon(R.drawable.mika_sin_fondo);
+        dialogo1.show();
 
         //Se defienen los elementos y se les da listener de arrastre y long click
         target1 = findViewById(R.id.target1);
